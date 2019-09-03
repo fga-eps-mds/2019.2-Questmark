@@ -10,3 +10,12 @@
 |Luiz Gustavo|lgpinheiro94@gmail.com|[Lgpinheiro94](https://github.com/lgpinheiro94)||
 |Miguel Santos|miguelisdemir@gmail.com|[Miguelisdemir](https://github.com/Miguelisdemir)||
 |Nicalo Ribeiro|nicalo63@gmail.com|[Nicaloribeiro](https://github.com/nicaloribeiro)||
+---
+<p align="center">
+</p>
+<h4 align="center"> Grupo 4 </h4>
+<h4 align="center"> Métodos de Desenvolvimento de Software (MDS) </h4>
+<h4 align="center"> 2019 </h4>
+</p>
+
+![rsz_4-0](https://user-images.githubusercontent.com/43656009/64180201-c29ced00-ce3a-11e9-8920-fefad420fcb0.png)
