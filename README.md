@@ -2,11 +2,11 @@
 
 ### Equipe
 ---
-|Nomes|Github|
-|---|---|
-|Danillo Gonçalves|[DanilloGS](https://github.com/DanilloGS)|
-|Gustavo Nogeuira|[Gustavo-Nogueira](https://github.com/Gustavo-Nogueira)|
-|Lucas Lopes|[Lucaslop](https://github.com/lucaslop)|
-|Luiz Gustavo|[Lgpinheiro94](https://github.com/lgpinheiro94)|
-|Miguel Santos|[Miguelisdemir](https://github.com/Miguelisdemir)|
-|Nicalo Ribeiro|[Nicaloribeiro](https://github.com/nicaloribeiro)|
+|Nomes|Email|Github|
+|---|---|---|
+|Danillo Gonçalves|danillosouza1704@gmail.com|[DanilloGS](https://github.com/DanilloGS)||
+|Gustavo Nogeuira|gustavonr.13@gmail.com|[Gustavo-Nogueira](https://github.com/Gustavo-Nogueira)||
+|Lucas Lopes|lucaslopes050597@gmail.com	|[Lucaslop](https://github.com/lucaslop)||
+|Luiz Gustavo|lgpinheiro94@gmail.com|[Lgpinheiro94](https://github.com/lgpinheiro94)||
+|Miguel Santos|miguelisdemir@gmail.com|[Miguelisdemir](https://github.com/Miguelisdemir)||
+|Nicalo Ribeiro|nicalo63@gmail.com|[Nicaloribeiro](https://github.com/nicaloribeiro)||
