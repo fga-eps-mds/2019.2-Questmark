@@ -126,6 +126,12 @@ Problemas/Comentários|Além de responderem os questionários,os respondentes ev
  
 ### 3.6 Principais necessidades dos Usuários ou dos Envolvidos
 
+|**Necessidade**|**Prioridade**|**Preocupação**|**Solução Proposta**|**Solução Atual**|
+|:---:|:---:|:---:|:---:|:---:|
+|Criar questionários em Markdown|Alta|Falta de conhecimento em Markdown|||
+|Compartilhar o questionário|Alta||Após a criação do questionário, criar um link de compartilhamento para que esse seja respondido||
+|Editar textos em markdown com visualização em tempo real|Média||Permitir que o usuário escreva em markdown e visualize simultaneamente o resultado|Plugins e sites que fazem isso|
+
 # Histórico de Revisão 
 |Data|Versão|Modificação|Autor(es)|
 |:---:|:---:|:---:|:---:|
@@ -133,5 +139,6 @@ Problemas/Comentários|Além de responderem os questionários,os respondentes ev
 04/09/2019|0.2|Adição do tópico 1|Danillo Souza|
 05/09/2019|0.3|Revisão do Tópico 1, Template do Tópico 2|Nícalo Ribeiro|
 05/09/2019|0.4|Adição do tópico 3 e seus subtópicos|Nícalo Ribeiro|
-|06/05/2019|0.5|Adição do tópico 2 e seus subtópicos|Danillo Souza|
+|06/09/2019|0.5|Adição dos tópicos 4, 5 e 6|Nícalo Ribeiro|
+|06/05/2019|0.6|Adição do tópico 2 e seus subtópicos|Danillo Souza|
  
