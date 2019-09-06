@@ -13,8 +13,10 @@ MDS: Disciplina de Métodos de Desenvolvimento de Software.
 EPS : Disciplina de Engenharia de Produto de Software.  
 Markdown: Linguagem de marcação que converte texto comum em páginas web.  
 ## 1.4 Referências
->IBM Knowledge Center - Documento de Visão: A estrutura de tópicos do documento de visão. Disponível em: https://www.ibm.com/support/knowledgecenter/pt-br/SSWMEQ_4.0.6/com.ibm.rational.rrm.help.doc/topics/r_vision_doc.html. Acesso em 4 de set. de 2019;  
-Disponível em: https://github.com/fga-eps-mds/2018.2-Lino/blob/master/docs/documento-de-visao.md. Acesso em 4 de set. de 2019;  
+>- IBM Knowledge Center - Documento de Visão: A estrutura de tópicos do documento de visão. Disponível em: https://www.ibm.com/support/knowledgecenter/pt-br/SSWMEQ_4.0.6/com.ibm.rational.rrm.help.doc/topics/r_vision_doc.html. Acesso em 4 de set. de 2019;  
+>- Disponível em: https://github.com/fga-eps-mds/2018.2-Lino/blob/master/docs/documento-de-visao.md. Acesso em 4 de set. de 2019;  
+>- Disponível em: https://fga-eps-mds.github.io/2018.2-IndicaAi//docs/2018/08/24/vision-doc.html. Acesso em 4 de set. de 2019;
+>- Disponível em: https://fga-eps-mds.github.io/2019.1-ADA/#/docs/product/vision_document. Acesso em 6 de set. de 2019;
 
 ## 1.5 Visão geral
 O atual documento tem como objetivo representar para os membros e os interessados, de forma explicativa, às informações gerais do projeto, os requisitos do software, os envolvidos e usuários, a visão geral do produto e seus recursos.
@@ -23,10 +25,27 @@ O atual documento tem como objetivo representar para os membros e os interessado
 ## 2.1 Oportunidade de Negócio 
 Atualmente, a linguagem de marcação Markdown é amplamente utilizada na plataforma de versionamento Github para criação de documentos estáticos, por conta de sua fácil utilização, e nada muito além dessa função. O projeto Questmark, possui como objetivo atribuir ao Markdown mais uma comodidade possibilitando a criação de formulários, algo que até o presente momento não é factível de se fazer com o mesmo. Além de oferecer um dashboard com a relação de todas as respostas dadas ao questionário.
 
+## 2.2 Descrição do Problema
+
+| |**Informações do Produto**|
+|:---:|:---:|
+|**O problema**|Markdown não permite a criação de formulários|
+|**Afeta**|Usuários que possuem familiaridade com Markdown|
+|**Cujo Impacto é**|Possibilitar a criação de formulários em Markdown|
+|**Uma boa solução seria**|Uma plataforma voltada especialmente à criação e compartilhamento de formulários em Markdown de forma descomplicada|
+
+## 2.3 Instrução de posição do produto
+
+| |**Instrução de posição do produto**|
+|:---:|:---:|
+|**Para**|Qualquer usuário que possua familiaridade com a linguagem de marcação|
+|**Que**| Oferece uma forma simples, elegante e rápida de criar questionários|
+|**Questmar é**|Plataforma para criar questionários|
+|**Que**|Converte Markdown para um formulário|
+|**Difernte do**|Google Forms|
+|**Nosso produto**|Oferece mais uma usabilidade para a linguagem de marcação|
 
 
-
- 
 # 3. Descrição dos envolvidos e dos Usuários
 Os envolvidos no projeto serão os membros da equipe da turma de MDS, que irão desempenhar papeis de desenvolvimento e de gestão com auxílio do monitor.
 O projeto tem como alvo programadores que desejam utilizar markdown, tanto para tarefas simples quanto tarefas mais elaboradas.
@@ -104,8 +123,6 @@ Responsabilidades|Responder o questionário|
 Critérios de Sucesso|Responder e enviar o questionário|
 Envolvimento|Médio|
 Problemas/Comentários|Além de responderem os questionários,os respondentes eventualmente podem se interessar usufruirem das ferramentas disponibilizadas|
-
-
  
 ### 3.6 Principais necessidades dos Usuários ou dos Envolvidos
 
@@ -116,4 +133,5 @@ Problemas/Comentários|Além de responderem os questionários,os respondentes ev
 04/09/2019|0.2|Adição do tópico 1|Danillo Souza|
 05/09/2019|0.3|Revisão do Tópico 1, Template do Tópico 2|Nícalo Ribeiro|
 05/09/2019|0.4|Adição do tópico 3 e seus subtópicos|Nícalo Ribeiro|
+|06/05/2019|0.5|Adição do tópico 2 e seus subtópicos|Danillo Souza|
  
