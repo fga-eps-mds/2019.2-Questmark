@@ -12,8 +12,6 @@
 |Miguel Santos|miguelisdemir@gmail.com|[Miguelisdemir](https://github.com/Miguelisdemir)||
 |Nicalo Ribeiro|nicalo63@gmail.com|[Nicaloribeiro](https://github.com/nicaloribeiro)||
 
----
-
 <hr/>
 <p align="center"><b>Questmark</b></p>
 <p align="center">Métodos de Desenvolvimento de Software (MDS) - 2019.2<br /><br />
