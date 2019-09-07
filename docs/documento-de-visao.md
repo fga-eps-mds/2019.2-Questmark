@@ -125,6 +125,41 @@ Envolvimento|Médio|
 Problemas/Comentários|Além de responderem os questionários,os respondentes eventualmente podem se interessar usufruirem das ferramentas disponibilizadas|
  
 ### 3.6 Principais necessidades dos Usuários ou dos Envolvidos
+ 
+|Necessidade|Prioridade|Preocupação|Solução Proposta |Solução Atual|
+|:----------|:--------:|:---------:|:------:|:-----:|
+|Criar questionários via Markdown|Alta|Falta de conhecimento em Markdown|Disponibilizar em HTML o que foi escrito em Markdown|----|
+|Compartilhar o questionário|Alta|Falta de interesse ou esquecimento de tal possibilidade|Após a criação do questionário, criar um link de compartilhamento para que esse seja respondido|----|
+|Editar textos em markdown com visualização em tempo real|Média|Problemas na visualização simultânea|Permitir que o usuário escreva em markdown e visualize simultaneamente o resultado|Plugins e outros sites que fazem isso|
+
+# 4. Visão Geral do produto
+## 4.1 Perspectiva do Produto
+A plataforma Questmark visa facilitar a escrita de códigos HTML utilizando Markdown, visando a elaboração de questionários. Além disso, permite o compartilhamento dos questionados criados e a visualização de suas respostas em uma dashboard.
+## 4.2 Resumo dos recursos
+|Benefício para o cliente|Recursos de suporte|
+|:----------------------:|:-----------------:|
+|Fornece um editor de texto com resultados simultâneos|A plataforma Questmark proverá um editor de texto para a escrita de Markdown e mostrará os resultados simultaneamente|
+|Elaboração de questionários|Ao criar um questionário em Markdown na plataforma, um código HTML será gerado, permitindo sua edição ou compartilhamento| 
+|Permitir o compartilhamento dos questionários|Caso seja de interesse do usuário, o questionário criado terá um link compartilhável para ser respondido|
+|Fornecer uma dashboard para a visualização das respostas|Ao logar na plataforma, o usuário terá acesso a uma dashboard e poderá visualizar as respostas de seus questionários|
+|Fornecer uma dashboard para a edição dos questionários|Ao logar na plataforma, o usuário terá acesso a uma dashboard e poderá editar os questionários criados|
+ 
+# 5. Recursos do Produto
+Na plataforma Questmark, é possível :
+* Editar textos em Markdown
+* Visualizar em tempo real a edição do Markdown
+* Elaborar questionários
+* Receber o HTML do questionário criado
+* Compartilhar questionários para serem respondidos
+* Visualizar as respostas dos questionários
+* Editar os questionários
+ 
+# 6. Restrições
+* Uso da Internet
+* Uso de navegador web
+* Conhecimentos básicos em Markdown
+ 
+
 
 |**Necessidade**|**Prioridade**|**Preocupação**|**Solução Proposta**|**Solução Atual**|
 |:---:|:---:|:---:|:---:|:---:|
