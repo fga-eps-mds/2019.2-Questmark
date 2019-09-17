@@ -25,6 +25,7 @@ O atual documento tem como objetivo representar para os membros e os interessado
 ## 2.1 Oportunidade de Negócio 
 Atualmente, a linguagem de marcação Markdown é amplamente utilizada na plataforma de versionamento Github para criação de documentos estáticos, por conta de sua fácil utilização, e nada muito além dessa função. O projeto Questmark, possui como objetivo atribuir ao Markdown mais uma comodidade possibilitando a criação de formulários, algo que até o presente momento não é factível de se fazer com o mesmo. Além de oferecer um dashboard com a relação de todas as respostas dadas ao questionário.
 
+
 ## 2.2 Descrição do Problema
 
 | |**Informações do Produto**|
@@ -153,6 +154,8 @@ Na plataforma Questmark, é possível :
 * Compartilhar questionários para serem respondidos
 * Visualizar as respostas dos questionários
 * Editar os questionários
+
+![](uc_questmark.png)
  
 # 6. Restrições
 * Uso da Internet
@@ -163,7 +166,7 @@ Na plataforma Questmark, é possível :
 
 |**Necessidade**|**Prioridade**|**Preocupação**|**Solução Proposta**|**Solução Atual**|
 |:---:|:---:|:---:|:---:|:---:|
-|Criar questionários em Markdown|Alta|Falta de conhecimento em Markdown|Disponibilizar,na própria interface so site, um manual de  fácil entendimento para os usuários ||
+|Criar questionários em Markdown|Alta|Falta de conhecimento em Markdown|Disponibilizar,na própria interface do site, um manual de  fácil entendimento para os usuários ||
 |Compartilhar o questionário|Alta||Após a criação do questionário, criar um link de compartilhamento para que esse seja respondido||
 |Editar textos em markdown com visualização em tempo real|Média||Permitir que o usuário escreva em markdown e visualize simultaneamente o resultado|Plugins e sites que fazem isso|
 
@@ -175,5 +178,6 @@ Na plataforma Questmark, é possível :
 05/09/2019|0.3|Revisão do Tópico 1, Template do Tópico 2|Nícalo Ribeiro|
 05/09/2019|0.4|Adição do tópico 3 e seus subtópicos|Nícalo Ribeiro|
 |06/09/2019|0.5|Adição dos tópicos 4, 5 e 6|Nícalo Ribeiro|
-|06/05/2019|0.6|Adição do tópico 2 e seus subtópicos|Danillo Souza|
-|07/05/2019|0.7|Adição de proposta de solução do tópico 3.6|Gustavo Nogueira| 
+|06/09/2019|0.6|Adição do tópico 2 e seus subtópicos|Danillo Souza|
+|07/09/2019|0.7|Adição de proposta de solução do tópico 3.6|Gustavo Nogueira| 
+|17/09/2019|0.8|Adição do diagrama de casos de uso no tópico 5|Gustavo Nogueira| 
