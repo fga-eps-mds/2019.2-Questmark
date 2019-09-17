@@ -8,3 +8,5 @@
 |**Miguel**|0|2|0|0|2|4|4|1|2|4|19|
 |**Nícalo**|3|3|1|2|0|1|3|0|4|4|21|
 |**_Score da Equipe_**|4|17|4|5|4|19|18|2|21|20||
+
+![Drag Racing](../Imagens/Conhecimento1.png)
