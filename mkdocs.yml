@@ -1,3 +1,10 @@
 site_name: Questmark
-# theme:
- #    name: material
+ theme:
+    name: material
+
+repo_name : 'Questmark'
+repo_url : 'https://github.com/fga-eps-mds/2019.2-Questmark'
+
+plugins:
+    - search
+    - awesome-pages

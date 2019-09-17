@@ -1,13 +1,23 @@
-language: python
-python: 3.6
+sudo: required
+language: python # Set the build language to Python
+services:
+- docker
+python: 3.6 # Set the version of Python to use
+branches: develop # Set the branch to build from
 
-# script:
-#     - mkdocs build --verbose --clean
-    
+# install:
+# - pip install pygments
+# - pip install mkdocs
+# - pip install mkdocs-material
+# - pip install mkdocs-awesome-pages-plugin
+
+script:
+    - mkdocs build --verbose --clean # Build a local version of the docs
+
 deploy: # Deploy documentation to Github in the gh_pages branch
     provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
     local_dir: site
     on:
-        branch: gh-pages
+        branch: docs
