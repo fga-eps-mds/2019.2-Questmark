@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Documento de visão - Questmark</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Questmark</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentos <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">Documento de visão</a>
+</li>
+                                    
+<li >
+    <a href="../gestao-de-configuracao-de-software/">Gestão de configuração de Software</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sprint <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Sprint 1</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Sprint/Sprint 1/Basico/">Informações básicas da Sprint</a>
+</li>
+            
+<li >
+    <a href="../../Sprint/Sprint 1/Conhecimentos/">Conhecimentos</a>
+</li>
+            
+<li >
+    <a href="../../Sprint/Sprint 1/Sprint Backlog/">Sprint Backlog</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../..">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../gestao-de-configuracao-de-software/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#documento-de-visao">Documento de visão</a></li>
+        <li class="main "><a href="#1-introducao">1. Introdução</a></li>
+            <li><a href="#11-proposito">1.1 Propósito</a></li>
+            <li><a href="#12-escopo">1.2 Escopo</a></li>
+            <li><a href="#13-definicoes-acronimos-e-abreviacoes">1.3 Definições, acrônimos e abreviações</a></li>
+            <li><a href="#14-referencias">1.4 Referências</a></li>
+            <li><a href="#15-visao-geral">1.5 Visão geral</a></li>
+        <li class="main "><a href="#2-posicionamento">2. Posicionamento</a></li>
+            <li><a href="#21-oportunidade-de-negocio">2.1 Oportunidade de Negócio</a></li>
+            <li><a href="#22-descricao-do-problema">2.2 Descrição do Problema</a></li>
+            <li><a href="#23-instrucao-de-posicao-do-produto">2.3 Instrução de posição do produto</a></li>
+        <li class="main "><a href="#3-descricao-dos-envolvidos-e-dos-usuarios">3. Descrição dos envolvidos e dos Usuários</a></li>
+            <li><a href="#31-resumo-dos-envolvidos">3.1 Resumo dos Envolvidos</a></li>
+            <li><a href="#32-resumo-dos-usuarios">3.2 Resumo dos Usuários</a></li>
+            <li><a href="#33-principais-necessidades-dos-usuarios-e-dos-envolvidos">3.3 Principais Necessidades dos Usuários e dos Envolvidos</a></li>
+            <li><a href="#34-perfis-dos-envolvidos">3.4 Perfis dos Envolvidos</a></li>
+            <li><a href="#35-perfis-dos-usuarios">3.5 Perfis dos Usuários</a></li>
+        <li class="main "><a href="#4-visao-geral-do-produto">4. Visão Geral do produto</a></li>
+            <li><a href="#41-perspectiva-do-produto">4.1 Perspectiva do Produto</a></li>
+            <li><a href="#42-resumo-dos-recursos">4.2 Resumo dos recursos</a></li>
+        <li class="main "><a href="#5-recursos-do-produto">5. Recursos do Produto</a></li>
+        <li class="main "><a href="#6-restricoes">6. Restrições</a></li>
+        <li class="main "><a href="#historico-de-revisao">Histórico de Revisão</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="documento-de-visao">Documento de visão</h1>
+<h1 id="1-introducao">1. Introdução</h1>
+<p>Este documento consiste na descrição oficial do escopo do projeto Questmark, o qual refere-se a uma plataforma que possibilitará a criação de formulários escritos em Markdown e o compartilhamento do mesmo para diversos usuários.</p>
+<h2 id="11-proposito">1.1 Propósito</h2>
+<p>Manter uma visão comum para os envolvidos e informar o leitor a finalidade do projeto Questmark ao expor as ideias necessárias para seu desenvolvimento.</p>
+<h2 id="12-escopo">1.2 Escopo</h2>
+<p>Projeto desenvolvido por estudantes do curso de Engenharia de Software da Universidade de Brasília.
+Questmark é uma plataforma que possibilita a criação de questionários a partir da linguagem de marcação Markdown, que proporciona ao usuário a oportunidade de compartilhar suas perguntas com terceiros e visualizar em um dashboard o todas respostas que foram dadas em seu questionário.</p>
+<h2 id="13-definicoes-acronimos-e-abreviacoes">1.3 Definições, acrônimos e abreviações</h2>
+<p>UnB: Universidade De Brasília.<br />
+FGA: Faculdade do Gama - Campus da Universidade de Brasília localizado no Gama.<br />
+MDS: Disciplina de Métodos de Desenvolvimento de Software.<br />
+EPS : Disciplina de Engenharia de Produto de Software.<br />
+Markdown: Linguagem de marcação que converte texto comum em páginas web.  </p>
+<h2 id="14-referencias">1.4 Referências</h2>
+<blockquote>
+<ul>
+<li>IBM Knowledge Center - Documento de Visão: A estrutura de tópicos do documento de visão. Disponível em: https://www.ibm.com/support/knowledgecenter/pt-br/SSWMEQ_4.0.6/com.ibm.rational.rrm.help.doc/topics/r_vision_doc.html. Acesso em 4 de set. de 2019;  </li>
+<li>Disponível em: https://github.com/fga-eps-mds/2018.2-Lino/blob/master/docs/documento-de-visao.md. Acesso em 4 de set. de 2019;  </li>
+<li>Disponível em: https://fga-eps-mds.github.io/2018.2-IndicaAi//docs/2018/08/24/vision-doc.html. Acesso em 4 de set. de 2019;</li>
+<li>Disponível em: https://fga-eps-mds.github.io/2019.1-ADA/#/docs/product/vision_document. Acesso em 6 de set. de 2019;</li>
+</ul>
+</blockquote>
+<h2 id="15-visao-geral">1.5 Visão geral</h2>
+<p>O atual documento tem como objetivo representar para os membros e os interessados, de forma explicativa, às informações gerais do projeto, os requisitos do software, os envolvidos e usuários, a visão geral do produto e seus recursos.</p>
+<h1 id="2-posicionamento">2. Posicionamento</h1>
+<h2 id="21-oportunidade-de-negocio">2.1 Oportunidade de Negócio</h2>
+<p>Atualmente, a linguagem de marcação Markdown é amplamente utilizada na plataforma de versionamento Github para criação de documentos estáticos, por conta de sua fácil utilização, e nada muito além dessa função. O projeto Questmark, possui como objetivo atribuir ao Markdown mais uma comodidade possibilitando a criação de formulários, algo que até o presente momento não é factível de se fazer com o mesmo. Além de oferecer um dashboard com a relação de todas as respostas dadas ao questionário.</p>
+<h2 id="22-descricao-do-problema">2.2 Descrição do Problema</h2>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"><strong>Informações do Produto</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>O problema</strong></td>
+<td align="center">Markdown não permite a criação de formulários</td>
+</tr>
+<tr>
+<td align="center"><strong>Afeta</strong></td>
+<td align="center">Usuários que possuem familiaridade com Markdown</td>
+</tr>
+<tr>
+<td align="center"><strong>Cujo Impacto é</strong></td>
+<td align="center">Possibilitar a criação de formulários em Markdown</td>
+</tr>
+<tr>
+<td align="center"><strong>Uma boa solução seria</strong></td>
+<td align="center">Uma plataforma voltada especialmente à criação e compartilhamento de formulários em Markdown de forma descomplicada</td>
+</tr>
+</tbody>
+</table>
+<h2 id="23-instrucao-de-posicao-do-produto">2.3 Instrução de posição do produto</h2>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"><strong>Instrução de posição do produto</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Para</strong></td>
+<td align="center">Qualquer usuário que possua familiaridade com a linguagem de marcação</td>
+</tr>
+<tr>
+<td align="center"><strong>Que</strong></td>
+<td align="center">Oferece uma forma simples, elegante e rápida de criar questionários</td>
+</tr>
+<tr>
+<td align="center"><strong>Questmark é</strong></td>
+<td align="center">Plataforma para criar questionários</td>
+</tr>
+<tr>
+<td align="center"><strong>Que</strong></td>
+<td align="center">Converte Markdown para um formulário</td>
+</tr>
+<tr>
+<td align="center"><strong>Diferente do</strong></td>
+<td align="center">Google Forms</td>
+</tr>
+<tr>
+<td align="center"><strong>Nosso produto</strong></td>
+<td align="center">Oferece mais uma usabilidade para a linguagem de marcação</td>
+</tr>
+</tbody>
+</table>
+<h1 id="3-descricao-dos-envolvidos-e-dos-usuarios">3. Descrição dos envolvidos e dos Usuários</h1>
+<p>Os envolvidos no projeto serão os membros da equipe da turma de MDS, que irão desempenhar papeis de desenvolvimento e de gestão com auxílio do monitor.
+O projeto tem como alvo programadores que desejam utilizar markdown, tanto para tarefas simples quanto tarefas mais elaboradas.
+Dentre os artefatos que o Questmark propõe, os principais são a possibilidade de editar markdown com visualização em tempo real e elaborar questionários compartilháveis para serem respondidos.</p>
+<h2 id="31-resumo-dos-envolvidos">3.1 Resumo dos Envolvidos</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Nome</th>
+<th align="center">Descrição</th>
+<th align="center">Responsabilidades</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Equipe de desenvolvimento e gestão de software</td>
+<td align="center">Estudantes da disciplina de Métodos de Desenvolvimento de Software</td>
+<td align="center">Desenvolvimento do software descrito no documento, assim como a gestão da equipe</td>
+</tr>
+<tr>
+<td align="center">Monitor</td>
+<td align="center">Estudante que já cursou a disciplina de Métodos de Desenvolvimento de Software</td>
+<td align="center">Foi designado pelo professor e auxiliará a equipe, especialmente na parte da gestão do projeto</td>
+</tr>
+<tr>
+<td align="center">Orientador</td>
+<td align="center">Professor da disciplina de Métodos de Desenvolvimento de Software</td>
+<td align="center">Orientar a equipe em eventuais dúvidas problemas</td>
+</tr>
+</tbody>
+</table>
+<h2 id="32-resumo-dos-usuarios">3.2 Resumo dos Usuários</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Nome</th>
+<th align="center">Descrição</th>
+<th align="center">Responsabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Programadores</td>
+<td align="center">Aqueles que utilizam Markdown para a elaboração de HTML</td>
+<td align="center">Utilizar a plataforma via Web, criar e editar textos em Markdown e/ou criar questionários com a linguagem</td>
+</tr>
+</tbody>
+</table>
+<h2 id="33-principais-necessidades-dos-usuarios-e-dos-envolvidos">3.3 Principais Necessidades dos Usuários e dos Envolvidos</h2>
+<p>Os usuários irão utilizar o Questmark, via página Web, sempre que desejarem criar ou editar textos em Markdown, elaborar questionários e visualizar suas respostas. Também poderão responder questionários já existentes, caso possuam link de compartilhamento.</p>
+<h2 id="34-perfis-dos-envolvidos">3.4 Perfis dos Envolvidos</h2>
+<h3 id="341-equipe-de-desenvolvimento-e-gestao-de-software">3.4.1 Equipe de desenvolvimento e gestão de software</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Perfil</th>
+<th align="center">--</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Representantes</td>
+<td align="center">Danillo Souza, Gustavo Nogueira, Lucas Lopes, Luiz Gustavo , Miguel Santos, Nícalo Ribeiro</td>
+</tr>
+<tr>
+<td align="center">Descrição</td>
+<td align="center">Desenvolvimento do software e gestão do projeto</td>
+</tr>
+<tr>
+<td align="center">Tipo</td>
+<td align="center">Graduandos da disciplina de Métodos de Desenvolvimento de Software da UnB - Campus Gama</td>
+</tr>
+<tr>
+<td align="center">Responsabilidades</td>
+<td align="center">Desenvolver e testar o software, gerir o projeto</td>
+</tr>
+<tr>
+<td align="center">Critérios de Sucesso</td>
+<td align="center">Realizar a entrega do produto ao final do semestre</td>
+</tr>
+<tr>
+<td align="center">Envolvimento</td>
+<td align="center">Alto</td>
+</tr>
+<tr>
+<td align="center">Problemas/Comentários</td>
+<td align="center">Falta do apoio de integrantes da turma de EPS, compensado em parte pelo auxílio do monitor da disciplina; Inexperiência com as tecnologias utilizadas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="342-monitor">3.4.2 Monitor</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Perfil</th>
+<th align="center">--</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Representantes</td>
+<td align="center">Filipe Toyoshima</td>
+</tr>
+<tr>
+<td align="center">Descrição</td>
+<td align="center">Auxiliará especialmente na gestão do projeto, suprindo a falta de membros da disciplina de EPS</td>
+</tr>
+<tr>
+<td align="center">Tipo</td>
+<td align="center">Monitor da disciplina de EPS</td>
+</tr>
+<tr>
+<td align="center">Responsabilidades</td>
+<td align="center">Monitorar e auxiliar a equipe de desenvolvimento e gestão</td>
+</tr>
+<tr>
+<td align="center">Critérios de Sucesso</td>
+<td align="center">Auxiliar a equipe de desenvolvimento e gestão a cumprirem os prazos para a entrega do produto</td>
+</tr>
+<tr>
+<td align="center">Envolvimento</td>
+<td align="center">Médio/Alto</td>
+</tr>
+<tr>
+<td align="center">Problemas/Comentários</td>
+<td align="center">Realizar o auxílio de acordo com o tempo disponível</td>
+</tr>
+</tbody>
+</table>
+<h3 id="343-orientador">3.4.3 Orientador</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Perfil</th>
+<th align="center">--</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Representantes</td>
+<td align="center">Professor Mestre Joenio Costa</td>
+</tr>
+<tr>
+<td align="center">Descrição</td>
+<td align="center">Professor da disciplina de Métodos de Desenvolvimento de Software (MDS) na UnB-Campus Gama</td>
+</tr>
+<tr>
+<td align="center">Tipo</td>
+<td align="center">Orientador e avaliador do projeto</td>
+</tr>
+<tr>
+<td align="center">Responsabilidades</td>
+<td align="center">Avaliar a equipe de desenvolvimento e gestão e sanar eventuais dúvidas</td>
+</tr>
+<tr>
+<td align="center">Critérios de Sucesso</td>
+<td align="center">Observar o sucesso da equipe/projeto</td>
+</tr>
+<tr>
+<td align="center">Envolvimento</td>
+<td align="center">Médio</td>
+</tr>
+<tr>
+<td align="center">Problemas/Comentários</td>
+<td align="center">--</td>
+</tr>
+</tbody>
+</table>
+<h2 id="35-perfis-dos-usuarios">3.5 Perfis dos Usuários</h2>
+<h3 id="351-programadores">3.5.1 Programadores</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Perfil</th>
+<th align="center">--</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Representantes</td>
+<td align="center">Programadores que utilizam Markdown</td>
+</tr>
+<tr>
+<td align="center">Descrição</td>
+<td align="center">Programadores que queiram criar,editar e elaborar questionários em Markdown</td>
+</tr>
+<tr>
+<td align="center">Tipo</td>
+<td align="center">Programadores que necessitam de ferramentas para o uso de markdown</td>
+</tr>
+<tr>
+<td align="center">Responsabilidades</td>
+<td align="center">Interagir com a ferramenta web, utilizando seus recursos</td>
+</tr>
+<tr>
+<td align="center">Critérios de Sucesso</td>
+<td align="center">Utilizar os recursos de maneira fluida</td>
+</tr>
+<tr>
+<td align="center">Envolvimento</td>
+<td align="center">Alto</td>
+</tr>
+<tr>
+<td align="center">Problemas/Comentários</td>
+<td align="center">--</td>
+</tr>
+</tbody>
+</table>
+<h3 id="352-respondente">3.5.2 Respondente</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Perfil</th>
+<th align="center">--</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Representantes</td>
+<td align="center">Aqueles que irão responder os questionários</td>
+</tr>
+<tr>
+<td align="center">Descrição</td>
+<td align="center">Usuários que irão responder os questionários, caso possuam link de compartilhamento</td>
+</tr>
+<tr>
+<td align="center">Tipo</td>
+<td align="center">Usuários que chegaram ao questionário via link de compartilhamento</td>
+</tr>
+<tr>
+<td align="center">Responsabilidades</td>
+<td align="center">Responder o questionário</td>
+</tr>
+<tr>
+<td align="center">Critérios de Sucesso</td>
+<td align="center">Responder e enviar o questionário</td>
+</tr>
+<tr>
+<td align="center">Envolvimento</td>
+<td align="center">Médio</td>
+</tr>
+<tr>
+<td align="center">Problemas/Comentários</td>
+<td align="center">Além de responderem os questionários,os respondentes eventualmente podem se interessar usufruirem das ferramentas disponibilizadas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="36-principais-necessidades-dos-usuarios-ou-dos-envolvidos">3.6 Principais necessidades dos Usuários ou dos Envolvidos</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Necessidade</th>
+<th align="center">Prioridade</th>
+<th align="center">Preocupação</th>
+<th align="center">Solução Proposta</th>
+<th align="center">Solução Atual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Criar questionários via Markdown</td>
+<td align="center">Alta</td>
+<td align="center">Falta de conhecimento em Markdown</td>
+<td align="center">Disponibilizar em HTML o que foi escrito em Markdown</td>
+<td align="center">----</td>
+</tr>
+<tr>
+<td align="left">Compartilhar o questionário</td>
+<td align="center">Alta</td>
+<td align="center">Falta de interesse ou esquecimento de tal possibilidade</td>
+<td align="center">Após a criação do questionário, criar um link de compartilhamento para que esse seja respondido</td>
+<td align="center">----</td>
+</tr>
+<tr>
+<td align="left">Editar textos em markdown com visualização em tempo real</td>
+<td align="center">Média</td>
+<td align="center">Problemas na visualização simultânea</td>
+<td align="center">Permitir que o usuário escreva em markdown e visualize simultaneamente o resultado</td>
+<td align="center">Plugins e outros sites que fazem isso</td>
+</tr>
+</tbody>
+</table>
+<h1 id="4-visao-geral-do-produto">4. Visão Geral do produto</h1>
+<h2 id="41-perspectiva-do-produto">4.1 Perspectiva do Produto</h2>
+<p>A plataforma Questmark visa facilitar a escrita de códigos HTML utilizando Markdown, visando a elaboração de questionários. Além disso, permite o compartilhamento dos questionados criados e a visualização de suas respostas em uma dashboard.</p>
+<h2 id="42-resumo-dos-recursos">4.2 Resumo dos recursos</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Benefício para o cliente</th>
+<th align="center">Recursos de suporte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Fornece um editor de texto com resultados simultâneos</td>
+<td align="center">A plataforma Questmark proverá um editor de texto para a escrita de Markdown e mostrará os resultados simultaneamente</td>
+</tr>
+<tr>
+<td align="center">Elaboração de questionários</td>
+<td align="center">Ao criar um questionário em Markdown na plataforma, um código HTML será gerado, permitindo sua edição ou compartilhamento</td>
+</tr>
+<tr>
+<td align="center">Permitir o compartilhamento dos questionários</td>
+<td align="center">Caso seja de interesse do usuário, o questionário criado terá um link compartilhável para ser respondido</td>
+</tr>
+<tr>
+<td align="center">Fornecer uma dashboard para a visualização das respostas</td>
+<td align="center">Ao logar na plataforma, o usuário terá acesso a uma dashboard e poderá visualizar as respostas de seus questionários</td>
+</tr>
+<tr>
+<td align="center">Fornecer uma dashboard para a edição dos questionários</td>
+<td align="center">Ao logar na plataforma, o usuário terá acesso a uma dashboard e poderá editar os questionários criados</td>
+</tr>
+</tbody>
+</table>
+<h1 id="5-recursos-do-produto">5. Recursos do Produto</h1>
+<p>Na plataforma Questmark, é possível :
+* Editar textos em Markdown
+* Visualizar em tempo real a edição do Markdown
+* Elaborar questionários
+* Receber o HTML do questionário criado
+* Compartilhar questionários para serem respondidos
+* Visualizar as respostas dos questionários
+* Editar os questionários</p>
+<h1 id="6-restricoes">6. Restrições</h1>
+<ul>
+<li>Uso da Internet</li>
+<li>Uso de navegador web</li>
+<li>Conhecimentos básicos em Markdown</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Necessidade</strong></th>
+<th align="center"><strong>Prioridade</strong></th>
+<th align="center"><strong>Preocupação</strong></th>
+<th align="center"><strong>Solução Proposta</strong></th>
+<th align="center"><strong>Solução Atual</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Criar questionários em Markdown</td>
+<td align="center">Alta</td>
+<td align="center">Falta de conhecimento em Markdown</td>
+<td align="center">Disponibilizar,na própria interface so site, um manual de  fácil entendimento para os usuários</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Compartilhar o questionário</td>
+<td align="center">Alta</td>
+<td align="center"></td>
+<td align="center">Após a criação do questionário, criar um link de compartilhamento para que esse seja respondido</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Editar textos em markdown com visualização em tempo real</td>
+<td align="center">Média</td>
+<td align="center"></td>
+<td align="center">Permitir que o usuário escreva em markdown e visualize simultaneamente o resultado</td>
+<td align="center">Plugins e sites que fazem isso</td>
+</tr>
+</tbody>
+</table>
+<h1 id="historico-de-revisao">Histórico de Revisão</h1>
+<table>
+<thead>
+<tr>
+<th align="center">Data</th>
+<th align="center">Versão</th>
+<th align="center">Modificação</th>
+<th align="center">Autor(es)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">04/09/2019</td>
+<td align="center">0.1</td>
+<td align="center">Abertura do documento</td>
+<td align="center">MDS(Todos)</td>
+</tr>
+<tr>
+<td align="center">04/09/2019</td>
+<td align="center">0.2</td>
+<td align="center">Adição do tópico 1</td>
+<td align="center">Danillo Souza</td>
+</tr>
+<tr>
+<td align="center">05/09/2019</td>
+<td align="center">0.3</td>
+<td align="center">Revisão do Tópico 1, Template do Tópico 2</td>
+<td align="center">Nícalo Ribeiro</td>
+</tr>
+<tr>
+<td align="center">05/09/2019</td>
+<td align="center">0.4</td>
+<td align="center">Adição do tópico 3 e seus subtópicos</td>
+<td align="center">Nícalo Ribeiro</td>
+</tr>
+<tr>
+<td align="center">06/09/2019</td>
+<td align="center">0.5</td>
+<td align="center">Adição dos tópicos 4, 5 e 6</td>
+<td align="center">Nícalo Ribeiro</td>
+</tr>
+<tr>
+<td align="center">06/05/2019</td>
+<td align="center">0.6</td>
+<td align="center">Adição do tópico 2 e seus subtópicos</td>
+<td align="center">Danillo Souza</td>
+</tr>
+<tr>
+<td align="center">07/05/2019</td>
+<td align="center">0.7</td>
+<td align="center">Adição de proposta de solução do tópico 3.6</td>
+<td align="center">Gustavo Nogueira</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
