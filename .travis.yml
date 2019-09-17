@@ -5,10 +5,10 @@ services:
 python: 3.6 # Set the version of Python to use
 branches: develop # Set the branch to build from
 
-# install:
+install:
 # - pip install pygments
 # - pip install mkdocs
-# - pip install mkdocs-material
+pip install mkdocs-material
 # - pip install mkdocs-awesome-pages-plugin
 
 script:
