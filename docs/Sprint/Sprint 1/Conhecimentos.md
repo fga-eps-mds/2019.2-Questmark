@@ -9,4 +9,4 @@
 |**Nícalo**|3|3|1|2|0|1|3|0|4|4|21|
 |**_Score da Equipe_**|4|17|4|5|4|19|18|2|21|20||
 
-![Drag Racing](../Imagens/Conhecimento1.png)
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3Ip4WPvsS8QuR5eWcpLOPBcGsNFUXXG9gVXwei4rKu_ecob8kjDY488sGnxvs5nUJfG0JJRmhEGTu/pubchart?oid=869048262&amp;format=interactive"></iframe>
