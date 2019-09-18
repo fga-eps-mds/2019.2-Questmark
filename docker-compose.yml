@@ -1,21 +1,18 @@
-version: '3'
+version: "3"
 
 services:
-  server:
-    container_name: NODEJS_LUCAS
-    build: '.'
+  app:
+    build: . 
+    command: npm start
+    ports:
+      - "3000:3000"
     volumes:
-      - ./:/node-app
-      - ./node_modules:/node-app/node_modules
-    environment:
-      NODE_ENV: development
+      - .:/usr/app
     depends_on:
       - db
     links:
       - db
-    ports:
-      - '3000:3000'
-
+      
   db:
     image: 'mongo'
     container_name: MONGODB_LUCAS

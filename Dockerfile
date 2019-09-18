@@ -1,15 +1,13 @@
-FROM node:11-alpine
+FROM node:alpine
 
-WORKDIR /node-app
+WORKDIR /usr/app/
 
-COPY package.json .
+COPY package*.json ./
 
-RUN npm install --quiet
+RUN npm install
 
-RUN npm install nodemon -g --quiet
-
-COPY . . 
+COPY . .
 
 EXPOSE 3000
 
-CMD nodemon -L --watch . index.js
+CMD ["npm", "start"]

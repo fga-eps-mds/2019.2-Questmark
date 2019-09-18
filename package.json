@@ -1,19 +1,16 @@
 {
-  "name": "questmark",
+  "name": "2019.2-questmark",
   "version": "1.0.0",
-  "description": "Questionarios em markdown",
+  "description": "### Equipe ---",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fga-eps-mds/2019.2-Questmark.git"
   },
-  "author": "Lucas Lopes",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fga-eps-mds/2019.2-Questmark/issues"
