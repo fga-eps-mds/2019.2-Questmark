@@ -1,5 +1,5 @@
 ﻿# Documento de visão
-# 1. Introdução
+## 1. Introdução
 Este documento consiste na descrição oficial do escopo do projeto Questmark, o qual refere-se a uma plataforma que possibilitará a criação de formulários escritos em Markdown e o compartilhamento do mesmo para diversos usuários.
 ## 1.1 Propósito
 Manter uma visão comum para os envolvidos e informar o leitor a finalidade do projeto Questmark ao expor as ideias necessárias para seu desenvolvimento.

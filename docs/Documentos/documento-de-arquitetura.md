@@ -65,6 +65,7 @@ As metas do projeto são disponibilizar a criação de um questionário com entr
 
 ## 4. Qualidade
 O software suporta os seguintes requisitos de qualidade:
+
 - Interface amigável e funcional
 - Sistema objetivo para o usúario
 - Ser capaz de mostrar dados fiéis ao usuário.
