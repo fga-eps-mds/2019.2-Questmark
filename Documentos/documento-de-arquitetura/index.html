@@ -36,7 +36,7 @@
     
     
       
-        <title>Gestão de configuração de Software - Questmark</title>
+        <title>Documento de Arquitetura de Software - Questmark</title>
       
     
     
@@ -85,7 +85,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#gestao-de-configuracao-de-software" tabindex="1" class="md-skip">
+      <a href="#documento-de-arquitetura-de-software" tabindex="1" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -111,7 +111,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Gestão de configuração de Software
+                Documento de Arquitetura de Software
               
             </span>
           
@@ -253,30 +253,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../documento-de-arquitetura/" title="Documento de Arquitetura de Software" class="md-nav__link">
-      Documento de Arquitetura de Software
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../documento-de-visao/" title="Documento de visão" class="md-nav__link">
-      Documento de visão
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -288,11 +264,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Gestão de configuração de Software
+        Documento de Arquitetura de Software
       </label>
     
-    <a href="./" title="Gestão de configuração de Software" class="md-nav__link md-nav__link--active">
-      Gestão de configuração de Software
+    <a href="./" title="Documento de Arquitetura de Software" class="md-nav__link md-nav__link--active">
+      Documento de Arquitetura de Software
     </a>
     
       
@@ -310,26 +286,40 @@
     1. Introdução
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-politicas" class="md-nav__link">
-    2. Políticas
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-politica-de-commits" class="md-nav__link">
-    2.1 Política de Commits
+  <a href="#11-finalidade" class="md-nav__link">
+    1.1 Finalidade
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-politica-de-branches" class="md-nav__link">
-    2.2 Política de Branches
+  <a href="#12-escopo" class="md-nav__link">
+    1.2 Escopo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-definicoes-acronimos-e-abreviacoes" class="md-nav__link">
+    1.3 Definições, Acrônimos e Abreviações
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-referencias" class="md-nav__link">
+    1.4 Referências
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-visao-geral" class="md-nav__link">
+    1.5 Visão Geral
   </a>
   
 </li>
@@ -340,15 +330,97 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-ferramentas" class="md-nav__link">
-    3. Ferramentas
+  <a href="#2-representacao-da-arquitetura" class="md-nav__link">
+    2. Representação da Arquitetura
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-tecnologias" class="md-nav__link">
+    2.1 Tecnologias
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-nodejs" class="md-nav__link">
+    2.1.1 NodeJs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-express" class="md-nav__link">
+    2.1.2 Express
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-mongoose" class="md-nav__link">
+    2.1.3 Mongoose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-handlebars" class="md-nav__link">
+    2.1.4 Handlebars
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-html" class="md-nav__link">
+    2.1.5 HTML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#216-css" class="md-nav__link">
+    2.1.6 CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#217-bootstrap" class="md-nav__link">
+    2.1.7 Bootstrap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#218-react" class="md-nav__link">
+    2.1.8 React
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metas-e-restricoes-de-arquitetura" class="md-nav__link">
+    3. Metas e Restrições de Arquitetura
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    Referências
+  <a href="#4-qualidade" class="md-nav__link">
+    4. Qualidade
   </a>
   
 </li>
@@ -368,6 +440,30 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../documento-de-visao/" title="Documento de visão" class="md-nav__link">
+      Documento de visão
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gestao-de-configuracao-de-software/" title="Gestão de configuração de Software" class="md-nav__link">
+      Gestão de configuração de Software
+    </a>
   </li>
 
         
@@ -533,26 +629,40 @@
     1. Introdução
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-politicas" class="md-nav__link">
-    2. Políticas
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-politica-de-commits" class="md-nav__link">
-    2.1 Política de Commits
+  <a href="#11-finalidade" class="md-nav__link">
+    1.1 Finalidade
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-politica-de-branches" class="md-nav__link">
-    2.2 Política de Branches
+  <a href="#12-escopo" class="md-nav__link">
+    1.2 Escopo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-definicoes-acronimos-e-abreviacoes" class="md-nav__link">
+    1.3 Definições, Acrônimos e Abreviações
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-referencias" class="md-nav__link">
+    1.4 Referências
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-visao-geral" class="md-nav__link">
+    1.5 Visão Geral
   </a>
   
 </li>
@@ -563,15 +673,97 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-ferramentas" class="md-nav__link">
-    3. Ferramentas
+  <a href="#2-representacao-da-arquitetura" class="md-nav__link">
+    2. Representação da Arquitetura
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-tecnologias" class="md-nav__link">
+    2.1 Tecnologias
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-nodejs" class="md-nav__link">
+    2.1.1 NodeJs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-express" class="md-nav__link">
+    2.1.2 Express
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-mongoose" class="md-nav__link">
+    2.1.3 Mongoose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-handlebars" class="md-nav__link">
+    2.1.4 Handlebars
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-html" class="md-nav__link">
+    2.1.5 HTML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#216-css" class="md-nav__link">
+    2.1.6 CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#217-bootstrap" class="md-nav__link">
+    2.1.7 Bootstrap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#218-react" class="md-nav__link">
+    2.1.8 React
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metas-e-restricoes-de-arquitetura" class="md-nav__link">
+    3. Metas e Restrições de Arquitetura
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    Referências
+  <a href="#4-qualidade" class="md-nav__link">
+    4. Qualidade
   </a>
   
 </li>
@@ -599,163 +791,90 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fga-eps-mds/2019.2-Questmark/edit/master/docs/Documentos/gestao-de-configuracao-de-software.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fga-eps-mds/2019.2-Questmark/edit/master/docs/Documentos/documento-de-arquitetura.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="gestao-de-configuracao-de-software">Gestão de configuração de Software</h1>
+                <h1 id="documento-de-arquitetura-de-software">Documento de Arquitetura de Software</h1>
 <h2 id="1-introducao">1. Introdução</h2>
-<p>Este documento tem como finalidade fornecer apoio para o desenvolvimento de software. Ele elucida os procedimentos necessários para controlar mudanças e identificar o que será alterado, mecanismos para a gerência de diferentes versões do produto, auditando e relatando as transformaçõe realizadas, e a integração das ferramentas que serão utilizadas pela equipe para desenvolvimento, organização e comunicação.</p>
-<h2 id="2-politicas">2. Políticas</h2>
-<h3 id="21-politica-de-commits">2.1 Política de Commits</h3>
-<p>Os <em>commits</em> devem ser escritos em portugês, iniciando o comentário com o número da <em>issue</em> em questão, seguido de uma descrição clara, objetiva e direta o que foi produzido. <br />
-Deve-se utilizar verbos no particípio, omitir acentuações , iniciar a parte textual com letra maiúscula e finalizar com ponto final.<br />
-Exemplo :  </p>
-<blockquote>
-<p>[#<Id da issue>]<Comentário.>  </p>
-<p>[#12]Topico 2.1 adicionado ao documento.</p>
-</blockquote>
-<h3 id="22-politica-de-branches">2.2 Política de Branches</h3>
-<p>O <em>workflow</em> do projeto será baseado no <a href="https://nvie.com/posts/a-successful-git-branching-model/">GitFlow</a>.</p>
-<p><img alt="Falha ao carregar imagem." src="https://camo.githubusercontent.com/b12ce8394edc7e0f5d1e92b63bd64642e2ade5ee/687474703a2f2f692e696d6775722e636f6d2f357946774848492e706e67" /></p>
-<p>O repositório será composto de :<br />
-<em> Branch <strong>MASTER</strong> : 
-  * Será a branch estável do projeto;
-  * <strong>Nunca</strong> deve receber </em>commits<em> diretamente;
-  * Modificações na <strong>MASTER</strong> deverão vir, via </em>merge<em>, da </em>branch* <strong>DEVELOP</strong>.  </p>
+<h3 id="11-finalidade">1.1 Finalidade</h3>
+<p>Este documento tem como objetivo informar, de uma forma geral, a arquitetura do projeto Questmark. Tanto o comportamento do software, quanto as tecnologias utilizadas para o desenvolvimento do mesmo devem ser expostas de forma clara, explicativa e objetiva para o leitor. </p>
+<h3 id="12-escopo">1.2 Escopo</h3>
+<p>Questmark é uma plataforma que irá possibilitar a criação de formulários em Markdown, de uma forma descomplicada, para qualquer usuário que fizer cadastro no mesmo. O projeto também dá ao cliente a comodidade de visualizar um dashboard, de simples entendimento, com as respostas dadas em seu formulário por um terceiro usuário. O documento apresentará toda a parte arquitetural para a confecção do Questmark, a fim de tornar claras as características arquiteturais do projeto.</p>
+<h3 id="13-definicoes-acronimos-e-abreviacoes">1.3 Definições, Acrônimos e Abreviações</h3>
 <ul>
-<li>
-<p>Branch <strong>DEVELOP</strong> :  </p>
-<ul>
-<li>Receberá as <em>features</em> que foram concluídas; </li>
-<li><strong>Nunca</strong> deve receber <em>commits</em> diretamente;</li>
-<li>Modificações na <strong>DEVELOP</strong> deverão vir, via <em>merge</em>, das <em>branches</em> de <em>features</em> que foram concluídas;</li>
-<li>A <em>branch</em> fará <em>merge</em> na <strong>MASTER</strong> quando estiver estável e pronta para <em>release</em>.  </li>
+<li>FGA: Faculdade do Gama - Campus da Universidade de Brasília localizado no Gama</li>
+<li>MDS: Métodos de desenvolvimento de software</li>
+<li>UnB: Universidade de Brasília</li>
+<li>Markdown: Linguagem de marcação</li>
 </ul>
-</li>
-<li>
-<p>Branches <strong>FEATURE</strong> :</p>
+<h3 id="14-referencias">1.4 Referências</h3>
+<blockquote>
+<p>André; Gabriel; Guilherme; ALMEIDA; Weyler. Cidade Democrática: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2016.2-CidadeDemocratica/wiki/Documento-de-Arquitetura</p>
+</blockquote>
+<h3 id="15-visao-geral">1.5 Visão Geral</h3>
+<p>O documento, através de dez principais tópicos e suas ramificações, visa detalhar a arquitetura e os requisitos do software do projeto. Tendo como objetivo facilitar o desenvolvimento e esclarecendo dúvidas a respeito deste.</p>
 <ul>
-<li>Destinadas para a criação de novas funcionalidades e correção de <em>bugs</em>;</li>
-<li>Devem ser baseadas na <em>branch</em> <strong>DEVELOP</strong> e não a <strong>MASTER</strong>;</li>
-<li>O nome da <em>branch</em> deverá seguir o padrão :  </li>
+<li>Estrutura do documento:<ul>
+<li>Introdução;</li>
+<li>Representação da Arquitetura;</li>
+<li>Metas e Restrições de Arquitetura;</li>
+<li>Visão de Casos de Uso;</li>
+<li>Visão Lógica;</li>
+<li>Visão de Processos;</li>
+<li>Visão de Implantação;</li>
+<li>Visão de Dados;</li>
+<li>Tamanho e Desempenho;</li>
+<li>Qualidade;</li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<p><Número da issue relacionada>-<Propósito-da-branch> </p>
-<p>12-Definir-politica-de-branches</p>
-</blockquote>
+<h2 id="2-representacao-da-arquitetura">2. Representação da Arquitetura</h2>
+<h3 id="21-tecnologias">2.1 Tecnologias</h3>
+<h4 id="211-nodejs">2.1.1 NodeJs</h4>
+<p>NodeJs é uma plataforma de aplicação, na qual você escreve seus programas com Javascript que serão compilados, otimizados e interpretados pela máquina virtual V8. Essa VM é a mesma que o Google utiliza para executar Javascript no browser Chrome, e foi a partir dela que o criador do Node.js, Ryan Dahl, criou o projeto. Foi a tecnologia que atendeu as necessidades da equipe </p>
+<h4 id="212-express">2.1.2 Express</h4>
+<p>É framework web mais famoso para Node.js. Inclui suporte a diferentes view engines, funciona no padrão MVC, possui JSON e HTTP na caixa, trabalha com URLs amigáveis nativamente e muito mais, sem deixar de ser bem leve, o tornando indispensável para APIs e aplicações web escritas em Node</p>
+<h4 id="213-mongoose">2.1.3 Mongoose</h4>
+<p>Mongoose é uma biblioteca do Nodejs que proporciona uma solução baseada em esquemas para modelar os dados da sua aplicação. Ele possui sistema de conversão de tipos, validação, criação de consultas e hooks para lógica de negócios. O Mongoose fornece um mapeamento de objetos do MongoDB similar ao ORM (Object Relational Mapping), ou ODM (Object Data Mapping) no caso do Mongoose. Isso significa que o Mongoose traduz os dados do banco de dados para objetos JavaScript para que possam ser utilizados pela aplicação.</p>
+<h4 id="214-handlebars">2.1.4 Handlebars</h4>
+<p>Handlebars é um template engine. Está baseado na sintaxe de "Mustache Templates", às que foram agregadas algumas funcionalidades extras como estruturas condicionais e de repetição. Permitindo gerar conteúdos dinâmicos de forma simples.</p>
+<h4 id="215-html">2.1.5 HTML</h4>
+<p>HTML (abreviação para a expressão inglesa HyperText Markup Language, que significa Hipertexto de Marcação de Linguagem) é uma linguagem de marcação utilizada na construção de páginas na Web. Documentos HTML podem ser interpretados por navegadores. A tecnologia é fruto da junção entre os padrões HyTime e SGML.</p>
+<h4 id="216-css">2.1.6 CSS</h4>
+<p>CSS (Cascading Style Sheets) significa Folhas de Estilo em Cascata é uma linguagem de estilo utilizada para definir a apresentação de documentos escritos em uma linguagem de marcação, como HTML ou XML</p>
+<h4 id="217-bootstrap">2.1.7 Bootstrap</h4>
+<p>Bootstrap é uma biblioteca open-source CSS framework direcionada á responsividade, mobile-first front-end web development. Com diversos tipos de formularios, botãoes, navbar entre outras interfaces e componente</p>
+<h4 id="218-react">2.1.8 React</h4>
+<p>O React é uma biblioteca JavaScript de código aberto para criar interfaces de usuário. É mantido pelo Facebook, Instagram e uma comunidade de desenvolvedores individuais e outras empresas. De acordo com o serviço de análise de JavaScript Libscore o React está sendo usado nos sites da Netflix, Imgur, Feedly, Airbnb, SeatGeek, HelloSign, Walmart e outros.</p>
+<h2 id="3-metas-e-restricoes-de-arquitetura">3. Metas e Restrições de Arquitetura</h2>
+<p>As restrições de arquitetura do projeto são a utilização de um Banco de Dados MongoDB para cada serviço interno, Logo um banco onde irá armazenar informações sobre os usuários cadastrados e seus respectivos formulários.
+Utilização da ferramenta Docker para a virtualização dos ambientes de forma prática e adequada para a realização do projeto ( Conexão com a internet é necessária) 
+As metas do projeto são disponibilizar a criação de um questionário com entrada em markdown  , por ser uma marcação simples e disponibilizar o questionário criado a todos os usuários sem cadastro prévio. Além disso, disponibilizar ao criador do questionário um dashboard com dados analiticos do questionario, para análise das respostas.</p>
+<!-- ## 4. Diagrama de Pacotes -->
+
+<h2 id="4-qualidade">4. Qualidade</h2>
+<p>O software suporta os seguintes requisitos de qualidade:</p>
 <ul>
-<li>Branches <strong>FIX</strong> :<ul>
-<li>Destinadas para a solução <strong>imediata</strong> de <em>bugs</em>;</li>
-<li>Nomear conforme o padrão :  </li>
+<li>Interface amigável e funcional</li>
+<li>Sistema objetivo para o usúario</li>
+<li>Ser capaz de mostrar dados fiéis ao usuário.</li>
 </ul>
-</li>
-</ul>
-<blockquote>
-<p>fix-<em>bug</em>/issue  </p>
-<p>fix-falha-Login<br />
-fix-12-Falha-Login    </p>
-</blockquote>
-<ul>
-<li>Branches <strong>PLAYGROUND</strong> :<ul>
-<li>Destinadas para criar e testar novas ideias;</li>
-<li>A princípio não entrarão como <em>features</em>;</li>
-<li>Nomear conforme o padrão :  </li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>playground-Ideia-incrivel<br />
-playground-Testando-ideia-genial</p>
-</blockquote>
-<h2 id="3-ferramentas">3. Ferramentas</h2>
-<table>
-<thead>
-<tr>
-<th align="center">Ferramenta</th>
-<th align="center">Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Git</td>
-<td align="center">Ferramenta de versionamento</td>
-</tr>
-<tr>
-<td align="center">GitHub</td>
-<td align="center">Ferramenta de hospedagem de respositórios</td>
-</tr>
-<tr>
-<td align="center">ZenHub</td>
-<td align="center">Extensão com ferramentas de gerenciamento</td>
-</tr>
-<tr>
-<td align="center">ReactJS</td>
-<td align="center">Biblioteca JS para criação de interfaces de usuário</td>
-</tr>
-<tr>
-<td align="center">NodeJS</td>
-<td align="center">Interpretador JS no lado dos servidores</td>
-</tr>
-<tr>
-<td align="center">ExpressJS</td>
-<td align="center">Estrutura de servidor padrão para o NodeJS</td>
-</tr>
-<tr>
-<td align="center">MongoDB</td>
-<td align="center">Software de banco de dados</td>
-</tr>
-<tr>
-<td align="center">Docker</td>
-<td align="center">Ferramenta de virtualização e configuração de ambiente via containers</td>
-</tr>
-<tr>
-<td align="center">Docker Compose</td>
-<td align="center">Ferramenta para gerenciamento de containers Docker</td>
-</tr>
-<tr>
-<td align="center">Telegram</td>
-<td align="center">Ferramenta para comunicação</td>
-</tr>
-<tr>
-<td align="center">Slack</td>
-<td align="center">Ferramenta para comunicação</td>
-</tr>
-</tbody>
-</table>
-<h2 id="referencias">Referências</h2>
-<blockquote>
-<p>PRESSMAN, Roger S. (1995). Engenharia de Software. São Paulo : Pearson Makron Books  </p>
-</blockquote>
 <h2 id="historico-de-revisao">Histórico de Revisão</h2>
 <table>
 <thead>
 <tr>
 <th align="center">Data</th>
 <th align="center">Versão</th>
-<th align="center">Descrição</th>
+<th align="center">Modificação</th>
 <th align="center">Autor(es)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">02/09/2019</td>
+<td align="center">06/09/2019</td>
 <td align="center">0.1</td>
-<td align="center">Criação do documento</td>
-<td align="center">Nícalo Ribeiro</td>
-</tr>
-<tr>
-<td align="center">02/09/2019</td>
-<td align="center">0.2</td>
-<td align="center">Adição dos tópicos Introdução , Política de <em>commits</em> e Política de <em>branches</em></td>
-<td align="center">Nícalo Ribeiro</td>
-</tr>
-<tr>
-<td align="center">03/09/2019</td>
-<td align="center">0.3</td>
-<td align="center">Adição do tópico Ferramentas</td>
-<td align="center">Nícalo Ribeiro</td>
+<td align="center">Tópicos e subtópicos de 1, 2, 3 e 4 adicionados</td>
+<td align="center">Lucas Lopes</td>
 </tr>
 </tbody>
 </table>
@@ -779,7 +898,7 @@ playground-Testando-ideia-genial</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../documento-de-visao/" title="Documento de visão" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -788,19 +907,19 @@ playground-Testando-ideia-genial</p>
                 <span class="md-footer-nav__direction">
                   Anterior
                 </span>
-                Documento de visão
+                Home
               </span>
             </div>
           </a>
         
         
-          <a href="../requisitos-de-software/" title="Requisitos de Software" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../documento-de-visao/" title="Documento de visão" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Próximo
                 </span>
-                Requisitos de Software
+                Documento de visão
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
