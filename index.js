@@ -3,15 +3,18 @@ const app = express();
 
 //importando rota usuers
 const users = require('./routes/users')
+const forms = require('./routes/forms')
 
-
-
-//rotas
+//rota principal
 app.get('/',(req,res)=>{
     res.send("Hello World")
 })
-
+//rotas usuarios (users)
 app.use('/users',users)
+
+//rota formularios(forms)
+
+app.use('/forms',forms)
 
 //servidor
 
