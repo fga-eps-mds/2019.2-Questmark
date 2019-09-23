@@ -70,6 +70,7 @@ O software suporta os seguintes requisitos de qualidade:
 - Sistema objetivo para o usúario
 - Ser capaz de mostrar dados fiéis ao usuário.
 
+## Histórico de Revisão
 |Data|Versão|Modificação|Autor(es)|
 |:---:|:---:|:---:|:---:|
 |06/09/2019|0.1|Tópicos e subtópicos de 1, 2, 3 e 4 adicionados|Lucas Lopes| 

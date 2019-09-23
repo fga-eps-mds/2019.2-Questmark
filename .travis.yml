@@ -1,4 +1,4 @@
-# sudo: required
+sudo: required
 language: python # Set the build language to Python
 
 install:
