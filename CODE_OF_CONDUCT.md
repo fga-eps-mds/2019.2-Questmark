@@ -10,12 +10,12 @@ As pessoas envolvidas devem se comportar de forma adequada e profissional durant
 
 Outros seguintes comportamentos são esperados e solicitados a todos os membros do projeto QuestMark e ligados a ele: 
 
-*Participe de uma maneira autêntica e ativa. Ao fazer isso, você contribui para a saúde e a longevidade dessa comunidade.
-*Tenha consideração e respeito em seu discurso e ações.
-*Tente colaboração antes do conflito.
-*Abster-se de comportamento e discurso humilhantes, discriminatórios ou de assédio.
-*Esteja atento ao seu entorno e aos seus colegas participantes. Alerte os líderes da comunidade se notar uma situação perigosa, alguém em perigo ou violações deste Código de Conduta, mesmo que pareçam irrelevantes.
-*Lembre-se de que os locais de eventos da comunidade podem ser compartilhados com membros do público; respeite todos os usuários desses locais.
+* Participe de uma maneira autêntica e ativa. Ao fazer isso, você contribui para a saúde e a longevidade dessa comunidade.
+* Tenha consideração e respeito em seu discurso e ações.
+* Tente colaboração antes do conflito.
+* Abster-se de comportamento e discurso humilhantes, discriminatórios ou de assédio.
+* Esteja atento ao seu entorno e aos seus colegas participantes. Alerte os líderes da comunidade se notar uma situação perigosa, alguém em perigo ou violações deste Código de Conduta, mesmo que pareçam irrelevantes.
+* Lembre-se de que os locais de eventos da comunidade podem ser compartilhados com membros do público; respeite todos os usuários desses locais.
 
 ## 3.Comportamento Inaceitável e conseguências desse comportamento inaceitável 
 O QuestMark se dedica a promover uma experiência livre de assédios para todas as pessoas, independente do gênero, orientação sexual, incapacidade, aparência física, tamanho do corpo, raça ou religião. Prevalecendo o respeito e a igualdade entro todos os membros do grupo e todos os envolvidos do projeto, de maneira direta e indereta. Linguagem e imagens sexuais não são adequadas para qualquer situação, desrespeitos e qualquer forma de opressão não serão tolerados de forma alguma, de modo que o respeito e a igualdade sejam ponto chave entre todos. Os participantes que violarem essas regras podem ser penalizados sendo necessários ações que partem de uma retratação até expulsão do projeto, dependendo da conduta do penalizado. 
