@@ -1,5 +1,10 @@
 const express = require('express')
 const router = express.Router()
+const mongoose = require('mongoose')
+
+require('../models/Forms');
+const modelFormulario = mongoose.model("formulario")
+
 
 
 router.get('/',(req,res)=>{

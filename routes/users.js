@@ -1,5 +1,10 @@
 const express = require('express')
 const router = express.Router()
+const mongoose = require('mongoose')
+require('../models/Users');
+const modelUsuario = mongoose.model("User")
+
+
 
 
 router.get('/',(req,res)=>{

@@ -1,20 +1,30 @@
+//imports
 const express = require('express');
 const app = express();
-
-//importando rota usuers
+const mongoose = require('mongoose')
 const users = require('./routes/users')
 const forms = require('./routes/forms')
 
-//rota principal
-app.get('/',(req,res)=>{
-    res.send("Hello World")
-})
-//rotas usuarios (users)
-app.use('/users',users)
 
-//rota formularios(forms)
+//configurações 
+    //mongoose
+    mongoose.connect("mongodb://mongo/questmark").then(()=>{
+        console.log('conectado com sucesso')
+    }).catch((err)=>{
+    console.log("houve um erro"+err)
+    })
 
-app.use('/forms',forms)
+
+//rotas
+    //rotas principais 
+        app.get('/',(req,res)=>{
+            res.send("Hello World")
+        })
+    //rotas secundarias 
+        //rotas usuarios (users)
+        app.use('/users',users)
+        //rota formularios(forms)
+        app.use('/forms',forms)
 
 //servidor
 
