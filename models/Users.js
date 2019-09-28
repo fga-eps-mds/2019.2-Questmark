@@ -3,35 +3,35 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    username : {
-        type : String,
-        required : true,
-        unique : true,
-        trim : true,
-        minlength : 3
+    username: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        minlength: 3
     },
-    email : {
-        type : String,
-        required : true,
-        unique : true
+    email: {
+        type: String,
+        required: true,
+        unique: true
     },
-    senha:{
+    senha: {
         type: String,
         required: true
     },
-    admin:{
+    admin: {
         type: Number,
         required: true,
         default: 0
     },
-    formulario:{
+    formulario: {
         type: Schema.Types.ObjectId,
-        ref:"formulario",
-        required: false	
+        ref: "formulario",
+        required: false
     }
-},{
-    timestamps : true,        
-});
+}, {
+        timestamps: true,
+    });
 
 const User = mongoose.model('User', userSchema);
 

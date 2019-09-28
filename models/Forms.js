@@ -1,21 +1,20 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
-
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const Formulario = new Schema({
-    nome:{
+    nome: {
         type: String,
         required: true
     },
-    data_quest:{
+    data_quest: {
         type: Object,
         required: true
     },
-    respostas:{
+    respostas: {
         type: Object,
-        required: false	
+        required: false
     }
-})
+});
 
 module.exports = mongoose.model('formulario', Formulario);
 
