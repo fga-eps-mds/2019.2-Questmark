@@ -8,12 +8,14 @@ const forms = require('./routes/forms')
 
 //configurações 
     //mongoose
-    mongoose.connect("mongodb://mongo/questmark").then(()=>{
+    mongoose.connect("mongodb://mongo/questmark", 
+    {useNewUrlParser : true, useCreateIndex : true, useUnifiedTopology : true}).then(()=>{
         console.log('conectado com sucesso')
     }).catch((err)=>{
     console.log("houve um erro"+err)
     })
 
+    
 
 //rotas
     //rotas principais 
