@@ -6,6 +6,9 @@ router.get('/',(req,res)=>{
     res.send("Rota de cadastro formulario")
 })
 
+router.get('/lista',(req,res)=>{
+     res.render("./formularios/lista")
+})
 
 router.post('/novo',(req,res)=>{
     res.send("Rota salvar  cadastro formulario")
@@ -22,4 +25,5 @@ router.get('/edit/:id',(req,res)=>{
 router.post('/edit',(req,rs)=>{
     res.send("salvar alterações ")
 })
+
 module.exports = router

@@ -17,6 +17,11 @@ app.use('/users',users)
 
 app.use('/forms',forms)
 
+//EJS
+app.set('view engine','ejs');
+// configuração do path
+app.use(express.static(path.join(__dirname,"public")))
+
 //servidor
 
 app.listen(3000, () => console.log('SV ativo na porta 3000'));
