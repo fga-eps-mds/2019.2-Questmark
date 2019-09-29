@@ -31,3 +31,15 @@ header {
     text-decoration: none;    
     color: white;
 }
+
+.mainDiv{
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border:2px solid black;
+
+}
+
+.buttons{
+    overflow: hidden;
+}
