@@ -20,7 +20,7 @@ app.use('/forms',forms)
 //EJS
 app.set('view engine','ejs');
 // configuração do path
-app.use(express.static(path.join(__dirname,"public")))
+//app.use(express.static(path.join(__dirname,"public")))
 
 //servidor
 
