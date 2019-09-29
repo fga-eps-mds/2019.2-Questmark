@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Registro</title>
+
+		<link rel="stylesheet" href="/wmd/wmd.css"/>
+		<script src="/wmd/wmd.js"></script>
+		<script src="/wmd/showdown.js"></script>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<style type="text/css" media="screen">
+			textarea {width:100%;margin:0;}
+			textarea, #notes-preview {border:1px solid gray;height:100px;}
+			#notes-preview {overflow-x:hidden;overflow-y:scroll;}
+		</style>
+	</head>
+	<body>
+		<h1 style="text-align: center;">Registro de Questionário</h1>
+		<% if (erros.length>0) { %>
+			<% for(let i = 0;i < erros.length;i++){ %>
+				<div class="alert alert-danger"><%= erros[i].texto %></div>
+			<% } %> 
+		 <% } %>
+			<br>
+			<br>
+			<br>
+			<br>
+		<div class="card-body">
+			<label for="name_quest">Nome: </label>
+		    <input type="text" id="name_quest" name="name_quest"  placeholder="Nome Do Questionário" class="form-control">
+		    <hr>
+			<div id="notes-button-bar"></div>
+			<hr>
+			<label for="copy_markdown">Conteúdo:</label>
+			<textarea id="notes" name="copy_markdown" placeholder="Markdown" class="form-control"></textarea>
+
+			Preview:
+			<div id="notes-preview"></div>
+
+			Saída HTML:
+		    <textarea type="text" id="copy_html" name ="copy_html" class="form-control" disabled="disabled" placeholder="Saída HTML">
+		    </textarea>
+			
+			<br>
+		    <button type="submit" onclick="recoverInputsInformation()" 
+		    class="btn btn-primary" class="form-control"> Cadastrar </button>
+		</div>
+
+		<script type="text/javascript">
+			new WMDEditor({
+				input: "notes",
+				button_bar: "notes-button-bar",
+				preview: "notes-preview",
+				output: "copy_html",
+				buttons: "bold italic link  ol ul  heading",
+				modifierKeys: false,
+				autoFormatting: false
+			});
+		</script>
+
+		<!-- Script de submissão do questionário -->
+		<script src="/scripts/inputsType.js"></script>
+
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	</body>
+</html>
