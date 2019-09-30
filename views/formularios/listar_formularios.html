@@ -10,7 +10,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <link href="../../public/listforms.css" rel="stylesheet">
+    <link href="../../public/listagem_formulario/listforms.css" rel="stylesheet">
 </head>
 
 <header>
@@ -46,23 +46,23 @@
                     <div class="buttons">
 
                         <a class="icons" href="/forms/responder/<%= formulario[i].id %>">
-                            <img src="../../public/images/pencil-edit-button.svg" width="50px" height="50px"
+                            <img src="../../public/listagem_formulario/images/pencil-edit-button.svg" width="50px" height="50px"
                                 style="background-color:#7FCAF2;padding: 10px">
                         </a>
 
                         <a class="icons" href="/forms/postar/<%= formulario[i].id %>">
-                            <img src="../../public/images/share-sign.svg" width="50px" height="50px"
+                            <img src="../../public/listagem_formulario/images/share-sign.svg" width="50px" height="50px"
                                 style="background-color:#77D353;padding: 10px">
 
                         </a>
 
                         <a class="icons" href="">
-                            <img src="../../public/images/pie-chart-stats.svg" width="50px" height="50px"
+                            <img src="../../public/listagem_formulario/images/pie-chart-stats.svg" width="50px" height="50px"
                                 style="background-color:#4B2CFF;padding: 10px">
                         </a>
 
                         <form class="icons" action="/forms/delete" method="POST">
-                            <input type="image" alt="Submit" src="../../public/images/recycling-bin.svg" width="50px"
+                            <input type="image" alt="Submit" src="../../public/listagem_formulario/images/recycling-bin.svg" width="50px"
                                 height="50px" style="background-color:#FF2C2C;padding: 10px" name="id"
                                 value="formulario[i].id">
                         </form>
