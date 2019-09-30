@@ -7,13 +7,17 @@ header {
     left: 0;
     border-bottom: 1px solid #ccc;
     background: #2398D6;
-    z-index: 2;   
-    
+    z-index: 2;       
+}
+
+body{
+    background: white;
 }
 
 .topnav {
     margin-top: 7.5px;
 }
+
 .topnav select{
    float: right;
     background: white;
@@ -31,12 +35,36 @@ header {
     color: white;
 }
 
-.topNavLogo {
-    color: #FFFFFF;
-    font-family: Knewave;
-    font-size: 58px;
-    font-weight: 400;
-    line-height: 62px;
-    width: 118px;
+.mainDiv{
+    margin-top: 60px;
+    min-height: 100%;
+    position: relative;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.icons{
+    margin-right: 5px;
+}
+
+.listas{
+    border: 1px solid black;
+    margin: 20px;
     text-align: center;
-  }
+    border-radius: 10px;
+    background: white
+}
+
+.blocolistas{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    list-style:none;    
+}
+
