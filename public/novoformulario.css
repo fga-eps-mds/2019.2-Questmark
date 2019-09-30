@@ -1,0 +1,62 @@
+.backGround {
+  background-color: rgba(237, 237, 237, 0.27);
+}
+.flexRow {
+  flex-direction: row;
+}
+
+h1 {
+  color: #47525E;
+  font-family: Cardo;
+  font-size: 35px;
+  font-weight: bold;
+  /* margin-top: %; */
+  margin-left: 1.5%;  
+  text-align: left;
+}
+.textTitles {
+  color: #47525E;
+  font-family: Cardo;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 33px;
+  text-align: left;
+  margin-left: 2%;
+}
+.conteudoTitle{
+  color: #47525E;
+  font-family: Cardo;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 33px;
+  text-align: left;
+  margin-left: 2%;
+  margin-right: 41%;
+}
+
+.textBox {
+  background-color: #FFFFFF;
+  border: 1px solid #8492A6;
+  margin-left: 2%;  
+  width: 650px;
+  height: 385px;
+}
+.textBoxName {
+  background-color: #FFFFFF;
+  border: 1px solid #8492A6;
+  width: 350px;
+  height: 25px;
+  margin-left: 0.1%;
+  margin-bottom: 1%; 
+}
+.row {
+  flex-direction: row;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.buttonsView{
+  margin-top: 2%;
+  margin-right: 2%;
+  float: right;
+}
