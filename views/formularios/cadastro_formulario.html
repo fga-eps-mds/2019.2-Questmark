@@ -41,6 +41,7 @@
 </header>
 
 <body>
+
 	<body style="padding-top: 1.5%">
 		<h1>Registro de Questionário</h1>
 	</body>
@@ -51,21 +52,22 @@
 			<label for="name_quest" class="textTitles">Nome: </label>
 			<input type="text" id="name_quest" name="name_quest" placeholder=" Nome do Questionário"
 				class="textBoxName">
-			<!-- <div id="notes-button-bar"></div> -->
 		</body>
-		<div>
-			<label for="copy_markdown" class="conteudoTitle">Conteúdo:</label>
-			<label class="textTitles">Preview:</label>
-		</div>
 		<div class="row">
-			<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox"></textarea>
-			<div class="textBox" id="notes-preview"></div>
+			<div>
+				<label for="copy_markdown" class="textTitles">Conteúdo:</label>
+				<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox"></textarea>
+			</div>
+			<div>
+				<label class="textTitles">Preview:</label>
+				<div class="textBox" id="notes-preview"></div>
+			</div>				
 		</div>
 	</body>
 	<div class="buttonsView">
-		<button type="submit" class="btn btn-primary" class="form-control">
+		<button type="submit" class="buttonCancel">
 			Cancelar </button>
-		<button type="submit" onclick="recoverInputsInformation()" class="btn btn-primary" class="form-control">
+		<button type="submit" onclick="recoverInputsInformation()" class="buttonAgree">
 			Cadastrar </button>
 	</div>
 
