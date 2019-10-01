@@ -1,27 +1,28 @@
 {
-  "name": "questmark",
+  "name": "2019.2-questmark",
   "version": "1.0.0",
-  "description": "Plataforma de gerenciamento de formulários escritos em markdown",
-  "main": "app.js",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "consign": "^0.1.6",
-    "ejs": "^2.7.1",
-    "express": "^4.17.1",
-    "mongoose": "^5.7.3",
-    "mongodb": "^3.3.2"
+  "description": "Questionario Markdown",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fga-eps-mds/2019.2-Questmark/tree/master"
+    "url": "git+https://github.com/fga-eps-mds/2019.2-Questmark.git"
   },
-  "keywords": [
-    "Formulários;Markdown."
-  ],
-  "author": "Grupo 04 - MDS 2019.2 - UNB/FGA",
-  "license": "ISC"
+  "author": "Lucas Lopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fga-eps-mds/2019.2-Questmark/issues"
+  },
+  "homepage": "https://github.com/fga-eps-mds/2019.2-Questmark#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1"
+  }
 }
