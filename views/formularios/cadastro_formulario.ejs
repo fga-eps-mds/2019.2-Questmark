@@ -1,73 +1,101 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Registro</title>
 
-		<link rel="stylesheet" href="/wmd/wmd.css"/>
-		<script src="/wmd/wmd.js"></script>
-		<script src="/wmd/showdown.js"></script>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Registro</title>
+	<link rel="stylesheet" type="text/css" href="wmd.css" />
+	<link rel="stylesheet" href="../../public/cadastro_formulario/style/novoformulario.css">
+	<link rel="stylesheet" href="../../public/cadastro_formulario/style/header.css">
+	<link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
+	<script src="..wmd.js"></script>
+	<script src="showdown.js"></script>
+	<style type="text/css" media="screen">
+		textarea,
+		#notes-preview {
+			border: 1px solid gray;
+		}
 
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		
-		<style type="text/css" media="screen">
-			textarea {width:100%;margin:0;}
-			textarea, #notes-preview {border:1px solid gray;height:100px;}
-			#notes-preview {overflow-x:hidden;overflow-y:scroll;}
-		</style>
-	</head>
-	<body>
-		<h1 style="text-align: center;">Registro de Questionário</h1>
-		<% if (erros.length>0) { %>
-			<% for(let i = 0;i < erros.length;i++){ %>
-				<div class="alert alert-danger"><%= erros[i].texto %></div>
-			<% } %> 
-		 <% } %>
-			<br>
-			<br>
-			<br>
-			<br>
-		<div class="card-body">
-			<label for="name_quest">Nome: </label>
-		    <input type="text" id="name_quest" name="name_quest"  placeholder="Nome Do Questionário" class="form-control">
-		    <hr>
-			<div id="notes-button-bar"></div>
-			<hr>
-			<label for="copy_markdown">Conteúdo:</label>
-			<textarea id="notes" name="copy_markdown" placeholder="Markdown" class="form-control"></textarea>
+		#notes-preview {
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+	</style>
+</head>
+<header>
+	<div class="topNavLogo">QM</div>
+	<div class="topnav-right">
+		<a href="" title="Logout">Log Out</a>
+		<a href="" title="Ajuda">Ajuda</a>
+		<a href="" title="Opcoes">Opções</a>
+	</div>
+	<div class="topnav">
+		<select>
+			<option value="">Ordenar por</option>
+			<option value="novos">Data de criação (Novo-Antigo)</option>
+			<option value="antigos">Data de criação (Antigo-Novo)</option>
+			<option value="a-z">Ordem Alfabética (A-Z)</option>
+			<option value="z-a">Ordem Alfabética (Z-A)</option>
+		</select>
+	</div>
+</header>
+<body>
 
-			Preview:
-			<div id="notes-preview"></div>
+	<div style="padding-top: 0.7%">
+		<h1>Registro de Questionário</h1>
+	</div>
 
-			Saída HTML:
-		    <textarea type="text" id="copy_html" name ="copy_html" class="form-control" disabled="disabled" placeholder="Saída HTML">
-		    </textarea>
-			
-			<br>
-		    <button type="submit" onclick="recoverInputsInformation()" 
-		    class="btn btn-primary" class="form-control"> Cadastrar </button>
+	<div class="backGround">
+
+		<div>
+			<label for="name_quest" class="textTitleName">Nome: </label>
+			<input type="text" id="name_quest" name="name_quest" placeholder=" Nome do Questionário"
+				class="textBoxName">
 		</div>
+		<div class="row">
+			<div style="display: flex; flex-direction: column;">
+				<label for="copy_marskdown" class="textTitles">Conteúdo:</label>
+				<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox"></textarea>
+			</div>
+			<div style="display: flex; flex-direction: column;">
+				<label class="textTitles">Preview:</label>
+				<div class="textBox" id="notes-preview"></div>
+			</div>				
+		</div>
+	</div>
+	<div class="buttonsView">
+		<button type="submit" onclick="window.location.href=./"  ()class="buttonCancel">
+			Cancelar </button>
+		<button type="submit" onclick="recoverInputsInformation()" class="buttonAgree">
+			Cadastrar </button>
+	</div>
 
-		<script type="text/javascript">
-			new WMDEditor({
-				input: "notes",
-				button_bar: "notes-button-bar",
-				preview: "notes-preview",
-				output: "copy_html",
-				buttons: "bold italic link  ol ul  heading",
-				modifierKeys: false,
-				autoFormatting: false
-			});
-		</script>
+	<script type="text/javascript">
+		new WMDEditor({
+			input: "notes",
+			button_bar: "notes-button-bar",
+			preview: "notes-preview",
+			output: "copy_html",
+			buttons: "bold italic link  ol ul  heading",
+			modifierKeys: false,
+			autoFormatting: false
+		});
+	</script>
 
-		<!-- Script de submissão do questionário -->
-		<script src="/scripts/inputsType.js"></script>
+	<!-- Script de submissão do questionário -->
+	<script src="../../public/cadastro_formulario/javascript/functions_submission.js"></script>
 
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
 
-	</body>
+</body>
+
 </html>

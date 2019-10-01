@@ -6,11 +6,10 @@ header {
     left: 0;
     border-bottom: 1px solid #ccc;
     background: #2398D6;
-    z-index: 2;   
+    z-index: 2;
 }
-
 .topnav {
-    margin-top: 7.5px;
+    margin-top: 0.7%;
 }
 .topnav select{
    float: right;
