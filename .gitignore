@@ -1,6 +1,11 @@
-
 node_modules/
 
 data/
 
+<<<<<<< HEAD
 package-lock.json
+=======
+yarn.lock
+
+package-lock.json
+>>>>>>> 38-frontend

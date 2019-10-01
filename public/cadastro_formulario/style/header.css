@@ -1,0 +1,39 @@
+header {
+    height: 8.5%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid #ccc;
+    background: #2398D6;
+    z-index: 2;
+}
+.topnav {
+    margin-top: 0.7%;
+}
+.topnav select{
+   float: right;
+    background: white;
+    width: 200px;
+    height: 35px;
+    color: black;
+}
+
+.topnav-right a {
+    text-align: center;
+    font-size: 17px;
+    float: right;
+    padding: 14px 16px;
+    text-decoration: none;    
+    color: white;
+}
+
+.topNavLogo {
+    color: #FFFFFF;
+    font-family: 'Knewave', cursive;
+    font-size: 35px;
+    float: left;
+    font-weight: 400;
+    width: 7%;
+    text-align: center;
+}
