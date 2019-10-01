@@ -40,43 +40,44 @@
             <ul class="blocolistas">
                 <% for(let i = 0;i < formulario.length;i++){ %>
 
-                <li class="listas">
-
-                    <h3>Nome do Formulário</h3>
-                    <div class="buttons">
-
-                        <a class="icons" href="/forms/responder/<%= formulario[i].id %>">
-                            <img src="../../public/listagem_formulario/images/pencil-edit-button.svg" width="50px" height="50px"
-                                style="background-color:#7FCAF2;padding: 10px">
-                        </a>
-
-                        <a class="icons" href="/forms/postar/<%= formulario[i].id %>">
-                            <img src="../../public/listagem_formulario/images/share-sign.svg" width="50px" height="50px"
-                                style="background-color:#77D353;padding: 10px">
+                <div class="card border-dark mb-3" style="max-width: 22rem;margin-left: 8px ">
+                    <div class="card-header">Nome: <%= formulario[i].nome%></div>
+                    <div class="card-body text-dark">
+                        <a href="/forms/listarespostas/<%= formulario[i].id %>">
+                            <img src="../../public/listagem_formulario/images/pencil-edit-button.svg"
+                                style="background-color:#7FCAF2;padding: 10px;width: 50px; height: 50px;">
 
                         </a>
+                        <a href="/forms/postar/<%= formulario[i].id %>">
+                            <img src="../../public/listagem_formulario/images/share-sign.svg"
+                                style="background-color:#77D353; margin-left: 30px; padding: 10px;width: 50px; height: 50px;">
 
-                        <a class="icons" href="">
-                            <img src="../../public/listagem_formulario/images/pie-chart-stats.svg" width="50px" height="50px"
-                                style="background-color:#4B2CFF;padding: 10px">
                         </a>
+                        </a>
+                        <a href="#">
+                            <img src="../../public/listagem_formulario/images/pie-chart-stats.svg"
+                                style="background-color:#4B2CFF;margin-left: 30px;padding: 10px;width: 50px; height: 50px;">
 
-                        <form class="icons" action="/forms/delete" method="POST">
-                            <input type="image" alt="Submit" src="../../public/listagem_formulario/images/recycling-bin.svg" width="50px"
-                                height="50px" style="background-color:#FF2C2C;padding: 10px" name="id"
-                                value="formulario[i].id">
-                        </form>
+                        </a>
+                        <a href="/forms/delete/<%= formulario[i].id %>">
+                            <img src="../../public/listagem_formulario/images/recycling-bin.svg"
+                                style="background-color:#FF2C2C;margin-left: 30px;padding: 10px;width: 50px; height: 50px;">
 
+                        </a>
                     </div>
-                </li>
-                <% } %>
-            </ul>
-            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-                    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>Icons made by <a href="https://www.flaticon.com/authors/catalin-fertu" title="Catalin Fertu">Catalin
-                    Fertu</a>
-                from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                    <div class="card-footer text-muted">
+                        Data de Criação: <%=formulario[i].data%>
+                    </div>
+                </div>
         </div>
+        <% } %>
+        </ul>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/catalin-fertu" title="Catalin Fertu">Catalin
+                Fertu</a>
+            from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    </div>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -90,4 +91,5 @@
         crossorigin="anonymous"></script>
 
 </body>
+
 </html>
