@@ -41,9 +41,9 @@ function sendDataJson(typeInputs){
 	};
 
 	let xhttp = new XMLHttpRequest();
-	xhttp.open("POST",`${window.location.href}save`,true);
+	xhttp.open("POST",`${window.location.href}/salvar`,true);
 	xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
 	xhttp.send(JSON.stringify(jsonData));				
 	alert('Questionário cadastrado!');
-	//window.location.href = '/';
+	window.location.href = '/forms/listagem';
 }

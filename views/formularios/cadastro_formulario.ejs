@@ -4,11 +4,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Registro</title>
-	<link rel="stylesheet" href="../../public/cadastro_formulario/style/novoformulario.css">
-	<link rel="stylesheet" href="../../public/cadastro_formulario/style/header.css">
+	<link rel="stylesheet" href="/cadastro_formulario/style/novoformulario.css">
+	<link rel="stylesheet" href="/cadastro_formulario/style/header.css">
 	<link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
-	<script src="../../public/wmd/wmd.js"></script>
-	<script src="../../public/wmd/showdown.js"></script>
+	<script src="/wmd/wmd.js"></script>
+	<script src="/wmd/showdown.js"></script>
 	<style type="text/css" media="screen">
 		textarea,
 		#notes-preview {
@@ -40,7 +40,7 @@
 </header>
 <body>
 
-	<div style="padding-top: 0.7%">
+	<div style="padding-top: 1%">
 		<h1>Registro de Questionário</h1>
 	</div>
 
@@ -60,10 +60,13 @@
 				<label class="textTitles">Preview:</label>
 				<div class="textBox" id="notes-preview"></div>
 			</div>				
+
+			<textarea hidden="hidden" type="text" id="copy_html" name ="copy_html" class="form-control" placeholder="Saída HTML">
+			</textarea>
 		</div>
 	</div>
 	<div class="buttonsView">
-		<button type="submit" onclick="window.location.href=./" class="buttonCancel">
+		<button type="submit" onclick="window.location.href='/'" class="buttonCancel">
 			Cancelar </button>
 		<button type="submit" onclick="recoverInputsInformation()" class="buttonAgree">
 			Cadastrar </button>
@@ -82,7 +85,7 @@
 	</script>
 
 	<!-- Script de submissão do questionário -->
-	<script src="../../public/cadastro_formulario/javascript/functions_submission.js"></script>
+	<script src="/cadastro_formulario/javascript/functions_submission.js"></script>
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

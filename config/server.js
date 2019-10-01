@@ -14,10 +14,10 @@ mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedT
 
 //Definindo EJS como motor de geração de views.
 app.set('view engine','ejs');
-app.set('views','./application/views');
+app.set('views','./views');
 
 //Configuração para utilizar arquivos estáticos nas views 
-app.use(express.static('./application/public'));
+app.use(express.static('./public'));
 
 //Incluindo body-parser como Middleware
 app.use(bodyParser.urlencoded({extended:true}));
@@ -29,13 +29,13 @@ app.use(express.json());
 //----------Rotas----------
  //Página inicial
 app.get("/",(req,res)=>{
-	res.render('./menu');
+	res.render('./formularios/inicio');
  });
 
 //Rotas secundarias (sub-rotas)
-const forms = require('../application/routes/forms');
+const forms = require('../routes/forms');
 app.use('/forms',forms);
-const users = require("../application/routes/users");
+const users = require("../routes/users");
 app.use('/users',users);
 
 

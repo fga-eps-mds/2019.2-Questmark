@@ -43,8 +43,9 @@ router.get('/visualizar/:id',(req,res)=>{
 });
 
 //Rota para apagar formulario
-router.post('/delete',(req,res)=>{
-    var id = req.body.id
+router.get('/deletar/:id',(req,res)=>{
+    //var id = req.body.id;
+    let id = req.params.id;
     modelFormulario.findOneAndDelete(id).then(()=>{
         console.log('Formulário deletado.');
     }).catch((err)=>{

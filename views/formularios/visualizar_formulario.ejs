@@ -6,23 +6,23 @@
 	
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="/questionnaires/styles/styles.css"/>
+	<link rel="stylesheet" href="/exibicao_formulario/styles/styles.css"/>
 	
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
 
-	<title><%= formulario.nome %></title>	
+	<title><%= name_quest %></title>	
 </head>
 <body>
 	<div id="mainDiv">
-		<h1 style="text-align: center;"><%= formulario.nome %></h1>
-		<form action="/forms/salvar_resposta/<%= formulario.id %>" method="POST">
-			 <%- formulario.data_quest.copy_html %>
+		<h1 style="text-align: center;"><%= name_quest %></h1>
+		<form action="/questionnaire/save_answer/<%= name_quest %>" method="post">
+			 <%- copy_html %>
 			<button type="submit" id="btnSubmit" class="btn btn-primary">Enviar Resposta</button>	
 		</form>
 	</div>
 	<!-- Estilização dos campos  -->
-	<script src="/questionnaires/javascript/input_field_stylization.js"></script>
+	<script src="/exibicao_formulario/javascript/input_field_stylization.js"></script>
 	<script type="text/javascript"> stylizeFields() </script>
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
