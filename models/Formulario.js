@@ -14,6 +14,10 @@ const Formulario = new Schema({
     respostas:{
         type: Object,
         required: false	
+    },
+    data:{
+        type: Date,
+        default:Date.now()
     }
 })
 
