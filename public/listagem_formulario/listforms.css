@@ -47,7 +47,16 @@ body{
 .newFormDiv{
     display: flex;
     flex-direction: row;
-    justify-content: center
+    justify-content: center;
 }
 
+.logo{
+    color: #FFFFFF;
+    font-family: 'Knewave', cursive;
+    font-size: 35px;
+    float: left;
+    font-weight: 400;
+    width: 7%;
+    text-align: center;
+}
 

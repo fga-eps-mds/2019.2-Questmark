@@ -11,10 +11,13 @@
 
 
     <link href="../../public/listagem_formulario/listforms.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
 </head>
 
 <header>
     <!-- <h1 style="text-align: center;">Meus Questionários</h1>-->
+
+    <div class="logo">QM</div>
 
     <div class="topnav-right">
         <a href="" title="Logout">Log Out</a>
@@ -40,7 +43,7 @@
         <% if (formulario.length>0) { %>
         <% for(let i = 0;i < formulario.length;i++){ %>
 
-        <div class="card border-dark mb-3" style="max-width: 22rem;margin-left: 8px ">
+        <div class="card border-dark mb-3" style="max-width: 22rem;">
             <div class="card-header">Nome: <%= formulario[i].nome%></div>
             <div class="card-body text-dark">
                 <a href="/forms/listarespostas/<%= formulario[i].id %>">
@@ -77,10 +80,12 @@
         Sem Formulários Cadastrados!
     </div>
     <% } %>
+
     <div class="newFormDiv">
-        <a href="/forms/registro"><button class="btn btn-success" style="margin-left: 111px;  ">Novo
+        <a href="/forms/registro"><button class="btn btn-success">Novo
                 Formulário</button></a>
     </div>
+
     <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
             href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     <div>Icons made by <a href="https://www.flaticon.com/authors/catalin-fertu" title="Catalin Fertu">Catalin
