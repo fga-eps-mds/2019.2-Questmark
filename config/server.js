@@ -1,7 +1,9 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path')
+
 
 //Conexão do MongoDB
 const url = "mongodb://mongo/questmark";
@@ -17,8 +19,7 @@ app.set('view engine','ejs');
 
 
 //Configuração para utilizar arquivos estáticos nas views 
-app.use(express.static('public'));
-
+app.use(express.static(path.join("public")))
 //Incluindo body-parser como Middleware
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -29,7 +30,7 @@ app.use(express.json());
 //----------Rotas----------
  //Página inicial
 app.get("/",(req,res)=>{
-	res.render('./formularios/inicio');
+	res.send('rota inicial');
  });
 
 //Rotas secundarias (sub-rotas)
