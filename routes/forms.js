@@ -1,24 +1,23 @@
-
 const express = require('express')
 const router = express.Router()
-const mongoose = require('mongoose')
-require('../models/Users')
-const modelUsers = mongoose.model("users")
 
+require('../models/Users')
 require('../models/Formulario')
+const mongoose = require('mongoose')
+const modelUsers = mongoose.model("users")
 const modelFormulario = mongoose.model("formulario")
+
 
 //rota das opções
 router.get('/',(req,res)=>{
     modelFormulario.find().then((formulario)=>{
         res.render('./formularios/inicio',{formulario:formulario})
     })
-   
 })
+
 //rota que mostra o  layout de  cadastro de um novo formulario
 router.get('/registro',(req,res)=>{
     res.render('./formularios/cadastro_formulario')
-    
 })
 
 router.post('/registro/salvar',(req,res)=>{
@@ -53,43 +52,37 @@ router.post('/registro/salvar',(req,res)=>{
 
 
 //visualizar um questionario e responder
-
 router.get('/postar/:id',(req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
-        res.render("./formularios/visuformulario",{formulario:formulario})
+        res.render("./formularios/visualizar_formulario",{name_quest: formulario.nome,
+                                                          copy_html: formulario.data_quest.copy_html, 
+                                                          id: formulario._id});
     })
     
 });
 
 //salvar a resposta do questionar
-
-router.post('/salvarresposta/:id',(req,res)=>{
+router.post('/salvar_resposta/:id',(req,res)=>{
     let resposta = req.body;
     let tmpAnswers = [];
     var id  = req.params.id
-    console.log("AAAAA")
     console.log(resposta)
 
     modelFormulario.findOne({_id: id},(err,formulario) => {
         if(err){
             console.log(`Falha ao tentar recuperar respostas anteriores de ${id}.Erro: ` + err);
         }
-        else{				
-            if(formulario.respostas != undefined) 
-            tmpAnswers = formulario.respostas;
+        else{               
+            if(formulario.respostas != undefined) tmpAnswers = formulario.respostas;
             tmpAnswers.push(resposta);
             modelFormulario.updateOne({_id: id},{$set: {'respostas' : tmpAnswers }},(err,result) => {
                 if(err)
-
                     console.log('Erro ao salvar a resposta: ' + err);
-                    
                 else
                     console.log('Resposta salva ! Resposta: ' + result);
-                    res.redirect('/forms')		
+                res.redirect('/forms')      
             });
             console.log(tmpAnswers)
-            console.log("eeeaiadoa")
-            console.log(formulario.respostas)
         }
     });
    
@@ -113,7 +106,4 @@ router.get('/delete/:id',(req,res)=>{
     })
 })
 
-
-
-
-module.exports = router
+module.exports = router;

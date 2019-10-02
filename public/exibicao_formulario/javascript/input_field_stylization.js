@@ -34,7 +34,7 @@ function stylizeFields(){
 		cjtRadio.parentAll.style.paddingLeft = '5px';
 		cjtRadio.parentAll.style.paddingTop= '20px	';
 		cjtRadio.parentAll.style.marginBottom= '10px';
-		cjtRadio.parentAll.style.border = '2px solid rgba(0,0,255,0.7)';
+		cjtRadio.parentAll.style.border = '1.5px solid rgba(35,152,214,0.8)';
 		cjtRadio.parentAll.style.borderRadius = '10px';
 	});
 
@@ -52,7 +52,7 @@ function stylizeFields(){
 		cjtCheckbox.parent.style.display = 'inline';
 		cjtCheckbox.child_label.style.marginLeft = '5px';
 		cjtCheckbox.parent.style.display = 'inline';
-		cjtCheckbox.parentAll.style.border = '2px solid rgba(0,0,255,0.7)';
+		cjtCheckbox.parentAll.style.border = '1.5px solid rgba(35,152,214,0.8)';
 		cjtCheckbox.parentAll.style.borderRadius = '10px';
 		cjtCheckbox.parentAll.style.marginBottom= '10px';
 	});
