@@ -30,7 +30,7 @@ router.post('/registro/salvar',(req,res)=>{
 //Rota de listagem de formulários
 router.get('/listagem',(req,res)=>{
     modelFormulario.find().then((formulario)=>{
-        res.render("./formularios/listar_formularios",{formulario:formulario})
+        res.render("./formularios/inicio",{formulario:formulario})
     })
 })
 

@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 //Conexão do MongoDB
-const url = "mongodb://localhost/questmark";
+const url = "mongodb://mongo/questmark";
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
     	.then(() => {
         	console.log('Conectado com sucesso ao banco de dados.');
@@ -14,10 +14,10 @@ mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedT
 
 //Definindo EJS como motor de geração de views.
 app.set('view engine','ejs');
-app.set('views','./views');
+
 
 //Configuração para utilizar arquivos estáticos nas views 
-app.use(express.static('./public'));
+app.use(express.static('public'));
 
 //Incluindo body-parser como Middleware
 app.use(bodyParser.urlencoded({extended:true}));

@@ -134,7 +134,7 @@ Showdown.converter = function () {
 
 		return text;
 	};
-
+	
 	// Capitalizes a string
 	var capitalize = function (str) {
 		return str.charAt(0).toUpperCase() + str.slice(1);
@@ -163,7 +163,7 @@ Showdown.converter = function () {
 			return template;
 		}
 	}
-	//Ok
+	
 	var _CreateFormTextInput = function (text) {
 		//
 		// Creates a form text input element.
@@ -198,9 +198,8 @@ Showdown.converter = function () {
 		// * Each form input created in this way should be on its own line.
 		// * Requires exactly 3 underscores on the right-hand side of the equals sign.
 		// * Currently does not check whether a <form> tag has been opened.
-		// ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ
-		return text.replace(/([\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t\-]*(\*)?)[ \t]*=[ \t]*___(\[\d+\])?/g,
-		function(wholeMatch, lhs, required, size) {
+		// 
+		return text.replace(/(\w[\w \t\-]*(\*)?)[ \t]*=[ \t]*___(\[\d+\])?/g, function(wholeMatch, lhs, required, size) {
 			var cleaned = lhs.replace(/\*/g, '').trim().replace(/\t/g, ' ').toLowerCase();
 			var inputName = cleaned.replace(/[ \t]/g, '-'); // convert spaces to hyphens
 			var labelName = cleaned.split(' ').map(capitalize).join(' ') + (required ? '*:' : ':');
@@ -212,7 +211,7 @@ Showdown.converter = function () {
 			return _Templater.format(template, {id: inputName, label: labelName, size: size, labelClass: labelClass, inputClass: inputClass});
 		});
 	};
-	//OK
+	
 	var _CreateRadioButtonInput = function (text) {
 		//
 		// Creates a group of radio buttons.
@@ -231,17 +230,15 @@ Showdown.converter = function () {
 		// Right now it only works on single-line expressions.
 		// 
 		// TODO: Make this work across multiple lines.
-		// /[^a-zA-Z0-9 àâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ]/
-		// var regex = /(\w[\w \t\-]*)=[ \t]*(\(x?\)[ \t]*[\w \t\-]+[\(\)\w \t\-]*)/g;
-		var regex = /(.*[.* \t\-]*)=[ \t]*(\(x?\)[ \t]*[\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t\-]+[\(\)\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t\-]*)/g;		
+		//
+		var regex = /(\w[\w \t\-]*)=[ \t]*(\(x?\)[ \t]*[\w \t\-]+[\(\)\w \t\-]*)/g;
 		return text.replace(regex, function(whole, name, options) {
-			var cleanedName = name.trim().replace(/ \t/g, ' ');
+			var cleanedName = name.trim().replace(/\t/g, ' ');
 			var inputName = cleanedName.replace(/[ \t]/g, '_').toLowerCase();
 			var cleanedOptions = options.trim().replace(/\t/g, ' ');
 			var labelName = cleanedName + ":";
 			var output = '<label>' + labelName + '</label>';
-			// var optRegex = /\((x?)\)[ \t]*([^\w \t_\-]+)/g;
-			var optRegex = /\((x?)\)[ \t]*([\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t_\-]+)/g;			
+			var optRegex = /\((x?)\)[ \t]*([a-zA-Z0-9 \t_\-]+)/g;
 			var match = optRegex.exec(cleanedOptions);
 			while (match) {
 				var id = match[2].trim().replace(/\t/g, ' ').replace(/[ \t]/g, '_').toLowerCase();
@@ -255,7 +252,7 @@ Showdown.converter = function () {
 			return output;
 		});
 	}
-	//OK
+	
 	var _CreateCheckboxInput = function (text) {
 		//
 		// Creates a group of checkboxes.
@@ -277,15 +274,14 @@ Showdown.converter = function () {
 		// 
 		// TODO: Make this work across multiple lines.
 		//
-		// var regex = /(\w[\w \t\-]*)=[ \t]*(\[x?\][ \t]*[\w \t\-]+[\[\]\w \t\-]*)/g;
-		var regex = /(.*[\w \t\-]*)=[ \t]*(\[x?\][ \t]*[\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t\-]+[\[\]\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t\-]*)/g;
+		var regex = /(\w[\w \t\-]*)=[ \t]*(\[x?\][ \t]*[\w \t\-]+[\[\]\w \t\-]*)/g;
 		return text.replace(regex, function(whole, name, options) {
 			var cleanedName = name.trim().replace(/\t/g, ' ');
 			var inputName = cleanedName.replace(/[ \t]/g, '_').toLowerCase();
 			var cleanedOptions = options.trim().replace(/\t/g, ' ');
 			var labelName = cleanedName + ":";
 			var output = '<label>' + labelName + '</label>';
-			var optRegex = /\[(x?)\][ \t]*([\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t\-]+)/g;
+			var optRegex = /\[(x?)\][ \t]*([\w \t\-]+)/g;
 			var match = optRegex.exec(cleanedOptions);
 			while (match) {
 				var id = match[2].trim().replace(/\t/g, ' ').replace(/[ \t]/g, '_').toLowerCase();
@@ -299,7 +295,7 @@ Showdown.converter = function () {
 			return output;
 		});
 	};
-	//OK
+
 	var _CreateDropdownInput = function (text) {
 		//
 		// Creates an HTML dropdown menu.
@@ -325,8 +321,8 @@ Showdown.converter = function () {
 		//
 		// Any spaces on the left-hand side of the equal-sign will be converted into underscores
 		// to use as the id and name fields for the label and select tags.
-		// /[\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ]/
-		var regex = /([\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t_\-]*)=[ \t]*\{([\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t\->_,\(\)]+)\}/g;
+		//
+		var regex = /(\w[\w \t_\-]*)=[ \t]*\{([a-zA-Z0-9 \t\->_,\(\)]+)\}/g;
 		return text.replace(regex, function(whole, name, options) {
 			var cleanedName = name.trim().replace(/\t/g, ' ');
 			var id = cleanedName.replace(/[ \t]/g, '_').toLowerCase();
@@ -563,6 +559,7 @@ Showdown.converter = function () {
 
 		return text;
 	};
+
 
 	var _RunSpanGamut = function (text) {
 		//
@@ -855,6 +852,7 @@ Showdown.converter = function () {
 		return result;
 	};
 
+
 	var _DoHeaders = function (text) {
 
 		// Setext-style headers:
@@ -1041,6 +1039,7 @@ Showdown.converter = function () {
 		return list_str;
 	};
 
+
 	var _DoCodeBlocks = function (text) {
 		//
 		//  Process Markdown `<pre><code>` blocks.
@@ -1084,6 +1083,7 @@ Showdown.converter = function () {
 		text = text.replace(/(^\n+|\n+$)/g, "");
 		return "\n\n~K" + (g_html_blocks.push(text) - 1) + "K\n\n";
 	};
+
 
 	var _DoCodeSpans = function (text) {
 		//
@@ -1162,6 +1162,7 @@ Showdown.converter = function () {
 		return text;
 	};
 
+
 	var _EncodeCode = function (text) {
 		//
 		// Encode/escape certain characters inside Markdown code runs.
@@ -1205,6 +1206,7 @@ Showdown.converter = function () {
 		return text;
 	};
 
+
 	var _DoItalicsAndBold = function (text) {
 
 		if (true) { //eventually this will be replaced with a runtime option. But for now we're forcing it.
@@ -1222,6 +1224,7 @@ Showdown.converter = function () {
 
 		return text;
 	};
+
 
 	var _DoBlockQuotes = function (text) {
 
@@ -1264,6 +1267,7 @@ Showdown.converter = function () {
 		return text;
 	};
 
+
 	var _FormParagraphs = function (text) {
 		//
 		//  Params:
@@ -1278,12 +1282,11 @@ Showdown.converter = function () {
 		var grafsOut = [];
 
 		//
-		// Wrap <p> & <div> tags.
+		// Wrap <p> tags.
 		//
 		var end = grafs.length;
 		for (i = 0; i < end; i++) {
 			var str = grafs[i];
-			var div_tag = '<div>';
 			var p_tag = '<p>';
 
 			// if this is an HTML marker, copy it
@@ -1305,10 +1308,7 @@ Showdown.converter = function () {
 				
 				str = str.replace(/\n/g, "<br />"); // ** GFM **
 				str = str.replace(/^([ \t]*)/g, p_tag);
-				str = str.replace(/^([ \t]*)/g, div_tag);
-				
 				str += "</p>";
-				str += "</div>";
 				grafsOut.push(str);
 			}
 
@@ -1329,6 +1329,7 @@ Showdown.converter = function () {
 
 		return grafsOut.join("\n\n");
 	};
+
 
 	var _EncodeAmpsAndAngles = function (text) {
 		// Smart processing for ampersands and angle brackets that need to be encoded.
@@ -1372,6 +1373,7 @@ Showdown.converter = function () {
 		return text;
 	};
 
+
 	var _EncodeBackslashEscapes = function (text) {
 		//
 		//   Parameter:  String.
@@ -1390,6 +1392,7 @@ Showdown.converter = function () {
 		text = text.replace(/\\([`*_{}\[\]()>#+-.!])/g, escapeCharacters_callback);
 		return text;
 	};
+
 
 	var _DoAutoLinks = function (text) {
 
@@ -1414,6 +1417,7 @@ Showdown.converter = function () {
 
 		return text;
 	};
+
 
 	var _EncodeEmailAddress = function (addr) {
 		//
@@ -1469,6 +1473,7 @@ Showdown.converter = function () {
 		return addr;
 	};
 
+
 	var _UnescapeSpecialChars = function (text) {
 		//
 		// Swap back in all the special characters we've hidden.
@@ -1479,6 +1484,7 @@ Showdown.converter = function () {
 		});
 		return text;
 	};
+
 
 	var _Outdent = function (text) {
 		//
@@ -1518,9 +1524,12 @@ Showdown.converter = function () {
 
 		return text;
 	};
+
+
 	//
 	//  attacklab: Utility functions
 	//
+
 	var escapeCharacters = function (text, charsToEscape, afterBackslash) {
 		// First we have to escape the escape characters so that
 		// we can build a character class out of them
@@ -1535,6 +1544,7 @@ Showdown.converter = function () {
 
 		return text;
 	};
+
 
 	var escapeCharacters_callback = function (wholeMatch, m1) {
 		var charCodeToEscape = m1.charCodeAt(0);
