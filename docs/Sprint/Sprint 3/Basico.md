@@ -26,13 +26,11 @@
 ## Sprint Review
 ### Pontos Positivos
 - Entrega de tudo proposto para essa sprint sem o acumulo de divida para próxima sprint.
-- Equipe conseguiu encontrar um equilibrio em sua produtividade, entregando todas as issues.
-- Comprometimento ideal de todos os membros durante a sprint.
 - Tarefas que foram previstas como muito trabalhosas foram realizadas em tempo hábil.
 - Houve momentos no desenvolvimento da sprint que o grupo ficou adiantado.
 
 ### Pontos Negativos
--
+- Apesar do desempenho satisfatorio da sprint, o grupo ainda sim tem problemas de comunicação
 
 ### Melhorias
 - O grupo deve manter a forma produtiva de trabalho realizada durante essa sprint.
