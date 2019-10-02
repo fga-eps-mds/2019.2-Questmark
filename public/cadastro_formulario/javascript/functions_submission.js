@@ -45,5 +45,5 @@ function sendDataJson(typeInputs){
 	xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
 	xhttp.send(JSON.stringify(jsonData));				
 	alert('Questionário cadastrado!');
-	window.location.href = '/forms/listagem';
+	window.location.href = '/forms/';
 }
