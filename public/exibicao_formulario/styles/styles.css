@@ -1,0 +1,23 @@
+body{
+	background-color: rgba(35,152,214,1);
+	font-family: 'PT Serif', serif;
+}
+
+#mainDiv{
+	width: 800px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	/*background-color: rgba(128,128,128,0.8);*/
+	background-color: white;
+	border-radius: 10px; padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#btnSubmit{
+	width: 140px;
+	display: block;
+	margin-left: auto;
+}
+

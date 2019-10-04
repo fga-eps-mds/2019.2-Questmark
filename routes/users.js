@@ -1,19 +1,31 @@
-const express = require('express');
-const router = express.Router();
-const mongoose = require('mongoose');
-require('../models/Users');
-const modelUsuario = mongoose.model("User");
 
-router.get('/', (req, res) => {
-    res.send("Rota formulario cadastro usúario");
-});
+const express = require('express')
+const router = express.Router()
+require('../models/Formulario')
+const mongoose = require('mongoose')
+const modelFormulario = mongoose.model("formulario")
 
-router.post('/novo', (req, res) => {
-    res.send("Rota salvar  cadastro usúario");
-});
+require('../models/Users')
+const modelUsers = mongoose.model("users")
+router.get('/',(req,res)=>{
+    res.render('./usuarios/criarconta')
+})
 
-router.get('/delet', (req, res) => {
-    res.send("Rota deletar usúario");
-});
+router.post('/criarconta',(req,res)=>{
+    var usuario = {
+        nome : req.body.nome,
+        email: req.body.email,
+        senha: req.body.senha
+    }  
+    console.log(usuario)
+    new modelUsers(usuario).save().then(()=>{
+        console.log("salvo com sucesso")
+        res.redirect('/forms')
+    }).catch((err)=>{
+        console.log(err)
+        res.redirect('/')
+    })
+})
 
-module.exports = router;
+
+module.exports = router

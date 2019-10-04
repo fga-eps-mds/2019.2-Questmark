@@ -1278,11 +1278,12 @@ Showdown.converter = function () {
 		var grafsOut = [];
 
 		//
-		// Wrap <p> tags.
+		// Wrap <p> & <div> tags.
 		//
 		var end = grafs.length;
 		for (i = 0; i < end; i++) {
 			var str = grafs[i];
+			var div_tag = '<div>';
 			var p_tag = '<p>';
 
 			// if this is an HTML marker, copy it
@@ -1304,7 +1305,10 @@ Showdown.converter = function () {
 				
 				str = str.replace(/\n/g, "<br />"); // ** GFM **
 				str = str.replace(/^([ \t]*)/g, p_tag);
+				str = str.replace(/^([ \t]*)/g, div_tag);
+				
 				str += "</p>";
+				str += "</div>";
 				grafsOut.push(str);
 			}
 

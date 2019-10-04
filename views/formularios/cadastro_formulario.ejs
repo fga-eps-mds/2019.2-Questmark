@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Registro</title>
+	<link rel="stylesheet" href="/cadastro_formulario/style/novoformulario.css">
+	<link rel="stylesheet" href="/cadastro_formulario/style/header.css">
+	<link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
+	<script src="/wmd/wmd.js"></script>
+	<script src="/wmd/showdown.js"></script>
+	<style type="text/css" media="screen">
+		textarea,
+		#notes-preview {
+			border: 1px solid gray;
+		}
+
+		#notes-preview {
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+	</style>
+</head>
+<header>
+	<div class="topNavLogo">QM</div>
+	<div class="topnav-right">
+		<a href="" title="Logout">Log Out</a>
+		<a href="" title="Ajuda">Ajuda</a>
+		<a href="" title="Opcoes">Opções</a>
+	</div>
+
+</header>
+<body>
+
+	<div style="padding-top: 1%">
+		<h1>Registro de Questionário</h1>
+	</div>
+
+	<div class="backGround">
+
+		<div>
+			<label for="name_quest" class="textTitleName">Nome: </label>
+			<input type="text" id="name_quest" name="name_quest" placeholder=" Nome do Questionário"
+				class="textBoxName">
+		</div>
+		<div class="row">
+			<div style="display: flex; flex-direction: column;">
+				<label for="copy_marskdown" class="textTitles">Conteúdo:</label>
+				<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox"></textarea>
+			</div>
+			<div style="display: flex; flex-direction: column;">
+				<label class="textTitles">Preview:</label>
+				<div class="textBox" id="notes-preview"></div>
+			</div>				
+
+			<textarea hidden="hidden" type="text" id="copy_html" name ="copy_html" class="form-control" placeholder="Saída HTML">
+			</textarea>
+		</div>
+	</div>
+	<div class="buttonsView">
+		<button type="submit" onclick="window.location.href='/'" class="buttonCancel">
+			Cancelar </button>
+		<button type="submit" onclick="recoverInputsInformation()" class="buttonAgree">
+			Cadastrar </button>
+	</div>
+
+	<script type="text/javascript">
+		new WMDEditor({
+			input: "notes",
+			button_bar: "notes-button-bar",
+			preview: "notes-preview",
+			output: "copy_html",
+			buttons: "bold italic link  ol ul  heading",
+			modifierKeys: false,
+			autoFormatting: false
+		});
+	</script>
+
+	<!-- Script de submissão do questionário -->
+	<script src="/cadastro_formulario/javascript/functions_submission.js"></script>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
