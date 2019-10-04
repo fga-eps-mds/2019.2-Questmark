@@ -22,7 +22,7 @@ describe('Conectar com o  mongo', () => {
 
 //teste para criar e salvar um formulario
 
-it('Criar e salvar um formulario generico', async (done) => {
+it('Criar e salvar um formulario generico', async () => {
     //criando um formulario
     const formulario = new modelFormulario(formData);
     //salvando
@@ -37,10 +37,36 @@ it('Criar e salvar um formulario generico', async (done) => {
     expect(salvarformulario.data).toBe(formData.data);
      //verificando se é igual
     expect(salvarformulario.respostas).toBe(formData.respostas);
-    done ();
 });
 
-
+//teste para inserir formulario com campo inexistente e verificar se esse campo é indefinidado
+it('inserir formulario  com um campo  inexistente.', async () => {
+    //criando um formulario
+    const formulariocampoinvalido = new modelFormulario({ nome: 'Lucas', data_quest: [{name_quest: 'Lucas'}], data: new Date(),resp:'a'});
+    //salvando o formulario
+    const salvarformulariocampoinvalido = await formulariocampoinvalido.save();
+    //verificando se é definido (existe)
+    expect(salvarformulariocampoinvalido._id).toBeDefined();
+    //verificar se o campo .resp é indefinido 
+    expect(salvarformulariocampoinvalido.resp).toBeUndefined();
+});
+    //'criando um formulario sem um campo obrigatorio e verificado a falha'
+it('Criar sem um campo obrigatorio ', async () => {
+    //criando formulario so com o nome
+    const formularioSemObrigatorio = new modelFormulario({ nome: 'Lucas' });
+    let err;
+    try {
+        //tenta salvar
+        const salvarFormularioSemObrigatorio = await formularioSemObrigatorio.save();
+        error = salvarFormularioSemObrigatorio;
+    } catch (error) {
+        //salva o erro
+        err = error
+    }
+    expect(err).toBeInstanceOf(mongoose.Error.ValidationError)
+    //verifica que esse campo tinha que ser definido
+    expect(err.errors.data_quest).toBeDefined();
+});
 
 
 

@@ -5,3 +5,5 @@ data/
 package-lock.json
 
 yarn.lock
+
+coverage/
