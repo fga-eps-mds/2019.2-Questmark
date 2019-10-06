@@ -22,7 +22,7 @@ describe('Conectar com o  mongo', () => {
 
 //teste para criar e salvar um formulario
 
-it('Criar e salvar um formulario generico', async () => {
+it('Deve criar e salvar um formulario generico', async () => {
     //criando um formulario
     const formulario = new modelFormulario(formData);
     //salvando
@@ -40,7 +40,7 @@ it('Criar e salvar um formulario generico', async () => {
 });
 
 //teste para inserir formulario com campo inexistente e verificar se esse campo é indefinidado
-it('inserir formulario  com um campo  inexistente.', async () => {
+it('Não deve inserir formulario  com um campo  inexistente.', async () => {
     //criando um formulario
     const formulariocampoinvalido = new modelFormulario({ nome: 'Lucas', data_quest: [{name_quest: 'Lucas'}], data: new Date(),resp:'a'});
     //salvando o formulario
@@ -51,7 +51,7 @@ it('inserir formulario  com um campo  inexistente.', async () => {
     expect(salvarformulariocampoinvalido.resp).toBeUndefined();
 });
     //'criando um formulario sem um campo obrigatorio e verificado a falha'
-it('Criar sem um campo obrigatorio ', async () => {
+it('Não deve criar sem um campo obrigatorio ', async () => {
     //criando formulario so com o nome
     const formularioSemObrigatorio = new modelFormulario({ nome: 'Lucas' });
     let err;
