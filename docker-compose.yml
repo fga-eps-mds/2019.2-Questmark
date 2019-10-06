@@ -3,7 +3,7 @@ services:
   app:
     image: docker-questmark
     build: .
-    command: node index.js
+    command: nodemon index.js
     ports:
       - "3000:3000"
     volumes:
