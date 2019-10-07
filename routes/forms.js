@@ -21,35 +21,35 @@ router.get('/registro',(req,res)=>{
 })
 
 router.post('/registro/salvar',(req,res)=>{
-    let dados = req.body
-    var erros = []
-    if(dados.name_quest =='' ){
-        erros.push({texto:"Nome vazio"})
+    let dados = req.body;
+    var erros = [];
+
+    //Validação dos campos
+    if(dados.name_quest == ''){
+        erros.push({erro: "Campo nome está vazio."})
     }
-    if(dados.copy_markdown ==''){
-        erros.push({texto:"Entrada em markdown Vazio"})
+    if(dados.copy_markdown == ''){
+        erros.push({erro: "Campo markdown está vazio."})
     }
-    console.log(erros.length)
-    if(erros.length>0){
-        console.log(erros)
-        req.flash("error","Há campos Vazios")
-        res.render('./formularios/novoformulario')
-    }else{
+
+    if(erros.length > 0){
+        console.log(erros);
+        res.send({msg: erros, status: false});
+    }
+    else{
         var formulario = {
             nome : dados.name_quest,
             data_quest: dados
-        }  
+        };  
         new modelFormulario(formulario).save().then(()=>{
-            console.log("salvo com sucesso")
-            res.redirect('/')
+            console.log("Salvo com sucesso.");
+            res.send({msg: 'Questionário cadastrado!',status: true});
         }).catch((err)=>{
-            console.log(err)
-            res.redirect('/')
-        
-        })
+            console.log(err);
+            res.send({msg:['Falha ao salvar o questionário.'],status: false});
+        });
     }
-})
-
+});
 
 //visualizar um questionario e responder
 router.get('/postar/:id',(req,res)=>{
@@ -57,7 +57,7 @@ router.get('/postar/:id',(req,res)=>{
         res.render("./formularios/visualizar_formulario",{name_quest: formulario.nome,
                                                           copy_html: formulario.data_quest.copy_html, 
                                                           id: formulario._id});
-    })
+    });
     
 });
 

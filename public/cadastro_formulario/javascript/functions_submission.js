@@ -28,11 +28,14 @@ function recoverInputsInformation() {
 		}
 	}
 
-	sendDataJson(inputs);
+	return inputs;
 }	
 
-function sendDataJson(typeInputs){
-	//Envia os dados para o servidor
+//Encaminha a requisição com os dados do form para o servidor
+$("#form_registro").on("submit", function(event) {
+	event.preventDefault();
+	let typeInputs = recoverInputsInformation();
+
 	let jsonData = {
 		name_quest: document.getElementById('name_quest').value,
 		copy_html: document.getElementById('copy_html').value,
@@ -40,10 +43,40 @@ function sendDataJson(typeInputs){
 		type_inputs:typeInputs
 	};
 
-	let xhttp = new XMLHttpRequest();
-	xhttp.open("POST",`${window.location.href}/salvar`,true);
-	xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
-	xhttp.send(JSON.stringify(jsonData));				
-	alert('Questionário cadastrado!');
-	window.location.href = '/forms/';
-}
+	$.post(this.action,jsonData,(resp) => {
+		if(resp.status){
+			alert(resp.msg);
+			window.location.href = '/forms/';
+		}
+		else{
+			//Visibilidade
+			document.getElementById('div-erros').style.display = 'block';
+			
+			//Limpando conteúdo da ul de listagem de erros
+			let node = document.getElementById('lista-erros');
+			node.parentNode.removeChild(node);
+			let listErr = document.createElement('ul');
+			document.getElementById('div-lista-erros').appendChild(listErr);
+			listErr.id = 'lista-erros';
+			
+			//Listagem dos erros
+			resp.msg.forEach((msg) => {
+				let imsg = document.createElement('li');
+				imsg.innerHTML = msg.erro;
+				listErr.appendChild(imsg);
+			});
+		}
+	});
+});
+
+
+/*
+	$.ajax({
+  		type: "POST",
+		url: this.action,
+  		data: jsonData,
+  		success: (resp) => { console.log(resp);},
+  		error: (err) => { console.log(err);},
+  		dataType: 'json'
+	});
+*/

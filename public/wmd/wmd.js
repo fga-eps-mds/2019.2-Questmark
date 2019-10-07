@@ -1485,7 +1485,7 @@
 					button.onmouseover = button.onmouseout = button.onclick = function () {};
 				}
 			};
-
+			/*
 			var makeSpritedButtonRow = function () {
 
 				var buttonBar = (typeof wmd_options.button_bar == 'string') ? document.getElementById(wmd_options.button_bar || "wmd-button-bar") : wmd_options.button_bar;
@@ -1609,7 +1609,7 @@
 
 				setUndoRedoButtonStates();
 			};
-
+			*/
 			var setupEditor = function () {
 
 				if (/\?noundo/.test(document.location.href)) {
@@ -1623,7 +1623,7 @@
 					});
 				}
 
-				makeSpritedButtonRow();
+				//makeSpritedButtonRow();
 
 
 				var keyEvent = "keydown";
