@@ -6,7 +6,7 @@ const path = require('path')
 
 
 //Conexão do MongoDB
-const url = "mongodb://localhost/questmark";
+const url = "mongodb://mongo:27017/questmark";
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
     	.then(() => {
         	console.log('Conectado com sucesso ao banco de dados.');
