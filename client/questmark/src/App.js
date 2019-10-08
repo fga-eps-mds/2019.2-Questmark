@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import FormCard from './components/FormCard';
+import { Button } from '@material-ui/core';
 
 export default class App extends Component {
 
@@ -19,14 +20,18 @@ export default class App extends Component {
       <div>
         <Header></Header>
         <div className="mainContainer">
-          {
-            forms.map(item => 
-              <FormCard title={item.name} />
-            )
 
+          {
+            (forms === '' ? <div className="noForms"> Sem formulários cadastrados </div> :
+              forms.map(item =>
+                <FormCard title={item.name} />
+              )
+            )
           }
         </div>
-
+        <div className="createForm">
+          <Button variant={'contained'} size={'large'} color={"primary"}>Criar formulário</Button>
+        </div>
       </div>
     );
   }
