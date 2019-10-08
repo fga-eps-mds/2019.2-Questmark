@@ -10,6 +10,8 @@ Na pasta 2019.2-Questmark é necessário montar as imagens descritas pelos Docke
 
 2. Subir os containers: `docker-compose up`
 
+3. O projeto estará acessível em: `localhost:3000/`
+
 
 ### Equipe
 ---
