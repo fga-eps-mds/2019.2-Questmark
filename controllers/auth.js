@@ -7,6 +7,7 @@ const modelUsuario = mongoose.model('users')
 
 
 module.exports = function(passport){
+    //criando uma sessão 
     passport.use(new local({usernameField: 'email',passwordField: 'senha'},(email,senha,done)=>{
         modelUsuario.findOne({email:email}).then((usuario)=>{
             if(!usuario){
@@ -17,14 +18,15 @@ module.exports = function(passport){
             
             }
 
-            //criptografia para comparar senhas
+            //{}criptografia para comparar senhas
         })
         
     }))
+    //salva os dados do usuario em uma sessão
     passport.serializeUser((usuario,done)=>{
         done(null,usuario.id)
     })
- 
+    //procura um usuario pelo id dele
     passport.deserializeUser((id,done)=>{
         modelUsuario.findById(id,(err,usuario)=>{
             done(err,usuario)
