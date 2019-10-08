@@ -20,3 +20,11 @@
 .App-link {
   color: #09d3ac;
 }
+
+.mainContainer{
+  display: flex;
+  flex-direction: row;
+  min-height: 80vh;
+  flex-wrap: wrap;
+  justify-content: center
+}

@@ -20,7 +20,7 @@ export default class Header extends Component {
                     <select name="ordernar">
                     <option value="" selected>Ordenar por :</option>
                         <option value="alfabetica">Ordem Alfabética [A-Z]</option>
-                        <option value="criacao" selected>Data de criação</option>
+                        <option value="criacao">Data de criação</option>
                         <option value="edicao">Data de modificação</option>
                     </select>
                     <p>Ajuda</p>
