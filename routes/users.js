@@ -1,11 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
-
 require('../models/Users')
 const modelUsers = mongoose.model("users")
-
-
 const passport = require('passport')
 
 
