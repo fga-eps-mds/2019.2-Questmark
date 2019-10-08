@@ -45,17 +45,18 @@ router.post('/registro/salvar',(req,res)=>{
             nome : dados.name_quest,
             data_quest: dados
         };  
-        new modelFormulario(formulario).save().then(()=>{
-            console.log("Salvo com sucesso.");
-            res.send({msg: 'Questionário cadastrado!',status: true});
+        new modelFormulario(formulario).save().then((formulario)=>{
             let tmpfm = req.user.formulario
             tmpfm.push(formulario)
             modelUsers.updateOne({_id: req.user.id},{$set: {'formulario' : tmpfm }},(err,result) => {
                 console.log(result)
-                res.redirect('/forms')
+                res.send({msg: 'Questionário cadastrado!',status: true});
+                console.log("Salvo com sucesso.");
             })
+            
+         
         }).catch((err)=>{
-            console.log(err);
+            console.log(err)
             res.send({msg:['Falha ao salvar o questionário.'],status: false});
         });
     }
