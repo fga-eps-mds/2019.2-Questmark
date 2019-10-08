@@ -4,7 +4,6 @@
     </a>
 </p>
 
-## Introdução
 - O Markdown, uma tecnologia amplamente utilizada por desenvolvedores, permite a criação de textos elegantes de uma forma simples e intuitiva. Porém, o mesmo não permite a criação de um formulário por não ter sido programado com esse propósito. 
 
 - Então a equipe do projeto _**QuestMark**_, decidiu desenvolver uma plataforma que sana esse problema. A partir de pesquisas o grupo encontrou ferramentas que manipulam o Markdown, possibilitando a implementação de funções para a criação de formulários. Apesar existir uma ferramenta que modifica o Markdown, não há nenhuma plataforma que disponibilize essa aplicabilidade de uma maneira fácil ao público.
