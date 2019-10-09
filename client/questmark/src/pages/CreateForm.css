@@ -1,0 +1,33 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    min-height: 90vh;
+}
+
+.formsField{
+    display: flex;    
+    min-height: 70vh;
+    background-color: pink;
+}
+.inputMD{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: blueviolet;
+    padding : 3vh;
+    border-right-width: 1px;
+    border-right-color: black;
+    border-right-style: solid;
+}
+
+.outputHTML{
+    display: flex;
+    flex-direction: column;
+    flex : 1;
+    background-color: green;
+    padding : 3vh;
+    border-left-width: 1px;
+    border-left-color: black;
+    border-left-style: solid;
+}
