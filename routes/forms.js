@@ -7,7 +7,6 @@ const mongoose = require('mongoose')
 const modelUsers = mongoose.model("users")
 const modelFormulario = mongoose.model("formulario")
 
-
 //rota das opções
 router.get('/',(req,res)=>{
     modelUsers.findById(req.user).populate('formulario').then((user)=>{
@@ -99,7 +98,7 @@ router.post('/salvar_resposta/:id',(req,res)=>{
    
 })
 
-router.get('/listarespostas/:id',(req,res)=>{
+router.get('/listar_respostas/:id',(req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
         res.render("./formularios/lista_respostas",{formulario:formulario})
     })

@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 require('../models/Users')
 const modelUsers = mongoose.model("users")
 const passport = require('passport')
+const crypto = require('crypto')
 
 
 
@@ -19,10 +20,11 @@ router.post('/criarconta',(req,res)=>{
            res.redirect('/users')
        }
        else{
+            const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
             const novousuario = new modelUsers({
                 nome: req.body.nome,
                 email: req.body.email,
-                senha:req.body.senha,
+                senha:senhaCrypto
             })
             novousuario.save().then(()=>{
                 console.log("Salvou")
@@ -30,7 +32,7 @@ router.post('/criarconta',(req,res)=>{
                 console.log(erro)
             })
 
-           //hash de criptografa 
+           
        }
    })
 
@@ -50,3 +52,5 @@ router.post('/login',(req,res,next)=>{
 })
 
 module.exports = router
+
+
