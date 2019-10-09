@@ -31,3 +31,31 @@
     border-left-color: black;
     border-left-style: solid;
 }
+
+.formsField textarea{
+    min-height: 70vh
+}
+
+.formName{  
+    display: flex;
+    flex-direction: row;
+    background-color: yellow;
+    min-height: 7vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.formName input{
+    min-height: 5vh;
+    min-width: 20%;
+    margin-left: 2vh;
+    border-radius: 10px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
