@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import './FormCard.css';
+import '../styles/FormCard.css';
 export default class FormCard extends Component{
 
     constructor(props){

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import { Button } from '@material-ui/core';
-import './CreateForm.css';
+import '../styles/CreateForm.css';
 
 
 export default class CreateForm extends Component {
