@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-
 const Usuario = new Schema({
     nome:{
         type: String,
@@ -20,14 +19,11 @@ const Usuario = new Schema({
         required: true,
         default: 0
     },
-    formulario:{
+    formulario:[{
         type: Schema.Types.ObjectId,
         ref:"formulario",
         required: false	
-    }
+    }]
 })
 
 module.exports = mongoose.model('users', Usuario);
-
-
-

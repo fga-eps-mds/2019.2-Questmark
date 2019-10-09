@@ -1,33 +1,56 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
-const crypto = require('crypto')
-
-require('../models/Formulario')
-const modelFormulario = mongoose.model("formulario")
 require('../models/Users')
 const modelUsers = mongoose.model("users")
+const passport = require('passport')
+const crypto = require('crypto')
 
-router.get('/cadastro',(req,res)=>{
-    res.render('./usuarios/criar_conta');
+
+
+router.get('/',(req,res)=>{
+    res.render('./usuarios/criarconta')
 })
 
-router.post('/criar_conta',(req,res)=>{
-    //Criptogragia MD5 da senha => Criptografia unidirecional
-    const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
-    let usuario = {
-        nome : req.body.nome,
-        email: req.body.email,
-        senha: senhaCrypto
-    }  
-    console.log(usuario)
-    new modelUsers(usuario).save().then(()=>{
-        console.log("Usuário registrado com sucesso.")
-        res.redirect('/forms')
-    }).catch((err)=>{
-        console.log(err)
-        res.redirect('/')
-    })
+router.post('/criarconta',(req,res)=>{
+
+   modelUsers.findOne({email:req.body.email}).then((usuario)=>{
+       if(usuario){
+           console.log("usuario já existe")
+           res.redirect('/users')
+       }
+       else{
+            const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
+            const novousuario = new modelUsers({
+                nome: req.body.nome,
+                email: req.body.email,
+                senha:senhaCrypto
+            })
+            novousuario.save().then(()=>{
+                console.log("Salvou")
+            }).catch((erro)=>{
+                console.log(erro)
+            })
+
+           
+       }
+   })
+
+
 })
 
-module.exports = router;
+router.get('/login',(req,res)=>{
+    res.render('./usuarios/login')
+})
+
+router.post('/login',(req,res,next)=>{
+    passport.authenticate("local",{
+        successRedirect: '/forms',
+        failureRedirect: '/users/login',
+        failureFlash: true
+    })(req,res,next)
+})
+
+module.exports = router
+
+

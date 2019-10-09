@@ -3,8 +3,27 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path')
+const session = require('express-session')
+const flash = require('connect-flash')
+const passport = require('passport')
+require('../controllers/auth')(passport)
 
 
+//Configurando a sessão 
+app.use(session({
+	secret: "questmarkmdseps2019.2",
+	resave: true,
+	saveUninitialized: true
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(flash())
+app.use((req,res,next)=>{
+	res.locals.user = req.user || null; // armazena dados do usuario logado pega do passport//se caso não houver, é null
+	res.locals.error= req.flash("error")
+	res.locals.sucess = req.flash("sucess")
+	next()
+})
 //Conexão do MongoDB
 const url = "mongodb://localhost/questmark";
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
