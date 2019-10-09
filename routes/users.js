@@ -1,25 +1,28 @@
-
 const express = require('express')
 const router = express.Router()
-require('../models/Formulario')
 const mongoose = require('mongoose')
-const modelFormulario = mongoose.model("formulario")
+const crypto = require('crypto')
 
+require('../models/Formulario')
+const modelFormulario = mongoose.model("formulario")
 require('../models/Users')
 const modelUsers = mongoose.model("users")
-router.get('/',(req,res)=>{
-    res.render('./usuarios/criarconta')
+
+router.get('/cadastro',(req,res)=>{
+    res.render('./usuarios/criar_conta');
 })
 
-router.post('/criarconta',(req,res)=>{
-    var usuario = {
+router.post('/criar_conta',(req,res)=>{
+    //Criptogragia MD5 da senha => Criptografia unidirecional
+    const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
+    let usuario = {
         nome : req.body.nome,
         email: req.body.email,
-        senha: req.body.senha
+        senha: senhaCrypto
     }  
     console.log(usuario)
     new modelUsers(usuario).save().then(()=>{
-        console.log("salvo com sucesso")
+        console.log("Usuário registrado com sucesso.")
         res.redirect('/forms')
     }).catch((err)=>{
         console.log(err)
@@ -27,5 +30,4 @@ router.post('/criarconta',(req,res)=>{
     })
 })
 
-
-module.exports = router
+module.exports = router;

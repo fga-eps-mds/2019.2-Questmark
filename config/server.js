@@ -6,7 +6,7 @@ const path = require('path')
 
 
 //Conexão do MongoDB
-const url = "mongodb://mongo:27017/questmark";
+const url = "mongodb://localhost/questmark";
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
     	.then(() => {
         	console.log('Conectado com sucesso ao banco de dados.');
@@ -17,9 +17,8 @@ mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedT
 //Definindo EJS como motor de geração de views.
 app.set('view engine','ejs');
 
-
 //Configuração para utilizar arquivos estáticos nas views 
-app.use(express.static(path.join("public")))
+app.use(express.static(path.join("public")));
 //Incluindo body-parser como Middleware
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -30,7 +29,7 @@ app.use(express.json());
 //----------Rotas----------
  //Página inicial
 app.get("/",(req,res)=>{
-	res.send('rota inicial');
+	res.send('Página inicial');
  });
 
 //Rotas secundarias (sub-rotas)
