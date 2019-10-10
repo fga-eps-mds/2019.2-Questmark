@@ -1,0 +1,58 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+.formsField{
+    display: flex;    
+    min-height: 70vh;
+}
+.inputMD{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding : 3vh;
+    border-right-width: 1px;
+    border-right-color: black;
+    border-right-style: solid;
+    margin-top : 1vh;
+}
+
+.outputHTML{
+    display: flex;
+    flex-direction: column;
+    flex : 1;
+    padding : 3vh;
+    border-left-width: 1px;
+    border-left-color: black;
+    border-left-style: solid;
+    margin-top : 1vh;
+}
+
+.formsField textarea{
+    min-height: 70vh
+}
+
+.formName{  
+    display: flex;
+    flex-direction: row;
+    min-height: 7vh;
+    align-items: center;
+    justify-content: center;
+    margin-top : 1vh;
+}
+
+.formName input{
+    min-height: 5vh;
+    min-width: 20%;
+    margin-left: 2vh;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 3vh;
+    margin-right: 3vh;
+}

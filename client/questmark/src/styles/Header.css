@@ -1,0 +1,25 @@
+.mainHeader{
+    display: flex;
+    flex-direction: column;
+    min-height: 6vh;
+    background-color: #2398D6;
+    justify-content: center
+}
+
+.options{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: 0;
+}
+
+.options p{
+    margin-right: 3vh;
+    
+}
+
+.options select{
+    height: 4vh;
+    align-self: center;
+    margin-right: 3vh;
+}
