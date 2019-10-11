@@ -1,76 +1,35 @@
-# Contributor Covenant Code of Conduct
+# Código de conduta do colaborador 
+## Porque temos um código de conduta para o repósitorio Questmark ? 
 
-## Our Pledge
+Ele cria expectativas de comportamento para o nosso projeto. Ele encoraja pessoas que já tiveram experiências ruins anteriormente a participarem  do nosso projeto. Ele dá aos contribuidores instruções de como lidar com situações de assédio rapidamente, com a finalidade de se protejer, protejer a terceiros que também estejam sofrendo qualquer tipo de assédio e denunciar de forma rápida e simples qualquer forma de assédio sófrido. 
+## Nosso compromisso 
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, sex characteristics, gender identity and expression,
-level of experience, education, socio-economic status, nationality, personal
-appearance, race, religion, or sexual identity and orientation.
+No interesse de promover um ambiente aberto e acolhedor, nós, como colaboradores e mantenedores, nos comprometemos a tornar a participação em nosso projeto e em nossa comunidade uma experiência livre de assédio para todos, independentemente de idade, tamanho corporal, deficiência, etnia, características sexuais, identidade de gênero e expressão, nível de experiência, educação, status socioeconômico, nacionalidade, aparência pessoal, raça, religião ou identidade e orientação sexual.
 
-## Our Standards
+## Nossos padrões 
 
-Examples of behavior that contributes to creating a positive environment
-include:
+Exemplos de comportamento que contribuem para criar um ambiente positivo incluem:
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+* Usando linguagem acolhedora e inclusiva
+* Respeitar os diferentes pontos de vista e experiências
+* Aceitando graciosamente críticas construtivas
+* Focar o que é melhor para a projeto 
+* Mostrando empatia com outros membros do projeto
+* Elucidar suas opiniões de forma clara e educada, sempre respeitado os demais 
+* Buscar um respeito quanto as limitides de identidade e privacidade dos demais contribuidores do projeto Questmark 
+* Evitar tópicos que não estão relacionado ao escopo do projeto Questmark ou a disciplina de Métodos de Desenvolvimento de Software 
 
-Examples of unacceptable behavior by participants include:
+Exemplos de comportamento inaceitável pelos participantes incluem:
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
- advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
- address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
- professional setting
+* O uso de linguagem ou imagem sexualizada e atenção ou avanços sexuais indesejados
+*Depreciação ou qualquer outra forma de ofensa e assédio aos mais diversos gêneros, orientações sexuais, nacionalidades, identidade de genero, idade, raça, religião, nacionalidade, deficiência ou qualquer outra caractéristica individual de membros e contribuidores do projeto 
+* Trolling, comentários ofensivos / depreciativos e ataques pessoais ou políticos
+* Contéudos que fujam do proposto por este projeto ou proposto na disciplina de Métodos de Desenvolvimento de Software 
+* Assédio público ou privado
+* Publicando informações privadas de outras pessoas, como um endereço físico ou eletrônico, sem permissão explícita
+* Outra conduta que possa ser considerada inadequada em um ambiente profissional
 
-## Our Responsibilities
+## Nossas Responsabilidades
+Os mantenedores do projeto são responsáveis ​​por esclarecer os padrões de comportamento aceitável e devem tomar as ações corretivas apropriadas e justas em resposta a quaisquer instâncias de comportamento inaceitável.
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
-
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
-
-## Scope
-
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. Representation of a project may be
-further defined and clarified by project maintainers.
-
-## Enforcement
-
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at rocha.carla@gmail.com. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
-
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
-
-## Attribution
-
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
-
-[homepage]: https://www.contributor-covenant.org
-
-For answers to common questions about this code of conduct, see
-https://www.contributor-covenant.org/faq
+Os mantenedores do projeto têm o direito e a responsabilidade de remover, editar ou rejeitar comentários, confirmações, códigos, edições do wiki, questões e outras contribuições que não estejam alinhadas com este Código de Conduta, ou banir temporária ou permanentemente qualquer colaborador de outros comportamentos que eles consideram inapropriado, ameaçador, ofensivo ou prejudicial.
