@@ -9,7 +9,7 @@ const crypto = require('crypto')
 
 
 router.get('/',(req,res)=>{
-    res.render('./usuarios/criarconta')
+    res.render('./usuarios/criar_conta')
 })
 
 router.post('/criarconta',(req,res)=>{
@@ -40,7 +40,7 @@ router.post('/criarconta',(req,res)=>{
 })
 
 router.get('/login',(req,res)=>{
-    res.render('./usuarios/login')
+   res.render('usuarios/login')
 })
 
 router.post('/login',(req,res,next)=>{
