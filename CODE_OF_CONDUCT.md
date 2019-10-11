@@ -56,12 +56,12 @@ Detalhes adicionais de políticas específicas de imposição podem ser publicad
 
 ### Email da equipe do projeto Questmark 
 
-*Danilo danilosouza1704@gmail.com 
-*Gustavo gustanr.13@gmail.com 
-*Lucas lucaslopes05597@gmail.com 
-*Luiz Gustavo lgpinheiro94@gmail.com 
-*Miguel miguelisdemir@gmail.com 
-*Nicalo nicalo63@gmail.com 
+* Danilo danilosouza1704@gmail.com
+* Gustavo gustanr.13@gmail.com
+* Lucas lucaslopes05597@gmail.com
+* Luiz Gustavo lgpinheiro94@gmail.com
+* Miguel miguelisdemir@gmail.com
+* Nicalo nicalo63@gmail.com
 
 Os mantenedores, membros e contribuidores ou qualquer outro envolvido com o desenvolvimento do projeto que não seguem ou aplicam o Código de Conduta em boas condições
 a fé, ética e legalidade, pode enfrentar repercussões temporárias ou de forma permanentes, sendo aplicadas as devidas punições, de acordo com a conduta do infrator, e a gravidade da infração, conforme determinado por outras
