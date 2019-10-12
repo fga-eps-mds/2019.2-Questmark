@@ -1,33 +1,56 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Cadastro</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
-	</head>
-    
-	<body>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../public/login_e_cadastro/login.css">
+    <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- <div class="card">
         <div class="card">
-            <div class="card">
-                <div class="card-body">
-                    <form action="/users/criarconta" method="POST">
-                            <div class="form-group col-md-3">
-                                <label for="nome">Nome:</label>
-                                <input type="text" id="nome"  name="nome" placeholder="Nome" class="form-control">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email"  name="email" placeholder="Email" class="form-control">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="senha">Senha:</label>
-                                <input type="password" id="senha" name="senha" placeholder="Senha" class="form-control">
-                            </div>
-                            <br>
-                        <button class="btn btn-primary" class="form-control">Enviar</button>
-                    </form>
-                </div>
-            </div>  
+            <div class="card-body">
+                <form action="/users/criarconta" method="POST">
+                    <div class="form-group col-md-3">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" placeholder="Senha" class="form-control">
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" class="form-control">Enviar</button>
+                </form>
+            </div>
         </div>
-	</body>
+    </div> -->
+
+    <div class="logo">QM</div>
+        <div class="box">
+            <form class="loginBox" action="/users/criarconta" method="POST">
+                <label for="nome" class="textLabel"><b>Nome</b></label>
+                <input type="text" placeholder="Digite seu nome" name="nome" id="inputBox" class="inputBoxFocus">
+                <label for="email" class="textLabel"><b>E-mail</b></label>
+                <input type="email" placeholder="Digite seu e-mail" name="email" id="inputBox" class="inputBoxFocus">
+                <label for="senha" class="textLabel"><b>Senha</b></label>
+                <input type="password" placeholder="Digite a senha" name="senha"  id="inputBox" class="inputBoxFocus">
+                <label for="confirmPassword" class="textLabel"><b>Confirmar Senha</b></label>
+                <input type="text" placeholder="Confirme a senha" name="confirmPassword"  id="inputBox" class="inputBoxFocus">
+                <div class="hyperLinkBox">
+                    <a href="./login.ejs" id="hyperLinkCreate"class="hyperLinkCreateFocus">Já é cadastrado?</a>
+                </div>
+                <input type="submit" value="Cadastrar" id="buttonLogin" class="buttonLoginFocus">
+            </form>
+        </div>
+</body>
+
 </html>
