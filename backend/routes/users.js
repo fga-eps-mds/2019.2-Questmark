@@ -6,18 +6,15 @@ const modelUsers = mongoose.model("users")
 const passport = require('passport')
 const crypto = require('crypto')
 
-
-
-router.get('/',(req,res)=>{
+router.get('/cadastro',(req,res)=>{
     res.render('./usuarios/criar_conta')
 })
 
-router.post('/criarconta',(req,res)=>{
-
+router.post('/criar_conta',(req,res)=>{
    modelUsers.findOne({email:req.body.email}).then((usuario)=>{
        if(usuario){
-           console.log("usuario já existe")
-           res.redirect('/users')
+           console.log("usuario já existe");
+           res.redirect('/users/cadastro');
        }
        else{
             const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
@@ -27,30 +24,32 @@ router.post('/criarconta',(req,res)=>{
                 senha:senhaCrypto
             })
             novousuario.save().then(()=>{
-                console.log("Salvou")
+                console.log("Usuário cadastrado.")
+                res.redirect('/users/login')
             }).catch((erro)=>{
+                console.log("Erro ao cadastrar usuário.")
                 console.log(erro)
+                res.redirect('/users/cadastro')
             })
-
-           
        }
    })
-
-
 })
 
 router.get('/login',(req,res)=>{
-   res.render('usuarios/login')
-})
+    console.log('Erros: ');
+    console.log(res.locals.error);
+    res.render('usuarios/login');
+});
 
-router.post('/login',(req,res,next)=>{
-    passport.authenticate("local",{
+router.post('/autenticar',(req,res,next)=>{
+    let usuarioAt = passport.authenticate("local",{
         successRedirect: '/forms',
         failureRedirect: '/users/login',
         failureFlash: true
-    })(req,res,next)
-})
+    })(req,res,next);
 
-module.exports = router
+    console.log(usuarioAt);
+});
 
 
+module.exports = router;

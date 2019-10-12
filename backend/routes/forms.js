@@ -7,18 +7,14 @@ const mongoose = require('mongoose')
 const modelUsers = mongoose.model("users")
 const modelFormulario = mongoose.model("formulario")
 
-//rota das opções
+//Rota de listagem de formulários
 router.get('/',(req,res)=>{
     modelUsers.findById(req.user).populate('formulario').then((user)=>{
-        // console.log('usuario',req.user)
-        // console.log('formulario',req.user.formulario)
-       // console.log('aaa',user.formulario.length)
         res.render('./formularios/inicio',{formulario:user.formulario})
-    
     })
 })
 
-//rota que mostra o  layout de  cadastro de um novo formulario
+//Rota de cadastro de um novo formulario
 router.get('/registro',(req,res)=>{
     res.render('./formularios/cadastro_formulario')
 })
@@ -52,8 +48,6 @@ router.post('/registro/salvar',(req,res)=>{
                 res.send({msg: 'Questionário cadastrado!',status: true});
                 console.log("Salvo com sucesso.");
             })
-            
-         
         }).catch((err)=>{
             console.log(err)
             res.send({msg:['Falha ao salvar o questionário.'],status: false});
@@ -61,7 +55,7 @@ router.post('/registro/salvar',(req,res)=>{
     }
 });
 
-//visualizar um questionario e responder
+//Rota de visualizar um questionario e responder
 router.get('/postar/:id',(req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
         res.render("./formularios/visualizar_formulario",{name_quest: formulario.nome,
@@ -71,7 +65,7 @@ router.get('/postar/:id',(req,res)=>{
     
 });
 
-//salvar a resposta do questionar
+//Rota de salvar a resposta do questionar
 router.post('/salvar_resposta/:id',(req,res)=>{
     let resposta = req.body;
     let tmpAnswers = [];
@@ -98,13 +92,14 @@ router.post('/salvar_resposta/:id',(req,res)=>{
    
 })
 
+//Rota de listagem de resposta de um formulário
 router.get('/listar_respostas/:id',(req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
         res.render("./formularios/lista_respostas",{formulario:formulario})
     })
 })
 
-
+//Rota de remoção de um formulário
 router.get('/delete/:id',(req,res)=>{
     var id = req.params.id
     modelFormulario.findOneAndDelete(id).then(()=>{
