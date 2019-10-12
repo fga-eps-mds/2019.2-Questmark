@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../../public/login_e_cadastro/login.css">
+        <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="logo">QM</div>
+        <div class="box">
+            <div class="loginBox" action="/users/criarconta" method="POST">
+                <label for="nome" class="textLabel"><b>Nome</b></label>
+                <input type="text" placeholder="Enter Your Name" name="nome" placeholder="Nome" id="inputBox" class="inputBoxFocus">
+                <label for="email" class="textLabel"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="email" placeholder="Email" id="inputBox" class="inputBoxFocus">
+                <label for="senha" class="textLabel"><b>Senha</b></label>
+                <input type="password" placeholder="Enter Password" name="senha" placeholder="Senha" id="inputBox" class="inputBoxFocus">
+                <label for="confirmPassword" class="textLabel"><b>Confirmar Senha</b></label>
+                <input type="text" placeholder="Enter Password" name="confirmPassword" placeholder="Confirmar senha" id="inputBox" class="inputBoxFocus">
+                <div class="hyperLinkBox">
+                    <a href="./login.ejs" id="hyperLinkCreate"class="hyperLinkCreateFocus">Já é cadastrado?</a>
+                </div>
+                <button id="buttonLogin" class="buttonLoginFocus">Cadastrar</button>
+            </div>
+        </div>
+    </body>
+</html>

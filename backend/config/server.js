@@ -26,7 +26,7 @@ app.use((req,res,next)=>{
 	next()
 })
 //Conexão do MongoDB
-const url = "mongodb://mongo/questmark";
+const url = "mongodb://localhost/questmark";
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
     	.then(() => {
         	console.log('Conectado com sucesso ao banco de dados.');
@@ -60,9 +60,7 @@ app.use('/forms',forms);
 const users = require("../routes/users");
 app.use('/users',users);
 
-
 //var consign = require('consign');
 //consign().include('application/routes').into(app); 
 
 module.exports = app;
-

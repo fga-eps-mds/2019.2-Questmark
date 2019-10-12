@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(to right,#007BFF, rgb(0, 225, 255));
+}
+.logo {
+    color: #ffffff;
+    font-family: 'Knewave';
+    font-size: 15vh;
+    font-weight: bold;
+    text-align: center;
+}
+.box {
+    min-width: auto;  
+    min-height: auto;
+    background-color: rgba(255, 255, 255, 0.411);
+    border-radius: 25px;
+}
+.loginBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.textLabel{
+    color: white;
+    margin: 2vh 0vh 1vh 0vh;
+}
+.label:focus{
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+#inputBox{
+    width: 250px;
+    margin: 0vh 10vh 0vh 10vh;
+    padding: 5px;
+    border-radius: 5px;
+    border:0px;
+    background-color: white;
+    outline: none;
+}
+.inputBoxFocus:focus{
+    width: 250px;
+    margin: 0vh 10vh 0vh 10vh;
+    padding: 5px;
+    border-radius: 5px;
+    border:0px;
+    background-color: white;
+    outline: none;
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+#buttonLogin{
+    margin: 2vh 0vh 5vh 0vh;
+    background-image: linear-gradient(to right,#007BFF, rgb(0, 170, 255));
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px;
+    border-radius: 10px;
+    outline: none;
+}
+.buttonLoginFocus:focus{
+    margin: 2vh 0vh 5vh 0vh;
+    background-image: linear-gradient(to right,#007BFF, rgb(0, 170, 255));
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+.hyperLinkBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 4vh;
+    background-color: rgba(255, 255, 255, 0.459);
+    justify-content: center;
+    padding-bottom: 2vh;
+    border-radius: 15px;
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+#hyperLink{
+    padding: 1px;
+    margin: 2vh 1vh 0vh 1vh;
+    font-size: 10px;    
+    text-decoration: none;
+}
+.hyperLinkFocus:focus{
+    padding: 1px;
+    margin: 2vh 1vh 0vh 1vh;
+    font-size: 10px;    
+    text-decoration: none;
+    text-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+    outline: none;
+}
+#hyperLinkCreate{
+    padding: 1px;
+    margin: 2vh 10vh 0vh 10vh;
+    font-size: 10px;    
+    text-decoration: none;
+}
+.hyperLinkCreateFocus:focus{
+    padding: 1px;
+    margin: 2vh 10vh 0vh 10vh;
+    font-size: 10px;    
+    text-decoration: none;
+    outline: none;
+    text-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
