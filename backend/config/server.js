@@ -9,6 +9,7 @@ const passport = require('passport')
 require('../controllers/auth')(passport)
 
 
+
 //Configurando a sessão 
 app.use(session({
 	secret: "questmarkmdseps2019.2",
@@ -25,7 +26,7 @@ app.use((req,res,next)=>{
 	next()
 })
 //Conexão do MongoDB
-const url = "mongodb://localhost/questmark";
+const url = "mongodb://mongo/questmark";
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
     	.then(() => {
         	console.log('Conectado com sucesso ao banco de dados.');
@@ -36,8 +37,10 @@ mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedT
 //Definindo EJS como motor de geração de views.
 app.set('view engine','ejs');
 
+app.set('views', path.join(__dirname + '../../../frontend/', 'views'));
+console.log(__dirname)
 //Configuração para utilizar arquivos estáticos nas views 
-app.use(express.static(path.join("public")));
+app.use(express.static(path.join(__dirname + "../../../frontend/public")));
 //Incluindo body-parser como Middleware
 app.use(bodyParser.urlencoded({extended:true}));
 
