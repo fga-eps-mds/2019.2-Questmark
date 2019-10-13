@@ -9,16 +9,27 @@ const modelFormulario = mongoose.model("formulario")
 
 //Rota de listagem de formulários
 router.get('/',(req,res)=>{
-    modelUsers.findById(req.user).populate('formulario').then((user)=>{
-        res.render('./formularios/inicio',{formulario:user.formulario})
-    })
-})
+    if(req.user){
+        modelUsers.findById(req.user).populate('formulario').then((user)=>{
+            res.render('./formularios/inicio',{formulario:user.formulario});
+        });
+    }
+    else{
+        res.redirect('/users/login');
+    }
+});
 
 //Rota de cadastro de um novo formulario
 router.get('/registro',(req,res)=>{
-    res.render('./formularios/cadastro_formulario')
-})
+    if(req.user){
+        res.render('./formularios/cadastro_formulario');
+    }
+    else{
+        res.redirect('/users/login');
+    }
+});
 
+//Rota para salvar novo formulário
 router.post('/registro/salvar',(req,res)=>{
     let dados = req.body;
     var erros = [];
@@ -62,10 +73,9 @@ router.get('/postar/:id',(req,res)=>{
                                                           copy_html: formulario.data_quest.copy_html, 
                                                           id: formulario._id});
     });
-    
 });
 
-//Rota de salvar a resposta do questionar
+//Rota de salvar a resposta do questionário
 router.post('/salvar_resposta/:id',(req,res)=>{
     let resposta = req.body;
     let tmpAnswers = [];
@@ -90,14 +100,14 @@ router.post('/salvar_resposta/:id',(req,res)=>{
         }
     });
    
-})
+});
 
 //Rota de listagem de resposta de um formulário
 router.get('/listar_respostas/:id',(req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
         res.render("./formularios/lista_respostas",{formulario:formulario})
     })
-})
+});
 
 //Rota de remoção de um formulário
 router.get('/delete/:id',(req,res)=>{
@@ -109,6 +119,6 @@ router.get('/delete/:id',(req,res)=>{
         console.log(err)
         res.redirect('/forms')
     })
-})
+});
 
 module.exports = router;

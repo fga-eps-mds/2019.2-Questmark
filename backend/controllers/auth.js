@@ -12,7 +12,6 @@ module.exports = function(passport){
             if(!usuario){
                 return done(null,false,{message:"Usuário não existe."});
             }else{
-                
                 //Verificação da senha
                 const senhaCrypto = crypto.createHash('md5').update(senha).digest('hex');
                 if(usuario.senha === senhaCrypto){

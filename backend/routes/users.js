@@ -32,8 +32,8 @@ router.post('/criar_conta',(req,res)=>{
                 res.redirect('/users/cadastro')
             })
        }
-   })
-})
+   });
+});
 
 router.get('/login',(req,res)=>{
     console.log('Erros: ');
