@@ -19,7 +19,7 @@ router.get('/',(req,res)=>{
 })
 
 //rota que mostra o  layout de  cadastro de um novo formulario
-router.get('c',(req,res)=>{
+router.get('/registro',(req,res)=>{
     res.render("../../frontend/views/formularios/cadastro_formulario.ejs");
 })
 
