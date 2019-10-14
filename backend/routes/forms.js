@@ -13,14 +13,14 @@ router.get('/',(req,res)=>{
         // console.log('usuario',req.user)
         // console.log('formulario',req.user.formulario)
        // console.log('aaa',user.formulario.length)
-        res.render('../../frontend/views/formularios/inicio',{formulario:user.formulario})
+        res.render('./formularios/inicio',{formulario:user.formulario})
     
     })
 })
 
 //rota que mostra o  layout de  cadastro de um novo formulario
 router.get('/registro',(req,res)=>{
-    res.render("../../frontend/views/formularios/cadastro_formulario.ejs");
+    res.render("./formularios/cadastro_formulario.ejs");
 })
 
 router.post('/registro/salvar',(req,res)=>{
@@ -64,7 +64,7 @@ router.post('/registro/salvar',(req,res)=>{
 //visualizar um questionario e responder
 router.get('/postar/:id',(req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
-        res.render("../../frontend/views/formularios/visualizar_formulario",{name_quest: formulario.nome,
+        res.render("./formularios/visualizar_formulario",{name_quest: formulario.nome,
                                                           copy_html: formulario.data_quest.copy_html, 
                                                           id: formulario._id});
     });
@@ -100,7 +100,7 @@ router.post('/salvar_resposta/:id',(req,res)=>{
 
 router.get('/listar_respostas/:id',(req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
-        res.render("../../frontend/views/formularios/lista_respostas",{formulario:formulario})
+        res.render("./formularios/lista_respostas",{formulario:formulario})
     })
 })
 
