@@ -1,0 +1,32 @@
+body {
+    margin-top: 8.5vh;
+    background-color: #0E3D57;
+}
+
+.tituloPagina{
+    display: flex;
+    flex-direction: column;    
+    text-align: center;
+    color: white;
+    
+ 
+}
+
+.infoBlock{
+    display: flex;
+    flex-direction: row;;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 70vh;
+}
+
+.Infocard{
+    text-align: center;
+    background-color: white;
+    width: 45vh;
+    height: 30vh;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: #2398D6;
+    border-style: solid;
+}
