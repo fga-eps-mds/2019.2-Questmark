@@ -37,9 +37,13 @@ router.post('/criar_conta',(req,res)=>{
 });
 
 router.get('/login',(req,res)=>{
-    console.log('Erros: ');
-    console.log(res.locals.error);
-    res.render('usuarios/login',{validacao: {},email: []});
+    if(res.locals.error.length > 0){
+      let [erro,userEmail] = res.locals.error[0].split('Email:'); 
+      res.render('usuarios/login',{validacao: [{msg: erro}],email: userEmail});
+    }
+    else{
+      res.render('usuarios/login',{validacao: {},email: []});
+    }
 });
 
 router.post('/autenticar',
@@ -58,13 +62,12 @@ router.post('/autenticar',
       return;
     }
     
-    let usuarioAt = passport.authenticate("local",{
+    passport.authenticate("local",{
         successRedirect: '/forms',
         failureRedirect: '/users/login',
         failureFlash: true
     })(req,res,next);
 
-    console.log(usuarioAt);
 });
 
 

@@ -10,7 +10,7 @@ module.exports = function(passport){
         modelUsuario.findOne({email:email}).then((usuario)=>{
             //Verificação do de email no bd
             if(!usuario){
-                return done(null,false,{message:"Usuário não existe."});
+                return done(null,false,{message:`Usuário não existe.Email:${email}`});
             }else{
                 //Verificação da senha
                 const senhaCrypto = crypto.createHash('md5').update(senha).digest('hex');
@@ -18,7 +18,7 @@ module.exports = function(passport){
                     return done(null,usuario);
                 }
                 else{
-                    return done(null,false,{message:"A senha inserida está incorreta."});  
+                    return done(null,false,{message:`A senha inserida está incorreta.Email:${email}`});  
                 }
             }
         });
@@ -28,7 +28,7 @@ module.exports = function(passport){
     passport.serializeUser((usuario,done)=>{
         done(null,usuario.id)
     });
-    //procura um usuario pelo id dele
+    //procura um usuario pelo id 
     passport.deserializeUser((id,done)=>{
         modelUsuario.findById(id,(err,usuario)=>{
             done(err,usuario)
