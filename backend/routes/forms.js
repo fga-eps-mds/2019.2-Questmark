@@ -104,21 +104,31 @@ router.post('/salvar_resposta/:id',(req,res)=>{
 
 //Rota de listagem de resposta de um formulário
 router.get('/listar_respostas/:id',(req,res)=>{
-    modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
-        res.render("./formularios/lista_respostas",{formulario:formulario})
-    })
+    if(req.user){
+        modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
+            res.render("./formularios/lista_respostas",{formulario:formulario})
+        })
+    }
+    else{
+        res.redirect('/users/login');
+    }
 });
 
 //Rota de remoção de um formulário
 router.get('/delete/:id',(req,res)=>{
-    var id = req.params.id
-    modelFormulario.findOneAndDelete(id).then(()=>{
-        console.log('deletado')
-        res.redirect('/forms')
-    }).catch((err)=>{
-        console.log(err)
-        res.redirect('/forms')
-    })
+    if(req.user){
+        let id = req.params.id;
+        modelFormulario.findOneAndDelete(id).then(()=>{
+            console.log('deletado')
+            res.redirect('/forms')
+        }).catch((err)=>{
+            console.log(err)
+            res.redirect('/forms')
+        });
+    }
+    else{
+        res.redirect('/users/login');
+    }
 });
 
 module.exports = router;
