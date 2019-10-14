@@ -1,10 +1,11 @@
-const express = require('express')
-const router = express.Router()
-const mongoose = require('mongoose')
-require('../models/Users')
-const modelUsers = mongoose.model("users")
-const passport = require('passport')
-const crypto = require('crypto')
+const express = require('express');
+const router = express.Router();
+require('../models/Users');
+const mongoose = require('mongoose');
+const modelUsers = mongoose.model("users");
+const crypto = require('crypto');
+const passport = require('passport');
+const { check, validationResult } = require('express-validator');
 
 router.get('/cadastro',(req,res)=>{
     res.render('./usuarios/criar_conta')
@@ -41,7 +42,18 @@ router.get('/login',(req,res)=>{
     res.render('usuarios/login');
 });
 
-router.post('/autenticar',(req,res,next)=>{
+router.post('/autenticar',
+  [
+      //Validação dos campos 
+      check('email').not().isEmpty().withMessage('O campo email não deve ser vazio.'),
+      check('senha').not().isEmpty().withMessage('O campo senha não deve ser vazio.')
+  ],
+  (req,res,next)=>{
+    let dadosLogin = req.body;
+
+    let erros = validationResult(req);
+    console.log(erros);
+    
     let usuarioAt = passport.authenticate("local",{
         successRedirect: '/forms',
         failureRedirect: '/users/login',

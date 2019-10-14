@@ -8,7 +8,7 @@ module.exports = function(passport){
     //criando uma sessão 
     passport.use(new local({usernameField: 'email',passwordField: 'senha'},(email,senha,done)=>{
         modelUsuario.findOne({email:email}).then((usuario)=>{
-            //Verificação dos dados de email no bd
+            //Verificação do de email no bd
             if(!usuario){
                 return done(null,false,{message:"Usuário não existe."});
             }else{
