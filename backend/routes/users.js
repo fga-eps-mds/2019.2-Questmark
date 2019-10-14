@@ -8,7 +8,7 @@ const crypto = require('crypto')
 
 
 router.get('/',(req,res)=>{
-    res.render('../../frontend/views/usuarios/criar_conta')
+    res.render('./usuarios/criar_conta')
 });
 router.post('/criarconta',(req,res)=>{
    modelUsers.findOne({email:req.body.email}).then((usuario)=>{
@@ -34,7 +34,7 @@ router.post('/criarconta',(req,res)=>{
 
 });
 router.get('/login',(req,res)=>{
-   res.render('../../frontend/views/usuarios/login');
+   res.render('./usuarios/login');
 });
 
 router.post('/login',(req,res,next)=>{
