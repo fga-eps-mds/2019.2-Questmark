@@ -26,8 +26,7 @@ app.use((req,res,next)=>{
 	next()
 })
 //Conexão do MongoDB
-// const url = "mongodb://mongo/questmark";
-const url = "mongodb://localhost/questmark";
+const url = "mongodb://mongo/questmark";
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
     	.then(() => {
         	console.log('Conectado com sucesso ao banco de dados.');
