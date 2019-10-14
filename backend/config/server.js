@@ -22,7 +22,6 @@ app.use((req,res,next)=>{
 	res.locals.user = req.user || null; // armazena dados do usuario logado pega do passport//se caso não houver, é null
 	res.locals.error = req.flash("error");
 	res.locals.sucess = req.flash("sucess");
-	res.locals.email = req.flash();
 	next();
 });
 
