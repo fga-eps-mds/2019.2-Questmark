@@ -39,7 +39,7 @@ router.post('/criar_conta',(req,res)=>{
 router.get('/login',(req,res)=>{
     console.log('Erros: ');
     console.log(res.locals.error);
-    res.render('usuarios/login');
+    res.render('usuarios/login',{validacao: {},email: []});
 });
 
 router.post('/autenticar',
@@ -52,7 +52,11 @@ router.post('/autenticar',
     let dadosLogin = req.body;
 
     let erros = validationResult(req);
-    console.log(erros);
+
+    if(erros.errors.length > 0){
+      res.render('./usuarios/login',{validacao: erros.errors,email: dadosLogin.email});
+      return;
+    }
     
     let usuarioAt = passport.authenticate("local",{
         successRedirect: '/forms',
