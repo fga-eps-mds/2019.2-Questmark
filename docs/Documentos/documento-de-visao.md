@@ -154,8 +154,6 @@ Na plataforma Questmark, é possível :
 * Compartilhar questionários para serem respondidos
 * Visualizar as respostas dos questionários
 * Editar os questionários
-
-![UC_Questmark](../Imagens/uc_questmark.png)
  
 ## 6. Restrições
 * Uso da Internet
@@ -181,3 +179,4 @@ Na plataforma Questmark, é possível :
 |06/09/2019|0.6|Adição do tópico 2 e seus subtópicos|Danillo Souza|
 |07/09/2019|0.7|Adição de proposta de solução do tópico 3.6|Gustavo Nogueira| 
 |17/09/2019|0.8|Adição do diagrama de casos de uso no tópico 5|Gustavo Nogueira| 
+|15/10/2019|0.9|Remoção do diagrama de casos de uso. O mesmo se encontra no documento de arquitetura |Gustavo Nogueira| 

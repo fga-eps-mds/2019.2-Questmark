@@ -63,7 +63,31 @@ As metas do projeto são disponibilizar a criação de um questionário com entr
 
 <!-- ## 4. Diagrama de Pacotes -->
 
-## 4. Qualidade
+## 4. Visão de Casos de Uso
+Lista dos casos de uso:
+- Cadastro de usuários
+- Efetuar login
+- Recuperar senha
+- Cadastrar questionário
+- Visualizar questionário
+- Editar questionário
+- Apagar questionário
+- Responder questionário
+- Consultar painel de ajuda
+- Resgatar link de compartilhamento
+- Gerar dashboard 
+- Visualizar respostas 
+
+## 4.1 Atores
+
+O usuário da plataforma, quando logado, é capaz de realizar o CRUD de questionários, bem como ter acesso as respostas dos seus questionários. 
+O usuário da plataforma, quando deslogado, é capaz de resposder questionários de terceiros.
+
+## 4.2 Diagrama de casos de uso
+
+![UC_Questmark](../Imagens/uc_questmark.png)
+
+## 5. Qualidade
 O software suporta os seguintes requisitos de qualidade:
 
 - Interface amigável e funcional
@@ -74,4 +98,5 @@ O software suporta os seguintes requisitos de qualidade:
 |Data|Versão|Modificação|Autor(es)|
 |:---:|:---:|:---:|:---:|
 |06/09/2019|0.1|Tópicos e subtópicos de 1, 2, 3 e 4 adicionados|Lucas Lopes| 
+|15/10/2019|0.2|Atualização dos tópicos e adição do tópico de Visão de casos de uso|Gustavo Nogueira| 
 
