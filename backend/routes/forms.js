@@ -20,7 +20,7 @@ router.get('/',(req,res)=>{
 
 //rota que mostra o  layout de  cadastro de um novo formulario
 router.get('/registro',(req,res)=>{
-    res.render('./formularios/cadastro_formulario')
+    res.render("./formularios/cadastro_formulario");
 })
 
 router.post('/registro/salvar',(req,res)=>{

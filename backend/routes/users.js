@@ -7,13 +7,10 @@ const passport = require('passport')
 const crypto = require('crypto')
 
 
-
 router.get('/',(req,res)=>{
     res.render('./usuarios/criar_conta')
-})
-
+});
 router.post('/criarconta',(req,res)=>{
-
    modelUsers.findOne({email:req.body.email}).then((usuario)=>{
        if(usuario){
            console.log("usuario já existe")
@@ -31,17 +28,14 @@ router.post('/criarconta',(req,res)=>{
             }).catch((erro)=>{
                 console.log(erro)
             })
-
-           
        }
    })
 
 
-})
-
+});
 router.get('/login',(req,res)=>{
-   res.render('usuarios/login')
-})
+   res.render('./usuarios/login');
+});
 
 router.post('/login',(req,res,next)=>{
     passport.authenticate("local",{
@@ -49,8 +43,12 @@ router.post('/login',(req,res,next)=>{
         failureRedirect: '/users/login',
         failureFlash: true
     })(req,res,next)
-})
+});
 
-module.exports = router
+router.get('/logout', function(req, res){
+    console.log("Deslogado");
+    req.logout();
+    res.redirect('/users/login');
+});
 
-
+  module.exports = router
