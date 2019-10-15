@@ -22,7 +22,7 @@ router.post('/criar_conta',(req,res)=>{
             const novousuario = new modelUsers({
                 nome: req.body.nome,
                 email: req.body.email,
-                senha:senhaCrypto
+                senha: senhaCrypto
             })
             novousuario.save().then(()=>{
                 console.log("Usuário cadastrado.")
@@ -67,8 +67,12 @@ router.post('/autenticar',
         failureRedirect: '/users/login',
         failureFlash: true
     })(req,res,next);
-
 });
 
+router.get('/logout', function(req, res){
+    console.log("Deslogado");
+    req.logout();
+    res.redirect('/users/login');
+});
 
 module.exports = router;
