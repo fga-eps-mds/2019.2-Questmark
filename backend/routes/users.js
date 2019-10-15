@@ -39,7 +39,7 @@ router.post('/criarconta',(req,res)=>{
 })
 
 router.get('/login',(req,res)=>{
-   res.render('../../frontend/views/usuarios/login');
+   res.render('./usuarios/login');
 })
 
 router.post('/login',(req,res,next)=>{
