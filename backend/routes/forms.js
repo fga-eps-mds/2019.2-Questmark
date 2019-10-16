@@ -7,22 +7,29 @@ const mongoose = require('mongoose')
 const modelUsers = mongoose.model("users")
 const modelFormulario = mongoose.model("formulario")
 
-//rota das opções
+//Rota de listagem de formulários
 router.get('/',(req,res)=>{
-    modelUsers.findById(req.user).populate('formulario').then((user)=>{
-        // console.log('usuario',req.user)
-        // console.log('formulario',req.user.formulario)
-       // console.log('aaa',user.formulario.length)
-        res.render('../../frontend/views/formularios/inicio',{formulario:user.formulario})
-    
-    })
-})
+    if(req.user){
+        modelUsers.findById(req.user).populate('formulario').then((user)=>{
+            res.render('./formularios/inicio',{formulario:user.formulario});
+        });
+    }
+    else{
+        res.redirect('/users/login');
+    }
+});
 
-//rota que mostra o  layout de  cadastro de um novo formulario
-router.get('c',(req,res)=>{
-    res.render("../../frontend/views/formularios/cadastro_formulario.ejs");
-})
+//Rota de cadastro de um novo formulario
+router.get('/registro',(req,res)=>{
+    if(req.user){
+        res.render('./formularios/cadastro_formulario');
+    }
+    else{
+        res.redirect('/users/login');
+    }
+});
 
+//Rota para salvar novo formulário
 router.post('/registro/salvar',(req,res)=>{
     let dados = req.body;
     var erros = [];
@@ -52,8 +59,6 @@ router.post('/registro/salvar',(req,res)=>{
                 res.send({msg: 'Questionário cadastrado!',status: true});
                 console.log("Salvo com sucesso.");
             })
-            
-         
         }).catch((err)=>{
             console.log(err)
             res.send({msg:['Falha ao salvar o questionário.'],status: false});
@@ -61,17 +66,16 @@ router.post('/registro/salvar',(req,res)=>{
     }
 });
 
-//visualizar um questionario e responder
+//Rota de visualizar um questionario e responder
 router.get('/postar/:id',(req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
         res.render("../../frontend/views/formularios/visualizar_formulario",{name_quest: formulario.nome,
                                                           copy_html: formulario.data_quest.copy_html, 
                                                           id: formulario._id});
     });
-    
 });
 
-//salvar a resposta do questionar
+//Rota de salvar a resposta do questionário
 router.post('/salvar_resposta/:id',(req,res)=>{
     let resposta = req.body;
     let tmpAnswers = [];
@@ -96,24 +100,35 @@ router.post('/salvar_resposta/:id',(req,res)=>{
         }
     });
    
-})
+});
 
+//Rota de listagem de resposta de um formulário
 router.get('/listar_respostas/:id',(req,res)=>{
-    modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
-        res.render("./formularios/lista_respostas",{formulario:formulario})
-    })
-})
+    if(req.user){
+        modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
+            res.render("./formularios/lista_respostas",{formulario:formulario})
+        })
+    }
+    else{
+        res.redirect('/users/login');
+    }
+});
 
-
+//Rota de remoção de um formulário
 router.get('/delete/:id',(req,res)=>{
-    var id = req.params.id
-    modelFormulario.findOneAndDelete(id).then(()=>{
-        console.log('deletado')
-        res.redirect('/forms')
-    }).catch((err)=>{
-        console.log(err)
-        res.redirect('/forms')
-    })
-})
+    if(req.user){
+        let id = req.params.id;
+        modelFormulario.findOneAndDelete(id).then(()=>{
+            console.log('deletado')
+            res.redirect('/forms')
+        }).catch((err)=>{
+            console.log(err)
+            res.redirect('/forms')
+        });
+    }
+    else{
+        res.redirect('/users/login');
+    }
+});
 
 module.exports = router;
