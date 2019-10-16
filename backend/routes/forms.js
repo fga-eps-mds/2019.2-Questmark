@@ -100,7 +100,7 @@ router.post('/salvar_resposta/:id',(req,res)=>{
 
 router.get('/listar_respostas/:id',(req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
-        res.render("../../frontend/views/formularios/lista_respostas",{formulario:formulario})
+        res.render("./formularios/lista_respostas",{formulario:formulario})
     })
 })
 
