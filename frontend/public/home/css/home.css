@@ -17,7 +17,7 @@ body {
 a:hover,
 a:active,
 a:focus {
-  color: #0a98c0;
+  color: #fff;
   outline: none;
   text-decoration: none;
 }
@@ -51,7 +51,7 @@ p {
 #header.header-pages {
   height: 70px;
   padding: 15px 0;
-  background-color: #0a98c0;
+  background-color: #007DFF;
   box-shadow: 0px 0px 30px rgba(0, 68, 226, 0.3);
 }
 
@@ -67,8 +67,10 @@ p {
   padding: 0;
   line-height: 1;
   font-weight: 400;
+  color: #fff;
   letter-spacing: 3px;
   text-transform: uppercase;
+  
 }
 
 /* cor do nome */
@@ -134,7 +136,7 @@ p {
 }
 
 #intro .intro-info h2 span {
-  color: #1bb1dc;
+  color: #007DFF;
 }
 
 
@@ -152,7 +154,7 @@ p {
   border-radius: 4px;
   transition: 0.5s;
   color: #fff;
-  background: #1bb1dc;
+  background: #007DFF;
   color: #fff;
 }
 /* quando passa o mouse em cima (hover) */
@@ -197,7 +199,7 @@ p {
 
 /*background color da sessão funcções */
 .section-bg {
-  background: #0a98c0;
+  background: #007DFF;
 }
 
 .section-time{
