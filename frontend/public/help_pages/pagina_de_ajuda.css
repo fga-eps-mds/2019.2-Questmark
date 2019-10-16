@@ -1,15 +1,14 @@
 body {
     margin-top: 8.5vh;
-    background-color: #0E3D57;
+    background-image: url("../../public/help_pages/background-image.jpg");    
+    background-size: cover;
 }
 
-.tituloPagina{
-    display: flex;
-    flex-direction: column;    
+.tituloPagina{   
+    margin-top: 10vh;
     text-align: center;
     color: white;
     
- 
 }
 
 .infoBlock{
@@ -17,16 +16,14 @@ body {
     flex-direction: row;;
     justify-content: space-around;
     flex-wrap: wrap;
-    min-height: 70vh;
+    min-height: 70vh;  
+    background: rgba(14, 61, 87, 0.50);  
 }
 
 .Infocard{
-    text-align: center;
-    background-color: white;
-    width: 45vh;
-    height: 30vh;
-    border-radius: 20px;
-    border-width: 1px;
-    border-color: #2398D6;
-    border-style: solid;
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    color: white;
+
 }
