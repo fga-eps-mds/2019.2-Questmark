@@ -46,22 +46,7 @@ router.get('/login',(req,res)=>{
     }
 });
 
-router.post('/autenticar',
-  [
-      //Validação dos campos 
-      check('email').not().isEmpty().withMessage('O campo email não deve ser vazio.'),
-      check('senha').not().isEmpty().withMessage('O campo senha não deve ser vazio.')
-  ],
-  (req,res,next)=>{
-    let dadosLogin = req.body;
-
-    let erros = validationResult(req);
-
-    if(erros.errors.length > 0){
-      res.render('./usuarios/login',{validacao: erros.errors,email: dadosLogin.email});
-      return;
-    }
-    
+router.post('/autenticar',(req,res,next)=>{
     passport.authenticate("local",{
         successRedirect: '/forms',
         failureRedirect: '/users/login',
