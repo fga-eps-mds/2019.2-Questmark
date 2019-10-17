@@ -55,9 +55,7 @@ router.post('/autenticar',
   (req,res,next)=>{
     let dadosLogin = req.body;
 
-router.get('/login',(req,res)=>{
-   res.render('./usuarios/login');
-})
+    let erros = validationResult(req);
 
     if(erros.errors.length > 0){
       res.render('./usuarios/login',{validacao: erros.errors,email: dadosLogin.email});
