@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="./help_pages/pagina_de_ajuda.css">
+</head>
+<%- include ./partials/Header.ejs%>
+<body>
+    <div class="tituloPagina">
+        <h1>Sobre o Questmark</h1>
+    </div>
+
+    <div class="infoBlock">
+        <div class="Infocard">
+            <h2>O que é?</h2>
+            <p>Questmark é uma plataforma online para a criação de questionários, onde você escreve em Markdown!</p>
+            <p>Os questionários criados podem ser compartilhados para que sejam respondido e, no final, você terá
+                acesso a uma dashboard com as respostas e suas estatísticas!</p>
+
+            <h2>Uso</h2>
+            <ul>
+                <li> Para criar um campo de texto : name = ___ OU name = ___[50]</li>
+                <br />
+                <li> Para adicionar um 'radio button' : sex = () male () female</li>
+                <br />
+                <li> Para adicionar uma Checkbox : phones = [] Android [x] iPhone [x] Blackberry</li>
+                <br />
+                <li> Para adicionar um dropdown : city = {BOS, SFO, (NYC)}</li>
+                <br />
+                <li> Para definir os campos obrigatórios, basta inserir um '*' : zip code* = ___</li>
+            </ul>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

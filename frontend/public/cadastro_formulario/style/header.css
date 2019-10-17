@@ -1,5 +1,5 @@
 header {
-    height: 8.5%;
+    min-height: 8.5vh;
     position: fixed;
     top: 0;
     right: 0;

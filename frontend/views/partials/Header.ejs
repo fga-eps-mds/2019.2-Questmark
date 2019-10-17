@@ -1,0 +1,27 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
+</head>
+<header>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" id="logo">QM</a>
+        <a href="#news">Opções</a>
+        <a href="#contact">Ajuda</a>
+        <a href="#about">Logout</a>
+        <a href="javascript:void(1);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</header>

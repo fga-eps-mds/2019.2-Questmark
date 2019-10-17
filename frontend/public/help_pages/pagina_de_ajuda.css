@@ -1,0 +1,27 @@
+body {
+    margin-top: 8.5vh;
+    background-image: url("../../public/help_pages/background-image.jpg");    
+    background-size: cover;
+}
+
+.tituloPagina{   
+    margin-top: 10vh;
+    text-align: center;
+    color: white;    
+}
+
+.infoBlock{
+    display: flex;
+    flex-direction: row;;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 70vh;  
+    background: rgba(14, 61, 87, 0.85);  
+}
+
+.Infocard{
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+    color: white;
+}
