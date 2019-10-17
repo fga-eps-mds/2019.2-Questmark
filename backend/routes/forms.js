@@ -69,7 +69,7 @@ router.post('/registro/salvar',(req,res)=>{
 //Rota de visualizar um questionario e responder
 router.get('/postar/:id',(req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=>{
-        res.render("../../frontend/views/formularios/visualizar_formulario",{name_quest: formulario.nome,
+        res.render("./formularios/visualizar_formulario",{name_quest: formulario.nome,
                                                           copy_html: formulario.data_quest.copy_html, 
                                                           id: formulario._id});
     });
