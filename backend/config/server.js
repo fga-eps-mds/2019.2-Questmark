@@ -51,7 +51,7 @@ app.use(express.json());
 //----------Rotas----------
  //Página inicial
 app.get("/",(req,res)=>{
-	res.send('Página inicial');
+	res.render('./home/home');
  });
 
 //Rotas secundarias (sub-rotas)
