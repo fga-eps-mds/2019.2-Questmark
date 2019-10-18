@@ -1,0 +1,7 @@
+function passwordValidation(){
+	
+}
+
+function emailValidation(){
+	
+}

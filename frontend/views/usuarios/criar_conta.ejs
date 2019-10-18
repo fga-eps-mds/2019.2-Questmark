@@ -15,13 +15,13 @@
     <div class="box">
         <form class="loginBox" action="/users/criar_conta" method="POST">
             <label for="nome" class="textLabel"><b>Nome</b></label>
-            <input type="text" placeholder="Digite seu nome" name="nome" id="inputBox" class="inputBoxFocus">
+            <input type="text" placeholder="Digite seu nome" name="nome" id="inputBox" class="inputBoxFocus" required>
             <label for="email" class="textLabel"><b>E-mail</b></label>
-            <input type="email" placeholder="Digite seu e-mail" name="email" id="inputBox" class="inputBoxFocus">
+            <input type="email" placeholder="Digite seu e-mail" name="email" id="inputBox" class="inputBoxFocus" required>
             <label for="senha" class="textLabel"><b>Senha</b></label>
-            <input type="password" placeholder="Digite a senha" name="senha" id="inputBox" class="inputBoxFocus">
-            <!-- <label for="confirmPassword" class="textLabel"><b>Confirmar Senha</b></label> -->
-            <!-- <input type="text" placeholder="Confirme a senha" name="confirmPassword" id="inputBox" class="inputBoxFocus"> -->
+            <input type="password" placeholder="Digite a senha" name="senha" id="inputBox" class="inputBoxFocus" required>
+            <label for="confirmPassword" class="textLabel"><b>Confirmar Senha</b></label>
+            <input type="text" placeholder="Confirme a senha" name="confirmPassword" id="inputBox" class="inputBoxFocus" required>
             <div class="hyperLinkBox">
                 <a href="/users/login" id="hyperLinkCreate" class="hyperLinkCreateFocus">Já é cadastrado?</a>
             </div>
