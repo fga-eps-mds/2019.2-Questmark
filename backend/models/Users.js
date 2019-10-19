@@ -8,11 +8,13 @@ const Usuario = new Schema({
     },
     email:{
         type:String,
-        required:true
+        required:true,
+        unique: true,
     },
     senha:{
         type: String,
-        required: true
+        required: true,
+        minlength: 6
     },
     admin:{
         type: Number,
