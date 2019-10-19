@@ -4,20 +4,28 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Cadastro</title>
-    
+
     <!-- Estilos -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/login_e_cadastro/styles/login_e_cadastro.css">
     <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="/login_e_cadastro/javascript/form_validation.js"></script>
-    
+
 </head>
 
 <body>
@@ -27,6 +35,13 @@
             <label for="nome" class="textLabel"><b>Nome</b></label>
             <input type="text" placeholder="Digite seu nome" name="nome" id="inputBox" class="inputBoxFocus" required>
             <label for="email" class="textLabel"><b>E-mail</b></label>
+
+            <div class="divVerificaElemento">
+                <input type="email" placeholder="Digite seu e-mail" name="email" onblur="emailValidation(this.value)"
+                    class="inputBoxFocus" id="inputBox" required style="margin: 0px;">
+                <img src="/login_e_cadastro/images/check.png" class="iconeVerificacao">
+
+            </div>
             <!--s
             <div align="center">
                         <input type="email" placeholder="Digite seu e-mail" name="email" 
@@ -38,7 +53,7 @@
                     style="width: 7%;display: inline;">    
             </div>
             -->
-            <table>
+            <!-- <table>
                 <tr>
                     <td style="background-color: black;">
                         <input type="email" placeholder="Digite seu e-mail" name="email" 
@@ -51,8 +66,8 @@
                         style="width: 10%;padding: 0px;">    
                     </td>
                 </tr>
-            </table>
-            
+            </table> -->
+
             <!--
             <div class="">
             <div class="row" style="background-color: red;">
@@ -67,11 +82,13 @@
             </div>
             </div>
             -->
-            
+
             <label for="senha" class="textLabel"><b>Senha</b></label>
-            <input type="password" placeholder="Digite a senha" name="senha" id="inputBox" class="inputBoxFocus" required>
+            <input type="password" placeholder="Digite a senha" name="senha" id="inputBox" class="inputBoxFocus"
+                required>
             <label for="confirmPassword" class="textLabel"><b>Confirmar Senha</b></label>
-            <input type="password" placeholder="Confirme a senha" name="confirmPassword" id="inputBox" class="inputBoxFocus" required>
+            <input type="password" placeholder="Confirme a senha" name="confirmPassword" id="inputBox"
+                class="inputBoxFocus" required>
             <div class="hyperLinkBox">
                 <a href="/users/login" id="hyperLinkCreate" class="hyperLinkCreateFocus">
                     Já é cadastrado?
