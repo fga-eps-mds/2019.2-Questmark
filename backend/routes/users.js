@@ -14,8 +14,8 @@ router.get('/cadastro',(req,res)=>{
 router.post('/criar_conta',(req,res)=>{
    modelUsers.findOne({email:req.body.email}).then((usuario)=>{
        if(usuario){
-           console.log("usuario já existe");
-           res.redirect('/users/cadastro');
+          console.log("usuario já existe");
+          res.redirect('/users/cadastro');
        }
        else{
             const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
@@ -34,6 +34,19 @@ router.post('/criar_conta',(req,res)=>{
             })
        }
    });
+});
+
+router.post('/check_email',(req,res) =>{
+  
+  modelUsers.findOne({email:req.body.email}).then((usuario) => {
+      if(usuario){
+        res.send({check: false});
+      }
+      else{
+        res.send({check: true});
+      }
+  });
+
 });
 
 router.get('/login',(req,res)=>{
