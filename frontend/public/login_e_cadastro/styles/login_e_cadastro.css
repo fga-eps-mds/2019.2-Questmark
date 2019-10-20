@@ -18,7 +18,8 @@ body {
     background-color: rgba(255, 255, 255, 0.411);
     border-radius: 25px;
 }
-.loginBox{
+.loginBox{  
+    width: 30em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,4 +128,11 @@ body {
     height: 4vh;
     margin-left: 1vh;
     visibility: hidden;
+}
+
+.alertText{
+    color: red;
+    font-size: 10pt;
+    margin-left: 1em; 
+    font-weight: bolder;
 }
