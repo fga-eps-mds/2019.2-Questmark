@@ -5,16 +5,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Cadastro</title>
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="/login_e_cadastro/styles/login_e_cadastro.css">
-    <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
-
-    <!-- JQuery -->
+    <!-- JQuery  -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
     </script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/login_e_cadastro/styles/login_e_cadastro.css">
+    <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
 
 </head>
 
@@ -52,6 +55,24 @@
                 Cadastrar
             </button>
         </form>
+    </div>
+
+    <!-- Modal de Feedback -->
+    <div class="modal fade" id="modalFeedback" tabindex="-1" role="dialog" 
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div id="modalHeader">
+            <h5 class="modal-title" id="modalLabel">Título</h5>
+          </div>
+          <div id='modalBody' class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="btnClose" data-dismiss="modal">Texto Btn</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Script de submissão e validação do form -->

@@ -20,11 +20,11 @@ router.post('/criar_conta',(req,res)=>{
     })
     novousuario.save().then(()=>{
         console.log("Usuário cadastrado.");
-        res.send({msg: 'Cadastro concluído!'}); 
+        res.send({check: true,msg: 'Cadastro concluído com sucesso!'}); 
     }).catch((erro)=>{
         console.log("Erro ao cadastrar usuário.");
         console.log(erro);
-        res.send({msg: 'Erro ao cadastrar usuário.'}); 
+        res.send({check: false,msg: 'Erro ao cadastrar usuário.'}); 
     });
 });
 
