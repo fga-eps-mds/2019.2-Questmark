@@ -115,15 +115,16 @@ body {
     text-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
 }
 
-.divVerificaElemento{
+.divField{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-left: 5vh
+    margin-left: 5vh;
 }
 
-.iconeVerificacao{
+.verificationIcon{
     width: 4vh;
     height: 4vh;
-    margin-left: 1vh
+    margin-left: 1vh;
+    visibility: hidden;
 }
