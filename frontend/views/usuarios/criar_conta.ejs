@@ -6,57 +6,56 @@
     <title>Cadastro</title>
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="/login_e_cadastro/styles/login_e_cadastro.css">
     <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
-    <!-- Scripts -->
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="/login_e_cadastro/javascript/form_validation.js"></script>
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
 
 </head>
 
 <body>
     <div class="logo">QM</div>
     <div class="box">
-        <form class="loginBox" action="/users/criar_conta" method="POST">
+        <form id="formUser" class="loginBox" action="/users/criar_conta" method="POST">
+            
             <label for="nome" class="textLabel"><b>Nome</b></label>
-            <input type="text" placeholder="Digite seu nome" name="nome" id="inputBox" class="inputBoxFocus" required>
-            <label for="email" class="textLabel"><b>E-mail</b></label>
+            <input type="text" placeholder="Digite seu nome" name="nome" id="" 
+            class="inputBox inputBoxFocus" required>
 
+            <label for="email" class="textLabel"><b>E-mail</b></label>
             <div class="divField">
                 <input type="email" placeholder="Digite seu e-mail" name="email" 
-                onblur="emailValidation(this.value)" class="inputBoxFocus" id="inputBox"
-                style="margin: 0px;" required>
+                onblur="emailValidation(this.value)" class="inputBox inputBoxFocus"
+                style="margin: 0px;" id="" required>
                 <img id="iconEmail" class="verificationIcon">
             </div>
 
             <label for="senha" class="textLabel"><b>Senha</b></label>
-            <input type="password" placeholder="Digite a senha" name="senha" id="inputBox" class="inputBoxFocus" required>
-            
+            <input type="password" placeholder="Digite a senha" name="senha" id="" 
+            class="inputBox inputBoxFocus" required>
+
             <label for="confirmPassword" class="textLabel"><b>Confirmar Senha</b></label>
-            <input type="password" placeholder="Confirme a senha" name="confirmPassword" id="inputBox"
-                class="inputBoxFocus" required>
+            <input type="password" placeholder="Confirme a senha" name="confirmPassword" 
+            id="" class="inputBox inputBoxFocus" required>
+            
             <div class="hyperLinkBox">
                 <a href="/users/login" id="hyperLinkCreate" class="hyperLinkCreateFocus">
                     Já é cadastrado?
                 </a>
             </div>
-            <input type="submit" value="Cadastrar" id="buttonLogin" class="buttonLoginFocus">
+            <button type="submit" id="buttonLogin" class="buttonLoginFocus">
+                Cadastrar
+            </button>
         </form>
     </div>
+
+    <!-- Script de submissão e validação do form -->
+    <script src="/login_e_cadastro/javascript/form_validation.js"></script>
 </body>
 
 </html>

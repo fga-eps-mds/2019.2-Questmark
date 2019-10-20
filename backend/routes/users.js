@@ -12,41 +12,31 @@ router.get('/cadastro',(req,res)=>{
 })
 
 router.post('/criar_conta',(req,res)=>{
-   modelUsers.findOne({email:req.body.email}).then((usuario)=>{
-       if(usuario){
-          console.log("usuario já existe");
-          res.redirect('/users/cadastro');
-       }
-       else{
-            const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
-            const novousuario = new modelUsers({
-                nome: req.body.nome,
-                email: req.body.email,
-                senha: senhaCrypto
-            })
-            novousuario.save().then(()=>{
-                console.log("Usuário cadastrado.")
-                res.redirect('/users/login')
-            }).catch((erro)=>{
-                console.log("Erro ao cadastrar usuário.")
-                console.log(erro)
-                res.redirect('/users/cadastro')
-            })
-       }
-   });
+    const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
+    const novousuario = new modelUsers({
+        nome: req.body.nome,
+        email: req.body.email,
+        senha: senhaCrypto
+    })
+    novousuario.save().then(()=>{
+        console.log("Usuário cadastrado.");
+        res.send({msg: 'Cadastro concluído!'}); 
+    }).catch((erro)=>{
+        console.log("Erro ao cadastrar usuário.");
+        console.log(erro);
+        res.send({msg: 'Erro ao cadastrar usuário.'}); 
+    });
 });
 
 router.post('/check_email',(req,res) =>{
-  
   modelUsers.findOne({email:req.body.email}).then((usuario) => {
       if(usuario){
-        res.send({check: false});
+        res.send({checkEmail: false});
       }
       else{
-        res.send({check: true});
+        res.send({checkEmail: true});
       }
   });
-
 });
 
 router.get('/login',(req,res)=>{

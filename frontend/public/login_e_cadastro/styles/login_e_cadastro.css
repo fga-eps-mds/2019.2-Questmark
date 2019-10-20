@@ -30,7 +30,7 @@ body {
 .label:focus{
     box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
 }
-#inputBox{
+.inputBox{
     width: 250px;
     margin: 0vh 10vh 0vh 10vh;
     padding: 5px;
