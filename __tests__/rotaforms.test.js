@@ -22,8 +22,8 @@ describe('Rotas', () => {
       request(app).post('/forms/registro/salvar')
       .send(formData)
       .end(function(err, res) {
-       // expect(res.body.nome).toBeTruthy();
-       // expect(res.statusCode).toBeTruthy();
+        expect(res.body.nome).toBeTruthy();
+        expect(res.statusCode).toBeTruthy();
         done();
       
     })
