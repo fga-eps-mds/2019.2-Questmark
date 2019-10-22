@@ -2,28 +2,36 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const Usuario = new Schema({
-    nome:{
+    nome: {
         type: String,
         required: true
     },
-    email:{
-        type:String,
-        required:true
-    },
-    senha:{
+    email: {
         type: String,
         required: true
     },
-    admin:{
+    senha: {
+        type: String,
+        required: true
+    },
+    admin: {
         type: Number,
         required: true,
         default: 0
     },
-    formulario:[{
+    formulario: [{
         type: Schema.Types.ObjectId,
-        ref:"formulario",
-        required: false	
-    }]
+        ref: "formulario",
+        required: false
+    }],
+    passwordResetToken: {
+        type: String,
+        select: false,
+    },
+    passwordResetExpires: {
+        type: Date,
+        select: false
+    }
 })
 
 module.exports = mongoose.model('users', Usuario);
