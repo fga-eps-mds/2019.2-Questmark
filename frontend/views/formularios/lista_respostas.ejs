@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<title><%= formulario.nome %></title>
@@ -20,30 +21,30 @@
 </head>
 
 <body>
-	<h1 style="text-align: center;">Respostas: <%= formulario.nome %><h1/>
-	
-	<ul style="width: 800px;display: block; margin-left: auto; margin-right: auto;
+	<h1 style="text-align: center;">Respostas: <%= formulario.nome %>
+		<h1 />
+		<ul style="width: 800px;display: block; margin-left: auto; margin-right: auto;
 		list-style:none;border: 2px solid black;border-radius: 10px;">
-		
-		<% if(formulario.respostas != undefined){ %>
+			<% if(formulario.respostas != undefined){ %>
 			<% for(let i = 0;i < formulario.respostas.length;i++){ %>
-				<% let labelsArray = getJsonLabels(formulario.respostas[i]); %>					
-				<li style="border: 2px solid blue;margin: 20px;text-align: center;border-radius: 10px;">
-					<% for(let j = 0;j < labelsArray.length;j++){ %>
-						<span style="display: block;float: left;margin-left:15px;">
-							<%= labelsArray[j] %>:
-						</span>
-						<span style="display: block;float: left; margin-left:10px; ">
-							<%= formulario.respostas[i][labelsArray[j]] %>
-						</span>
-						<br>
-					<% } %>
-				</li>
+			<% let labelsArray = getJsonLabels(formulario.respostas[i]); %>
+			<li style="border: 2px solid blue;margin: 20px;text-align: center;border-radius: 10px;">
+				<% for(let j = 0;j < labelsArray.length;j++){ %>
+				<span style="display: block;float: left;margin-left:15px;">
+					<%= labelsArray[j] %>:
+				</span>
+				<span style="display: block;float: left; margin-left:10px; ">
+					<%= formulario.respostas[i][labelsArray[j]] %>
+				</span>
+				<br>
+				<% } %>
+			</li>
+			<a href="/forms/converter_respostas/<%=formulario.id%>">Conversor</a>
 			<% } %>
-		<% }else{ %> 
-				<h3> Sem respostas por enquanto :( </h3>
-		<% } %>
-	</ul>
-	
+			<% }else{ %>
+			<h3> Sem respostas por enquanto :( </h3>
+			<% } %>
+		</ul>
 </body>
+
 </html>
