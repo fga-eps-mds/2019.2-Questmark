@@ -1,7 +1,7 @@
 //importando o mongo
 const mongoose = require('mongoose');
 //importando o model
-const modelFormulario = require('../models/Formulario');
+const modelFormulario = require('../backend/models/Formulario');
 //criando um dado do tpo formulario com todos os campos
 const formData = { nome: 'Lucas', data_quest: [{name_quest: 'Lucas'}], respostas: [ { nome: 'Lucas Lopes', idade: '20' } ], data: new Date()
 };
