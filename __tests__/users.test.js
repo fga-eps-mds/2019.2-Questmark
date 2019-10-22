@@ -41,12 +41,6 @@ describe('Rotas usuarios', () => {
         
     })
 
-    
-
-    
-
-
-
 })
 
 

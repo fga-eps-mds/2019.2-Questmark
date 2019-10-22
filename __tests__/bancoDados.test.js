@@ -7,6 +7,12 @@ const formData = { nome: 'Lucas', data_quest: [{name_quest: 'Lucas'}], respostas
 };
 
 
+const modelUsers = require('../backend/models/Users');
+//criando um dado do tpo formulario com todos os campos
+const user = { nome: 'Lucas', email:'lopes@gmail.com' , senha: "1234567789"};
+
+
+
 //conectar com o mongo
 describe('Conectar com o  mongo', () => {
     beforeAll(async () => {
@@ -17,6 +23,10 @@ describe('Conectar com o  mongo', () => {
                 process.exit(1);
             }
         });
+    afterAll(async () => {
+            await connection.close();
+            await db.close();
+    });
 });
 
 
@@ -69,5 +79,19 @@ it('Não deve criar sem um campo obrigatorio ', async () => {
 });
 
 
+it('Deve criar e salvar um usuario generico', async () => {
+    //criando um user
+    const usuario = new modelUsers(user);
+    //salvando
+    const salvarusuario = await usuario.save();
+    //verificando se o id está definido
+    expect(salvarusuario._id).toBeDefined();
+    //verificando se é igual
+    expect(salvarusuario.nome).toBe(usuario.nome);
+     //verificando se é igual
+    expect(salvarusuario.email).toBe(usuario.email);
+     //verificando se é igual
+    expect(salvarusuario.senha).toBe(usuario.senha);
+});
 
 })
