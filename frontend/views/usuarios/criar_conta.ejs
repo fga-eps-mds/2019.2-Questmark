@@ -40,21 +40,25 @@
                 onblur="emailValidation(this.value)" class="inputBox inputBoxFocus"
                 style="margin: 0px;" id="" required>    
                 <img id="iconEmail" class="verificationIcon">
-                <div id="alertTextEmail" class="alertText">
-                </div>
+            </div>
+			<div id="alertTextEmail" class="alertText">
             </div>
 
             <label for="senha" class="textLabel"><b>Senha</b></label>
             <div class="divField">
-                <input type="password" placeholder="Digite a senha" name="senha" id="" 
-                class="inputBox inputBoxFocus" style="margin: 0px;" required>
+                <input type="password" placeholder="Digite a senha" name="senha" 
+                id="fieldPassword" class="inputBox inputBoxFocus" style="margin: 0px;" 
+                oninput="passwordValidation(this.value)" required>
                 <img id="iconPassword1" class="verificationIcon">
+            </div>
+            <div id="alertTextPassword" class="alertText">
             </div>
 
             <label for="confirmPassword" class="textLabel"><b>Confirmar Senha</b></label>
             <div class="divField">
                 <input type="password" placeholder="Confirme a senha" name="confirmPassword" 
-                id="" class="inputBox inputBoxFocus" style="margin: 0px;" required>
+                id="" class="inputBox inputBoxFocus" style="margin: 0px;" 
+                oninput="confirmPasswordValidation(this.value)" required>                
                 <img id="iconPassword2" class="verificationIcon">
             </div>
         

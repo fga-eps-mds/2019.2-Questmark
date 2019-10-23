@@ -1,41 +1,62 @@
 let checkUserEmail;
-
-function passwordValidation(email){
-
-}
+let checkUserPassword;
+let checkUserCofirmPassword;
 
 function nameValitation(name){
-	if(name === '') showIconValidation(false,document.getElementById('iconName'));
-	else showIconValidation(true,document.getElementById('iconName'));
+	showIconValidation(name,'iconName');
 }
 
 function emailValidation(email){
-	let url_req = '/users/check_email';
+	const url_req = '/users/validar_email';
 	let json = {email};	
-	let icon = document.getElementById('iconEmail');
 	if(email !== '' && email.indexOf('@') !== -1){
 		$.post(url_req,json,(resp) => {
-			showIconValidation(resp.checkEmail,icon);
+			showIconValidation(resp.checkEmail,'iconEmail');
 			if(resp.checkEmail){
-				checkUserEmail = true;
-				showAlertText('',document.getElementById('alertTextEmail'));
+				showAlertText('','alertTextEmail');
 			}
 			else{
-				checkUserEmail = false;
-				showAlertText('Usuário já possui cadastro.',document.getElementById('alertTextEmail'));
+				showAlertText('Usuário já possui cadastro.','alertTextEmail');
 			}
+			checkUserEmail = resp.checkEmail;
 		});	
 	}
 	else{
-		showIconValidation(false,icon);
+		showIconValidation(false,'iconEmail');
 	}
+}
+
+function passwordValidation(password){
+	const url_req = '/users/validar_senha';
+	
+	let json = {senha: password};
+	console.log(json.senha);
+	$.post(url_req,json,(resp) => {
+		if(resp.checkPassword){
+			showAlertText('','alertTextPassword');
+		}
+		else{
+			showAlertText('A senha deve conter letras e números com no mínimo 6 caracteres.','alertTextPassword');
+		}
+		showIconValidation(resp.checkPassword,'iconPassword1');
+		checkUserPassword = resp.checkPassword;
+	});
+}
+
+function confirmPasswordValidation(password){
+	let fieldPassword = document.getElementById('fieldPassword').value;
+	
+	if(checkUserPassword){
+		checkUserCofirmPassword = (password === fieldPassword);	
+		showIconValidation((password === fieldPassword),'iconPassword2');	
+	} 
 }
 
 $("#formUser").on("submit", function(event) {
 	event.preventDefault();
 	let fields = document.getElementsByTagName('input'); 
 	let json = {nome: fields[0].value,email: fields[1].value,senha: fields[2].value};
-	if(checkUserEmail){
+	if((checkUserEmail)&&(checkUserCofirmPassword)){
 		$.post(this.action,json,(resp) => {
 			if(resp.check){
 				document.getElementById('modalLabel').innerHTML = 'Pronto!';
@@ -58,12 +79,15 @@ $("#formUser").on("submit", function(event) {
 		});	
 	}
 	else{
-		showIconValidation(false,document.getElementById('iconEmail'));
-		showAlertText('Usuário já possui cadastro.',document.getElementById('alertTextEmail'));
+		if(!checkUserEmail){
+			showIconValidation(false,'iconEmail');
+			showAlertText('Usuário já possui cadastro.','alertTextEmail');
+		}
 	}
 });
 
-function showIconValidation(check,icon){
+function showIconValidation(check,iconId){
+	let icon = document.getElementById(iconId);
 	if(check){
 		icon.src = '/login_e_cadastro/images/check.png';
 	}
@@ -73,6 +97,7 @@ function showIconValidation(check,icon){
 	icon.style.visibility = 'visible';
 }
 
-function showAlertText(msg,element) {
+function showAlertText(msg,elementId) {
+	const element = document.getElementById(elementId);
 	element.innerHTML = msg;
 }

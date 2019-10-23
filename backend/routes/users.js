@@ -28,7 +28,7 @@ router.post('/criar_conta',(req,res)=>{
     });
 });
 
-router.post('/check_email',(req,res) =>{
+router.post('/validar_email',(req,res) =>{
   modelUsers.findOne({email:req.body.email}).then((usuario) => {
       if(usuario){
         res.send({checkEmail: false});
@@ -37,6 +37,17 @@ router.post('/check_email',(req,res) =>{
         res.send({checkEmail: true});
       }
   });
+});
+
+router.post('/validar_senha',(req,res) =>{
+  const minLength = 6;
+  const regex = /([a-zA-Z]*([0-9]+[a-zA-Z]+)|([a-zA-Z]+[0-9]+)[0-9]*)/;//Regex que para verificar se há letras & números.
+  if(regex.test(req.body.senha) && req.body.senha.length >= minLength){
+    res.send({checkPassword: true});
+  }
+  else{
+    res.send({checkPassword: false});
+  }
 });
 
 router.get('/login',(req,res)=>{
