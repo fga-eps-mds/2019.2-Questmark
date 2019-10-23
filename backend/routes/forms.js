@@ -75,6 +75,19 @@ router.get('/postar/:id',(req,res)=>{
     });
 });
 
+//================================================================================================================================================================================
+//Rota para Editar Formulário
+router.post('/editar_quest/:id', (req,res)=>{
+    modelFormulario.findOne({_id:req.params.id}).then((formulario)=> {
+        res.render("./formularios/visualizar_formulario",{
+            name_quest: formulario.nome,
+            copy_html: formulario.data_quest.copy_html,
+            id: formulario_id})
+    })
+})
+//================================================================================================================================================================================
+
+
 //Rota de salvar a resposta do questionário
 router.post('/salvar_resposta/:id',(req,res)=>{
     let resposta = req.body;
