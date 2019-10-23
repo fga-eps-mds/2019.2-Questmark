@@ -94,4 +94,44 @@ it('Deve criar e salvar um usuario generico', async () => {
     expect(salvarusuario.senha).toBe(usuario.senha);
 });
 
+it('Não deve inserir um usuario sem a senha', async () => {
+    //criando um formulario
+    const usuarioinvalido = new modelUsers({ nome: 'Lucas',email:'lucas@gmail.com'});
+    //salvando o formulario
+    const salvarinvalido = await usuarioinvalido.save();
+    //verificando se é definido (existe)
+    expect(salvarinvalido._id).toBeDefined();
+    //verificar se o campo .resp é indefinido 
+    expect(salvarinvalido.senha).toBeUndefined();
+});
+
+it('Não deve inserir um usuario sem o email', async () => {
+    //criando um formulario
+    const usuarioinvalido = new modelUsers({ nome: 'Lucas',senha:'1234567'});
+    //salvando o formulario
+    const salvarinvalido = await usuarioinvalido.save();
+    //verificando se é definido (existe)
+    expect(salvarinvalido._id).toBeDefined();
+    //verificar se o campo .resp é indefinido 
+    expect(salvarinvalido.senha).toBeUndefined();
+});
+
+it('Não deve criar sem um campo obrigatorio ', async () => {
+    //criando formulario so com o nome
+    const usuariosemobrigatorio = new modelUsers({ nome: 'Lucas' });
+    let err;
+    try {
+        //tenta salvar
+        const salvarusersemobrigatorio = await usuariosemobrigatorio.save();
+        error = salvarusersemobrigatorio;
+    } catch (error) {
+        //salva o erro
+        err = error
+    }
+    expect(err).toBeInstanceOf(mongoose.Error.ValidationError)
+    //verifica que esse campo tinha que ser definido
+    expect(err.errors.email).toBeDefined();
+});
+
+
 })
