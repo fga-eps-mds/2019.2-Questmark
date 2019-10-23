@@ -77,7 +77,7 @@ router.get('/postar/:id',(req,res)=>{
 
 //================================================================================================================================================================================
 //Rota para Editar Formulário
-router.post('/editar_quest/:id', (req,res)=>{
+router.post('/editar_formulario/:id', (req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=> {
         res.render("./formularios/visualizar_formulario",{
             name_quest: formulario.nome,
