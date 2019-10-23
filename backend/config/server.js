@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 //Conexão do MongoDB
-const url = "mongodb://mongo/questmark";
+const url = "mongodb://localhost/questmark";
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
 	.then(() => {
 		console.log('Conectado com sucesso ao banco de dados.');
@@ -36,7 +36,7 @@ mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedT
 
 //Definindo EJS como motor de geração de views.
 app.set('view engine', 'ejs');
-
+mongoose.set('useFindAndModify', false);
 app.set('views', path.join(__dirname + '../../../frontend/', 'views'));
 console.log(__dirname)
 //Configuração para utilizar arquivos estáticos nas views 

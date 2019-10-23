@@ -27,12 +27,13 @@ router.post('/recuperar_senha', async (req, res) => {
         });
 
         mailer.sendMail({
-            to: email,
             from: 'questmark@mds.com.br',
+            to: email,
             template: 'auth/forgot_password',
             context: { token }
         }, (err) => {
             if (err) {
+                console.log(err)
                 return res.status(400).send({ err: 'Falha ao enviar e-mail.' });
             }
             return res.send();
@@ -41,6 +42,8 @@ router.post('/recuperar_senha', async (req, res) => {
         console.log(token, now);
 
     } catch (error) {
+
+        console.log(error)
         res.status(400).send({ error: 'Erro ao tentar recuperar senha.' })
     };
 });
@@ -68,7 +71,7 @@ router.post('/redefinir_senha', async (req, res) => {
 
         await user.save();
 
-        res.send()
+        res.send();
 
     } catch (error) {
         res.status(400).send({ error: 'Erro ao redefinir senha.' })
