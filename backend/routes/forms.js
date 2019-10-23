@@ -77,14 +77,45 @@ router.get('/postar/:id',(req,res)=>{
 
 //================================================================================================================================================================================
 //Rota para Editar Formulário
-router.post('/editar_formulario/:id', (req,res)=>{
+router.get('/editar_formulario/:id', (req,res)=>{
     modelFormulario.findOne({_id:req.params.id}).then((formulario)=> {
-        res.render("./formularios/visualizar_formulario",{
+        res.render("./formularios/editar_formulario",{
             name_quest: formulario.nome,
-            copy_html: formulario.data_quest.copy_html,
-            id: formulario_id})
+            copy_markdown: formulario.data_quest.copy_markdown,
+            id: formulario.id})
     })
 })
+
+router.post('/salvar_edicao/:id', (req,res)=>{
+    let dados = req.body;
+    var erros = [];
+
+    //Validação dos campos
+    if(dados.name_quest == ''){
+        erros.push({erro: "Campo nome está vazio."})
+    }
+    if(dados.copy_markdown == ''){
+        erros.push({erro: "Campo markdown está vazio."})
+    }
+
+    if(erros.length > 0){
+        console.log(erros);
+        res.send({msg: erros, status: false});
+    }
+    else{
+        var formulario = {
+            nome : dados.name_quest,
+            data_quest: dados
+        };  
+        modelFormulario.updateOne({_id: id},{$set: {'respostas' : tmpAnswers }},(err,result) => {
+            if(err)
+                console.log('Erro ao salvar a resposta: ' + err);
+            else
+                console.log('Resposta salva ! Resposta: ' + result);
+            res.redirect('/forms')      
+        });
+    }
+})   
 //================================================================================================================================================================================
 
 

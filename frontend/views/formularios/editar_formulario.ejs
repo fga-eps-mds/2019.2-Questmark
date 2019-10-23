@@ -54,7 +54,7 @@
 	</div>
 
 	<div class="backGround">
-		<form id="form_registro" method="POST" action="/forms/registro/salvar">
+		<form id="form_registro" method="POST" action="/forms/salvar_edicao/<%= id %>">
 			<div>
 				<label for="name_quest" class="textTitleName">Nome: </label>
 				<input type="text" id="name_quest" name="name_quest" placeholder=" Nome do Questionário"
@@ -63,7 +63,9 @@
 			<div class="row">
 				<div style="display: flex; flex-direction: column;">
 					<label for="copy_marskdown" class="textTitles">Conteúdo:</label>
-					<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox"></textarea>
+					<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox">
+                        <%= copy_markdown %>
+                    </textarea>
 				</div>
 				<div style="display: flex; flex-direction: column;">
 					<label class="textTitles">Preview:</label>
@@ -74,7 +76,7 @@
 					placeholder="Saída HTML">
 					</textarea>
 			</div>
-			<button type="submit" class="buttonsView btn btn-success"> Cadastrar </button>
+			<button type="submit" class="buttonsView btn btn-success"> Finalizar Edição </button>
 		</form>
 
 		<button type="submit" onclick="window.location.href='/'" class="buttonsView btn btn-danger"> Cancelar
