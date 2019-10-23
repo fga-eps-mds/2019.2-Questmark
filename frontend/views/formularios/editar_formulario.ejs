@@ -57,14 +57,14 @@
 		<form id="form_registro" method="POST" action="/forms/salvar_edicao/<%= id %>">
 			<div>
 				<label for="name_quest" class="textTitleName">Nome: </label>
-				<input type="text" id="name_quest" name="name_quest" placeholder=" Nome do Questionário"
+				<input type="text" id="name_quest" name="name_quest" value="<%= name_quest %>"
 					class="textBoxName">
 			</div>
 			<div class="row">
 				<div style="display: flex; flex-direction: column;">
 					<label for="copy_marskdown" class="textTitles">Conteúdo:</label>
 					<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox">
-                        <%= copy_markdown %>
+                        <%= copy_markdown%>
                     </textarea>
 				</div>
 				<div style="display: flex; flex-direction: column;">

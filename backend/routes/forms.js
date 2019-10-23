@@ -89,6 +89,7 @@ router.get('/editar_formulario/:id', (req,res)=>{
 router.post('/salvar_edicao/:id', (req,res)=>{
     let dados = req.body;
     var erros = [];
+    const id = req.params.id;
 
     //Validação dos campos
     if(dados.name_quest == ''){
@@ -103,16 +104,12 @@ router.post('/salvar_edicao/:id', (req,res)=>{
         res.send({msg: erros, status: false});
     }
     else{
-        var formulario = {
-            nome : dados.name_quest,
-            data_quest: dados
-        };  
-        modelFormulario.updateOne({_id: id},{$set: {'respostas' : tmpAnswers }},(err,result) => {
+        modelFormulario.updateOne({_id: id},{$set: {'nome' : dados.name_quest, "data_quest": dados}},(err,result) => {
             if(err)
                 console.log('Erro ao salvar a resposta: ' + err);
             else
                 console.log('Resposta salva ! Resposta: ' + result);
-            res.redirect('/forms')      
+                res.send({msg: 'Modificações Salvas com Sucesso',status: true});     
         });
     }
 })   
