@@ -5,10 +5,10 @@ const mongoose = require('mongoose');
 const modelUsers = mongoose.model("users");
 const crypto = require('crypto');
 const passport = require('passport');
-const { check, validationResult } = require('express-validator');
+//const { check, validationResult } = require('express-validator');
 
 router.get('/cadastro',(req,res)=>{
-    res.render('./usuarios/criar_conta')
+    res.render('./usuarios/criar_conta');
 })
 
 router.post('/criar_conta',(req,res)=>{
@@ -41,7 +41,8 @@ router.post('/validar_email',(req,res) =>{
 
 router.post('/validar_senha',(req,res) =>{
   const minLength = 6;
-  const regex = /([a-zA-Z]*([0-9]+[a-zA-Z]+)|([a-zA-Z]+[0-9]+)[0-9]*)/;//Regex que para verificar se há letras & números.
+  //Regex que para verificar se há letras & números.
+  const regex = /([a-zA-Z]*([0-9]+[a-zA-Z]+)|([a-zA-Z]+[0-9]+)[0-9]*)/;
   if(regex.test(req.body.senha) && req.body.senha.length >= minLength){
     res.send({checkPassword: true});
   }
