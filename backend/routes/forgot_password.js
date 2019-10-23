@@ -1,6 +1,7 @@
 const express = require('express');
 const crypto = require('crypto');
 const User = require('../models/Users');
+const mailer = require('../modules/mailer');
 
 const router = express.Router();
 
@@ -23,6 +24,18 @@ router.post('/recuperar_senha', async (req, res) => {
                 passwordResetToken: token,
                 passwordResetExpires: now,
             }
+        });
+
+        mailer.sendMail({
+            to: email,
+            from: 'questmark@mds.com.br',
+            template: 'auth/forgot_password',
+            context: { token }
+        }, (err) => {
+            if (err) {
+                return res.status(400).send({ err: 'Falha ao enviar e-mail.' });
+            }
+            return res.send();
         });
 
         console.log(token, now);
