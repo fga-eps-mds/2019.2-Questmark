@@ -45,7 +45,7 @@ $("#form_registro").on("submit", function(event) {
 
 	$.post(this.action,jsonData,(resp) => {
 		if(resp.status){
-			alert(resp.msg);
+			alert(resp.validacao[0].msg);
 			window.location.href = '/forms/';
 		}
 		else{
@@ -60,9 +60,9 @@ $("#form_registro").on("submit", function(event) {
 			listErr.id = 'lista-erros';
 			
 			//Listagem dos erros
-			resp.msg.forEach((msg) => {
+			resp.validacao.forEach((erro) => {
 				let imsg = document.createElement('li');
-				imsg.innerHTML = msg.erro;
+				imsg.innerHTML = erro.msg;
 				listErr.appendChild(imsg);
 			});
 		}

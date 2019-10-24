@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Registro</title>
+	<link rel="stylesheet" href="/cadastro_formulario/style/novoformulario.css">
+	<link rel="stylesheet" href="/cadastro_formulario/style/header.css">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+		</script>
+
+	<link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
+	<script src="/wmd/wmd.js"></script>
+	<script src="/wmd/showdown.js"></script>
+	<style type="text/css" media="screen">
+		textarea,
+		#notes-preview {
+			border: 1px solid gray;
+		}
+
+		#notes-preview {
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+	</style>
+</head>
+<%- include ../partials/Header.ejs%>
+
+<body>
+
+	<nav class="navbar navbar-light bg-light mt-5">
+		<div class="container">
+			<div class="navbar-brand mx-auto mb-0 h1">
+				<h1>Registro de Questionário</h1>
+			</div>
+		</div>
+	</nav>
+
+	<div id="div-erros" class="row" style="display: none;">
+		<div class="col-md-12">
+			<div id="div-lista-erros" class="alert alert-danger">
+				<strong>Atenção!</strong>
+				<ul id="lista-erros">
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="backGround">
+		<form id="form_registro" method="POST" action="/forms/salvar_edicao/<%= id %>">
+			<div>
+				<label for="name_quest" class="textTitleName">Nome: </label>
+				<input type="text" id="name_quest" name="name_quest" value="<%= name_quest %>"
+					class="textBoxName">
+			</div>
+			<div class="row">
+				<div style="display: flex; flex-direction: column;">
+					<label for="copy_marskdown" class="textTitles">Conteúdo:</label>
+					<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox">
+                        <%= copy_markdown%>
+                    </textarea>
+				</div>
+				<div style="display: flex; flex-direction: column;">
+					<label class="textTitles">Preview:</label>
+					<div class="textBox" id="notes-preview"></div>
+				</div>
+
+				<textarea hidden="hidden" type="text" id="copy_html" name="copy_html" class="form-control"
+					placeholder="Saída HTML">
+					</textarea>
+			</div>
+			<button type="submit" class="buttonsView btn btn-success"> Finalizar Edição </button>
+		</form>
+
+		<button type="submit" onclick="window.location.href='/'" class="buttonsView btn btn-danger"> Cancelar
+		</button>
+	</div>
+
+	<script type="text/javascript">
+		new WMDEditor({
+			input: "notes",
+			button_bar: "notes-button-bar",
+			preview: "notes-preview",
+			output: "copy_html",
+			buttons: "bold italic link  ol ul  heading",
+			modifierKeys: false,
+			autoFormatting: false
+		});
+	</script>
+
+	<!-- Script de submissão do questionário -->
+	<script src="/cadastro_formulario/javascript/functions_submission.js"></script>
+
+</body>
+
+</html>
