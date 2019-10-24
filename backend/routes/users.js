@@ -7,54 +7,54 @@ const crypto = require('crypto');
 const passport = require('passport');
 const { check, validationResult } = require('express-validator');
 
-router.get('/cadastro',(req,res)=>{
+router.get('/cadastro', (req, res) => {
     res.render('./usuarios/criar_conta')
 })
 
-router.post('/criar_conta',(req,res)=>{
-   modelUsers.findOne({email:req.body.email}).then((usuario)=>{
-       if(usuario){
-           console.log("usuario já existe");
-           res.redirect('/users/cadastro');
-       }
-       else{
+router.post('/criar_conta', (req, res) => {
+    modelUsers.findOne({ email: req.body.email }).then((usuario) => {
+        if (usuario) {
+            console.log("usuario já existe");
+            res.redirect('/users/cadastro');
+        }
+        else {
             const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
             const novousuario = new modelUsers({
                 nome: req.body.nome,
                 email: req.body.email,
                 senha: senhaCrypto
             })
-            novousuario.save().then(()=>{
+            novousuario.save().then(() => {
                 console.log("Usuário cadastrado.")
                 res.redirect('/users/login')
-            }).catch((erro)=>{
+            }).catch((erro) => {
                 console.log("Erro ao cadastrar usuário.")
                 console.log(erro)
                 res.redirect('/users/cadastro')
             })
-       }
-   });
+        }
+    });
 });
 
-router.get('/login',(req,res)=>{
-    if(res.locals.error.length > 0){
-      let [erro,userEmail] = res.locals.error[0].split('Email:'); 
-      res.render('usuarios/login',{validacao: [{msg: erro}],email: userEmail});
+router.get('/login', (req, res) => {
+    if (res.locals.error.length > 0) {
+        let [erro, userEmail] = res.locals.error[0].split('Email:');
+        res.render('usuarios/login', { validacao: [{ msg: erro }], email: userEmail });
     }
-    else{
-      res.render('usuarios/login',{validacao: {},email: []});
+    else {
+        res.render('usuarios/login', { validacao: {}, email: [] });
     }
 });
 
-router.post('/autenticar',(req,res,next)=>{
-    passport.authenticate("local",{
+router.post('/autenticar', (req, res, next) => {
+    passport.authenticate("local", {
         successRedirect: '/forms',
         failureRedirect: '/users/login',
         failureFlash: true
-    })(req,res,next);
+    })(req, res, next);
 });
 
-router.get('/logout', function(req, res){
+router.get('/logout', function (req, res) {
     console.log("Deslogado");
     req.logout();
     res.redirect('/users/login');
