@@ -5,35 +5,52 @@ const mongoose = require('mongoose');
 const modelUsers = mongoose.model("users");
 const crypto = require('crypto');
 const passport = require('passport');
-const { check, validationResult } = require('express-validator');
+//const { check, validationResult } = require('express-validator');
 
-router.get('/cadastro', (req, res) => {
-    res.render('./usuarios/criar_conta')
+
+router.get('/cadastro',(req,res)=>{
+    res.render('./usuarios/criar_conta');
 })
 
-router.post('/criar_conta', (req, res) => {
-    modelUsers.findOne({ email: req.body.email }).then((usuario) => {
-        if (usuario) {
-            console.log("usuario já existe");
-            res.redirect('/users/cadastro');
-        }
-        else {
-            const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
-            const novousuario = new modelUsers({
-                nome: req.body.nome,
-                email: req.body.email,
-                senha: senhaCrypto
-            })
-            novousuario.save().then(() => {
-                console.log("Usuário cadastrado.")
-                res.redirect('/users/login')
-            }).catch((erro) => {
-                console.log("Erro ao cadastrar usuário.")
-                console.log(erro)
-                res.redirect('/users/cadastro')
-            })
-        }
+router.post('/criar_conta',(req,res)=>{
+    const senhaCrypto = crypto.createHash('md5').update(req.body.senha).digest('hex');
+    const novousuario = new modelUsers({
+        nome: req.body.nome,
+        email: req.body.email,
+        senha: senhaCrypto
+    })
+    novousuario.save().then(()=>{
+        console.log("Usuário cadastrado.");
+        res.send({check: true,msg: 'Cadastro concluído com sucesso!'}); 
+    }).catch((erro)=>{
+        console.log("Erro ao cadastrar usuário.");
+        console.log(erro);
+        res.send({check: false,msg: 'Erro ao cadastrar usuário.'}); 
     });
+});
+
+router.post('/validar_email',(req,res) =>{
+  modelUsers.findOne({email:req.body.email}).then((usuario) => {
+      if(usuario){
+        res.send({checkEmail: false});
+      }
+      else{
+        res.send({checkEmail: true});
+      }
+  });
+});
+
+router.post('/validar_senha',(req,res) =>{
+  const minLength = 6;
+  //Regex que para verificar se há letras & números.
+  const regex = /([a-zA-Z]*([0-9]+[a-zA-Z]+)|([a-zA-Z]+[0-9]+)[0-9]*)/;
+  if(regex.test(req.body.senha) && req.body.senha.length >= minLength){
+    res.send({checkPassword: true});
+  }
+  else{
+    res.send({checkPassword: false});
+  }
+
 });
 
 router.get('/login', (req, res) => {

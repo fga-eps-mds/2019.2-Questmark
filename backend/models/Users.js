@@ -6,13 +6,15 @@ const Usuario = new Schema({
         type: String,
         required: true
     },
-    email: {
-        type: String,
-        required: true
+    email:{
+        type:String,
+        required:true,
+        unique: true,
     },
     senha: {
         type: String,
-        required: true
+        required: true,
+        minlength: 6
     },
     admin: {
         type: Number,
