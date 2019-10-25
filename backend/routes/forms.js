@@ -130,7 +130,8 @@ router.get('/converter_respostas/:id', (req, res) => {
         }
         modelFormulario.findById(id).then((formulario)=>{
             var csv= arrayToCSV(formulario.respostas)
-            res.attachment('csv.csv');
+            var nome = formulario.nome
+            res.attachment(nome+'.csv');
             console.log(csv)
            res.send(Buffer.from(csv));  
        })
