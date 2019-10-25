@@ -128,6 +128,12 @@ router.get('/converter_respostas/:id', (req, res) => {
                 return str;
             }, str);
         }
+        modelFormulario.findById(id).then((formulario)=>{
+            var csv= arrayToCSV(formulario.respostas)
+            res.attachment('csv.csv');
+            console.log(csv)
+           res.send(Buffer.from(csv));  
+       })
     }
     else {
         res.redirect('/users/login');
