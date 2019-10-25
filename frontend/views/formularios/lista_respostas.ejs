@@ -14,7 +14,6 @@
 			let jsonstr = JSON.stringify(json);
 			let tmpLabels = jsonstr.match(regex1);			
 			tmpLabels.forEach((v,i) => {let tmp = tmpLabels[i].match(regex2); labelsArray[i] = tmp[0];});	
-
 			return labelsArray;
 		}
 	%>
