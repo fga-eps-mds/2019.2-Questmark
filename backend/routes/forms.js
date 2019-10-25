@@ -118,21 +118,16 @@ router.get('/listar_respostas/:id', (req, res) => {
 
 router.get('/converter_respostas/:id', (req, res) => {
     if (req.user) {
-        modelFormulario.findOne({ _id: req.params.id }).then((formulario) => {
-            var array = typeof formulario.respostas != 'object' ? JSON.parse(formulario.respostas) : formulario.respostas;
-            var csv = '';
-            for (var i = 0; i < array.length; i++) {
-                var line = '';
-                for (var index in array[i]) {
-                    if (line != '') line += ','
-
-                    line += array[i][index];
-                }
-                csv += line + '\r\n';
-            }
-
-            console.log("----------Resposta----------\n" + formulario.respostas)
-        });
+        var id = req.params.id
+        function arrayToCSV(objArray) {
+            const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
+            let str = `${Object.keys(array[0]).map(value => `"${value}"`).join(",")}` + '\r\n';
+            let fields = str
+            return array.reduce((str, next) => {
+                str += `${Object.values(next).map(value => `"${value}"`).join(",")}` + '\r\n';
+                return str;
+            }, str);
+        }
     }
     else {
         res.redirect('/users/login');
