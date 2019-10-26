@@ -1,0 +1,46 @@
+body{
+    background: white;
+}
+
+.mainDiv{
+    margin-top: 60px;
+    min-height: 100%;
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.newFormDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.wrapping{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly
+}
+
+.box1{
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+}
+
+.box2{
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.box3{
+    margin-top: 10px;    
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
