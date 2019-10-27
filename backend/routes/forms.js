@@ -84,6 +84,7 @@ router.get('/editar_formulario/:id', (req,res)=>{
             name_quest: formulario.nome,
             copy_markdown: formulario.data_quest.copy_markdown,
             id: formulario.id});
+
     });
 });
 
@@ -149,6 +150,31 @@ router.get('/listar_respostas/:id', (req, res) => {
         modelFormulario.findOne({ _id: req.params.id }).then((formulario) => {
             res.render("./formularios/lista_respostas", { formulario: formulario })
         })
+    }
+    else {
+        res.redirect('/users/login');
+    }
+});
+
+router.get('/converter_respostas/:id', (req, res) => {
+    if (req.user) {
+        var id = req.params.id
+        function arrayToCSV(objArray) {
+            const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
+            let str = `${Object.keys(array[0]).map(value => `"${value}"`).join(",")}` + '\r\n';
+            let fields = str
+            return array.reduce((str, next) => {
+                str += `${Object.values(next).map(value => `"${value}"`).join(",")}` + '\r\n';
+                return str;
+            }, str);
+        }
+        modelFormulario.findById(id).then((formulario)=>{
+            var csv= arrayToCSV(formulario.respostas)
+            var nome = formulario.nome
+            res.attachment(nome+'.csv');
+            console.log(csv)
+           res.send(Buffer.from(csv));  
+       })
     }
     else {
         res.redirect('/users/login');
