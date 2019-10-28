@@ -40,7 +40,7 @@ $("#form_registro").on("submit", function(event) {
 		name_quest: document.getElementById('name_quest').value,
 		copy_html: document.getElementById('copy_html').value,
 		copy_markdown: document.getElementById('notes').value,
-		type_inputs:typeInputs
+		type_inputs: typeInputs
 	};
 
 	$.post(this.action,jsonData,(resp) => {

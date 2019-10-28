@@ -66,12 +66,14 @@ router.post('/registro/salvar',
     }
 );
 
-//Rota de visualizar um questionario e responder
+//Rota de visualizar um questionário e responder
 router.get('/postar/:id', (req, res) => {
     modelFormulario.findOne({ _id: req.params.id }).then((formulario) => {
+        console.log(formulario);
         res.render("./formularios/visualizar_formulario", {
             name_quest: formulario.nome,
             copy_html: formulario.data_quest.copy_html,
+            map_fields: formulario.data_quest.type_inputs,
             id: formulario._id
         });
     });
@@ -147,7 +149,7 @@ router.post('/salvar_resposta/:id', (req, res) => {
 router.get('/listar_respostas/:id', (req, res) => {
     if (req.user) {
         modelFormulario.findOne({ _id: req.params.id }).then((formulario) => {
-            res.render("./formularios/lista_respostas", { formulario: formulario })
+            res.render("./formularios/listar_respostas", { formulario: formulario })
         })
     }
     else {
