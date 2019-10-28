@@ -239,7 +239,7 @@ Showdown.converter = function () {
 			var cleanedOptions = options.trim().replace(/\t/g, ' ');
 			var labelName = cleanedName;
 			var output = `<p><div id="${labelName.toLowerCase()}"><label>${labelName}:</label>`;
-			var optRegex = /\((x?)\)[ \t]*([a-zA-Z0-9 \t_\-]+)/g;
+			var optRegex = /\((x?)\)[ \t]*([\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t_\-]+)/g;	
 			var match = optRegex.exec(cleanedOptions);
 			while (match) {
 				var id = match[2].trim().replace(/\t/g, ' ').replace(/[ \t]/g, '_').toLowerCase();
@@ -284,7 +284,7 @@ Showdown.converter = function () {
 			var cleanedOptions = options.trim().replace(/\t/g, ' ');
 			var labelName = cleanedName;
 			var output = `<p><div id="${labelName.toLowerCase()}"><label>${labelName}:</label>`;
-			var optRegex = /\[(x?)\][ \t]*([\w \t\-]+)/g;
+			var optRegex = /\[(x?)\][ \t]*([\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t\-]+)/g;
 			var match = optRegex.exec(cleanedOptions);
 			while (match) {
 				var id = match[2].trim().replace(/\t/g, ' ').replace(/[ \t]/g, '_').toLowerCase();
