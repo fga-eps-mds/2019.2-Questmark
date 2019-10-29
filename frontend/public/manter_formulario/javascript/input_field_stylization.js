@@ -1,6 +1,7 @@
 
 function apllyClass(arrayElements,classBootstrap){
 	let visited_fields = Array();
+	if(!arrayElements) return;
 	arrayElements.forEach((element) => {
 		if(visited_fields.indexOf(element.name) == -1){
 			let divParent = document.getElementById(`${element.name}`);	
@@ -28,17 +29,21 @@ function stylizeFields(dataInputs){
 	apllyClass(dataInputs.radio,classBootstrap);
 
 	//Text
-	dataInputs.text.forEach((element) => {
-		let domElement = document.getElementById(element.name);
-		domElement.parentNode.className = 'form-inline mx-sm-2';
-		domElement.className = 'form-control mx-sm-2';
-	});
-
+	if(dataInputs.text){
+		dataInputs.text.forEach((element) => {
+			let domElement = document.getElementById(element.name);
+			domElement.parentNode.className = 'form-inline mx-sm-2';
+			domElement.className = 'form-control mx-sm-2';
+		});
+	}
+	
 	//Select
-	dataInputs.select.forEach((element) => {
-		// document.getElementById(element.name).className = 'form-control';
-		let domElement = document.getElementById(element.name);
-		domElement.parentNode.className = 'form-inline mx-sm-2';
-		domElement.className = 'form-control mx-sm-2';			
-	});
+	if(dataInputs.select){
+		dataInputs.select.forEach((element) => {
+			// document.getElementById(element.name).className = 'form-control';
+			let domElement = document.getElementById(element.name);
+			domElement.parentNode.className = 'form-inline mx-sm-2';
+			domElement.className = 'form-control mx-sm-2';			
+		});
+	}
 }
