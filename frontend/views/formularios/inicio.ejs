@@ -19,23 +19,23 @@
 			<div class="formText"><%= formulario[i].nome%></div>
 			<div class="buttonsBox">
 				<a href="/forms/listar_respostas/<%= formulario[i].id %>">
-					<div class="buttonEdit">
-						<i class="fa fa-pencil" style="font-size:20px; color:white; margin-top: 15px;"></i>
+					<div class="buttonForm" style="background: #00AAFF">
+						<i class="fa fa-pencil" id="buttonIcon"></i>
 					</div>
 				</a>
 				<a href="/forms/postar/<%= formulario[i].id %>">
-					<div class="buttonShare">
-						<i class="fas fa-share-alt" style="font-size:20px; color:white; margin-top: 15px"></i>
+					<div class="buttonForm" style="background: #77D353">
+						<i class="fas fa-share-alt" id="buttonIcon"></i>
 					</div>
 				</a>
 				<a href="#">
-					<div class="buttonsGraphs">
-						<i class="fas fa-chart-bar" style="font-size:20px; color:white; margin-top: 15px"></i>
+					<div class="buttonForm" style="background: #4B2CFF">
+						<i class="fas fa-chart-bar" id="buttonIcon"></i>
 					</div>
 				</a>
 				<a href="/forms/delete/<%= formulario[i].id %>">
-					<div class="buttonTrash">
-						<i class="fas fa-trash" style="font-size:20px; color:white; margin-top: 15px"></i>
+					<div class="buttonForm" style="background: #FF2C2C">
+						<i class="fas fa-trash" id="buttonIcon"></i>
 					</div>
 				</a>
 			</div>

@@ -1,3 +1,6 @@
+h1, h2, h3, h4, h5, h6{
+  text-align: center
+}
 .backGround {
   display: flex;
   justify-content: space-evenly;  
@@ -34,9 +37,6 @@
 .textBox:focus {
   box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
 }
-#textBoxOutPut{
-  margin-left: 3vw;
-}
 .textBoxName {
   background-color: #FFFFFF;
   border: 1px solid #8492A6;
@@ -61,8 +61,7 @@
   float: right;
 }
 
-.buttonCancel{
-  background-color: rgb(255, 0, 0);
+.buttonOption{
   width: 45px;
   height: 45px;
   border-radius:45px;
@@ -71,18 +70,17 @@
   cursor: pointer;
   transition: 0.3;
 }
-.buttonCancel:hover{
+.buttonOption:hover{
   outline: none;
   opacity: 1;
   box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
 }
-.buttonCancel:focus{
+.buttonOption:focus{
   outline: none;
   opacity: 1;
   box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
 }
-.buttonAgree{
-  background: rgb(15, 225, 20);
+.buttonOptionDiv{
   width: 45px;
   height: 45px;
   border-radius:45px;
@@ -90,14 +88,23 @@
   opacity: 0.7;
   cursor: pointer;
   transition: 0.3;
+  justify-content: center;
+  margin-right: 10px;
 }
-.buttonAgree:hover{
+.buttonOptionDiv:hover{
   outline: none;
   opacity: 1;
   box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
 }
-.buttonAgree:focus{
+.buttonOptionDiv:focus{
   outline: none;
   opacity: 1;
   box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+#buttonIcon{
+  font-size:20px; 
+  color:white; 
+  align-self: center;
+  margin-left: 16px;
+  margin-top: 12.5px;
 }
