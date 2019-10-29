@@ -3,9 +3,20 @@ body{
 	font-family: 'PT Serif', serif;
 }
 
+.container{
+	float: left;
+	width: 100%;
+}
+
+/*960px*/
+.content{
+	width: 64.8648648649%;
+	margin: 0 auto;
+	padding: 0,625% 0;
+}
+
 #mainDiv{
-	width: 800px;
-	display: block;
+	width: 64.8648648649%;
 	margin-left: auto;
 	margin-right: auto;
 	/*background-color: rgba(128,128,128,0.8);*/
