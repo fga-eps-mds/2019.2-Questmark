@@ -64,7 +64,6 @@
 				<div style="display: flex; flex-direction: column;">
 					<label for="copy_marskdown" class="textTitles">Conteúdo:</label>
 					<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox">
-                        <%= copy_markdown%>
                     </textarea>
 				</div>
 				<div style="display: flex; flex-direction: column;">
@@ -72,9 +71,8 @@
 					<div class="textBox" id="notes-preview"></div>
 				</div>
 
-				<textarea hidden="hidden" type="text" id="copy_html" name="copy_html" class="form-control"
-					placeholder="Saída HTML">
-					</textarea>
+				<textarea hidden="hidden" type="text" id="copy_html" name="copy_html" class="form-control" placeholder="Saída HTML">
+				</textarea>
 			</div>
 			<button type="submit" class="buttonsView btn btn-success"> Finalizar Edição </button>
 		</form>
@@ -93,6 +91,15 @@
 			modifierKeys: false,
 			autoFormatting: false
 		});
+
+		function insertCopyMarkdown(markdown) {
+			let fieldText = document.getElementById('notes');
+			fieldText.value = '';	
+			fieldText.value = markdown;	
+		}
+
+		insertCopyMarkdown(<%-JSON.stringify(copy_markdown)%>);
+		
 	</script>
 
 	<!-- Script de submissão do questionário -->
