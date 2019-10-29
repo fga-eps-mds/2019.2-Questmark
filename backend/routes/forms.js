@@ -139,9 +139,9 @@ router.get('/dashboard/:id', async (req, res) => {
         if (req.user) {
             const form = await modelFormulario.findOne({ _id: req.params.id })
             res.render("./formularios/lista_respostas", { formulario: form })
-            console.log(form);
-            console.log(form.nome);
-            console.log(form.respostas);
+            console.log(form); // Imprime o formulario específico
+            console.log(form.nome); // Imprime o nome do formulário
+            console.log(form.respostas); // Imprime as respostas
             const keys = Object.keys(form.respostas[0]); //Pega os nomes dos campos das respostas
             console.log(keys);
         } else {
