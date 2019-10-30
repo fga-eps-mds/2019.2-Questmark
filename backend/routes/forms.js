@@ -139,7 +139,8 @@ router.get('/:id/dashboard/', async (req, res) => {
         if (req.user) {
             const form = await modelFormulario.findOne({ _id: req.params.id });
             const keys = Object.keys(form.respostas[0]); //Pa os nomes dos campos das respostas
-            res.render("./formularios/dashboard", { formulario: form, tipos: keys, respostas: form.respostas });
+            const tipos = form.data_quest.type_inputs;
+            res.render("./formularios/dashboard", { formulario: form, tipos: keys, respostas: form.respostas, tipoResposta: tipos });
         } else {
             res.redirect('/users/login');
         }
