@@ -134,16 +134,12 @@ router.get('/delete/:id', (req, res) => {
     }
 });
 
-router.get('/dashboard/:id', async (req, res) => {
+router.get('/:id/dashboard/', async (req, res) => {
     try {
         if (req.user) {
-            const form = await modelFormulario.findOne({ _id: req.params.id })
-            res.render("./formularios/lista_respostas", { formulario: form })
-            console.log(form); // Imprime o formulario específico
-            console.log(form.nome); // Imprime o nome do formulário
-            console.log(form.respostas); // Imprime as respostas
-            const keys = Object.keys(form.respostas[0]); //Pega os nomes dos campos das respostas
-            console.log(keys);
+            const form = await modelFormulario.findOne({ _id: req.params.id });
+            const keys = Object.keys(form.respostas[0]); //Pa os nomes dos campos das respostas
+            res.render("./formularios/dashboard", { formulario: form, tipos: keys, respostas: form.respostas });
         } else {
             res.redirect('/users/login');
         }
