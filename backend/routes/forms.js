@@ -134,13 +134,13 @@ router.get('/delete/:id', (req, res) => {
     }
 });
 
+//Rota de acesso ao dashboard das respostas do formulário
 router.get('/:id/dashboard/', async (req, res) => {
     try {
         if (req.user) {
             const form = await modelFormulario.findOne({ _id: req.params.id });
-            const keys = Object.keys(form.respostas[0]); //Pa os nomes dos campos das respostas
             const tipos = form.data_quest.type_inputs;
-            res.render("./formularios/dashboard", { formulario: form, tipos: keys, respostas: form.respostas, tipoResposta: tipos });
+            res.render("./formularios/dashboard", { respostas: form.respostas, mapeamentoCampos: tipos });
         } else {
             res.redirect('/users/login');
         }
