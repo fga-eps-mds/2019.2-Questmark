@@ -3,53 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/cadastro_formulario/style/header.css">
-    <!-- Bootstrap CSS -->
-    <%
-    function getJsonLabels(json){
-        let labelsArray = [];
-        let regex1 = /\"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ0-9@.\- ]+\":/g;
-        let regex2 = /[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ0-9@.\- ]+/;
-        
-        let jsonstr = JSON.stringify(json);
-        let tmpLabels = jsonstr.match(regex1);          
-        tmpLabels.forEach((v,i) => {let tmp = tmpLabels[i].match(regex2); labelsArray[i] = tmp[0];});   
-
-        return labelsArray;
-    }
-%>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./cabecalho/style/header.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/cadastro_formulario/style/header.css">
+    <link rel="stylesheet" href="./cabecalho/style/header.css">
+    <link rel="stylesheet" href="/dashboard/styles/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <title>QuestMark</title>
 </head>
 
 <body>
     <% include ../partials/Header.ejs %>
-    <ul style="width: 800px;display: block;margin-top: 10vh; margin-left: auto; margin-right: auto;
-    list-style:none;border: 2px solid black;border-radius: 10px;">
-
-        <% if(respostas){ %>
-        <% for(let i = 0;i < respostas.length;i++){ %>
-        <% let labelsArray = getJsonLabels(respostas[i]); %>
-        <li style="border: 2px solid blue;margin: 20px;text-align: center;border-radius: 10px;">
-            <% for(let j = 0;j < labelsArray.length;j++){ %>
-            <span style="display: block;float: left;margin-left:15px;">
-                <%= labelsArray[j] %>:
-            </span>
-            <span style="display: block;float: left; margin-left:10px; ">
-                <%= respostas[i][labelsArray[j]] %>
-            </span>
-            <br>
-            <% } %>
-        </li>
-        <% } %>
-        <% }else{ %>
-        <h3> Sem respostas por enquanto :( </h3>
-        <% } %>
-    </ul>
-
+    
+    <!-- Script de de plotagem dos gráficos -->
+    <script src="/dashboard/javascript/chart_script.js"></script>
 </body>
-
 </html>
