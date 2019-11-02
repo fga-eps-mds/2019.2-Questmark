@@ -4,17 +4,17 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Registro</title>
-	<link rel="stylesheet" href="/cadastro_formulario/style/novoformulario.css">
-	<link rel="stylesheet" href="/cadastro_formulario/style/header.css">
+	<link rel="stylesheet" href="/manter_formulario/styles/novoformulario.css">
+	<link rel="stylesheet" href="/manter_formulario/styles/header.css">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+	</script>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-		</script>
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+	</script>
 
 	<link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
 	<script src="/wmd/wmd.js"></script>
@@ -64,7 +64,6 @@
 				<div style="display: flex; flex-direction: column;">
 					<label for="copy_marskdown" class="textTitles">Conteúdo:</label>
 					<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox">
-                        <%= copy_markdown%>
                     </textarea>
 				</div>
 				<div style="display: flex; flex-direction: column;">
@@ -72,9 +71,8 @@
 					<div class="textBox" id="notes-preview"></div>
 				</div>
 
-				<textarea hidden="hidden" type="text" id="copy_html" name="copy_html" class="form-control"
-					placeholder="Saída HTML">
-					</textarea>
+				<textarea hidden="hidden" type="text" id="copy_html" name="copy_html" class="form-control" placeholder="Saída HTML">
+				</textarea>
 			</div>
 			<button type="submit" class="buttonsView btn btn-success"> Finalizar Edição </button>
 		</form>
@@ -93,10 +91,19 @@
 			modifierKeys: false,
 			autoFormatting: false
 		});
+
+		function insertCopyMarkdown(markdown) {
+			let fieldText = document.getElementById('notes');
+			fieldText.value = '';	
+			fieldText.value = markdown;	
+		}
+
+		insertCopyMarkdown(<%-JSON.stringify(copy_markdown)%>);
+		
 	</script>
 
 	<!-- Script de submissão do questionário -->
-	<script src="/cadastro_formulario/javascript/functions_submission.js"></script>
+	<script src="/manter_formulario/javascript/functions_submission.js"></script>
 
 </body>
 
