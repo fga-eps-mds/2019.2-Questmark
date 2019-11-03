@@ -4,13 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="/cadastro_formulario/style/header.css">
 	<!-- Bootstrap CSS -->
 	<link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="./cabecalho/style/header.css">
+	<link rel="stylesheet" href="/listagem_formulario/listforms.css">
+	<link rel="stylesheet" href="/listagem_formulario/fixWhenMerge.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>QuestMark</title>
 </head>
@@ -30,16 +30,15 @@
 					style="background-color:#7FCAF2;padding: 10px;border-radius: 26px;">
 
 			</a>
-			<a href="/forms/postar/<%= formulario[i].id %>">
+			<a onclick="on('<%=formulario[i].id%>')">
 				<img src="https://img.icons8.com/ios/24/000000/share.png"
 					style="background-color:#77D353; margin-left: 30px; padding: 10px;border-radius: 20px;">
-
 			</a>
 			</a>
 
 			<a href="/forms/listar_respostas/<%= formulario[i].id %>"">
-				<img src="https://img.icons8.com/ios-filled/25/000000/75-percents.png"
-					style="background-color:#4B2CFF;margin-left: 30px;padding: 10px;border-radius: 20px;">
+				<img src=" https://img.icons8.com/ios-filled/25/000000/75-percents.png"
+				style="background-color:#4B2CFF;margin-left: 30px;padding: 10px;border-radius: 20px;">
 
 			</a>
 			<a href="/forms/delete/<%= formulario[i].id %>">
@@ -51,6 +50,13 @@
 		<div class="card-footer text-muted">
 			Data de Criação: <%=formulario[i].data%>
 		</div>
+	</div>
+
+	<div id="overlay" onclick="off()">
+		<div>
+
+		</div>
+		<div id="text"></div>
 	</div>
 	</div>
 	<% } %>
@@ -70,6 +76,17 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+	<script>
+		function on(formId) {
+			console.log(formId);
+			document.getElementById("text").innerHTML = formId;
+			document.getElementById("overlay").style.display = "block";
+		}
+		function off() {
+			document.getElementById("overlay").style.display = "none";
+		}
+	</script>
+
 </body>
 
 </html>
