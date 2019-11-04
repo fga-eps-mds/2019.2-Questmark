@@ -39,6 +39,7 @@ router.post('/recuperar_senha', async (req, res) => {
             return res.send();
         });
 
+        res.render('usuarios/definir_nova_senha');
         console.log(token, now);
 
     } catch (error) {
@@ -71,6 +72,7 @@ router.post('/redefinir_senha', async (req, res) => {
 
         await user.save();
 
+        res.render('usuarios/login');
         res.send();
 
     } catch (error) {

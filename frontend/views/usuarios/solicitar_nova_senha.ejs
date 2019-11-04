@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Redefinir senha</title>
 </head>
+
 <body>
-    
+    <form id="formUser" class="loginBox" action="/password/recuperar_senha" method="POST">
+        <label><b>Email</b></label>
+        <div>
+            <input type="text" placeholder="Digite o email para recuperação de senha" name="email">
+        </div>
+        <button type="submit">
+            Enviar e-mail
+        </button>
+    </form>
 </body>
+
 </html>
