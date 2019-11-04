@@ -53,3 +53,68 @@ function generateHistogram(jsonAnswers,fieldMapping) {
 
     return histogramFields;
 }
+
+//Retorna as configurações do gráfico de pizza.
+function createConfigPieChart(field,chartColors,data) {
+    const labelsField = Object.keys(data);
+    const histogramField = Object.values(data);
+    
+    let configPie = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: histogramField,
+                backgroundColor: chartColors,
+                label: ''
+            }],
+            labels: labelsField
+        },
+        options: {
+            responsive: true,
+            legend:{
+                position:'top',
+            },
+            title:{
+                display: true,
+                text: field
+            }
+        }
+    };
+
+    return configPie;
+}
+
+//Retorna as configurações do gráfico de barras.
+function createConfigBarChart(field,chartColors,data){
+    const labelsField = Object.keys(data);
+    const histogramField = Object.values(data);
+
+    let configBar = {
+        type: 'bar',
+        data: {
+            datasets: [{
+                data: histogramField,
+                backgroundColor: chartColors,
+                label: ''
+            }],
+            labels: labelsField
+        },
+        options: {
+            responsive: true,
+            legend:false,
+            title:{
+                display: true,
+                text: field
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    };    
+    
+    return configBar;
+}
