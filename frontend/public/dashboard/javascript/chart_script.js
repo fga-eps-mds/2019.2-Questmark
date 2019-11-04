@@ -118,3 +118,24 @@ function createConfigBarChart(field,chartColors,data){
     
     return configBar;
 }
+
+//Cria o contexto em que cada gráfico que será inserido.
+function makeContext(field){
+    let htmlContext = `        
+    <div class="container ctx-chart">
+      <div class="row header-chart">
+        <div class="col" id="type-${field}">
+          Tipo do campo: 
+        </div>
+        <div class="col">
+          <button class="btn-chart" onclick="changeChart('${field}')">Trocar</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="chart-${field}">
+        </div>
+      </div>
+    </div> `;            
+
+   document.getElementById('charts-div').insertAdjacentHTML('beforeend', htmlContext);
+}
