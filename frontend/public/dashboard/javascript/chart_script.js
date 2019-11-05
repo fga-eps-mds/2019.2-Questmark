@@ -139,3 +139,32 @@ function makeContext(field){
 
    document.getElementById('charts-div').insertAdjacentHTML('beforeend', htmlContext);
 }
+
+//Carrega os gráficos na página.
+window.onload = function() {
+    let histogramFields = generateHistogram(<%-JSON.stringify(respostas)%>,
+                                            <%-JSON.stringify(mapeamentoCampos)%>);
+    for(let field in histogramFields){
+        //Criando contexto dos gráficos
+        makeContext(field);
+        let chartDiv = document.getElementById(`chart-${field}`);
+        let canvasPie = document.createElement('canvas');
+        let canvasBar = document.createElement('canvas');
+        canvasBar.id = `bar-canvas-${field}`;
+        canvasPie.id = `pie-canvas-${field}`;
+        chartDiv.appendChild(canvasPie);
+        chartDiv.appendChild(canvasBar);
+        canvasBar.style.display ='none';
+
+        //Cores dos gráficos
+        const lengthField = Object.values(histogramFields[field]).length;
+        const chartColors = generateColors(lengthField);
+
+        //Criando os gráficos
+        let ctxPie = canvasPie.getContext('2d');
+        let ctxBar = canvasBar.getContext('2d');
+        new Chart(ctxPie, createConfigPieChart(field,chartColors,histogramFields[field]));
+        new Chart(ctxBar, createConfigBarChart(field,chartColors,histogramFields[field]));
+        typeCharts[field] = 'pie';
+    }
+};
