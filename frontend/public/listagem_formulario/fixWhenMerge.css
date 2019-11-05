@@ -61,3 +61,7 @@
   right: 35px;
   }
 }
+.offscreen {
+  position: absolute;
+  left: -999em;
+}
