@@ -6,7 +6,7 @@ const mailer = require('../modules/mailer');
 const router = express.Router();
 
 router.get('/forgot', (req, res) => {
-    res.render('./usuarios/solicitar_nova_senha', { status : false });
+    res.render('./usuarios/solicitar_nova_senha', { status: false });
 })
 
 router.post('/recuperar_senha', async (req, res) => {
@@ -16,7 +16,7 @@ router.post('/recuperar_senha', async (req, res) => {
         const user = await User.findOne({ email });
         if (!user) {
             //return res.status(400).send({ error: 'Usuário não encontrado !' });
-            res.render('./usuarios/solicitar_nova_senha', { status : true })
+            res.render('./usuarios/solicitar_nova_senha', { status: true })
         }
 
         const token = crypto.randomBytes(20).toString('hex');  // Cria o token
@@ -44,7 +44,7 @@ router.post('/recuperar_senha', async (req, res) => {
             return res.send();
         });
 
-        res.render('usuarios/definir_nova_senha');
+        res.render('usuarios/definir_nova_senha', { notUser: false, notToken: false, tokenExpires: false });
         console.log(token, now);
 
     } catch (error) {
@@ -62,14 +62,18 @@ router.post('/redefinir_senha', async (req, res) => {
         const user = await User.findOne({ email })
             .select('+passwordResetToken passwordResetExpires');
         if (!user) {
-            return res.status(400).send({ error: 'Usuário não encontrado !' });
+
+            //return res.status(400).send({ error: 'Usuário não encontrado !' });
+            res.render('usuarios/definir_nova_senha', { notUser: true, notToken: false, tokenExpires: false });
         }
         if (token !== user.passwordResetToken) { //Verifica se o token é válido para o usuário
-            return res.status(400).send({ error: 'Token inválido!' });
+            //return res.status(400).send({ error: 'Token inválido!' });
+            res.render('usuarios/definir_nova_senha', { notUser: false, notToken: true, tokenExpires: false });
         }
         const now = new Date(); //Veririfica se o token já expirou
         if (now > user.passwordResetExpires) {
-            res.status(400).send({ error: 'Token expirou!' });
+            //res.status(400).send({ error: 'Token expirou!' });
+            res.render('usuarios/definir_nova_senha', { notUser: false, notToken: false, tokenExpires: true });
         }
         const senhaCrypto = await crypto.createHash('md5').update(senha).digest('hex'); //Encripta a nova senha
 

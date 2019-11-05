@@ -12,11 +12,11 @@
     <h1 style="text-align: center;color : white">Recuperar senha</h1>
 
     <div style="align-self: center;display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top : 5vh;
-    background-color: white; width: 560px; height: 360px; border-radius: 10px">
+    background-color: white; width: 560px; min-height: 360px; border-radius: 10px">
 
         <form action="/password/redefinir_senha" method="POST">
             <div
-                style="display:flex;flex-direction:row; justify-content: space-around;margin-bottom: 10px; font-size: 19px">
+                style="display:flex;flex-direction:row; justify-content: space-around;margin-bottom: 10px; font-size: 19px; margin-top: 5%">
                 <label><b>Confirme o email</b></label><label><b>Insira o código recebido</b></label>
             </div>
             <div style="display:flex;flex-direction:row; margin-bottom: 20px">
@@ -36,11 +36,32 @@
             </div>
 
             <div style="display:flex;flex-direction:row;justify-content: center;margin-top: 35px">
-                <button style="color:white ;height : 40px; background-color: #4AB1FF; border-radius : 10px; width: 160px; font-weight: bold; border-style: solid; border-color: black; border-width: 0.5px" type="submit">
+                <button
+                    style="color:white ;height : 40px; background-color: #4AB1FF; border-radius : 10px; width: 160px; font-weight: bold;"
+                    type="submit">
                     Confirmar nova senha
                 </button>
             </div>
         </form>
+
+        <% if (notUser || notToken || tokenExpires) { %>
+        <div
+            style="background-color: red; color: white; width: 260px; min-height: 80px; text-align: center; border-radius: 15px; margin-top: 5%; margin-bottom: 5%">
+            <% if(notUser) { %>
+            <p>E-mail não encontrado !</p>
+            <p>Por favor, insira um e-mail válido</p>
+            <% } %>
+            <% if(notToken) { %>
+            <p>Código inválido !</p>
+            <p>Por favor, verifique o código ou solicite um novo.</p>
+            <% } %>
+            <% if(tokenExpires) { %>
+            <p>O código expirou !</p>
+            <p>Por favor, solicite um novo.</p>
+            <% } %>
+
+        </div>
+        <% } %>
     </div>
 </body>
 
