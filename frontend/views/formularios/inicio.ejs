@@ -12,11 +12,39 @@
 	<link rel="stylesheet" href="/listagem_formulario/listforms.css">
 	<link rel="stylesheet" href="/listagem_formulario/fixWhenMerge.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Esse fica o resto saí-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<title>QuestMark</title>
 </head>
 
 <body>
 	<%- include ../partials/Header.ejs%>
+	<!-- Modal -->
+	<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
+		aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="TituloModalCentralizado"></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div>
+					<button name="Debug" type="button" class="btn btn-primary" onclick="copyPaste()">
+						Link Copartilhável
+					</button>
+					<input type="hidden" id="shareLink" value="">
+					<button type="button" class="btn btn-primary">iFrame</button>
+					<input type="hidden" id="iFrame" value="">
+				</div>
+				<div class="modal-footer"> </div>
+			</div>
+		</div>
+	</div>
+
 	<br>
 	<br>
 	<hr>
@@ -28,14 +56,14 @@
 			<a href="/forms/editar_formulario/<%= formulario[i].id %>">
 				<img src="https://img.icons8.com/material-two-tone/24/000000/pencil.png"
 					style="background-color:#7FCAF2;padding: 10px;border-radius: 26px;">
-
 			</a>
-			<a onclick="on('<%=formulario[i].id%>')">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado"
+				onclick="getInfo('<%=formulario[i].id%>','<%=formulario[i].nome%>')">
 				<img src="https://img.icons8.com/ios/24/000000/share.png"
 					style="background-color:#77D353; margin-left: 30px; padding: 10px;border-radius: 20px;">
+			</button>
+			<!-- '<%=formulario[i].id%>','<%=formulario[i].nome%>' -->
 			</a>
-			</a>
-
 			<a href="/forms/listar_respostas/<%= formulario[i].id %>"">
 				<img src=" https://img.icons8.com/ios-filled/25/000000/75-percents.png"
 				style="background-color:#4B2CFF;margin-left: 30px;padding: 10px;border-radius: 20px;">
@@ -52,11 +80,11 @@
 		</div>
 	</div>
 
-	<div id="overlay" onclick="off()">
-		<div>
-
+	<div id="overlay">
+		<div id="boxOverlay">
+			<div id="text" />
+			<div></div>
 		</div>
-		<div id="text"></div>
 	</div>
 	</div>
 	<% } %>
@@ -67,23 +95,26 @@
 	<% } %>
 	<a href="/forms/registro"><button class="btn btn-success" style="margin-left: 111px ">Novo Questionário</button></a>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-		</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		sintegrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 	<script>
-		function on(formId) {
-			console.log(formId);
-			document.getElementById("text").innerHTML = formId;
-			document.getElementById("overlay").style.display = "block";
+		getInfo = (formId, formName) => {
+			document.getElementById("TituloModalCentralizado").innerHTML = formName;
+			document.getElementById("shareLink").value = 'http://localhost:3000/forms/postar/' + formId;
+			console.log('<iframe src='+'"http://localhost:3000/forms/postar/'+formId+'"'+'></iframe>');
+			document.getElementById("iFrame").value = '<iframe src='+'"http://localhost:3000/forms/postar/'+formId+'"';+'></iframe>';  
 		}
-		function off() {
-			document.getElementById("overlay").style.display = "none";
+		copyPaste = () => {
+			var copyText = document.getElementsByName("button1");
+
 		}
 	</script>
 
