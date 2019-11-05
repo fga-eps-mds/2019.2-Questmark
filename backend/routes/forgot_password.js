@@ -5,6 +5,10 @@ const mailer = require('../modules/mailer');
 
 const router = express.Router();
 
+router.get('/forgot', (req, res) => {
+    res.render('./usuarios/solicitar_nova_senha');
+})
+
 router.post('/recuperar_senha', async (req, res) => {
     const { email } = req.body;
     try {
@@ -72,8 +76,8 @@ router.post('/redefinir_senha', async (req, res) => {
 
         await user.save();
 
-        res.render('usuarios/login');
         res.send();
+        res.redirect('/users/login');
 
     } catch (error) {
         res.status(400).send({ error: 'Erro ao redefinir senha.' })
