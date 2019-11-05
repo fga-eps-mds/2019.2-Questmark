@@ -140,6 +140,22 @@ function makeContext(field){
    document.getElementById('charts-div').insertAdjacentHTML('beforeend', htmlContext);
 }
 
+//Troca o tipo de gráfico que está sendo exibido.
+        function changeChart(field){
+            let canvasPie = document.getElementById(`pie-canvas-${field}`);
+            let canvasBar = document.getElementById(`bar-canvas-${field}`);
+            if(typeCharts[field] === 'pie'){
+               canvasPie.style.display = 'none'; 
+               canvasBar.style.display = 'block'; 
+               typeCharts[field] = 'bar';
+            }
+            else if(typeCharts[field] === 'bar'){
+                canvasBar.style.display = 'none'; 
+                canvasPie.style.display = 'block'; 
+                typeCharts[field] = 'pie';
+            }
+        }
+
 //Carrega os gráficos na página.
 window.onload = function() {
     let histogramFields = generateHistogram(<%-JSON.stringify(respostas)%>,
