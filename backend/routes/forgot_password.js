@@ -6,7 +6,7 @@ const mailer = require('../modules/mailer');
 const router = express.Router();
 
 router.get('/forgot', (req, res) => {
-    res.render('./usuarios/solicitar_nova_senha');
+    res.render('./usuarios/solicitar_nova_senha', { status : false });
 })
 
 router.post('/recuperar_senha', async (req, res) => {
@@ -15,7 +15,8 @@ router.post('/recuperar_senha', async (req, res) => {
 
         const user = await User.findOne({ email });
         if (!user) {
-            return res.status(400).send({ error: 'Usuário não encontrado !' });
+            //return res.status(400).send({ error: 'Usuário não encontrado !' });
+            res.render('./usuarios/solicitar_nova_senha', { status : true })
         }
 
         const token = crypto.randomBytes(20).toString('hex');  // Cria o token
@@ -48,8 +49,8 @@ router.post('/recuperar_senha', async (req, res) => {
 
     } catch (error) {
 
-        console.log(error)
-        res.status(400).send({ error: 'Erro ao tentar recuperar senha.' })
+        console.log(error);
+        //res.status(400).send({ error: 'Erro ao tentar recuperar senha.' })
     };
 });
 
