@@ -3,47 +3,15 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Bootstrap CSS -->
-	<link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="/listagem_formulario/listforms.css">
-	<link rel="stylesheet" href="/listagem_formulario/fixWhenMerge.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<!-- Esse fica o resto saí-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<!-- Esses ficam-->
+	<script src="/listagem_formulario/js/copyForm.js"></script>
 	<title>QuestMark</title>
 </head>
 
 <body>
 	<%- include ../partials/Header.ejs%>
-	<!-- Modal -->
-	<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
-		aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="TituloModalCentralizado"></h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div>
-					<buttontype="button" class="btn btn-primary" onclick="copyLink()">
-						Link Copartilhável
-					</buttontype="button">
-					<input type="text" class="offscreen" id="shareLink" value="">
-					<button type="button" class="btn btn-primary" onclick="copyIframe()">iFrame</button>
-					<input type="text" class="offscreen" id="iFrame" value="">
-				</div>
-				<div class="modal-footer"> </div>
-			</div>
-		</div>
-	</div>
+
+	<%- include ../partials/Overlay.ejs%>
 
 	<br>
 	<br>
@@ -57,12 +25,13 @@
 				<img src="https://img.icons8.com/material-two-tone/24/000000/pencil.png"
 					style="background-color:#7FCAF2;padding: 10px;border-radius: 26px;">
 			</a>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado"
+			<!-- Esses ficam-->
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPrincipal"
 				onclick="getInfo('<%=formulario[i].id%>','<%=formulario[i].nome%>')">
 				<img src="https://img.icons8.com/ios/24/000000/share.png"
 					style="background-color:#77D353; margin-left: 30px; padding: 10px;border-radius: 20px;">
 			</button type="button">
-			<!-- '<%=formulario[i].id%>','<%=formulario[i].nome%>' -->
+			<!-- Esses ficam-->
 			</a>
 			<a href="/forms/listar_respostas/<%= formulario[i].id %>"">
 				<img src=" https://img.icons8.com/ios-filled/25/000000/75-percents.png"
@@ -94,39 +63,6 @@
 	</div>
 	<% } %>
 	<a href="/forms/registro"><button class="btn btn-success" style="margin-left: 111px ">Novo Questionário</button></a>
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		sintegrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-		crossorigin="anonymous"></script>
-	<script>
-		getInfo = (formId, formName) => {
-			document.getElementById("TituloModalCentralizado").innerHTML = formName;
-			document.getElementById("shareLink").value = 'http://localhost:3000/forms/postar/' + formId;
-			document.getElementById("iFrame").value = '<iframe src=' + '"http://localhost:3000/forms/postar/' + formId + '"' +'></iframe>';
-		}
-		copyLink = () => {
-			var copyText = document.getElementById("shareLink");
-			copyText.select();
-			document.execCommand("copy");
-			alert("Copied the text: " + copyText.value);
-
-		}
-		copyIframe = () => {
-			var copyText = document.getElementById("iFrame");
-			copyText.select();
-			document.execCommand("copy");
-			alert("Copied the text: " + copyText.value);
-
-		}
-	</script>
-
 </body>
 
 </html>

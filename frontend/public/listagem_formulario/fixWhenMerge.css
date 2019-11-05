@@ -1,15 +1,8 @@
-/* #text{
-    color: white;
-    font-weight: bold;
-    text-align: center;
-  } */
-#boxOverlay{
-  padding: 8px;
-  width: 100px;
-  height: 100px;
-  color: white;
-  display: block;
-  transition: 0.3s;
+.boxOverlay{
+  display: flex;
+  /* background-color: red; */
+  justify-content: space-evenly;
+  padding: 10px;
 }
 
 .overlay {
