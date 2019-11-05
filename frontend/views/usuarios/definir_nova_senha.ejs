@@ -8,27 +8,40 @@
     <title>Redefinir senha</title>
 </head>
 
-<body>
+<body style="background-color: #49AFFF; display: flex; flex-direction: column;">
+    <h1 style="text-align: center;color : white">Recuperar senha</h1>
 
-    <form action="/password/redefinir_senha" method="POST">
-        <label><b>Confirme o email</b></label>
-        <div>
-            <input type="text" placeholder="Digite o email para recuperação de senha" name="email">
-        </div>
-        <label><b>Insira o token</b></label>
-        <div>
-            <input type="text" placeholder="Insira o token..." name="token">
-        </div>
-        <label><b>Digite a nova senha</b></label>
-        <div>
-            <input type="text" placeholder="Insira a nova senha..." name="senha">
-        </div>
+    <div style="align-self: center;display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top : 5vh;
+    background-color: white; width: 560px; height: 360px; border-radius: 10px">
 
-        <button type="submit">
-            Trocar senha
-        </button>
-    </form>
+        <form action="/password/redefinir_senha" method="POST">
+            <div
+                style="display:flex;flex-direction:row; justify-content: space-around;margin-bottom: 10px; font-size: 19px">
+                <label><b>Confirme o email</b></label><label><b>Insira o código recebido</b></label>
+            </div>
+            <div style="display:flex;flex-direction:row; margin-bottom: 20px">
+                <input style="height: 30px; border-radius: 5px; width: 240px; margin-right: 10px; padding-left: 10px"
+                    type="text" placeholder="Confirme o e-mail..." name="email">
+                <input style="height: 30px; border-radius: 5px; width: 240px;  padding-left: 10px" type="text"
+                    placeholder="Insira o código..." name="token">
+            </div>
 
+            <div
+                style="display:flex;flex-direction:row; justify-content: space-around;margin-bottom: 10px; font-size: 19px">
+                <label><b>Digite a nova senha</b></label>
+            </div>
+            <div style="display:flex;flex-direction:row; justify-content: center">
+                <input style="height: 30px; border-radius: 5px; width: 320px; margin-right: 20px; padding-left: 10px"
+                    type="password" placeholder="Insira a nova senha..." name="senha">
+            </div>
+
+            <div style="display:flex;flex-direction:row;justify-content: center;margin-top: 35px">
+                <button style="color:white ;height : 40px; background-color: #4AB1FF; border-radius : 10px; width: 160px; font-weight: bold; border-style: solid; border-color: black; border-width: 0.5px" type="submit">
+                    Confirmar nova senha
+                </button>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
