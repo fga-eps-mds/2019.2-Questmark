@@ -6,8 +6,8 @@
 </head>
 <header>
     <div class="topnav" id="myTopnav">
-        <a href="/forms" id="logo">QM</a>
-        <a href="#help">Ajuda</a>
+        <a href="/forms" id="logo">QM</a>   
+        <a href="#" onclick="abrir('http://localhost:3000/ajuda')">Ajuda</a>
         <a href="/users/logout">Logout</a>
         <a href="javascript:void(1);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
@@ -21,6 +21,11 @@
             } else {
                 x.className = "topnav";
             }
+        }
+
+        function abrir(URL) {
+            window.open(URL, 'janela', 
+            'width=795, height=590, top=100, left=699,scrollbars=no, status=no, toolbar=no, location=center, menubar=no, resizable=no, fullscreen=no')
         }
     </script>
 </header>
