@@ -7,14 +7,12 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
 
-  <!-- Favicons -->
-  <link href="/ajuda/img/fkavicon.png" rel="icon">
-  <link href="/ajuda/img/apple-touch-icokn.png" rel="apple-touch-icon">
 
-  <!-- Google -->
+
+  <!-- Google  -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
-  <!-- Bootstrap-->
+  <!-- Bootstrap CSS  -->
   <link href="/ajuda/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!--  CSS Files -->
@@ -24,35 +22,38 @@
   <link href="/ajuda/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="/ajuda/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-  <!-- principal css File -->
+  <!-- Main Stylesheet File -->
   <link href="/ajuda/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!--==========================
-    Navbar
-    ============================-->
-    <header id="header" class="fixed-top">
-      <div class="container">
-  
-        <div class="logo float-left">
-           <h1 class="text-light"><a href="#header"><span>QM</span></a></h1>
-        </div>
-  
-        <nav class="main-nav float-right d-none d-lg-block">
-          <ul>
-            <li class="active"><a href="#intro">Ínicio</a></li>
-            <li><a href="#services">Sintaxe</a></li>
-            <li><a href="#why-us">Porque nós?</a></li>
-            <li><a href="#team">Inserir em seu site</a></li>
-            <li><a href="/forms">Criar Fórmulario</a></li>
-          </ul>
-        </nav>
-        
+  <!--==========================
+  Navbar
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+     
+        <h1 class="text-light"><a href="#header"><span>QM</span></a></h1> 
       </div>
-    </header>
-     <!--==========================
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#intro">Ínicio</a></li>
+          <li><a href="#services">Sintaxe</a></li>
+          <li><a href="#why-us">Porque nós?</a></li>
+          <li><a href="#team">Inserir em seu site</a></li>
+        
+          <li><a href="/forms">Criar Fórmulario</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+      
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
     Intro secao
   ============================-->
   <section id="intro" class="clearfix">
@@ -107,3 +108,171 @@
               <p class="description">Sexo = (x) Masculino () Feminino </p>
             </div>
           </div>
+          
+          <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="title"><a href="">Renderizado</a></h4>
+              <p class="description"><label>Sexo:</label> 
+                <input type="radio" name="sex" id="male" value="male" checked="checked"/><label for="male">Masculino</label>
+                <input type="radio" name="sex" id="female" value="female"/><label for="female">Feminino</label>  </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="titleb"><a href="">Check boxes</a></h4>
+              <p class="description">Celulares = [] Android [x] iPhone [x] Blackberry</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="title"><a href="">Renderizado</a></h4>
+              <p class="description"><label>Celulares:</label> 
+                <input type="checkbox" name="phones" id="Android" value="Android"/><label for="Android">Android</label>
+                <input type="checkbox" name="phones" id="iPhone" value="iPhone" checked="checked"/><label for="iPhone">iPhone</label>
+                <input type="checkbox" name="phones" id="Blackberry" value="Blackberry" checked="checked"/><label for="Blackberry">Blackberry</label>
+                </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+              <div class="box">
+                <h4 class="titleb"><a href="">Drop Down</a></h4>
+                <p class="description">Estado = {GO, DF, (MA)}
+              </div>
+          </div>
+            <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+              <div class="box">
+                <h4 class="title"><a href="">Renderizado</a></h4>
+                <p class="description">
+                    <label for="city">Estado:</label>
+                    <select id="city" name="city">
+                      <option value="BOS">GO</option>
+                      <option value="SFO">DF</option>
+                      <option value="NYC" selected="selected">MA</option>
+                    </select>
+                </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+              <div class="box">
+                <h4 class="titleb"><a href="">Campos Obigatorios</a></h4>
+                <p class="description">Nome* = ___
+              </div>
+          </div>
+            <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+              <div class="box">
+                <h4 class="title"><a href="">Renderizado</a></h4>
+                <p class="description">
+                    <label for="zip-code" class="required-label">Nome*:</label>
+                    <input type="text" name="zip-code" id="zip-code" size="20" class="required-input"/>
+                </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!--==========================
+      pq nos
+    ============================-->
+    <section id="why-us" class="wow fadeIn">
+      <div class="container">
+        <header class="section-header">
+          <h3>Por que usar o Questmark?</h3>
+          <p>Somos uma plataforma de criação e gereciamentos de questionários a partir de markdown</p>
+        </header>
+
+        <div class="row row-eq-height justify-content-center">
+
+          <div class="col-lg-4 mb-4">
+            <div class="card wow bounceInUp">
+                <i class="fa fa-diamond"></i>
+              <div class="card-body">
+                <h5 class="card-title">Markdown</h5>
+                <p class="card-text">A linguagem markdown é muito simples de aprender e muito fácil de utilizar</p>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card wow bounceInUp">
+                <i class="fa fa-language"></i>
+              <div class="card-body">
+                <h5 class="card-title">Download em .csv</h5>
+                <p class="card-text">Baixe as respostas de cada questionário em um arquivo csv, para utilizar da forma que quiser.</p>
+              
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card wow bounceInUp">
+                <i class="fa fa-object-group"></i>
+              <div class="card-body">
+                <h5 class="card-title">Inserir na página github</h5>
+                <p class="card-text">Nós disponibilzamos a opção de inserir seu questionário em suas páginas html,githubpages e qualquer outra página.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        
+
+      </div>
+    </section>
+
+  
+
+    <!--==========================
+      Selecionar opção para colocar no site
+    ============================-->
+    <section id="team">
+      <div class="container">
+        <div class="section-header">
+          <h3>Inserir o questionário em suas páginas</h3>
+          <p>---</p>
+        </div>
+
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="credits">
+        Designed by <a href="https://bootstrap.com/">Bootstrap</a>
+        icons by <a href="https://icons8.com/">Icons8</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <script src="/ajuda/lib/jquery/jquery.min.js"></script>
+  <script src="/ajuda/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/ajuda/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/ajuda/lib/easing/easing.min.js"></script>
+  <script src="/ajuda/lib/mobile-nav/mobile-nav.js"></script>
+  <script src="/ajuda/lib/wow/wow.min.js"></script>
+  <script src="/ajuda/lib/waypoints/waypoints.min.js"></script>
+  <script src="/ajuda/lib/counterup/counterup.min.js"></script>
+  <script src="/ajuda/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/ajuda/lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="/ajuda/lib/lightbox/js/lightbox.min.js"></script>
+  
+
+  <!-- Template Main -->
+  <script src="/ajuda/js/main.js"></script>
+
+</body>
+</html>
