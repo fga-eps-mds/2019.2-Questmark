@@ -10,16 +10,17 @@ function getFieldMappingEJS(fieldMapping){
 
 //Retorna um array de cores aleatórias.
 function generateColors(size) {
-    let colors = Array();
+    let backgroundColors = Array();
+    let borderColors = Array();
     let R,G,B;
-    const alphaChannel = 0.5;
     for(let i = 0;i < size;i++){
         R = Math.floor(Math.random() * 256);
         G = Math.floor(Math.random() * 256);
         B = Math.floor(Math.random() * 256);
-        colors.push(`rgba(${R},${G},${B},${alphaChannel})`);
+        backgroundColors.push(`rgba(${R},${G},${B},${0.2})`);
+        borderColors.push(`rgba(${R},${G},${B},${0.9})`);
     }
-    return colors;
+    return [backgroundColors,borderColors];
 }
 
 //Inicializa o histograma com 0.
@@ -62,7 +63,7 @@ function generateHistogram(jsonAnswers,fieldMapping) {
 }
 
 //Retorna as configurações do gráfico de pizza.
-function createConfigPieChart(field,chartColors,data) {
+function createConfigPieChart(field,backgroundColors,borderColors,data) {
     const labelsField = Object.keys(data);
     const histogramField = Object.values(data);
     
@@ -71,7 +72,8 @@ function createConfigPieChart(field,chartColors,data) {
         data: {
             datasets: [{
                 data: histogramField,
-                backgroundColor: chartColors,
+                backgroundColor: backgroundColors,
+                borderColor: borderColors,
                 label: ''
             }],
             labels: labelsField
@@ -82,8 +84,7 @@ function createConfigPieChart(field,chartColors,data) {
                 position:'top',
             },
             title:{
-                display: true,
-                text: field
+                display: false,
             }
         }
     };
@@ -92,7 +93,7 @@ function createConfigPieChart(field,chartColors,data) {
 }
 
 //Retorna as configurações do gráfico de barras.
-function createConfigBarChart(field,chartColors,data){
+function createConfigBarChart(field,backgroundColors,borderColors,data){
     const labelsField = Object.keys(data);
     const histogramField = Object.values(data);
 
@@ -101,7 +102,9 @@ function createConfigBarChart(field,chartColors,data){
         data: {
             datasets: [{
                 data: histogramField,
-                backgroundColor: chartColors,
+                backgroundColor: backgroundColors,
+                borderColor: borderColors,
+                borderWidth: 2,
                 label: ''
             }],
             labels: labelsField
@@ -110,8 +113,7 @@ function createConfigBarChart(field,chartColors,data){
             responsive: true,
             legend:false,
             title:{
-                display: true,
-                text: field
+                display: false,
             },
             scales: {
                 yAxes: [{
@@ -129,16 +131,16 @@ function createConfigBarChart(field,chartColors,data){
 //Cria o contexto em que cada gráfico que será inserido.
 function makeContext(field){
     let htmlContext = `        
-    <div class="container ctx-chart">
+    <div class="col-lg-5 ctx-chart">
       <div class="row header-chart">
-        <div class="col" id="type-${field}">
-          Tipo do campo: 
-        </div>
-        <div class="col">
-          <button class="btn-change" onclick="changeChart('${field}')">
-          	<span id="span-btn-${field}"></span>
-          	<img id="img-btn-${field}"/>
-          </button>
+      	<div class="col-md-11" style="text-align:center;margin: auto;">
+      		<span style="font-weight: bold;">${field[0].toUpperCase() + field.slice(1)}</span>
+      	</div>
+        <div class="col-md-1">
+        	<button class="btn-change" onclick="changeChart('${field}')">
+          		<span id="span-btn-${field}"></span>
+          		<img id="img-btn-${field}"/>
+          	</button>
         </div>
       </div>
       <div class="row">
@@ -161,7 +163,6 @@ function changeChart(field){
 		typeCharts[field] = 'bar';
 		//Botão
 		document.getElementById(`img-btn-${field}`).src = '/dashboard/images/chart-pie.png';
-		document.getElementById(`span-btn-${field}`).innerHTML = 'Pizza';
 	}
 	else if(typeCharts[field] === 'bar'){
 		//Display
@@ -170,7 +171,6 @@ function changeChart(field){
 		typeCharts[field] = 'pie';
 		//Botão
 		document.getElementById(`img-btn-${field}`).src = '/dashboard/images/chart-bar.png';
-		document.getElementById(`span-btn-${field}`).innerHTML = 'Barra';
 	}
 }
 
@@ -194,20 +194,17 @@ function loadCharts(answers,fieldMapping) {
         let imgChange = document.getElementById(`img-btn-${field}`);
         let spanChange = document.getElementById(`span-btn-${field}`);
         imgChange.src = '/dashboard/images/chart-bar.png';
-        spanChange.innerHTML = 'Barra';
-  
 
         //Cores dos gráficos
         const lengthField = Object.values(histogramFields[field]).length;
-        const chartColors = generateColors(lengthField);
+        const [backgroundColors,borderColors] = generateColors(lengthField);
 
         //Criando os gráficos
         let ctxPie = canvasPie.getContext('2d');
         let ctxBar = canvasBar.getContext('2d');
-        new Chart(ctxPie, createConfigPieChart(field,chartColors,histogramFields[field]));
-        new Chart(ctxBar, createConfigBarChart(field,chartColors,histogramFields[field]));
+        new Chart(ctxPie, createConfigPieChart(field,backgroundColors,borderColors,histogramFields[field]));
+        new Chart(ctxBar, createConfigBarChart(field,backgroundColors,borderColors,histogramFields[field]));
         typeCharts[field] = 'pie';
 
     }
 };
-
