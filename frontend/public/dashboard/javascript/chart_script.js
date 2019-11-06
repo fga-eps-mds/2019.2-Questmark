@@ -135,7 +135,10 @@ function makeContext(field){
           Tipo do campo: 
         </div>
         <div class="col">
-          <button class="btn-chart" onclick="changeChart('${field}')">Trocar</button>
+          <button class="btn-change" onclick="changeChart('${field}')">
+          	<span id="span-btn-${field}"></span>
+          	<img id="img-btn-${field}"/>
+          </button>
         </div>
       </div>
       <div class="row">
@@ -152,14 +155,22 @@ function changeChart(field){
 	let canvasPie = document.getElementById(`pie-canvas-${field}`);
 	let canvasBar = document.getElementById(`bar-canvas-${field}`);
 	if(typeCharts[field] === 'pie'){
+		//Display
 		canvasPie.style.display = 'none'; 
 		canvasBar.style.display = 'block'; 
 		typeCharts[field] = 'bar';
+		//Botão
+		document.getElementById(`img-btn-${field}`).src = '/dashboard/images/chart-pie.png';
+		document.getElementById(`span-btn-${field}`).innerHTML = 'Pizza';
 	}
 	else if(typeCharts[field] === 'bar'){
+		//Display
 		canvasBar.style.display = 'none'; 
 		canvasPie.style.display = 'block'; 
 		typeCharts[field] = 'pie';
+		//Botão
+		document.getElementById(`img-btn-${field}`).src = '/dashboard/images/chart-bar.png';
+		document.getElementById(`span-btn-${field}`).innerHTML = 'Barra';
 	}
 }
 
@@ -178,6 +189,13 @@ function loadCharts(answers,fieldMapping) {
         chartDiv.appendChild(canvasPie);
         chartDiv.appendChild(canvasBar);
         canvasBar.style.display ='none';
+        
+        //Botão de troca de gráfico
+        let imgChange = document.getElementById(`img-btn-${field}`);
+        let spanChange = document.getElementById(`span-btn-${field}`);
+        imgChange.src = '/dashboard/images/chart-bar.png';
+        spanChange.innerHTML = 'Barra';
+  
 
         //Cores dos gráficos
         const lengthField = Object.values(histogramFields[field]).length;
@@ -192,3 +210,4 @@ function loadCharts(answers,fieldMapping) {
 
     }
 };
+

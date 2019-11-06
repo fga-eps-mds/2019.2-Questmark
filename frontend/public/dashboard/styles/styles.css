@@ -12,6 +12,11 @@
     margin-bottom: 1vh;
     border-bottom: 1px solid blue;
 }
+.btn-change{
+    /*border-radius: 1vh;*/
+    /*width: 10vw;*/
+    margin-bottom: 1vh;
+}
 
 #charts-div {   
     display: block; 
