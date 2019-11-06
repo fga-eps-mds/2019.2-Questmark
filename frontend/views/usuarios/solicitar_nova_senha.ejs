@@ -5,41 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/recuperar_senha/styles/solicitar_senha.css">
     <title>Redefinir senha</title>
 </head>
 
-<body style="background-color: #49AFFF; display: flex; flex-direction: column;">
-    <h1 style="text-align: center;color : white">Recuperar senha</h1>
-    <div style="align-self: center;display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top : 5vh;
-     background-color: white; width: 560px; height: 360px; border-radius: 10px">
-        <p
-            style="color: black; margin-left: 10px; margin-right: 10px; font-size: 19px; margin-top: -5%; text-align: center">
-            Para
-            recuperar sua senha, informe seu e-mail cadastrado que enviaremos um código para a redefinição da senha.</p>
+<body>
+    <h1 class="main-title">Recuperar senha</h1>
+    <div class="main-box">
+        <p class="email-text">
+            Para recuperar sua senha, informe seu e-mail cadastrado que enviaremos um código para a redefinição da
+            senha.</p>
         <form action="/password/recuperar_senha" method="POST">
-            <div style="display:flex;flex-direction:row;">
-                <input style="height: 30px; border-radius: 5px; width: 320px; margin-right: 20px; padding-left: 10px"
-                    type="text" placeholder="Digite o email para recuperação de senha" name="email">
+            <div class="div-input-email">
+                <input class="input-email" type="text" placeholder="Digite o email para recuperação de senha"
+                    name="email">
                 <button type="submit">
                     Enviar e-mail
                 </button>
             </div>
+        </form>
 
-        </form>        
         <% if (status == true) { %>
-        <div
-            style="background-color: red; color: white; width: 260px; height: 80px; text-align: center; border-radius: 15px; margin-top: 5%">
+        <div class="div-error">
             <p>E-mail não encontrado !</p>
             <p>Por favor, insira um e-mail válido</p>
         </div>
-
         <% } %>
+
     </div>
-    <div
-            style="flex-direction : row; align-self: center; display: flex; justify-content: space-evenly; align-items: center;background-color: white; border-radius: 10px; height: 30px; width: 360px; margin-top: 5%">
-            <a style="color: black" href="/users/login"> Voltar para o login</a>
-            <a style="color: black" href="/"> Voltar para a Home</a>
-        </div>
+    <div class="div-options">
+        <a href="/users/login"> Voltar para o login</a>
+        <a href="/"> Voltar para a Home</a>
+    </div>
 </body>
 
 </html>

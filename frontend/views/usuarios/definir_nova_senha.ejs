@@ -5,48 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/recuperar_senha/styles/definir_senha.css">
     <title>Redefinir senha</title>
 </head>
 
-<body style="background-color: #49AFFF; display: flex; flex-direction: column;">
-    <h1 style="text-align: center;color : white">Recuperar senha</h1>
-
-    <div style="align-self: center;display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top : 5vh;
-    background-color: white; width: 560px; min-height: 360px; border-radius: 10px">
-
+<body>
+    <h1 class="main-title">Recuperar senha</h1>
+    <div class="main-box">
         <form action="/password/redefinir_senha" method="POST">
-            <div
-                style="display:flex;flex-direction:row; justify-content: space-around;margin-bottom: 10px; font-size: 19px; margin-top: 5%">
+            <div class="box-inserts">
                 <label><b>Confirme o email</b></label><label><b>Insira o código recebido</b></label>
             </div>
-            <div style="display:flex;flex-direction:row; margin-bottom: 20px">
-                <input style="height: 30px; border-radius: 5px; width: 240px; margin-right: 10px; padding-left: 10px"
-                    type="text" placeholder="Confirme o e-mail..." name="email">
-                <input style="height: 30px; border-radius: 5px; width: 240px;  padding-left: 10px" type="text"
-                    placeholder="Insira o código..." name="token">
+            <div class="div-input">
+                <input class="input-email" type="text" placeholder="Confirme o e-mail..." name="email">
+                <input class="input-code" type="text" placeholder="Insira o código..." name="token">
             </div>
-
-            <div
-                style="display:flex;flex-direction:row; justify-content: space-around;margin-bottom: 10px; font-size: 19px">
+            <div class="div-password">
                 <label><b>Digite a nova senha</b></label>
             </div>
-            <div style="display:flex;flex-direction:row; justify-content: center">
-                <input style="height: 30px; border-radius: 5px; width: 320px; margin-right: 20px; padding-left: 10px"
-                    type="password" placeholder="Insira a nova senha..." name="senha">
+            <div class="div-input-password">
+                <input class="input-password" type="password" placeholder="Insira a nova senha..." name="senha">
             </div>
 
-            <div style="display:flex;flex-direction:row;justify-content: center;margin-top: 35px">
-                <button
-                    style="color:white ;height : 40px; background-color: #4AB1FF; border-radius : 10px; width: 160px; font-weight: bold;"
-                    type="submit">
+            <div class="div-confirm">
+                <button class="button-confirm" type="submit">
                     Confirmar nova senha
                 </button>
             </div>
         </form>
 
         <% if (notUser || notToken || tokenExpires) { %>
-        <div
-            style="background-color: red; color: white; width: 260px; min-height: 80px; text-align: center; border-radius: 15px; margin-top: 5%; margin-bottom: 5%">
+        <div class="div-error">
             <% if(notUser) { %>
             <p>E-mail não encontrado !</p>
             <p>Por favor, insira um e-mail válido</p>
@@ -63,12 +52,11 @@
         </div>
         <% } %>
     </div>
-    <div
-    style="flex-direction : row; align-self: center; display: flex; justify-content: space-evenly; align-items: center;background-color: white; border-radius: 10px; height: 30px; width: 480px; margin-top: 5%">
-    <a style="color: black" href="/password/forgot"> Inserir novo e-mail</a>
-    <a style="color: black" href="/users/login"> Voltar para o login</a>
-    <a style="color: black" href="/"> Voltar para a Home</a>
-</div>
+    <div class="div-options">
+        <a href="/password/forgot"> Inserir novo e-mail</a>
+        <a href="/users/login"> Voltar para o login</a>
+        <a href="/"> Voltar para a Home</a>
+    </div>
 </body>
 
 </html>
