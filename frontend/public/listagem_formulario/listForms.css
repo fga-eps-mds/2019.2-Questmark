@@ -1,0 +1,86 @@
+body{
+    background: white;
+}
+.formBox{
+    min-height: 100px;
+    height: 25vh;
+    width:auto;
+    margin-bottom: 3vh;
+    padding-top: 10px;
+    background: #EDEDED;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 10px;
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+.formText{
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    margin-bottom: 15px; 
+}
+.wrapping{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.buttonsBox{
+    display: flex;
+    background: #FFFFFF;
+    height: 80px;
+    padding: 0px 10px 0px 10px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.buttonForm{
+    margin: 8px;
+    outline: none;
+    text-align: center;
+    text-decoration: none; 
+    width: 52px;
+    height: 52px;
+    opacity: 0.7;
+    border-radius: 52px;
+    transition: 0.3s;
+}
+.buttonForm:hover{
+    opacity: 1;
+}
+#buttonIcon{
+    font-size:20px; 
+    color:white; 
+    margin-top: 15px;
+}
+.newFormButton{
+    border-radius: 75px;
+    background-image: linear-gradient(to right,rgba(0, 123, 255), rgba(0, 170, 255));
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    color: white;
+    font-size: 66px;
+    outline: none;
+    text-decoration: none;
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+.newFormButton:hover{
+    opacity: 1;
+}
+.nothingHere{
+    display: flex;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.nothingHereText{
+    font-size: 26px;
+    margin-bottom: 15px;
+}

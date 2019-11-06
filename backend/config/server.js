@@ -54,6 +54,9 @@ app.get("/", (req, res) => {
 	res.render('./home/home');
 });
 
+app.get("/ajuda",(req,res)=>{
+	res.render('./ajuda/ajuda')
+});
 //Rotas secundarias (sub-rotas)
 const forms = require('../routes/forms');
 app.use('/forms', forms);
