@@ -36,6 +36,12 @@
             loadCharts(answers,fieldMapping);    
         }
         else{
+           let img = document.createElement('img');
+           img.src = "/dashboard/images/chart-semresposta.png";
+           img.style.width = '500px';
+           img.style.height = '700px';
+           console.log(img)
+           document.body.appendChild = img;
             alert('Sem respostas :(');
         }
         
