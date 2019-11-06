@@ -1,3 +1,13 @@
+let typeCharts = Array();
+
+function getAnsewrsEJS(answers) {
+	return answers;
+}
+        
+function getFieldMappingEJS(fieldMapping){
+	return fieldMapping;
+}
+
 //Retorna um array de cores aleatórias.
 function generateColors(size) {
     let colors = Array();
@@ -47,9 +57,6 @@ function generateHistogram(jsonAnswers,fieldMapping) {
             }
         }
     });
-
-    console.log(jsonAnswers);
-    console.log(histogramFields);
 
     return histogramFields;
 }
@@ -141,26 +148,26 @@ function makeContext(field){
 }
 
 //Troca o tipo de gráfico que está sendo exibido.
-        function changeChart(field){
-            let canvasPie = document.getElementById(`pie-canvas-${field}`);
-            let canvasBar = document.getElementById(`bar-canvas-${field}`);
-            if(typeCharts[field] === 'pie'){
-               canvasPie.style.display = 'none'; 
-               canvasBar.style.display = 'block'; 
-               typeCharts[field] = 'bar';
-            }
-            else if(typeCharts[field] === 'bar'){
-                canvasBar.style.display = 'none'; 
-                canvasPie.style.display = 'block'; 
-                typeCharts[field] = 'pie';
-            }
-        }
+function changeChart(field){
+	let canvasPie = document.getElementById(`pie-canvas-${field}`);
+	let canvasBar = document.getElementById(`bar-canvas-${field}`);
+	if(typeCharts[field] === 'pie'){
+		canvasPie.style.display = 'none'; 
+		canvasBar.style.display = 'block'; 
+		typeCharts[field] = 'bar';
+	}
+	else if(typeCharts[field] === 'bar'){
+		canvasBar.style.display = 'none'; 
+		canvasPie.style.display = 'block'; 
+		typeCharts[field] = 'pie';
+	}
+}
 
 //Carrega os gráficos na página.
-window.onload = function() {
-    let histogramFields = generateHistogram(<%-JSON.stringify(respostas)%>,
-                                            <%-JSON.stringify(mapeamentoCampos)%>);
-    for(let field in histogramFields){
+function loadCharts(answers,fieldMapping) {
+    let histogramFields = generateHistogram(answers,fieldMapping);
+  
+    for(let field in histogramFields){	
         //Criando contexto dos gráficos
         makeContext(field);
         let chartDiv = document.getElementById(`chart-${field}`);
@@ -182,5 +189,6 @@ window.onload = function() {
         new Chart(ctxPie, createConfigPieChart(field,chartColors,histogramFields[field]));
         new Chart(ctxBar, createConfigBarChart(field,chartColors,histogramFields[field]));
         typeCharts[field] = 'pie';
+
     }
 };

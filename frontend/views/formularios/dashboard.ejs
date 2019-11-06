@@ -20,13 +20,25 @@
 </head>
 
 <body>
-    <% include ../partials/Header.ejs %>
-    
+    <!--<% include ../partials/Header.ejs %>-->
+
     <div id="charts-div">
             
     </div>
 
     <!-- Script de de plotagem dos gráficos -->
     <script src="/dashboard/javascript/chart_script.js"></script>
+    <script>
+        let answers = getAnsewrsEJS(<%-JSON.stringify(respostas)%>);
+        let fieldMapping = getFieldMappingEJS(<%-JSON.stringify(mapeamentoCampos)%>);
+
+        if(answers){
+            loadCharts(answers,fieldMapping);    
+        }
+        else{
+            alert('Sem respostas :(');
+        }
+        
+    </script>
 </body>
 </html>
