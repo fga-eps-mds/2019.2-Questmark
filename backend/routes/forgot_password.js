@@ -1,9 +1,10 @@
 const express = require('express');
 const crypto = require('crypto');
 const User = require('../models/Users');
-const mailer = require('../modules/mailer');
-
+//const mailer = require('../modules/mailer');
+const sgMail = require('@sendgrid/mail');
 const router = express.Router();
+sgMail.setApiKey("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");
 
 router.get('/forgot', (req, res) => {
     res.render('./usuarios/solicitar_nova_senha', { status: false });
@@ -19,7 +20,7 @@ router.post('/recuperar_senha', async (req, res) => {
             res.render('./usuarios/solicitar_nova_senha', { status: true })
         }
 
-        const token = crypto.randomBytes(20).toString('hex');  // Cria o token
+        const token = crypto.randomBytes(5).toString('hex');  // Cria o token
 
         const now = new Date();
         now.setHours(now.getHours() + 1); //Define o tempo em que o token ficará ativo ( 1 hora )
@@ -31,19 +32,30 @@ router.post('/recuperar_senha', async (req, res) => {
             }
         });
 
-        mailer.sendMail({
-            from: 'questmark@mds.com.br',
-            to: email,
-            template: 'auth/forgot_password',
-            context: { token }
-        }, (err) => {
-            if (err) {
-                console.log(err)
-                return res.status(400).send({ err: 'Falha ao enviar e-mail.' });
-            }
-            return res.send();
-        });
+        //Talvez nao seja necessário -- verificar na revisão de código final
+        // mailer.sendMail({
+        //     from: 'questmark@mds.com.br',
+        //     to: email,
+        //     template: 'auth/forgot_password',
+        //     context: { token }
 
+        // }, (err) => {
+        //     if (err) {
+        //         console.log(err)
+        //         return res.status(400).send({ err: 'Falha ao enviar e-mail.' });
+        //     }
+        //     return res.send();
+        // });
+        const msg = {
+            to: email,
+            from: 'no-reply@questmark.com.br',
+            subject: 'Recuperar senha - Questmark',
+            text: 'E-mail para recuperação de senha no Questmark',
+            html: `<p>Utilize o seguinte código em nosso site ${token} </p>
+            <p>Se você não solicitou a troca de senha, por favor desconsidere este e-mail.`,
+        };
+
+        await sgMail.send(msg);
         res.render('usuarios/definir_nova_senha', { notUser: false, notToken: false, tokenExpires: false });
         console.log(token, now);
 
