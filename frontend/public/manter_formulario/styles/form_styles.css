@@ -32,3 +32,36 @@ body{
 	margin-left: auto;
 }
 
+
+#main-div{
+	width: 50em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	border-radius: 10px; 
+	padding: 10px;
+	margin-top: 1em;
+}
+
+.field{
+	padding-left: 5px;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border: 1.5px solid rgba(35,152,214,0.8);
+	border-radius: 10px;
+}
+
+.optionField{
+	display: inline;
+}
+
+.labelOption{
+	margin-left: 5px;
+}
+
+#btnSubmit{
+	width: 10em;
+	display: block;
+	margin-left: auto;
+}

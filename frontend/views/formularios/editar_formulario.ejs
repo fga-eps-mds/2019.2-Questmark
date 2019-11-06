@@ -39,15 +39,15 @@
 		</div>
 	</div>
 	<div style="display: flex; justify-content: center;">
-		<div class="pageTitle">Registrar Novo Questionário</div>
+		<div class="pageTitle">Editar Questionário</div>
 	</div>
 
 	<div class="backGround">
-		<form id="form_registro" method="POST" action="/forms/registro/salvar">
+		<form id="form_registro" method="POST" action="/forms/salvar_edicao/<%= id %>">
 			<div>
 				<div style="display: flex; justify-content: center;">
 					<input type="text" id="name_quest" name="name_quest" placeholder="Nome do questionário"
-						class="textBoxName">
+						class="textBoxName" value="<%= name_quest %>">
 				</div>
 				<div class="pageDimension">
 					<div style="display: flex; flex-direction: column;">
@@ -92,6 +92,7 @@
 		</div>
 	</div>
 
+
 	<script type="text/javascript">
 		new WMDEditor({
 			input: "notes",
@@ -102,6 +103,15 @@
 			modifierKeys: false,
 			autoFormatting: false
 		});
+
+		function insertCopyMarkdown(markdown) {
+			let fieldText = document.getElementById('notes');
+			fieldText.value = '';	
+			fieldText.value = markdown;	
+		}
+
+		insertCopyMarkdown(<%-JSON.stringify(copy_markdown)%>);
+		
 	</script>
 
 	<!-- Script de submissão do questionário -->
