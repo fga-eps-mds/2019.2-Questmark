@@ -1,0 +1,110 @@
+h1, h2, h3, h4, h5, h6{
+  text-align: center
+}
+.backGround {
+  display: flex;
+  justify-content: space-evenly;  
+  margin: 10px;
+  background-color: white;
+}
+.pageTitle {
+  color: #000000;
+  font-size: 22px;
+  margin-top: 15px;  
+  text-align: center;
+}
+.textTitleName {
+  color: #000000;
+  min-width: 2vh;
+  font-weight: 700;
+  text-align: left;
+}
+.textTitles {
+  color: #000000;
+  font-weight: bold;  
+  text-align: center;
+}
+.textBox {
+  background-color: #FFFFFF;
+  border: 1px solid #8492A6;  
+  width: 40vw;
+  height: 50vh;
+  resize: none;
+  word-wrap: break-word;
+  outline: none;
+  border-radius: 15px;
+}
+.textBox:focus {
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+.textBoxName {
+  background-color: #FFFFFF;
+  border: 1px solid #8492A6;
+  width: 350px;
+  height: 25px;
+  text-align: center;
+  margin-bottom: 1vh;
+  border-radius: 8px;
+  outline: none;
+  opacity: 0.8;
+}
+.textBoxName:focus {
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+.pageDimension {
+  justify-content: space-between;
+  display: flex;
+}
+.buttonsView{
+  margin-top: 1%;
+  margin-right: 2%;
+  float: right;
+}
+
+.buttonOption{
+  width: 45px;
+  height: 45px;
+  border-radius:45px;
+  border-width: 0px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.3;
+}
+.buttonOption:hover{
+  outline: none;
+  opacity: 1;
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+.buttonOption:focus{
+  outline: none;
+  opacity: 1;
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+.buttonOptionDiv{
+  width: 45px;
+  height: 45px;
+  border-radius:45px;
+  border-width: 0px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.3;
+  justify-content: center;
+  margin-right: 10px;
+}
+.buttonOptionDiv:hover{
+  outline: none;
+  opacity: 1;
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+.buttonOptionDiv:focus{
+  outline: none;
+  opacity: 1;
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
+}
+#buttonIcon{
+  font-size:20px; 
+  color:white; 
+  align-self: center;
+  margin-left: 16px;
+  margin-top: 12.5px;
+}

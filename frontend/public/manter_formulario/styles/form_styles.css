@@ -1,0 +1,67 @@
+body{
+	background-color: rgba(35,152,214,1);
+	font-family: 'PT Serif', serif;
+}
+
+.container{
+	float: left;
+	width: 100%;
+}
+
+/*960px*/
+.content{
+	width: 64.8648648649%;
+	margin: 0 auto;
+	padding: 0,625% 0;
+}
+
+#mainDiv{
+	width: 64.8648648649%;
+	margin-left: auto;
+	margin-right: auto;
+	/*background-color: rgba(128,128,128,0.8);*/
+	background-color: white;
+	border-radius: 10px; padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#btnSubmit{
+	width: 140px;
+	display: block;
+	margin-left: auto;
+}
+
+
+#main-div{
+	width: 50em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	border-radius: 10px; 
+	padding: 10px;
+	margin-top: 1em;
+}
+
+.field{
+	padding-left: 5px;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border: 1.5px solid rgba(35,152,214,0.8);
+	border-radius: 10px;
+}
+
+.optionField{
+	display: inline;
+}
+
+.labelOption{
+	margin-left: 5px;
+}
+
+#btnSubmit{
+	width: 10em;
+	display: block;
+	margin-left: auto;
+}
