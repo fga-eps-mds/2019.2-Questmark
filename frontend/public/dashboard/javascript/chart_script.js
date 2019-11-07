@@ -1,4 +1,5 @@
 let typeCharts = Array();
+let maxScale = Array();
 
 function getAnsewrsEJS(answers) {
 	return answers;
@@ -30,6 +31,7 @@ function initializeFieldHistogram(mapField,histogramFields) {
         if(histogramFields[element.name] === undefined){
                 histogramFields[element.name] = Array();
         }
+        maxScale[element.name] = 0;
         histogramFields[element.name][element.option] = 0;
     });
 }
@@ -51,10 +53,12 @@ function generateHistogram(jsonAnswers,fieldMapping) {
             if(Array.isArray(element[field])){
                 element[field].forEach((answer) => {
                     histogramFields[field][answer]++;
+                    maxScale[field] = Math.max(maxScale[field],histogramFields[field][answer]);
                 });
             }
             else{
                 histogramFields[field][element[field]]++;
+                maxScale[field] = Math.max(maxScale[field],histogramFields[field][element[field]]);
             }
         }
     });
@@ -118,7 +122,10 @@ function createConfigBarChart(field,backgroundColors,borderColors,data){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        min: 0,
+                        max: maxScale[field] + 1,
+                        stepSize: 1,
                     }
                 }]
             }
@@ -138,7 +145,6 @@ function makeContext(field){
       	</div>
         <div class="col-md-1">
         	<button class="btn-change" onclick="changeChart('${field}')">
-          		<span id="span-btn-${field}"></span>
           		<img id="img-btn-${field}"/>
           	</button>
         </div>
@@ -192,7 +198,6 @@ function loadCharts(answers,fieldMapping) {
         
         //Botão de troca de gráfico
         let imgChange = document.getElementById(`img-btn-${field}`);
-        let spanChange = document.getElementById(`span-btn-${field}`);
         imgChange.src = '/dashboard/images/chart-bar.png';
 
         //Cores dos gráficos
