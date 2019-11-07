@@ -5,44 +5,31 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Registro</title>
 	<link rel="stylesheet" href="/manter_formulario/styles/novoformulario.css">
-	<link rel="stylesheet" href="/manter_formulario/styles/header.css">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<!-- JQuery  -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+		</script>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-	</script>
+	<script src="https://kit.fontawesome.com/4b0fcedc6f.js" crossorigin="anonymous"></script>
 
-	<link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
 	<script src="/wmd/wmd.js"></script>
 	<script src="/wmd/showdown.js"></script>
-	<style type="text/css" media="screen">
-		textarea,
-		#notes-preview {
-			border: 1px solid gray;
-		}
-
-		#notes-preview {
-			overflow-x: hidden;
-			overflow-y: scroll;
-		}
-	</style>
 </head>
 <%- include ../partials/Header.ejs%>
 
 <body>
-
-	<nav class="navbar navbar-light bg-light mt-5">
-		<div class="container">
-			<div class="navbar-brand mx-auto mb-0 h1">
-				<h1>Registro de Questionário</h1>
-			</div>
-		</div>
-	</nav>
-
-	<div id="div-erros" class="row" style="display: none;">
+	<div id="div-erros" style="display: none; height: 45px; margin: 10px 0px 20px 0px">
 		<div class="col-md-12">
 			<div id="div-lista-erros" class="alert alert-danger">
 				<strong>Atenção!</strong>
@@ -51,32 +38,58 @@
 			</div>
 		</div>
 	</div>
+	<div style="display: flex; justify-content: center;">
+		<div class="pageTitle">Registrar Novo Questionário</div>
+	</div>
 
 	<div class="backGround">
 		<form id="form_registro" method="POST" action="/forms/registro/salvar">
 			<div>
-				<label for="name_quest" class="textTitleName">Nome: </label>
-				<input type="text" id="name_quest" name="name_quest" placeholder=" Nome do Questionário" class="textBoxName">
-			</div>
-			<div class="row">
-				<div style="display: flex; flex-direction: column;">
-					<label for="copy_marskdown" class="textTitles">Conteúdo:</label>
-					<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox"></textarea>
+				<div style="display: flex; justify-content: center;">
+					<input type="text" id="name_quest" name="name_quest" placeholder="Nome do questionário"
+						class="textBoxName">
 				</div>
-				<div style="display: flex; flex-direction: column;">
-					<label class="textTitles">Preview:</label>
-					<div class="textBox" id="notes-preview"></div>
+				<div class="pageDimension">
+					<div style="display: flex; flex-direction: column;">
+						<label for="copy_marskdown" class="textTitles">Conteúdo</label>
+						<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox"></textarea>
+					</div>
+					<div style="display: flex; flex-direction: column;">
+						<label class="textTitles">Preview</label>
+						<div class="textBox" id="notes-preview" style="margin-left: 2vw"></div>
+					</div>
+					<textarea hidden="hidden" type="text" id="copy_html" name="copy_html"></textarea>
 				</div>
-
-				<textarea hidden="hidden" type="text" id="copy_html" name="copy_html" class="form-control"
-					placeholder="Saída HTML">
-					</textarea>
 			</div>
-			<button type="submit" class="buttonsView btn btn-success"> Cadastrar </button>
+			<div style="float: right; margin-top: 15px; flex-direction: row; display:flex">
+				<a onclick="window.location.href='/forms'">
+					<div class="buttonOptionDiv" style="background-color: rgb(255, 0, 0);">
+						<i class="fas fa-times" style="color: white" id="buttonIcon"></i>
+					</div>
+				</a>
+				<button type="submit" class="buttonOption" style="background: rgb(15, 225, 20);">
+					<i class="fas fa-check" style="color: white"></i>
+				</button>
+			</div>
 		</form>
+	</div>
 
-		<button type="submit" onclick="window.location.href='/'" class="buttonsView btn btn-danger"> Cancelar
-		</button>
+	<!-- Modal erro/sucesso cadastro -->
+	<div class="modal fade" id="modal-form" data-keyboard="false" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div id="modalHeader">
+					<h5 class="modal-title" id="modalLabel">Título</h5>
+				</div>
+				<div id='modalBody' class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="btnClose" data-dismiss="modal">Texto Btn</button>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<script type="text/javascript">

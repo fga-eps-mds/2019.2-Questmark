@@ -32,39 +32,41 @@ router.get('/registro', (req, res) => {
 
 //Rota para salvar novo formulário
 
-router.post('/registro/salvar',
-    [//Validação dos campos
-        check('name_quest').not().isEmpty().withMessage('Campo nome está vazio.'),
-        check('copy_markdown').not().isEmpty().withMessage('Campo markdown está vazio.'),
-    ],(req,res)=>{
-        let erros = validationResult(req);
-        let dadosForm = req.body;
-        
-        if(erros.array().length > 0){
-            console.log(erros.array());
-            res.send({validacao: erros.array(), status: false});
-        }       
-        else{
-            var formulario = {
-                nome : dadosForm.name_quest,
-                data_quest: dadosForm
-            };  
-            new modelFormulario(formulario).save().then((formulario)=>{
-                let tmpfm = req.user.formulario
-                tmpfm.push(formulario)
-                modelUsers.updateOne({_id: req.user.id},{$set: {'formulario' : tmpfm }},(err,result) => {
-                    console.log(result);
-                    res.send({validacao: [{msg:'Questionário cadastrado!'}],status: true});
-                    console.log("Salvo com sucesso.");
-                })
-            }).catch((err)=>{
-                console.log(err)
-                res.send({validacao: [{msg:'Falha ao salvar o questionário.'}],status: false});
-            });
-        }
+router.post('/registro/salvar',(req,res)=>{
+    let dados = req.body;
+    var erros = [];
 
+    //Validação dos campos
+    if(dados.name_quest == ''){
+        erros.push({erro: "Campo nome está vazio."})
     }
-);
+    if(dados.copy_markdown == ''){
+        erros.push({erro: "Campo markdown está vazio."})
+    }
+
+    if(erros.length > 0){
+        console.log(erros);
+        res.send({msg: erros, status: false});
+    }
+    else{
+        var formulario = {
+            nome : dados.name_quest,
+            data_quest: dados
+        };  
+        new modelFormulario(formulario).save().then((formulario)=>{
+            let tmpfm = req.user.formulario
+            tmpfm.push(formulario)
+            modelUsers.updateOne({_id: req.user.id},{$set: {'formulario' : tmpfm }},(err,result) => {
+                console.log(result)
+                res.send({msg: 'Questionário cadastrado!',status: true});
+                console.log("Salvo com sucesso.");
+            })
+        }).catch((err)=>{
+            console.log(err)
+            res.send({msg:['Falha ao salvar o questionário.'],status: false});
+        });
+    }
+});
 
 //Rota de visualizar um questionário e responder
 router.get('/postar/:id', (req, res) => {
@@ -80,37 +82,42 @@ router.get('/postar/:id', (req, res) => {
 });
 
 //Rota para Editar Formulário
-router.get('/editar_formulario/:id', (req,res)=>{
-    modelFormulario.findOne({_id:req.params.id}).then((formulario)=> {
-        res.render("./formularios/editar_formulario",{
-            name_quest: formulario.nome,
-            copy_markdown: formulario.data_quest.copy_markdown,
-            id: formulario.id});
-
-    });
+router.get('/editar/:id', (req, res) => {
+    if (req.user) {
+        modelFormulario.findOne({ _id: req.params.id }).then((formulario) => {
+            res.render("./formularios/editar_formulario", {
+                name_quest: formulario.nome,
+                copy_markdown: formulario.data_quest.copy_markdown,
+                id: formulario.id
+            });
+        });
+    }
+    else {
+        res.redirect('/users/login');
+    }
 });
 
 router.post('/salvar_edicao/:id',
     [//Validação dos campos
         check('name_quest').not().isEmpty().withMessage('Campo nome está vazio.'),
         check('copy_markdown').not().isEmpty().withMessage('Campo markdown está vazio.'),
-    ],(req,res)=>{
+    ], (req, res) => {
         let erros = validationResult(req);
         const id = req.params.id;
         let dadosForm = req.body;
-        
-        if(erros.array().length > 0){
+
+        if (erros.array().length > 0) {
             console.log(erros.array());
-            res.send({validacao: erros.array(), status: false});
-        } 
-        else{
-            modelFormulario.updateOne({_id: id},{$set: {'nome' : dadosForm.name_quest, "data_quest": dadosForm}},(err,result) => {
-                if(err){
+            res.send({ validacao: erros.array(), status: false });
+        }
+        else {
+            modelFormulario.updateOne({ _id: id }, { $set: { 'nome': dadosForm.name_quest, "data_quest": dadosForm } }, (err, result) => {
+                if (err) {
                     console.log('Erro ao salvar a resposta: ' + err);
-                    res.send({validacao: [{msg:'Falha no servidor ao tentar salvar as modificações.'}],status: false});     
-                }                    
-                else{
-                    res.send({validacao: [{msg:'Modificações Salvas com Sucesso!'}],status: true});     
+                    res.send({ validacao: [{ msg: 'Falha no servidor ao tentar salvar as modificações.' }], status: false });
+                }
+                else {
+                    res.send({ validacao: [{ msg: 'Modificações Salvas com Sucesso!' }], status: true });
                 }
             });
         }
@@ -163,20 +170,19 @@ router.get('/converter_respostas/:id', (req, res) => {
         var id = req.params.id
         function arrayToCSV(objArray) {
             const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
-            let str = `${Object.keys(array[0]).map(value => `"${value}"`).join(",")}` + '\r\n';
-            let fields = str
+            let str = `${Object.keys(array[0]).map(value => `"${value}"`).join(";")}` + '\r\n';
             return array.reduce((str, next) => {
-                str += `${Object.values(next).map(value => `"${value}"`).join(",")}` + '\r\n';
+                str += `${Object.values(next).map(value => `"${value}"`).join(";")}` + '\r\n';
                 return str;
             }, str);
         }
-        modelFormulario.findById(id).then((formulario)=>{
-            var csv= arrayToCSV(formulario.respostas)
+        modelFormulario.findById(id).then((formulario) => {
+            var csv = arrayToCSV(formulario.respostas)
             var nome = formulario.nome
-            res.attachment(nome+'.csv');
+            res.attachment(nome + '.csv');
             console.log(csv)
-           res.send(Buffer.from(csv));  
-       })
+            res.send(Buffer.from(csv));
+        })
     }
     else {
         res.redirect('/users/login');

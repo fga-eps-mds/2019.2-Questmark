@@ -3,65 +3,53 @@
 
 <head>
 	<meta charset="UTF-8">
-	<!-- Esses ficam-->
 	<script src="/listagem_formulario/js/copyForm.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/listagem_formulario/styles/listForms.css">
+	<script src="https://kit.fontawesome.com/4b0fcedc6f.js" crossorigin="anonymous"></script>
 	<title>QuestMark</title>
 </head>
-
+<%- include ../partials/Header.ejs%>
+<%- include ../partials/Overlay.ejs%>
+<% if (formulario.length>0) { %>
 <body>
-	<%- include ../partials/Header.ejs%>
-	<%- include ../partials/Overlay.ejs%>
-
 	<br>
-	<br>
-	<hr>
-	<% if (formulario.length>0) { %>
-	<% for(let i = 0;i < formulario.length;i++){ %>
-	<div class="card border-dark mb-3" style="max-width: 22rem;margin-left: 8px ">
-		<div class="card-header">Nome: <%= formulario[i].nome%></div>
-		<div class="card-body text-dark">
-			<a href="/forms/editar_formulario/<%= formulario[i].id %>">
-				<img src="https://img.icons8.com/material-two-tone/24/000000/pencil.png"
-					style="background-color:#7FCAF2;padding: 10px;border-radius: 26px;">
-			</a>
-			<!-- Esses ficam-->
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPrincipal"
-				onclick="getInfo('<%=formulario[i].id%>','<%=formulario[i].nome%>')">
-				<img src="https://img.icons8.com/ios/24/000000/share.png"
-					style="background-color:#77D353; margin-left: 30px; padding: 10px;border-radius: 20px;">
-			</button type="button">
-			<!-- Esses ficam-->
-			</a>
-			<a href="/forms/listar_respostas/<%= formulario[i].id %>"">
-				<img src=" https://img.icons8.com/ios-filled/25/000000/75-percents.png"
-				style="background-color:#4B2CFF;margin-left: 30px;padding: 10px;border-radius: 20px;">
-
-			</a>
-			<a href="/forms/delete/<%= formulario[i].id %>">
-				<img src="https://img.icons8.com/android/24/000000/trash.png"
-					style="background-color:#FF2C2C;margin-left: 30px;padding: 10px;border-radius: 20px;">
-
-			</a>
+	<div class="wrapping">
+		<% for(let i = 0;i < formulario.length;i++){ %>
+		<div class="formBox">
+			<div class="formText"><%= formulario[i].nome%></div>
+			<div class="buttonsBox">
+				<a href="/forms/editar/<%= formulario[i].id %>">
+					<div class="buttonForm" style="background: #00AAFF">
+						<i class="fa fa-pencil" id="buttonIcon"></i>
+					</div>
+				</a>
+				<a onclick="getInfo('<%=formulario[i].id%>','<%=formulario[i].nome%>')" data-toggle="modal" data-target="#ModalPrincipal" style="cursor:pointer;">
+					<div class="buttonForm" style="background: #77D353" >
+						<i class="fas fa-share-alt" id="buttonIcon"></i>
+					</div>
+				</a>
+				<a href="/forms/listar_respostas/<%= formulario[i].id %>">
+					<div class="buttonForm" style="background: #4B2CFF">
+						<i class="fas fa-chart-bar" id="buttonIcon"></i>
+					</div>
+				</a>
+				<a onclick="return confirm('Tem certeza que deseja excluir o questionário?');" href="/forms/delete/<%= formulario[i].id %>">
+					<div class="buttonForm" style="background: #FF2C2C">
+						<i class="fas fa-trash" id="buttonIcon"></i>
+					</div>
+				</a>
+			</div>
 		</div>
-		<div class="card-footer text-muted">
-			Data de Criação: <%=formulario[i].data%>
-		</div>
+		<% } %>
+		<a href="/forms/registro" class="newFormButton">+</a>
 	</div>
-
-	<div id="overlay">
-		<div id="boxOverlay">
-			<div id="text" />
-			<div></div>
-		</div>
-	</div>
-	</div>
-	<% } %>
 	<% }else{ %>
-	<div class="alert alert-dark" role="alert">
-		Sem Formulários Cadastrados!
+	<div class="nothingHere">
+		<div class="nothingHereText">Nenhum Formulário Foi Cadastrado</div>
+		<a href="/forms/registro" class="newFormButton">+</a>
 	</div>
 	<% } %>
-	<a href="/forms/registro"><button class="btn btn-success" style="margin-left: 111px ">Novo Questionário</button></a>
 </body>
 
 </html>

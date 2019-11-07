@@ -45,38 +45,27 @@ $("#form_registro").on("submit", function(event) {
 
 	$.post(this.action,jsonData,(resp) => {
 		if(resp.status){
-			alert(resp.validacao[0].msg);
-			window.location.href = '/forms/';
+			//Configurando saída de sucesso
+			document.getElementById('modalLabel').innerHTML = 'Pronto!';
+			document.getElementById('modalHeader').className = 'modal-header text-success';
+			document.getElementById('btnClose').innerHTML = 'Voltar ao menu';
+			document.getElementById('btnClose').className = 'btn btn-success';
+			document.getElementById('modalBody').innerHTML = 'Questionário cadastrado com sucesso.';
+			document.getElementById('btnClose').onclick = function(){window.location.href = '/forms/'};
+			$('#modal-form').modal('show');
 		}
 		else{
-			//Visibilidade
-			document.getElementById('div-erros').style.display = 'block';
-			
-			//Limpando conteúdo da ul de listagem de erros
-			let node = document.getElementById('lista-erros');
-			node.parentNode.removeChild(node);
-			let listErr = document.createElement('ul');
-			document.getElementById('div-lista-erros').appendChild(listErr);
-			listErr.id = 'lista-erros';
-			
-			//Listagem dos erros
-			resp.validacao.forEach((erro) => {
-				let imsg = document.createElement('li');
-				imsg.innerHTML = erro.msg;
-				listErr.appendChild(imsg);
+			//Configurando saída de erro
+			let erros = '';
+			resp.msg.forEach((msg) => {
+				erros += `<br>*${msg.erro}`;
 			});
+			document.getElementById('modalLabel').innerHTML = 'Erro';
+			document.getElementById('modalHeader').className = 'modal-header text-danger';
+			document.getElementById('btnClose').innerHTML = 'Voltar';
+			document.getElementById('btnClose').className = 'btn btn-danger';
+			document.getElementById('modalBody').innerHTML = `Erro(s):${erros}`;
+			$('#modal-form').modal('show');
 		}
 	});
 });
-
-
-/*
-	$.ajax({
-  		type: "POST",
-		url: this.action,
-  		data: jsonData,
-  		success: (resp) => { console.log(resp);},
-  		error: (err) => { console.log(err);},
-  		dataType: 'json'
-	});
-*/
