@@ -1,0 +1,10 @@
+.boxOverlay{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+.offscreen {
+  position: absolute;
+  left: -999em;
+}
+  
