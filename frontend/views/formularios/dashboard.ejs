@@ -16,9 +16,9 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
 
-    < src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></>
-    < src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></>
-    < src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <title>QuestMark</title>
 </head>
 
@@ -32,6 +32,11 @@
         
         </div>    
     </div>
+
+    <div id="none-answer" class="not-visible" style="display: none;">
+        <img src="/dashboard/images/chart-semresposta.png" 
+            style="width: 40vw;display: block;margin: 0 auto;">
+    </div>
     
     <!-- Script de de plotagem dos gráficos -->
     <script src="/dashboard/javascript/chart_script.js"></script>
@@ -43,13 +48,7 @@
             loadCharts(answers,fieldMapping);    
         }
         else{
-           let img = document.createElement('img');
-           img.src = "/dashboard/images/chart-semresposta.png";
-           img.style.width = '500px';
-           img.style.height = '700px';
-           console.log(img)
-           document.body.appendChild = img;
-            alert('Sem respostas :('') ; 
+           document.getElementById('none-answer').style.display = 'block';
         }
         
     </script>
