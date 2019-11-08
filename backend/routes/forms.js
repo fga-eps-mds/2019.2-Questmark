@@ -31,39 +31,38 @@ router.get('/registro', (req, res) => {
 });
 
 //Rota para salvar novo formulário
-
-router.post('/registro/salvar',(req,res)=>{
+router.post('/registro/salvar', (req, res) => {
     let dados = req.body;
     var erros = [];
 
     //Validação dos campos
-    if(dados.name_quest == ''){
-        erros.push({erro: "Campo nome está vazio."})
+    if (dados.name_quest == '') {
+        erros.push({ erro: "Campo nome está vazio." })
     }
-    if(dados.copy_markdown == ''){
-        erros.push({erro: "Campo markdown está vazio."})
+    if (dados.copy_markdown == '') {
+        erros.push({ erro: "Campo markdown está vazio." })
     }
 
-    if(erros.length > 0){
+    if (erros.length > 0) {
         console.log(erros);
-        res.send({msg: erros, status: false});
+        res.send({ msg: erros, status: false });
     }
-    else{
+    else {
         var formulario = {
-            nome : dados.name_quest,
+            nome: dados.name_quest,
             data_quest: dados
-        };  
-        new modelFormulario(formulario).save().then((formulario)=>{
+        };
+        new modelFormulario(formulario).save().then((formulario) => {
             let tmpfm = req.user.formulario
             tmpfm.push(formulario)
-            modelUsers.updateOne({_id: req.user.id},{$set: {'formulario' : tmpfm }},(err,result) => {
+            modelUsers.updateOne({ _id: req.user.id }, { $set: { 'formulario': tmpfm } }, (err, result) => {
                 console.log(result)
-                res.send({msg: 'Questionário cadastrado!',status: true});
+                res.send({ msg: 'Questionário cadastrado!', status: true });
                 console.log("Salvo com sucesso.");
             })
-        }).catch((err)=>{
+        }).catch((err) => {
             console.log(err)
-            res.send({msg:['Falha ao salvar o questionário.'],status: false});
+            res.send({ msg: ['Falha ao salvar o questionário.'], status: false });
         });
     }
 });
@@ -128,10 +127,9 @@ router.post('/salvar_edicao/:id',
 router.post('/salvar_resposta/:id', (req, res) => {
     let resposta = req.body;
     let tmpAnswers = [];
+    let id = req.params.id;
 
-    var id = req.params.id
-
-    console.log(resposta)
+    console.log(resposta);
 
     modelFormulario.findOne({ _id: id }, (err, formulario) => {
         if (err) {
@@ -165,6 +163,7 @@ router.get('/listar_respostas/:id', (req, res) => {
     }
 });
 
+//Rota de conversão de respostas para csv
 router.get('/converter_respostas/:id', (req, res) => {
     if (req.user) {
         var id = req.params.id
@@ -203,6 +202,21 @@ router.get('/delete/:id', (req, res) => {
     }
     else {
         res.redirect('/users/login');
+    }
+});
+
+//Rota de acesso ao dashboard das respostas do formulário
+router.get('/dashboard/:id', async (req, res) => {
+    try {
+        if (req.user) {
+            const form = await modelFormulario.findOne({ _id: req.params.id });
+            const tipos = form.data_quest.type_inputs;
+            res.render("./formularios/dashboard", { id: req.params.id,respostas: form.respostas, mapeamentoCampos: tipos });
+        } else {
+            res.redirect('/users/login');
+        }
+    } catch (error) {
+        console.log(error);
     }
 });
 
