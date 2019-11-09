@@ -3,6 +3,7 @@ const router = express.Router()
 
 require('../models/Users')
 require('../models/Formulario')
+const convertercsv = require('../../backend/controllers/csv')
 const mongoose = require('mongoose')
 const modelUsers = mongoose.model("users")
 const modelFormulario = mongoose.model("formulario")
@@ -165,21 +166,16 @@ router.get('/listar_respostas/:id', (req, res) => {
 
 //Rota de conversão de respostas para csv
 router.get('/converter_respostas/:id', (req, res) => {
+    console.log(req.body)
     if (req.user) {
         var id = req.params.id
-        function arrayToCSV(objArray) {
-            const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
-            let str = `${Object.keys(array[0]).map(value => `"${value}"`).join(";")}` + '\r\n';
-            return array.reduce((str, next) => {
-                str += `${Object.values(next).map(value => `"${value}"`).join(";")}` + '\r\n';
-                return str;
-            }, str);
-        }
+        console.log(req.body)
         modelFormulario.findById(id).then((formulario) => {
-            var csv = arrayToCSV(formulario.respostas)
+            var csv = convertercsv(formulario.respostas)
             var nome = formulario.nome
             res.attachment(nome + '.csv');
             console.log(csv)
+            console.log(req.body)
             res.send(Buffer.from(csv));
         })
     }
