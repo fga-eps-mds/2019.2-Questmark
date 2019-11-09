@@ -96,6 +96,7 @@ router.get('/editar/:id', (req, res) => {
     }
 });
 
+//Rota para salvar edições dos questionários.
 router.post('/salvar_edicao/:id',
     [//Validação dos campos
         check('name_quest').not().isEmpty().withMessage('Campo nome está vazio.'),
@@ -128,6 +129,7 @@ router.post('/salvar_resposta/:id', (req, res) => {
     let resposta = req.body;
     let tmpAnswers = [];
     let id = req.params.id;
+    let feedbackMsg;
 
     console.log(resposta);
 
@@ -140,10 +142,15 @@ router.post('/salvar_resposta/:id', (req, res) => {
             tmpAnswers.push(resposta);
             modelFormulario.updateOne({ _id: id }, { $set: { 'respostas': tmpAnswers } }, (err, result) => {
                 if (err)
-                    console.log('Erro ao salvar a resposta: ' + err);
+                    feedbackMsg = `Erro ao salvar a resposta.`;
                 else
-                    console.log('Resposta salva ! Resposta: ' + result);
-                res.redirect('/forms')
+                    feedbackMsg = `Resposta registrada com sucesso !`;
+  
+                res.render('./formularios/feedback_resposta',{
+                                                                id: id,
+                                                                msg: feedbackMsg,
+                                                                name_quest: formulario.nome
+                                                            });
             });
             console.log(tmpAnswers)
         }
