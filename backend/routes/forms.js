@@ -152,7 +152,6 @@ router.post('/salvar_resposta/:id', (req, res) => {
                                                                 name_quest: formulario.nome
                                                             });
             });
-            console.log(tmpAnswers)
         }
     });
 
