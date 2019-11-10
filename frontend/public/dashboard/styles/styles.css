@@ -1,4 +1,4 @@
-body{
+.main-font{
     font-family: 'PT Serif', serif;
 }
 
@@ -30,7 +30,6 @@ body{
 
 #btn-csv{
     display: block;
-    width: 20vw;
     margin: 0px auto;
     border-color: white; 
     background-color: rgba(211,211,211,0.5);
@@ -39,5 +38,10 @@ body{
     border-radius: 5px;
     font-weight: bold;  
 }
-/*(35,152,214,1)*/
+
+#font-logo{
+  font-family: 'Knewave', cursive;
+  color: #747474;
+}
+
 

@@ -8,28 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="/cadastro_formulario/style/header.css">
-    <link rel="stylesheet" href="./cabecalho/style/header.css">
     <link rel="stylesheet" href="/dashboard/styles/styles.css">
     
-    <!-- Font -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Knewave&display=swap" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-    <title>QuestMark</title>
+    <title>Dashboard</title>
 </head>
-
+<%- include ../partials/Header.ejs%>
 <body>
-    <!--<% include ../partials/Header.ejs %>-->
 
-    <h1 style="font-weight: bold;text-shadow:2px 2px rgba(0, 0, 0, 0.2);" align="center">           Dashboard
+    <h1 id="font-logo" align="center">           
+        Dashboard
     </h1>
 
-    <div id="charts-container" class="container" style="display: none;">
-        <button id="btn-csv" onclick="window.location.href='/forms/converter_respostas/<%= id %>'">
+    <div id="charts-container" class="container main-font" style="display: none;">
+        <button id="btn-csv" 
+                onclick="window.location.href='/forms/converter_respostas/<%= id %>'">
             <span>Download CSV</span>
             <img src="/dashboard/images/csv-icon.png">
         </button>
