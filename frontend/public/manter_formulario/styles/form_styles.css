@@ -1,5 +1,4 @@
-body{
-	/*background-color: rgba(35,152,214,1);*/
+#view-form-body{
 	background-image: linear-gradient(to right,#007BFF, rgb(0, 225, 255));
 	font-family: 'PT Serif', serif;
 }
@@ -10,7 +9,7 @@ body{
 	background-color: white;
 	border-radius: 10px; 
 	padding: 1vh 1vw;
-	margin-top: 1vh;
+	margin: 3vh 0vw;
 }
 
 .field{
@@ -29,10 +28,11 @@ body{
 }
 
 .labelOption{
-	margin-left: 0.5vw;
+	/*margin-left: 0.5vw;*/
 }
 
 #btnSubmit{
 	display: block;
 	margin-left: auto;
+	margin-top: 2vh;
 }

@@ -5,19 +5,18 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Registro</title>
 	<link rel="stylesheet" href="/manter_formulario/styles/novoformulario.css">
+	<link rel="stylesheet" href="/manter_formulario/styles/form_styles.css">
 
 	<!-- JQuery  -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
 
 	<script src="https://kit.fontawesome.com/4b0fcedc6f.js" crossorigin="anonymous"></script>
 
@@ -44,17 +43,17 @@
 		<form id="form_registro" method="POST" action="/forms/registro/salvar">
 			<div>
 				<div style="display: flex; justify-content: center;">
-					<input type="text" id="name_quest" name="name_quest" placeholder="Nome do questionário"
-						class="textBoxName">
+					<input type="text" id="name_quest" name="name_quest" placeholder="Nome do questionário" class="textBoxName">
 				</div>
 				<div class="pageDimension">
 					<div style="display: flex; flex-direction: column;">
 						<label for="copy_marskdown" class="textTitles">Conteúdo</label>
-						<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox"></textarea>
+						<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox" onkeyup="stylizePreview()"></textarea>
 					</div>
 					<div style="display: flex; flex-direction: column;">
 						<label class="textTitles">Preview</label>
-						<div class="textBox" id="notes-preview" style="margin-left: 2vw"></div>
+						<div class="textBox" id="notes-preview" style="margin-left: 2vw">
+						</div>
 					</div>
 					<textarea hidden="hidden" type="text" id="copy_html" name="copy_html"></textarea>
 				</div>
@@ -90,20 +89,30 @@
 		</div>
 	</div>
 
+	<!-- Script de submissão do questionário -->
+	<script src="/manter_formulario/javascript/functions_submission.js"></script>
+	<!-- Script de estilização do questionário -->
+	<script src="/manter_formulario/javascript/input_field_stylization.js"></script>
+
 	<script type="text/javascript">
-		new WMDEditor({
+		let wmd = new WMDEditor({
 			input: "notes",
 			button_bar: "notes-button-bar",
-			preview: "notes-preview",
+			/*preview: "notes-preview",*/
 			output: "copy_html",
 			buttons: "bold italic link  ol ul  heading",
 			modifierKeys: false,
 			autoFormatting: false
 		});
+
+		function stylizePreview(){
+			document.getElementById('notes-preview').innerHTML = wmd.previewMgr.output();
+			stylizeFields(recoverInputsInformation());
+		}
+
 	</script>
 
-	<!-- Script de submissão do questionário -->
-	<script src="/manter_formulario/javascript/functions_submission.js"></script>
+
 
 </body>
 

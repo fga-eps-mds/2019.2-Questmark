@@ -20,7 +20,7 @@ function stylizeFields(dataInputs){
 	let classBootstrap;
 
 	//Checkbox
-	classBootstrap = 'custom-control custom-checkbox optionField';
+	classBootstrap = 'custom-control custom-checkbox custom-control-inline optionField';
 	apllyClass(dataInputs.checkbox,classBootstrap);
 
 	//Radio
