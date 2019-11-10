@@ -7,7 +7,6 @@ describe('Rotas usuarios', () => {
     it('deve responder a rota de cadastro', async (done) => {
         request(app).get('/users/cadastro')
         .expect(200)
-        .expect(/criar_conta/)
         done ();
     })
 
@@ -15,31 +14,28 @@ describe('Rotas usuarios', () => {
         request(app).post('/users/criar_conta')
         .send(user)
         .end(function(err, res) {
-          expect(res.body.nome).toBe(user.nome);
-          expect(res.body.email).toBe(user.email)
-          expect(res.body.email).toBe(user.senha)
+          expect(res.body.nome).toBeDefined(user.nome);
+          expect(res.body.email).toBeDefined(user.email)
+          expect(res.body.senha).toBeDefined(user.senha)
           done();
-        
-      })
+      }).expect(201)
     })
 
-    it('deve responder a rota de login ', async (done) => {
+    it('deve responder a rota de login ', async() => {
         request(app).get('/users/login')
         .expect(200)
-        .expect(/login/)
-        done ();
+        
     })
 
-    // it('deve logar no sitema com sucesso ', async (done) => {
-        
-    // })
-
-    it('deve deslogar do sistema com sucesso', async (done) => {
-        request(app).get('/users/logout')
+    it('deve responder a rota de email',async ()=>{
+        request(app).post('/validar_email')
         .expect(200)
-        done ();
-        
+        .send('a@gmail.com')
+        .expect(201)
+       
     })
+   
+    
 
 })
 
