@@ -50,7 +50,7 @@ $("#form_registro").on("submit", function(event) {
 			document.getElementById('modalHeader').className = 'modal-header text-success';
 			document.getElementById('btnClose').innerHTML = 'Voltar ao menu';
 			document.getElementById('btnClose').className = 'btn btn-success';
-			document.getElementById('modalBody').innerHTML = 'Questionário cadastrado com sucesso.';
+			document.getElementById('modalBody').innerHTML = 'Questionário salvo com sucesso.';
 			document.getElementById('btnClose').onclick = function(){window.location.href = '/forms/'};
 			$('#modal-form').modal('show');
 		}
