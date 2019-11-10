@@ -1,8 +1,8 @@
 //importando o mongo
 const mongoose = require('mongoose');
 //importando o model
-const modelFormulario = require('../backend/models/Formulario');
-const modelUsers = require('../backend/models/Users');
+const modelFormulario = require('../../backend/models/Formulario');
+const modelUsers = require('../../backend/models/Users');
 
 //criando um dado do tpo formulario com todos os campos
 const userdata = { nome: 'Lucas',email: 'l@gmail.com',senha:"lucas123"};

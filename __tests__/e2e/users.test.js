@@ -1,4 +1,4 @@
-const app = require("../backend/config/server"); // Link to your server file
+const app = require("../../backend/config/server"); // Link to your server file
 const request = require("supertest");
 const user = {nome: "Lucas", email: "L@gmail.com", senha: "1234456"}
 

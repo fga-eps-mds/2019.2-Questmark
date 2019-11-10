@@ -1,4 +1,4 @@
-const app = require('../backend/config/server');
+const app = require('../../backend/config/server');
 const request = require('supertest')
 
 const formData = { nome: 'Lucas', data_quest: [{name_quest: 'Lucas'}], respostas: [ { nome: 'Lucas Lopes', idade: '20' } ], data: new Date()
