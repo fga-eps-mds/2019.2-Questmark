@@ -31,21 +31,17 @@ router.get('/registro', (req, res) => {
 });
 
 //Rota para salvar novo formulário
-router.post('/registro/salvar', (req, res) => {
+router.post('/registro/salvar',[
+        //Validação dos campos
+        check('name_quest').not().isEmpty().withMessage('Campo nome está vazio.'),
+        check('copy_markdown').not().isEmpty().withMessage('Campo markdown está vazio.'),
+    ],(req, res) => {
     let dados = req.body;
-    var erros = [];
+    let erros = validationResult(req);
 
-    //Validação dos campos
-    if (dados.name_quest == '') {
-        erros.push({ erro: "Campo nome está vazio." })
-    }
-    if (dados.copy_markdown == '') {
-        erros.push({ erro: "Campo markdown está vazio." })
-    }
-
-    if (erros.length > 0) {
-        console.log(erros);
-        res.send({ msg: erros, status: false });
+    if (erros.array().length > 0) {
+        console.log(erros.array());
+        res.send({ msg: erros.array().map((erro)=> erro.msg), status: false });
     }
     else {
         var formulario = {
@@ -102,22 +98,22 @@ router.post('/salvar_edicao/:id',
         check('name_quest').not().isEmpty().withMessage('Campo nome está vazio.'),
         check('copy_markdown').not().isEmpty().withMessage('Campo markdown está vazio.'),
     ], (req, res) => {
-        let erros = validationResult(req);
         const id = req.params.id;
         let dadosForm = req.body;
+        let erros = validationResult(req);
 
         if (erros.array().length > 0) {
             console.log(erros.array());
-            res.send({ validacao: erros.array(), status: false });
+            res.send({ msg: erros.array().map((erro)=> erro.msg), status: false });
         }
         else {
             modelFormulario.updateOne({ _id: id }, { $set: { 'nome': dadosForm.name_quest, "data_quest": dadosForm } }, (err, result) => {
                 if (err) {
                     console.log('Erro ao salvar a resposta: ' + err);
-                    res.send({ validacao: [{ msg: 'Falha no servidor ao tentar salvar as modificações.' }], status: false });
+                    res.send({ msg: 'Falha no servidor ao tentar salvar as modificações.', status: false });
                 }
                 else {
-                    res.send({ validacao: [{ msg: 'Modificações Salvas com Sucesso!' }], status: true });
+                    res.send({ msg: 'Modificações salvas com sucesso!', status: true });
                 }
             });
         }
