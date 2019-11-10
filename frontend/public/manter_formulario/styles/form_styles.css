@@ -1,67 +1,38 @@
-body{
-	background-color: rgba(35,152,214,1);
+#view-form-body{
+	background-image: linear-gradient(to right,#007BFF, rgb(0, 225, 255));
 	font-family: 'PT Serif', serif;
 }
 
-.container{
-	float: left;
-	width: 100%;
-}
-
-/*960px*/
-.content{
-	width: 64.8648648649%;
-	margin: 0 auto;
-	padding: 0,625% 0;
-}
-
-#mainDiv{
-	width: 64.8648648649%;
-	margin-left: auto;
-	margin-right: auto;
-	/*background-color: rgba(128,128,128,0.8);*/
-	background-color: white;
-	border-radius: 10px; padding: 10px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-#btnSubmit{
-	width: 140px;
-	display: block;
-	margin-left: auto;
-}
-
-
 #main-div{
-	width: 50em;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	text-align: justify;
+	display: inline-block;
 	background-color: white;
 	border-radius: 10px; 
-	padding: 10px;
-	margin-top: 1em;
+	padding: 1vh 1vw;
+	margin: 3vh 0vw;
 }
 
 .field{
-	padding-left: 5px;
-	padding-top: 1em;
-	padding-bottom: 1em;
-	border: 1.5px solid rgba(35,152,214,0.8);
-	border-radius: 10px;
+	display: inline-block;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-top: 3vh;
+	padding-bottom: 1vh;
+	border: 1.5px solid #007BFF;
+	border-radius: 10px;	
+	/*margin: 0vh 5vw;*/
 }
 
 .optionField{
-	display: inline;
+	display: inline-block;
 }
 
 .labelOption{
-	margin-left: 5px;
+	/*margin-left: 0.5vw;*/
 }
 
 #btnSubmit{
-	width: 10em;
 	display: block;
 	margin-left: auto;
+	margin-top: 2vh;
 }

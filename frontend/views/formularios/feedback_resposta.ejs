@@ -8,29 +8,35 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="/manter_formulario/styles/form_styles.css" />
+	<link rel="stylesheet" href="/manter_formulario/styles/feedback_styles.css" />
 
-	<!-- Font -->
+	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
-
+	<link href="https://fonts.googleapis.com/css?family=Knewave&display=swap" rel="stylesheet">
 	<title><%= name_quest %></title>
 </head>
 
-<body id="view-form-body">
-	
-	<div align="center">
-		<div id="main-div">
-			<h1 style="text-align: center;"><%= name_quest %></h1>
-			<form action="/forms/salvar_resposta/<%= id %>" method="post">
-				<%- copy_html %>
-				<button type="submit" id="btnSubmit" class="btn btn-primary">Enviar Resposta</button>
-			</form>
+<body>
+	<h1 id="font-logo" align="center">Questmark</h1>
+	<div id="main-div" class="container">
+		<div class="row" align="center">
+			<div class="col">
+				<%= name_quest %>
+			</div>
+		</div>
+		<hr>
+		<div class="row" align="center">
+			<div class="col">
+				<%= msg %>	
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col">
+				<a href="/forms/postar/<%= id %>">Enviar nova resposta</a>
+			</div>
 		</div>
 	</div>
-
-	<!-- Estilização dos campos  -->
-	<script src="/manter_formulario/javascript/input_field_stylization.js"></script>
-	<script type="text/javascript"> stylizeFields(<%-JSON.stringify(map_fields)%>) </script>
 
 	<!-- BOOTSTRAP JS --> 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

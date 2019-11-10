@@ -31,21 +31,17 @@ router.get('/registro', (req, res) => {
 });
 
 //Rota para salvar novo formulário
-router.post('/registro/salvar', (req, res) => {
+router.post('/registro/salvar',[
+        //Validação dos campos
+        check('name_quest').not().isEmpty().withMessage('Campo nome está vazio.'),
+        check('copy_markdown').not().isEmpty().withMessage('Campo markdown está vazio.'),
+    ],(req, res) => {
     let dados = req.body;
-    var erros = [];
+    let erros = validationResult(req);
 
-    //Validação dos campos
-    if (dados.name_quest == '') {
-        erros.push({ erro: "Campo nome está vazio." })
-    }
-    if (dados.copy_markdown == '') {
-        erros.push({ erro: "Campo markdown está vazio." })
-    }
-
-    if (erros.length > 0) {
-        console.log(erros);
-        res.send({ msg: erros, status: false });
+    if (erros.array().length > 0) {
+        console.log(erros.array());
+        res.send({ msg: erros.array().map((erro)=> erro.msg), status: false });
     }
     else {
         var formulario = {
@@ -96,27 +92,28 @@ router.get('/editar/:id', (req, res) => {
     }
 });
 
+//Rota para salvar edições dos questionários.
 router.post('/salvar_edicao/:id',
     [//Validação dos campos
         check('name_quest').not().isEmpty().withMessage('Campo nome está vazio.'),
         check('copy_markdown').not().isEmpty().withMessage('Campo markdown está vazio.'),
     ], (req, res) => {
-        let erros = validationResult(req);
         const id = req.params.id;
         let dadosForm = req.body;
+        let erros = validationResult(req);
 
         if (erros.array().length > 0) {
             console.log(erros.array());
-            res.send({ validacao: erros.array(), status: false });
+            res.send({ msg: erros.array().map((erro)=> erro.msg), status: false });
         }
         else {
             modelFormulario.updateOne({ _id: id }, { $set: { 'nome': dadosForm.name_quest, "data_quest": dadosForm } }, (err, result) => {
                 if (err) {
                     console.log('Erro ao salvar a resposta: ' + err);
-                    res.send({ validacao: [{ msg: 'Falha no servidor ao tentar salvar as modificações.' }], status: false });
+                    res.send({ msg: 'Falha no servidor ao tentar salvar as modificações.', status: false });
                 }
                 else {
-                    res.send({ validacao: [{ msg: 'Modificações Salvas com Sucesso!' }], status: true });
+                    res.send({ msg: 'Modificações salvas com sucesso!', status: true });
                 }
             });
         }
@@ -128,6 +125,7 @@ router.post('/salvar_resposta/:id', (req, res) => {
     let resposta = req.body;
     let tmpAnswers = [];
     let id = req.params.id;
+    let feedbackMsg;
 
     console.log(resposta);
 
@@ -140,12 +138,16 @@ router.post('/salvar_resposta/:id', (req, res) => {
             tmpAnswers.push(resposta);
             modelFormulario.updateOne({ _id: id }, { $set: { 'respostas': tmpAnswers } }, (err, result) => {
                 if (err)
-                    console.log('Erro ao salvar a resposta: ' + err);
+                    feedbackMsg = `Erro ao salvar a resposta.`;
                 else
-                    console.log('Resposta salva ! Resposta: ' + result);
-                res.redirect('/forms')
+                    feedbackMsg = `Resposta registrada com sucesso !`;
+  
+                res.render('./formularios/feedback_resposta',{
+                                                                id: id,
+                                                                msg: feedbackMsg,
+                                                                name_quest: formulario.nome
+                                                            });
             });
-            console.log(tmpAnswers)
         }
     });
 

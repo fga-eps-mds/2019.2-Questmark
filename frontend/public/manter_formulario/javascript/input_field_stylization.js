@@ -1,4 +1,3 @@
-
 function apllyClass(arrayElements,classBootstrap){
 	let visited_fields = Array();
 	if(!arrayElements) return;
@@ -21,7 +20,7 @@ function stylizeFields(dataInputs){
 	let classBootstrap;
 
 	//Checkbox
-	classBootstrap = 'custom-control custom-checkbox optionField';
+	classBootstrap = 'custom-control custom-checkbox custom-control-inline optionField';
 	apllyClass(dataInputs.checkbox,classBootstrap);
 
 	//Radio
@@ -36,11 +35,11 @@ function stylizeFields(dataInputs){
 			domElement.className = 'form-control mx-sm-2';
 		});
 	}
-	
+
 	//Select
 	if(dataInputs.select){
 		dataInputs.select.forEach((element) => {
-			// document.getElementById(element.name).className = 'form-control';
+			//document.getElementById(element.name).className = 'form-control';
 			let domElement = document.getElementById(element.name);
 			domElement.parentNode.className = 'form-inline mx-sm-2';
 			domElement.className = 'form-control mx-sm-2';			

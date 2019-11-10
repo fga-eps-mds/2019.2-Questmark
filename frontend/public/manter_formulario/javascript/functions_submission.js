@@ -44,13 +44,13 @@ $("#form_registro").on("submit", function(event) {
 	};
 
 	$.post(this.action,jsonData,(resp) => {
-		if(resp.status){
+		if(resp.status){	
 			//Configurando saída de sucesso
 			document.getElementById('modalLabel').innerHTML = 'Pronto!';
 			document.getElementById('modalHeader').className = 'modal-header text-success';
 			document.getElementById('btnClose').innerHTML = 'Voltar ao menu';
 			document.getElementById('btnClose').className = 'btn btn-success';
-			document.getElementById('modalBody').innerHTML = 'Questionário cadastrado com sucesso.';
+			document.getElementById('modalBody').innerHTML = resp.msg;
 			document.getElementById('btnClose').onclick = function(){window.location.href = '/forms/'};
 			$('#modal-form').modal('show');
 		}
@@ -58,7 +58,7 @@ $("#form_registro").on("submit", function(event) {
 			//Configurando saída de erro
 			let erros = '';
 			resp.msg.forEach((msg) => {
-				erros += `<br>*${msg.erro}`;
+				erros += `<br>*${msg}`;
 			});
 			document.getElementById('modalLabel').innerHTML = 'Erro';
 			document.getElementById('modalHeader').className = 'modal-header text-danger';

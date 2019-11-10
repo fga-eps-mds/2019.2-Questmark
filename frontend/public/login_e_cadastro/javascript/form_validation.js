@@ -30,7 +30,6 @@ function passwordValidation(password){
 	const url_req = '/users/validar_senha';
 	
 	let json = {senha: password};
-	console.log(json.senha);
 	$.post(url_req,json,(resp) => {
 		if(resp.checkPassword){
 			showAlertText('','alertTextPassword');
