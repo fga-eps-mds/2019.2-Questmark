@@ -84,6 +84,8 @@ body{
     flex-direction: column;
 }
 .nothingHereText{
+    font-family: 'Knewave', cursive;
+    color: #747474;
     font-size: 26px;
     margin-bottom: 15px;
 }

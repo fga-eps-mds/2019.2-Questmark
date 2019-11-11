@@ -2,11 +2,11 @@ let typeCharts = Array();
 let maxScale = Array();
 
 function getAnsewrsEJS(answers) {
-	return answers;
+    return answers;
 }
         
 function getFieldMappingEJS(fieldMapping){
-	return fieldMapping;
+    return fieldMapping;
 }
 
 //Retorna um array de cores aleatórias.
@@ -123,9 +123,12 @@ function createConfigBarChart(field,backgroundColors,borderColors,data){
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
+                        //Definição da escala
+                        /*
                         min: 0,
                         max: maxScale[field] + 1,
                         stepSize: 1,
+                        */
                     }
                 }]
             }
@@ -140,13 +143,13 @@ function makeContext(field){
     let htmlContext = `        
     <div class="col-lg-5 ctx-chart">
       <div class="row header-chart">
-      	<div class="col-md-11" style="text-align:center;margin: auto;">
-      		<span style="font-weight: bold;">${field[0].toUpperCase() + field.slice(1)}</span>
-      	</div>
+        <div class="col-md-11" style="text-align:center;margin: auto;">
+            <span style="font-weight: bold;">${field[0].toUpperCase() + field.slice(1)}</span>
+        </div>
         <div class="col-md-1">
-        	<button class="btn-change" onclick="changeChart('${field}')">
-          		<img id="img-btn-${field}"/>
-          	</button>
+            <button class="btn-change" onclick="changeChart('${field}')">
+                <img id="img-btn-${field}"/>
+            </button>
         </div>
       </div>
       <div class="row">
@@ -160,31 +163,31 @@ function makeContext(field){
 
 //Troca o tipo de gráfico que está sendo exibido.
 function changeChart(field){
-	let canvasPie = document.getElementById(`pie-canvas-${field}`);
-	let canvasBar = document.getElementById(`bar-canvas-${field}`);
-	if(typeCharts[field] === 'pie'){
-		//Display
-		canvasPie.style.display = 'none'; 
-		canvasBar.style.display = 'block'; 
-		typeCharts[field] = 'bar';
-		//Botão
-		document.getElementById(`img-btn-${field}`).src = '/dashboard/images/chart-pie.png';
-	}
-	else if(typeCharts[field] === 'bar'){
-		//Display
-		canvasBar.style.display = 'none'; 
-		canvasPie.style.display = 'block'; 
-		typeCharts[field] = 'pie';
-		//Botão
-		document.getElementById(`img-btn-${field}`).src = '/dashboard/images/chart-bar.png';
-	}
+    let canvasPie = document.getElementById(`pie-canvas-${field}`);
+    let canvasBar = document.getElementById(`bar-canvas-${field}`);
+    if(typeCharts[field] === 'pie'){
+        //Display
+        canvasPie.style.display = 'none'; 
+        canvasBar.style.display = 'block'; 
+        typeCharts[field] = 'bar';
+        //Botão
+        document.getElementById(`img-btn-${field}`).src = '/dashboard/images/chart-pie.png';
+    }
+    else if(typeCharts[field] === 'bar'){
+        //Display
+        canvasBar.style.display = 'none'; 
+        canvasPie.style.display = 'block'; 
+        typeCharts[field] = 'pie';
+        //Botão
+        document.getElementById(`img-btn-${field}`).src = '/dashboard/images/chart-bar.png';
+    }
 }
 
 //Carrega os gráficos na página.
 function loadCharts(answers,fieldMapping) {
     let histogramFields = generateHistogram(answers,fieldMapping);
   
-    for(let field in histogramFields){	
+    for(let field in histogramFields){  
         //Criando contexto dos gráficos
         makeContext(field);
         let chartDiv = document.getElementById(`chart-${field}`);

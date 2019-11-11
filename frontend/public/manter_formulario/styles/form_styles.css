@@ -20,15 +20,10 @@
 	padding-bottom: 1vh;
 	border: 1.5px solid #007BFF;
 	border-radius: 10px;	
-	/*margin: 0vh 5vw;*/
 }
 
 .optionField{
 	display: inline-block;
-}
-
-.labelOption{
-	/*margin-left: 0.5vw;*/
 }
 
 #btnSubmit{
