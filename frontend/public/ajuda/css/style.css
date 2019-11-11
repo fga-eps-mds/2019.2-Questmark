@@ -619,15 +619,31 @@ h6 {
 /* Como inserir no site Section
 --------------------------------*/
 
-#team {
+#embended {
   background: #fff;
-  padding: 60px 0;
+  text-align: center;
+  padding: 40px 0;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
+#embended .card {
+  background: #00458f;
+  border-color: #00458f;
+  border-radius: 10px;
+  margin: 0 15px;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  height: 100%;
+  margin-left: 10%;
+  margin-right: 20px; 
+}
 
-
-
+#embended .card:hover {
+  background: #003b7a;
+  border-color: #003b7a;
+}
 
 
 /*--------------------------------------------------------------
