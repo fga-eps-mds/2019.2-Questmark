@@ -23,8 +23,7 @@ O atual documento tem como objetivo representar para os membros e os interessado
  
 ## 2. Posicionamento
 ### 2.1 Oportunidade de Negócio 
-Atualmente, a linguagem de marcação Markdown é amplamente utilizada na plataforma de versionamento Github para criação de documentos estáticos, por conta de sua fácil utilização, e nada muito além dessa função. O projeto Questmark, possui como objetivo atribuir ao Markdown mais uma comodidade possibilitando a criação de formulários, algo que até o presente momento não é factível de se fazer com o mesmo. Além de oferecer um dashboard com a relação de todas as respostas dadas ao questionário.
-
+Atualmente, o Markdown é amplamente utilizada na plataforma de versionamento Github para criação de documentos estáticos, por conta de sua fácil utilização, e nada muito além dessa função. O projeto Questmark, possui como objetivo atribuir ao Markdown mais uma comodidade possibilitando a criação de formulários, algo que até o presente momento não é factível de se fazer com o mesmo. 
 
 ### 2.2 Descrição do Problema
 
@@ -64,7 +63,7 @@ Orientador|Professor da disciplina de Métodos de Desenvolvimento de Software|Or
 Programadores|Aqueles que utilizam Markdown para a elaboração de HTML|Utilizar a plataforma via Web, criar e editar textos em Markdown e/ou criar questionários com a linguagem|
  
 ### 3.3 Principais Necessidades dos Usuários e dos Envolvidos  
-Os usuários irão utilizar o Questmark, via página Web, sempre que desejarem criar ou editar textos em Markdown, elaborar questionários e visualizar suas respostas. Também poderão responder questionários já existentes, caso possuam link de compartilhamento.
+Os usuários irão utilizar o Questmark, via página Web, sempre que desejarem criar ou editar textos em Markdown, elaborar questionários e visualizar suas respostas. Também poderão responder questionários já existentes, caso possuam link de compartilhamento ou o iFrame do Questmark esteja disponível.
 
 ### 3.4 Perfis dos Envolvidos
 #### 3.4.1 Equipe de desenvolvimento e gestão de software
@@ -86,7 +85,7 @@ Descrição|Auxiliará especialmente na gestão do projeto, suprindo a falta de 
 Tipo|Monitor da disciplina de EPS|
 Responsabilidades|Monitorar e auxiliar a equipe de desenvolvimento e gestão|
 Critérios de Sucesso|Auxiliar a equipe de desenvolvimento e gestão a cumprirem os prazos para a entrega do produto|
-Envolvimento|Médio/Alto|
+Envolvimento|Baixo/Médio|
 Problemas/Comentários|Realizar o auxílio de acordo com o tempo disponível|
  
 #### 3.4.3 Orientador
@@ -106,7 +105,7 @@ Problemas/Comentários|--|
 |Perfil|--|
 |:---:|:---:|
 Representantes|Programadores que utilizam Markdown|
-Descrição|Programadores que queiram criar,editar e elaborar questionários em Markdown|
+Descrição|Programadores que queiram criar, editar e elaborar questionários em Markdown|
 Tipo|Programadores que necessitam de ferramentas para o uso de markdown|
 Responsabilidades|Interagir com a ferramenta web, utilizando seus recursos|
 Critérios de Sucesso|Utilizar os recursos de maneira fluida|
@@ -123,14 +122,14 @@ Tipo|Usuários que chegaram ao questionário via link de compartilhamento|
 Responsabilidades|Responder o questionário|
 Critérios de Sucesso|Responder e enviar o questionário|
 Envolvimento|Médio|
-Problemas/Comentários|Além de responderem os questionários,os respondentes eventualmente podem se interessar usufruirem das ferramentas disponibilizadas|
+Problemas/Comentários|Além de responderem os questionários,os respondentes eventualmente podem se interessar usufruírem das ferramentas disponibilizadas|
  
 ### 3.6 Principais necessidades dos Usuários ou dos Envolvidos
  
 |Necessidade|Prioridade|Preocupação|Solução Proposta |Solução Atual|
 |:----------|:--------:|:---------:|:------:|:-----:|
-|Criar questionários via Markdown|Alta|Falta de conhecimento em Markdown|Disponibilizar em HTML o que foi escrito em Markdown|----|
-|Compartilhar o questionário|Alta|Falta de interesse ou esquecimento de tal possibilidade|Após a criação do questionário, criar um link de compartilhamento para que esse seja respondido|----|
+|Criar questionários via Markdown|Alta|Falta de conhecimento em Markdown|Disponibilizar em HTML o que foi escrito em Markdown|Utilizando um código open source que faz Markdown para HTML automaticamente|
+|Compartilhar o questionário|Alta|Falta de interesse ou esquecimento de tal possibilidade|Após a criação do questionário, criar um link de compartilhamento para que esse seja respondido|A partir de um link compartilhável ou de um iFrame em uma página qualquer|
 |Editar textos em markdown com visualização em tempo real|Média|Problemas na visualização simultânea|Permitir que o usuário escreva em markdown e visualize simultaneamente o resultado|Plugins e outros sites que fazem isso|
 
 ## 4. Visão Geral do produto
@@ -144,6 +143,7 @@ A plataforma Questmark visa facilitar a escrita de códigos HTML utilizando Mark
 |Permitir o compartilhamento dos questionários|Caso seja de interesse do usuário, o questionário criado terá um link compartilhável para ser respondido|
 |Fornecer uma dashboard para a visualização das respostas|Ao logar na plataforma, o usuário terá acesso a uma dashboard e poderá visualizar as respostas de seus questionários|
 |Fornecer uma dashboard para a edição dos questionários|Ao logar na plataforma, o usuário terá acesso a uma dashboard e poderá editar os questionários criados|
+
  
 ## 5. Recursos do Produto
 Na plataforma Questmark, é possível :
@@ -159,14 +159,6 @@ Na plataforma Questmark, é possível :
 * Uso da Internet
 * Uso de navegador web
 * Conhecimentos básicos em Markdown
- 
-
-
-|**Necessidade**|**Prioridade**|**Preocupação**|**Solução Proposta**|**Solução Atual**|
-|:---:|:---:|:---:|:---:|:---:|
-|Criar questionários em Markdown|Alta|Falta de conhecimento em Markdown|Disponibilizar,na própria interface do site, um manual de  fácil entendimento para os usuários ||
-|Compartilhar o questionário|Alta||Após a criação do questionário, criar um link de compartilhamento para que esse seja respondido||
-|Editar textos em markdown com visualização em tempo real|Média||Permitir que o usuário escreva em markdown e visualize simultaneamente o resultado|Plugins e sites que fazem isso|
 
 ## Histórico de Revisão 
 |Data|Versão|Modificação|Autor(es)|
@@ -180,3 +172,5 @@ Na plataforma Questmark, é possível :
 |07/09/2019|0.7|Adição de proposta de solução do tópico 3.6|Gustavo Nogueira| 
 |17/09/2019|0.8|Adição do diagrama de casos de uso no tópico 5|Gustavo Nogueira| 
 |15/10/2019|0.9|Remoção do diagrama de casos de uso. O mesmo se encontra no documento de arquitetura |Gustavo Nogueira| 
+|10/11/2019|1.0|Ortografia revisada. Informações pertinentes ao projeto foram atualizadas. Tópicos redundantes removidos.|Danillo Souza|
+

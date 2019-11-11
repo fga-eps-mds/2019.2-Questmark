@@ -1247,7 +1247,7 @@ Markdown: Linguagem de marcação que converte texto comum em páginas web.  </p
 <p>O atual documento tem como objetivo representar para os membros e os interessados, de forma explicativa, às informações gerais do projeto, os requisitos do software, os envolvidos e usuários, a visão geral do produto e seus recursos.</p>
 <h2 id="2-posicionamento">2. Posicionamento</h2>
 <h3 id="21-oportunidade-de-negocio">2.1 Oportunidade de Negócio</h3>
-<p>Atualmente, a linguagem de marcação Markdown é amplamente utilizada na plataforma de versionamento Github para criação de documentos estáticos, por conta de sua fácil utilização, e nada muito além dessa função. O projeto Questmark, possui como objetivo atribuir ao Markdown mais uma comodidade possibilitando a criação de formulários, algo que até o presente momento não é factível de se fazer com o mesmo. Além de oferecer um dashboard com a relação de todas as respostas dadas ao questionário.</p>
+<p>Atualmente, o Markdown é amplamente utilizada na plataforma de versionamento Github para criação de documentos estáticos, por conta de sua fácil utilização, e nada muito além dessa função. O projeto Questmark, possui como objetivo atribuir ao Markdown mais uma comodidade possibilitando a criação de formulários, algo que até o presente momento não é factível de se fazer com o mesmo. </p>
 <h3 id="22-descricao-do-problema">2.2 Descrição do Problema</h3>
 <table>
 <thead>
@@ -1359,7 +1359,7 @@ Dentre os artefatos que o Questmark propõe, os principais são a possibilidade 
 </tbody>
 </table>
 <h3 id="33-principais-necessidades-dos-usuarios-e-dos-envolvidos">3.3 Principais Necessidades dos Usuários e dos Envolvidos</h3>
-<p>Os usuários irão utilizar o Questmark, via página Web, sempre que desejarem criar ou editar textos em Markdown, elaborar questionários e visualizar suas respostas. Também poderão responder questionários já existentes, caso possuam link de compartilhamento.</p>
+<p>Os usuários irão utilizar o Questmark, via página Web, sempre que desejarem criar ou editar textos em Markdown, elaborar questionários e visualizar suas respostas. Também poderão responder questionários já existentes, caso possuam link de compartilhamento ou o iFrame do Questmark esteja disponível.</p>
 <h3 id="34-perfis-dos-envolvidos">3.4 Perfis dos Envolvidos</h3>
 <h4 id="341-equipe-de-desenvolvimento-e-gestao-de-software">3.4.1 Equipe de desenvolvimento e gestão de software</h4>
 <table>
@@ -1431,7 +1431,7 @@ Dentre os artefatos que o Questmark propõe, os principais são a possibilidade 
 </tr>
 <tr>
 <td align="center">Envolvimento</td>
-<td align="center">Médio/Alto</td>
+<td align="center">Baixo/Médio</td>
 </tr>
 <tr>
 <td align="center">Problemas/Comentários</td>
@@ -1494,7 +1494,7 @@ Dentre os artefatos que o Questmark propõe, os principais são a possibilidade 
 </tr>
 <tr>
 <td align="center">Descrição</td>
-<td align="center">Programadores que queiram criar,editar e elaborar questionários em Markdown</td>
+<td align="center">Programadores que queiram criar, editar e elaborar questionários em Markdown</td>
 </tr>
 <tr>
 <td align="center">Tipo</td>
@@ -1553,7 +1553,7 @@ Dentre os artefatos que o Questmark propõe, os principais são a possibilidade 
 </tr>
 <tr>
 <td align="center">Problemas/Comentários</td>
-<td align="center">Além de responderem os questionários,os respondentes eventualmente podem se interessar usufruirem das ferramentas disponibilizadas</td>
+<td align="center">Além de responderem os questionários,os respondentes eventualmente podem se interessar usufruírem das ferramentas disponibilizadas</td>
 </tr>
 </tbody>
 </table>
@@ -1574,14 +1574,14 @@ Dentre os artefatos que o Questmark propõe, os principais são a possibilidade 
 <td align="center">Alta</td>
 <td align="center">Falta de conhecimento em Markdown</td>
 <td align="center">Disponibilizar em HTML o que foi escrito em Markdown</td>
-<td align="center">----</td>
+<td align="center">Utilizando um código open source que faz Markdown para HTML automaticamente</td>
 </tr>
 <tr>
 <td align="left">Compartilhar o questionário</td>
 <td align="center">Alta</td>
 <td align="center">Falta de interesse ou esquecimento de tal possibilidade</td>
 <td align="center">Após a criação do questionário, criar um link de compartilhamento para que esse seja respondido</td>
-<td align="center">----</td>
+<td align="center">A partir de um link compartilhável ou de um iFrame em uma página qualquer</td>
 </tr>
 <tr>
 <td align="left">Editar textos em markdown com visualização em tempo real</td>
@@ -1641,40 +1641,6 @@ Dentre os artefatos que o Questmark propõe, os principais são a possibilidade 
 <li>Uso de navegador web</li>
 <li>Conhecimentos básicos em Markdown</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th align="center"><strong>Necessidade</strong></th>
-<th align="center"><strong>Prioridade</strong></th>
-<th align="center"><strong>Preocupação</strong></th>
-<th align="center"><strong>Solução Proposta</strong></th>
-<th align="center"><strong>Solução Atual</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Criar questionários em Markdown</td>
-<td align="center">Alta</td>
-<td align="center">Falta de conhecimento em Markdown</td>
-<td align="center">Disponibilizar,na própria interface do site, um manual de  fácil entendimento para os usuários</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Compartilhar o questionário</td>
-<td align="center">Alta</td>
-<td align="center"></td>
-<td align="center">Após a criação do questionário, criar um link de compartilhamento para que esse seja respondido</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Editar textos em markdown com visualização em tempo real</td>
-<td align="center">Média</td>
-<td align="center"></td>
-<td align="center">Permitir que o usuário escreva em markdown e visualize simultaneamente o resultado</td>
-<td align="center">Plugins e sites que fazem isso</td>
-</tr>
-</tbody>
-</table>
 <h2 id="historico-de-revisao">Histórico de Revisão</h2>
 <table>
 <thead>
@@ -1739,6 +1705,12 @@ Dentre os artefatos que o Questmark propõe, os principais são a possibilidade 
 <td align="center">0.9</td>
 <td align="center">Remoção do diagrama de casos de uso. O mesmo se encontra no documento de arquitetura</td>
 <td align="center">Gustavo Nogueira</td>
+</tr>
+<tr>
+<td align="center">10/11/2019</td>
+<td align="center">1.0</td>
+<td align="center">Ortografia revisada. Informações pertinentes ao projeto foram atualizadas. Tópicos redundantes removidos.</td>
+<td align="center">Danillo Souza</td>
 </tr>
 </tbody>
 </table>
