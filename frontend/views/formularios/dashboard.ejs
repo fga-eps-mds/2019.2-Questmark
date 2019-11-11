@@ -13,7 +13,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Knewave&display=swap" rel="stylesheet">
-
+	<script src="https://kit.fontawesome.com/4b0fcedc6f.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
@@ -22,15 +22,15 @@
 <%- include ../partials/Header.ejs%>
 <body>
 
-    <h1 id="font-logo" align="center">           
+    <h4 class="font-logo" align="center">           
         Dashboard
-    </h1>
+    </h4>
 
     <div id="charts-container" class="container main-font" style="display: none;">
-        <button id="btn-csv" 
+        <button id="btn-csv" class="buttonCSV"
                 onclick="window.location.href='/forms/converter_respostas/<%= id %>'">
-            <span>Download CSV</span>
-            <img src="/dashboard/images/csv-icon.png">
+            <span style="margin: 0px 0px 0px 10px">Download CSV</span>
+            <i class="fas fa-file-csv" style="margin: 0px 10px 0px 10px"></i>
         </button>
         
         <div id="charts-div" class="row">
