@@ -52,13 +52,17 @@ function generateHistogram(jsonAnswers,fieldMapping) {
         for(let field in histogramFields){
             if(Array.isArray(element[field])){
                 element[field].forEach((answer) => {
-                    histogramFields[field][answer]++;
-                    maxScale[field] = Math.max(maxScale[field],histogramFields[field][answer]);
+                    if(answer){
+                        histogramFields[field][answer]++;
+                        maxScale[field] = Math.max(maxScale[field],histogramFields[field][answer]);
+                    }
                 });
             }
             else{
-                histogramFields[field][element[field]]++;
-                maxScale[field] = Math.max(maxScale[field],histogramFields[field][element[field]]);
+                if(element[field]){
+                    histogramFields[field][element[field]]++;
+                    maxScale[field] = Math.max(maxScale[field],histogramFields[field][element[field]]);    
+                }
             }
         }
     });
