@@ -53,8 +53,8 @@ CSS (Cascading Style Sheets) significa Folhas de Estilo em Cascata é uma lingua
 #### 2.1.7 Bootstrap
 Bootstrap é uma biblioteca open-source CSS framework direcionada á responsividade, mobile-first front-end web development. Com diversos tipos de formularios, botãoes, navbar entre outras interfaces e componente
 
-#### 2.1.8 React 
-O React é uma biblioteca JavaScript de código aberto para criar interfaces de usuário. É mantido pelo Facebook, Instagram e uma comunidade de desenvolvedores individuais e outras empresas. De acordo com o serviço de análise de JavaScript Libscore o React está sendo usado nos sites da Netflix, Imgur, Feedly, Airbnb, SeatGeek, HelloSign, Walmart e outros.
+#### 2.1.8 EJS 
+O EJS (Embedded JavaScript) é uma engine de visualização, que permite de uma maneira fácil e simples o transporte de dados que estão no backend para o frontend. Basicamente, o EJS utiliza a própria marcação do HTML com o acréscimo de códigos em JavaScript para o seu funcionamento.
 
 ## 3. Metas e Restrições de Arquitetura
 As restrições de arquitetura do projeto são a utilização de um Banco de Dados MongoDB para cada serviço interno, Logo um banco onde irá armazenar informações sobre os usuários cadastrados e seus respectivos formulários.
@@ -75,8 +75,10 @@ Lista dos casos de uso:
 - Responder questionário
 - Consultar painel de ajuda
 - Resgatar link de compartilhamento
+- Resgatar código HTML para iFrame
 - Gerar dashboard 
-- Visualizar respostas 
+- Visualizar respostas
+- Fazer download das respostas no formato de CSV 
 
 ## 4.1 Atores
 
@@ -99,4 +101,4 @@ O software suporta os seguintes requisitos de qualidade:
 |:---:|:---:|:---:|:---:|
 |06/09/2019|0.1|Tópicos e subtópicos de 1, 2, 3 e 4 adicionados|Lucas Lopes| 
 |15/10/2019|0.2|Atualização dos tópicos e adição do tópico de Visão de casos de uso|Gustavo Nogueira| 
-
+|11/11/2019|0.3|Substituição do tópico ReactJS pelo EJS e adição de novos casos de usos|Danillo Souza|
