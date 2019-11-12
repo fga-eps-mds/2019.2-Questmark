@@ -70,6 +70,10 @@ Este é um serviço dedicado para interação com o terminal de email da API do 
 ### 2.1.11 - JEST
 Jest é um poderoso Framework de Testes em JavaScript com um foco na simplicidade. Com o jest é possivél realizar testes unitarios, de integração e de aceitação. Além disso, é possivél gerar relatorios dos testes.
 
+### 2.1.2 - AJAX
+
+AJAX significa Asynchronous JavaScript and XML, ou JavaScript e XML Assíncronos, em bom português. Ele é um conjunto de técnicas de desenvolvimento voltado para a web que permite que aplicações trabalhem de modo assíncrono, processando qualquer requisição ao servidor em segundo plano.
+
 
 ## 3. Metas e Restrições de Arquitetura
 As restrições de arquitetura do projeto são a utilização de um Banco de Dados MongoDB para cada serviço interno, Logo um banco onde irá armazenar informações sobre os usuários cadastrados e seus respectivos formulários.
@@ -117,4 +121,4 @@ O software suporta os seguintes requisitos de qualidade:
 |06/09/2019|0.1|Tópicos e subtópicos de 1, 2, 3 e 4 adicionados|Lucas Lopes| 
 |15/10/2019|0.2|Atualização dos tópicos e adição do tópico de Visão de casos de uso|Gustavo Nogueira| 
 |11/11/2019|0.3|Substituição do tópico ReactJS pelo EJS e adição de novos casos de usos|Danillo Souza|
-|11/11/2019|0.4|Inserido as tecnologias faltantes no tópico 2.1| e recisão nos demais tópicosLucas Lopes|
+|11/11/2019|0.4|Inserido as tecnologias faltantes no tópico 2.1| e recisão nos demais tópicos |Lucas Lopes|
