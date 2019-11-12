@@ -194,8 +194,8 @@ router.get('/converter_respostas/:id', (req, res) => {
 router.get('/delete/:id', (req, res) => {
     if (req.user) {
         let id = req.params.id;
-        modelFormulario.findOneAndDelete(id).then(() => {
-            console.log('deletado')
+        modelFormulario.findByIdAndRemove(id).then(() => {
+            console.log('deletado');
             res.redirect('/forms')
         }).catch((err) => {
             console.log(err)
