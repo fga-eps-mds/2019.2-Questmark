@@ -121,4 +121,4 @@ O software suporta os seguintes requisitos de qualidade:
 |06/09/2019|0.1|Tópicos e subtópicos de 1, 2, 3 e 4 adicionados|Lucas Lopes| 
 |15/10/2019|0.2|Atualização dos tópicos e adição do tópico de Visão de casos de uso|Gustavo Nogueira| 
 |11/11/2019|0.3|Substituição do tópico ReactJS pelo EJS e adição de novos casos de usos|Danillo Souza|
-|11/11/2019|0.4|Inserido as tecnologias faltantes no tópico 2.1| e recisão nos demais tópicos |Lucas Lopes|
+|11/11/2019|0.4|Inserido as tecnologias faltantes no tópico 2.1 e recisão nos demais tópicos |Lucas Lopes|
