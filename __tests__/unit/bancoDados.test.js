@@ -1,16 +1,13 @@
 //importando o mongo
 const mongoose = require('mongoose');
 //importando o model
-const modelFormulario = require('../backend/models/Formulario');
+const modelFormulario = require('../../backend/models/Formulario');
+const modelUsers = require('../../backend/models/Users');
+
 //criando um dado do tpo formulario com todos os campos
+const userdata = { nome: 'Lucas',email: 'l@gmail.com',senha:"lucas123"};
 const formData = { nome: 'Lucas', data_quest: [{name_quest: 'Lucas'}], respostas: [ { nome: 'Lucas Lopes', idade: '20' } ], data: new Date()
 };
-
-
-const modelUsers = require('../backend/models/Users');
-//criando um dado do tpo formulario com todos os campos
-const user = { nome: 'Lucas', email:'lopes@gmail.com' , senha: "1234567789"};
-
 
 
 //conectar com o mongo
@@ -31,7 +28,6 @@ describe('Conectar com o  mongo', () => {
 
 
 //teste para criar e salvar um formulario
-
 it('Deve criar e salvar um formulario generico', async () => {
     //criando um formulario
     const formulario = new modelFormulario(formData);
@@ -78,60 +74,56 @@ it('Não deve criar sem um campo obrigatorio ', async () => {
     expect(err.errors.data_quest).toBeDefined();
 });
 
+it('Deve Encontrar o formulario cadastrado',async()=>{
+    const system = await modelFormulario.findOne({ nome: 'Lucas' });
+    expect(system.nome).toEqual(formData.nome);
+    expect(system.nome).toBeDefined();
+})
 
-it('Deve criar e salvar um usuario generico', async () => {
-    //criando um user
-    const usuario = new modelUsers(user);
-    //salvando
+it('Deve criar um usuario génerico',async()=>{
+    //criando um usuário
+    const usuario = new modelUsers(userdata);
     const salvarusuario = await usuario.save();
-    //verificando se o id está definido
     expect(salvarusuario._id).toBeDefined();
-    //verificando se é igual
-    expect(salvarusuario.nome).toBe(usuario.nome);
-     //verificando se é igual
-    expect(salvarusuario.email).toBe(usuario.email);
-     //verificando se é igual
-    expect(salvarusuario.senha).toBe(usuario.senha);
-});
+    expect(salvarusuario.nome).toBe(userdata.nome);
+    expect(salvarusuario.email).toBe(userdata.email);
+    expect(salvarusuario.senha).toBe(userdata.senha);
+})
 
-it('Não deve inserir um usuario sem a senha', async () => {
-    //criando um formulario
-    const usuarioinvalido = new modelUsers({ nome: 'Lucas',email:'lucas@gmail.com'});
+it('Não deve inserir usuario  com um campo  inexistente.',async () =>{
+    //criando um usuario
+    var invalidmodel = { nome: 'Lucas',email: 'lb@gmail.com',senha:"lucas123",telefone:'0000000000'};
+    const userinvalido = new modelUsers(invalidmodel);
     //salvando o formulario
-    const salvarinvalido = await usuarioinvalido.save();
+    const salvaruserinvalido = await userinvalido.save();
     //verificando se é definido (existe)
-    expect(salvarinvalido._id).toBeDefined();
-    //verificar se o campo .resp é indefinido 
-    expect(salvarinvalido.senha).toBeUndefined();
+    expect(salvaruserinvalido._id).toBeDefined();
+    //verificar se o campo telefone é indefinido 
+    expect(salvaruserinvalido.telefone).toBeUndefined();
 });
 
-it('Não deve inserir um usuario sem o email', async () => {
-    //criando um formulario
-    const usuarioinvalido = new modelUsers({ nome: 'Lucas',senha:'1234567'});
-    //salvando o formulario
-    const salvarinvalido = await usuarioinvalido.save();
-    //verificando se é definido (existe)
-    expect(salvarinvalido._id).toBeDefined();
-    //verificar se o campo .resp é indefinido 
-    expect(salvarinvalido.senha).toBeUndefined();
-});
-
-it('Não deve criar sem um campo obrigatorio ', async () => {
+it('Não deve criar  um usuario sem um campo obrigatorio ', async () => {
     //criando formulario so com o nome
-    const usuariosemobrigatorio = new modelUsers({ nome: 'Lucas' });
+    var userinvalid = { nome: 'Lucas', email:'lg@gmail.com'}
+    const usuariosemcampo = new modelFormulario(userinvalid);
     let err;
     try {
         //tenta salvar
-        const salvarusersemobrigatorio = await usuariosemobrigatorio.save();
-        error = salvarusersemobrigatorio;
+        const salvaruserinvalido = await usuariosemcampo.save();
+        error = salvaruserinvalido;
     } catch (error) {
         //salva o erro
         err = error
     }
     expect(err).toBeInstanceOf(mongoose.Error.ValidationError)
     //verifica que esse campo tinha que ser definido
-    expect(err.errors.email).toBeDefined();
+    expect(err.errors.senha).toBeUndefined();
 });
 
+it('Deve Encontrar o usuario cadastrado no banco',async()=>{
+    const systemusers = await modelFormulario.findOne({ nome: 'Lucas' });
+    expect(systemusers.nome).toEqual(userdata.nome);
+    expect(systemusers.nome).toBeDefined();
+})
 
 })
