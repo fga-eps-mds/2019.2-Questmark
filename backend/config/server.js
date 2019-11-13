@@ -77,7 +77,7 @@ const users = require("../routes/users");
 app.use('/users', users);
 const forgot_password = require('../routes/forgot_password');
 app.use('/password', forgot_password);
-const parseMarkdownToHMTL = require('../routes/parse_api');
+const parseMarkdownToHMTL = require('../routes/parser');
 app.use('/parse', parseMarkdownToHMTL);
 
 //var consign = require('consign');
