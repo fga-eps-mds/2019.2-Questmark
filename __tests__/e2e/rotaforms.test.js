@@ -10,13 +10,13 @@ const resp = {respostas: [ { nome: 'Lucas Lopes', idade: '20' } ]};
 describe('Rota Formularios', () => {
     it('deve responder a rota incial', async () => {
       request(app).get('/')
-      .expect(200)
+      .expect(200);
       
     })
 
     it('deve responder a rota de registro', async () => {
       request(app).get('/forms/registro')
-      .expect(200)
+      .expect(200);
 
     })
 
@@ -28,22 +28,22 @@ describe('Rota Formularios', () => {
         expect(res.body.nome).toBeDefined();
         done();
       
-    }).expect(201)
+    }).expect(201);
   })
 
   it('deve responder a rota de {id} com sucesso', async () => {
     request(app).get('/forms/postar/123')
-    .expect(200)
+    .expect(200);
     request(app).get('/forms/editar/123')
-    .expect(200)
+    .expect(200);
     request(app).get('forms/listar_respostas/123')
-    .expect(200)
+    .expect(200);
     request(app).get('/converter_respostas/123')
-    .expect(200)
+    .expect(200);
     request(app).get('/dashboard/123')
-    .expect(200)
+    .expect(200);
     request(app).get('/delete/123')
-    .expect(200)
+    .expect(200);
   })
 
   it('deve reposnder  a rota de salvar reposta e salvar a repostas', async () => {
@@ -52,7 +52,7 @@ describe('Rota Formularios', () => {
     .end(function(err, res) {
       expect(res.body.respostas).toBeDefined();
       done();
-  }).expect(201)
+  }).expect(201);
 })
 
 it('Deve responder a rota de edição de formulario e salvar um formulario ',async ()=>{
@@ -61,7 +61,7 @@ it('Deve responder a rota de edição de formulario e salvar um formulario ',asy
   .end(function(err, res) {
     expect(res.body.nome).toBeDefined();
     done();
-}).expect(201)
+}).expect(201);
 })
 
 
