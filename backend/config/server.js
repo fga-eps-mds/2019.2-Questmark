@@ -25,6 +25,19 @@ app.use((req, res, next) => {
 	next();
 });
 
+//Middleware para manipular/adicionar os cabeçalhos da requisição
+app.use((req, res, next)=>{
+	// Definindo hosts que podem fazer requisição no servidor
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	// Definindo quais métodos das requisições que serão permitidos 
+	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    // Definindo cabeçalhos que serão permitidos 
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    // Configurar 'true' caso o website utilize cookies nas requisições => Sessões
+    res.setHeader('Access-Control-Allow-Credentials', true);
+	next();
+});
+
 //Conexão do MongoDB
 const url = "mongodb://mongo/questmark";
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
@@ -64,6 +77,8 @@ const users = require("../routes/users");
 app.use('/users', users);
 const forgot_password = require('../routes/forgot_password');
 app.use('/password', forgot_password);
+const parseMarkdownToHMTL = require('../routes/parser');
+app.use('/parse', parseMarkdownToHMTL);
 
 //var consign = require('consign');
 //consign().include('application/routes').into(app); 
