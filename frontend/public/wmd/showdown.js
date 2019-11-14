@@ -238,7 +238,7 @@ Showdown.converter = function () {
 			var inputName = cleanedName.replace(/[ \t]/g, '_').toLowerCase();
 			var cleanedOptions = options.trim().replace(/\t/g, ' ');
 			var labelName = cleanedName;
-			var output = `<p><div id="${labelName.toLowerCase()}"><label>${labelName}:</label>`;
+			var output = `<p><div id="${inputName}"><label>${labelName}:</label>`;
 			var optRegex = /\((x?)\)[ \t]*([\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t_\-]+)/g;	
 			var match = optRegex.exec(cleanedOptions);
 			while (match) {
@@ -283,7 +283,7 @@ Showdown.converter = function () {
 			var inputName = cleanedName.replace(/[ \t]/g, '_').toLowerCase();
 			var cleanedOptions = options.trim().replace(/\t/g, ' ');
 			var labelName = cleanedName;
-			var output = `<p><div id="${labelName.toLowerCase()}"><label>${labelName}:</label>`;
+			var output = `<p><div id="${inputName}"><label>${labelName}:</label>`;
 			var optRegex = /\[(x?)\][ \t]*([\w ãáàâéêíòóôúçÃÀÁÂÉÊÍÓÔÚÇ \t\-]+)/g;
 			var match = optRegex.exec(cleanedOptions);
 			while (match) {
