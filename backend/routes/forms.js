@@ -1,15 +1,13 @@
-const express = require('express')
-const router = express.Router()
-
-require('../models/Users')
-require('../models/Formulario')
-const convertercsv = require('../../backend/controllers/csv')
-const mongoose = require('mongoose')
-const modelUsers = mongoose.model("users")
-const modelFormulario = mongoose.model("formulario")
+const express = require('express');
+const router = express.Router();
+require('../models/Users');
+require('../models/Formulario');
+const convertercsv = require('../../backend/controllers/csv');
+const mongoose = require('mongoose');
+const modelUsers = mongoose.model("users");
+const modelFormulario = mongoose.model("formulario");
 const { check, validationResult } = require('express-validator');
 
-//Rota de listagem de formulários
 router.get('/', (req, res) => {
     if (req.user) {
         modelUsers.findById(req.user).populate('formulario').then((user) => {
@@ -18,31 +16,28 @@ router.get('/', (req, res) => {
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
-//Rota de cadastro de um novo formulario
 router.get('/registro', (req, res) => {
     if (req.user) {
         res.render('./formularios/cadastro_formulario');
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
-//Rota para salvar novo formulário
-router.post('/registro/salvar',[
-        //Validação dos campos
-        check('name_quest').not().isEmpty().withMessage('Campo nome está vazio.'),
-        check('copy_markdown').not().isEmpty().withMessage('Campo markdown está vazio.'),
-    ],(req, res) => {
+router.post('/registro/salvar', [
+    check('name_quest').not().isEmpty().withMessage('Campo nome está vazio.'),
+    check('copy_markdown').not().isEmpty().withMessage('Campo markdown está vazio.'),
+], (req, res) => {
     let dados = req.body;
     let erros = validationResult(req);
 
     if (erros.array().length > 0) {
         console.log(erros.array());
-        res.send({ msg: erros.array().map((erro)=> erro.msg), status: false });
+        res.send({ msg: erros.array().map((erro) => erro.msg), status: false });
     }
     else {
         var formulario = {
@@ -61,10 +56,9 @@ router.post('/registro/salvar',[
             console.log(err)
             res.send({ msg: ['Falha ao salvar o questionário.'], status: false });
         });
-    }
+    };
 });
 
-//Rota de visualizar um questionário e responder
 router.get('/postar/:id', (req, res) => {
     modelFormulario.findOne({ _id: req.params.id }).then((formulario) => {
         console.log(formulario);
@@ -77,7 +71,6 @@ router.get('/postar/:id', (req, res) => {
     });
 });
 
-//Rota para Editar Formulário
 router.get('/editar/:id', (req, res) => {
     if (req.user) {
         modelFormulario.findOne({ _id: req.params.id }).then((formulario) => {
@@ -90,12 +83,11 @@ router.get('/editar/:id', (req, res) => {
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
-//Rota para salvar edições dos questionários.
 router.post('/salvar_edicao/:id',
-    [//Validação dos campos
+    [
         check('name_quest').not().isEmpty().withMessage('Campo nome está vazio.'),
         check('copy_markdown').not().isEmpty().withMessage('Campo markdown está vazio.'),
     ], (req, res) => {
@@ -105,7 +97,7 @@ router.post('/salvar_edicao/:id',
 
         if (erros.array().length > 0) {
             console.log(erros.array());
-            res.send({ msg: erros.array().map((erro)=> erro.msg), status: false });
+            res.send({ msg: erros.array().map((erro) => erro.msg), status: false });
         }
         else {
             modelFormulario.updateOne({ _id: id }, { $set: { 'nome': dadosForm.name_quest, "data_quest": dadosForm } }, (err, result) => {
@@ -115,13 +107,12 @@ router.post('/salvar_edicao/:id',
                 }
                 else {
                     res.send({ msg: 'Modificações salvas com sucesso!', status: true });
-                }
+                };
             });
-        }
+        };
     }
 );
 
-//Rota de salvar a resposta do questionário
 router.post('/salvar_resposta/:id', (req, res) => {
     let resposta = req.body;
     let tmpAnswers = [];
@@ -142,31 +133,30 @@ router.post('/salvar_resposta/:id', (req, res) => {
                     feedbackMsg = `Erro ao salvar a resposta.`;
                 else
                     feedbackMsg = `Resposta registrada com sucesso !`;
-  
-                res.render('./formularios/feedback_resposta',{
-                                                                id: id,
-                                                                msg: feedbackMsg,
-                                                                name_quest: formulario.nome
-                                                            });
+
+                res.render('./formularios/feedback_resposta', {
+                    id: id,
+                    msg: feedbackMsg,
+                    name_quest: formulario.nome
+                });
             });
-        }
+        };
     });
 
 });
 
-//Rota de listagem de resposta de um formulário
 router.get('/listar_respostas/:id', (req, res) => {
     if (req.user) {
         modelFormulario.findOne({ _id: req.params.id }).then((formulario) => {
             res.render("./formularios/listar_respostas", { formulario: formulario })
-        })
+        });
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
-//Rota de conversão de respostas para csv
+
 router.get('/converter_respostas/:id', (req, res) => {
     console.log(req.body)
     if (req.user) {
@@ -179,14 +169,13 @@ router.get('/converter_respostas/:id', (req, res) => {
             console.log(csv)
             console.log(req.body)
             res.send(Buffer.from(csv));
-        })
+        });
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
-//Rota de remoção de um formulário
 router.get('/delete/:id', (req, res) => {
     if (req.user) {
         let id = req.params.id;
@@ -200,22 +189,21 @@ router.get('/delete/:id', (req, res) => {
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
-//Rota de acesso ao dashboard das respostas do formulário
 router.get('/dashboard/:id', async (req, res) => {
     try {
         if (req.user) {
             const form = await modelFormulario.findOne({ _id: req.params.id });
             const tipos = form.data_quest.type_inputs;
-            res.render("./formularios/dashboard", { id: req.params.id,respostas: form.respostas, mapeamentoCampos: tipos });
+            res.render("./formularios/dashboard", { id: req.params.id, respostas: form.respostas, mapeamentoCampos: tipos });
         } else {
             res.redirect('/users/login');
-        }
+        };
     } catch (error) {
         console.log(error);
-    }
+    };
 });
 
 module.exports = router;
