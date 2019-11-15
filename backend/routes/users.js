@@ -19,12 +19,9 @@ router.post('/criar_conta', (req, res) => {
     senha: senhaCrypto
   });
   novousuario.save().then(() => {
-    console.log("Usuário cadastrado.");
     res.send({ check: true, msg: 'Cadastro concluído com sucesso!' });
   }).catch((erro) => {
-    console.log("Erro ao cadastrar usuário.");
-    console.log(erro);
-    res.send({ check: false, msg: 'Erro ao cadastrar usuário.' });
+    res.send({ check: false, msg: `Erro ao cadastrar usuário. ${erro}` });
   });
 });
 
@@ -70,7 +67,6 @@ router.post('/autenticar', (req, res, next) => {
 });
 
 router.get('/logout', function (req, res) {
-  console.log("Deslogado");
   req.logout();
   res.redirect('/users/login');
 });

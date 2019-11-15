@@ -36,11 +36,10 @@ router.post('/registro/salvar', [
     let erros = validationResult(req);
 
     if (erros.array().length > 0) {
-        console.log(erros.array());
         res.send({ msg: erros.array().map((erro) => erro.msg), status: false });
     }
     else {
-        var formulario = {
+        let formulario = {
             nome: dados.name_quest,
             data_quest: dados
         };
@@ -48,12 +47,9 @@ router.post('/registro/salvar', [
             let tmpfm = req.user.formulario
             tmpfm.push(formulario)
             modelUsers.updateOne({ _id: req.user.id }, { $set: { 'formulario': tmpfm } }, (err, result) => {
-                console.log(result)
                 res.send({ msg: 'Questionário cadastrado!', status: true });
-                console.log("Salvo com sucesso.");
-            })
+            });
         }).catch((err) => {
-            console.log(err)
             res.send({ msg: ['Falha ao salvar o questionário.'], status: false });
         });
     };
@@ -61,7 +57,6 @@ router.post('/registro/salvar', [
 
 router.get('/postar/:id', (req, res) => {
     modelFormulario.findOne({ _id: req.params.id }).then((formulario) => {
-        console.log(formulario);
         res.render("./formularios/visualizar_formulario", {
             name_quest: formulario.nome,
             copy_html: formulario.data_quest.copy_html,
@@ -94,15 +89,12 @@ router.post('/salvar_edicao/:id',
         const id = req.params.id;
         let dadosForm = req.body;
         let erros = validationResult(req);
-
         if (erros.array().length > 0) {
-            console.log(erros.array());
             res.send({ msg: erros.array().map((erro) => erro.msg), status: false });
         }
         else {
             modelFormulario.updateOne({ _id: id }, { $set: { 'nome': dadosForm.name_quest, "data_quest": dadosForm } }, (err, result) => {
                 if (err) {
-                    console.log('Erro ao salvar a resposta: ' + err);
                     res.send({ msg: 'Falha no servidor ao tentar salvar as modificações.', status: false });
                 }
                 else {
@@ -119,11 +111,9 @@ router.post('/salvar_resposta/:id', (req, res) => {
     let id = req.params.id;
     let feedbackMsg;
 
-    console.log(resposta);
-
     modelFormulario.findOne({ _id: id }, (err, formulario) => {
         if (err) {
-            console.log(`Falha ao tentar recuperar respostas anteriores de ${id}.Erro: ` + err);
+            res.send({ msg: [`Falha ao tentar recuperar respostar anteriores de ${id} -- ${err}`], status: false });
         }
         else {
             if (formulario.respostas != undefined) tmpAnswers = formulario.respostas;
@@ -158,16 +148,12 @@ router.get('/listar_respostas/:id', (req, res) => {
 
 
 router.get('/converter_respostas/:id', (req, res) => {
-    console.log(req.body)
     if (req.user) {
-        var id = req.params.id
-        console.log(req.body)
+        let id = req.params.id;
         modelFormulario.findById(id).then((formulario) => {
-            var csv = convertercsv(formulario.respostas)
-            var nome = formulario.nome
+            let csv = convertercsv(formulario.respostas)
+            let nome = formulario.nome;
             res.attachment(nome + '.csv');
-            console.log(csv)
-            console.log(req.body)
             res.send(Buffer.from(csv));
         });
     }
@@ -180,11 +166,9 @@ router.get('/delete/:id', (req, res) => {
     if (req.user) {
         let id = req.params.id;
         modelFormulario.findByIdAndRemove(id).then(() => {
-            console.log('deletado');
-            res.redirect('/forms')
+            res.redirect('/forms');
         }).catch((err) => {
-            console.log(err)
-            res.redirect('/forms')
+            res.redirect('/forms');
         });
     }
     else {
@@ -202,7 +186,7 @@ router.get('/dashboard/:id', async (req, res) => {
             res.redirect('/users/login');
         };
     } catch (error) {
-        console.log(error);
+        res.send({ msg: [`Erro na dashboard ${error}`], status: false });
     };
 });
 

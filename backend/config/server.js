@@ -48,7 +48,6 @@ mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedT
 app.set('view engine', 'ejs');
 mongoose.set('useFindAndModify', false);
 app.set('views', path.join(__dirname + '../../../frontend/', 'views'));
-console.log(__dirname);
 app.use(express.static(path.join(__dirname + "../../../frontend/public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());

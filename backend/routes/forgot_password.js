@@ -35,10 +35,8 @@ router.post('/recuperar_senha', async (req, res) => {
         };
         await sgMail.send(msg);
         res.render('usuarios/definir_nova_senha', { notUser: false, notToken: false, tokenExpires: false });
-        console.log(token, now);
-
     } catch (error) {
-        console.log(error);
+        res.send({ msg: ['Falha ao salvar o questionário.'], status: false });
     };
 });
 
