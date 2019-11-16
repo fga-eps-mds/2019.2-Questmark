@@ -11,6 +11,7 @@
 </head>
 <%- include ../partials/Header.ejs%>
 <%- include ../partials/Overlay.ejs%>
+<%- include ../partials/OverlayDelete.ejs%>
 
 <body>
   <% if (formulario.length>0) { %>
@@ -35,7 +36,8 @@
                 <i class="fas fa-chart-bar" id="buttonIcon"></i>
               </div>
             </a>
-            <a onclick="return confirm('Tem certeza que deseja excluir o questionário?');" href="/forms/delete/<%= formulario[i].id %>">
+            <!-- href="/forms/delete/<%= formulario[i].id %>" -->
+            <a onclick="deleteForm('<%=formulario[i].id%>','<%=formulario[i].nome%>')" data-toggle="modal" data-target="#ModalPrincipalDelete" style="cursor:pointer;">
               <div class="buttonForm" style="background: #FF2C2C">
                 <i class="fas fa-trash" id="buttonIcon"></i>
               </div>
