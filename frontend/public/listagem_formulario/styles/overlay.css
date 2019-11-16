@@ -7,4 +7,6 @@
   position: absolute;
   left: -999em;
 }
-  
+.modal-open {
+  overflow: auto; 
+ }
