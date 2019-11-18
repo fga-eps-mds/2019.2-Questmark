@@ -1,8 +1,7 @@
-
 function recoverInputsInformation() {
 	//Recupera as informações dos campos(type,name,required...)
-	let inputs = {select:[],checkbox:[],radio:[],text:[]};
-
+	let inputs = {fields:[],select:[],checkbox:[],radio:[],text:[]};
+	
 	//Tag Input
 	let inputElements = document.getElementsByTagName('input');
 	//Alterar início do ctd 'i' dependendo da posição do campo de nome do questionário
@@ -17,6 +16,8 @@ function recoverInputsInformation() {
 			inputs.text.push({name: inputElements[i].name,
 							required: (inputElements[i].className == 'required-input') ? true : false});
 		}
+		if(inputs.fields.indexOf(inputElements[i].name) == -1) 
+			inputs.fields.push(inputElements[i].name);			
 	}
 	
 	//Tag Select
@@ -26,8 +27,8 @@ function recoverInputsInformation() {
 			inputs.select.push({name: selectElements[i].name,option: selectElements[i][j].label,
 							required: (inputElements[i].className == 'required-input') ? true : false});
 		}
+		inputs.fields.push(selectElements[i].name);			
 	}
-
 	return inputs;
 }	
 
