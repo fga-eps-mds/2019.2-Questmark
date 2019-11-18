@@ -168,16 +168,14 @@ router.get('/listar_respostas/:id', (req, res) => {
 
 //Rota de conversão de respostas para csv
 router.get('/converter_respostas/:id', (req, res) => {
-    console.log(req.body)
     if (req.user) {
         var id = req.params.id
-        console.log(req.body)
         modelFormulario.findById(id).then((formulario) => {
-            var csv = convertercsv(formulario.respostas)
-            var nome = formulario.nome
+            var csv = convertercsv(formulario);
+            var nome = formulario.nome;
             res.attachment(nome + '.csv');
-            console.log(csv)
-            console.log(req.body)
+            // console.log(csv);
+            // console.log(req.body);
             res.send(Buffer.from(csv));
         })
     }
