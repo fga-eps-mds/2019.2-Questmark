@@ -36,6 +36,11 @@ O documento, através de dez principais tópicos e suas ramificações, visa det
 <!-- Diagrama de arquitetura + descrição de implementação -->
 
 ### 2.1 Padrão Arquitetural
+O padrão arquitetural utilizado para modelagem do projeto foi o MVC.
+![MVC](../Imagens/mvc.jpg)
+* **Model:** parte lógica da aplicação que gerencia o comportamento dos dados. 
+* **View:** parte responsável pela interação e exibição dos dados para o usuário final.
+* **Controller:** parte resposável por tratar as requisições do usuário, assim realizando ações e controlando a camada de _view_ e _model_ para chegar ao resultado desejado conforme as regras de negócio do projeto. 
 
 ### 2.2 Tecnologias
 
@@ -130,3 +135,4 @@ O software suporta os seguintes requisitos de qualidade:
 |11/11/2019|0.4|Inserido as tecnologias faltantes no tópico 2.1 e recisão nos demais tópicos |Lucas Lopes|
 |16/11/2019|0.5| Atualização do diagrama de casos de uso |Gustavo Nogueira|
 |16/11/2019|0.6| Adição do jQuery como tecnologia utilizada  |Gustavo Nogueira|
+|18/11/2019|0.7| Adição do tópico 2.1 Padrão Arquitetural  |Gustavo Nogueira|
