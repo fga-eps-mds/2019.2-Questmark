@@ -20,9 +20,7 @@
     return false;
   });
 
-
   new WOW().init();
-
 
   $(window).scroll(() => {
     if ($(this).scrollTop() > 100) {
@@ -34,14 +32,14 @@
 
   if ($(window).scrollTop() > 100) {
     $('#header').addClass('header-scrolled');
-  }
+  };
 
 
   $('.main-nav a, .mobile-nav a, .scrollto').on('click', () => {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
+      let target = $(this.hash);
       if (target.length) {
-        var top_space = 0;
+        let top_space = 0;
 
         if ($('#header').length) {
           top_space = $('#header').outerHeight();
@@ -71,20 +69,20 @@
   });
 
 
-  var nav_sections = $('section');
-  var main_nav = $('.main-nav, .mobile-nav');
-  var main_nav_height = $('#header').outerHeight();
+  let nav_sections = $('section');
+  let main_nav = $('.main-nav, .mobile-nav');
+  let main_nav_height = $('#header').outerHeight();
 
   $(window).on('scroll', () => {
-    var cur_pos = $(this).scrollTop();
+    let cur_pos = $(this).scrollTop();
 
     nav_sections.each(() => {
-      var top = $(this).offset().top - main_nav_height,
-        bottom = top + $(this).outerHeight();
+      let top = $(this).offset().top - main_nav_height,
+        bottom = top+$(this).outerHeight();
 
       if (cur_pos >= top && cur_pos <= bottom) {
         main_nav.find('li').removeClass('active');
-        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+        main_nav.find('a[href="#'+$(this).attr('id')+'"]').parent('li').addClass('active');
       }
     });
   });

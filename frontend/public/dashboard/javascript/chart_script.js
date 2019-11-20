@@ -128,7 +128,7 @@ makeContext = (field) => {
     <div class="col-lg-5 ctx-chart">
       <div class="row header-chart">
         <div class="col-md-11" style="text-align:center;margin: auto;">
-            <span style="font-weight: bold;">${field[0].toUpperCase() + field.slice(1)}</span>
+            <span style="font-weight: bold;">${field[0].toUpperCase()+field.slice(1)}</span>
         </div>
         <div class="col-md-1">
             <button class="btn-change" onclick="changeChart('${field}')">

@@ -48,7 +48,7 @@ $("#form_registro").on("submit", (event) => {
 			document.getElementById('btnClose').innerHTML = 'Voltar ao menu';
 			document.getElementById('btnClose').className = 'btn btn-success';
 			document.getElementById('modalBody').innerHTML = resp.msg;
-			document.getElementById('btnClose').onclick = function () { window.location.href = '/forms/' };
+			document.getElementById('btnClose').onclick =  () => { window.location.href = '/forms/' };
 			$('#modal-form').modal('show');
 		}
 		else {

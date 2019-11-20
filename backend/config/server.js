@@ -6,15 +6,14 @@ const path = require('path');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+require('../controllers/auth')(passport);
 
 const forms = require('../routes/forms');
-const users = require("../routes/users");
+const users = require('../routes/users');
 const forgot_password = require('../routes/forgot_password');
 const parseMarkdownToHMTL = require('../routes/parser');
 
 const url = "mongodb+srv://questmarkdeploy:questmarkdeploy@cluster0-62j7g.mongodb.net/test?retryWrites=true&w=majority";
-
-require('../controllers/auth')(passport);
 
 app.use(session({
 	secret: "questmarkmdseps2019.2",
@@ -38,12 +37,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
-	.then(() => {
-		console.log('Conectado com sucesso ao banco de dados.');
-	}).catch((err) => {
-		console.log("Houve um erro na conexão com o banco dados:" + err);
-	});
+mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
 app.set('view engine', 'ejs');
 mongoose.set('useFindAndModify', false);
@@ -56,7 +50,7 @@ app.get("/", (req, res) => {
 	res.render('./home/home');
 });
 app.get("/ajuda", (req, res) => {
-	res.render('./ajuda/ajuda')
+	res.render('./ajuda/ajuda');
 });
 
 app.use('/forms', forms);

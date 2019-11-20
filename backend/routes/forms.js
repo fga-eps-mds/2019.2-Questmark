@@ -25,7 +25,7 @@ router.get('/registro', (req, res) => {
     }
     else {
         res.redirect('/users/login');
-    };
+    }
 });
 
 router.post('/registro/salvar', [
@@ -153,7 +153,7 @@ router.get('/converter_respostas/:id', (req, res) => {
         modelFormulario.findById(id).then((formulario) => {
             let csv = convertercsv(formulario.respostas)
             let nome = formulario.nome;
-            res.attachment(nome + '.csv');
+            res.attachment(`${nome}.csv`);
             res.send(Buffer.from(csv));
         });
     }
