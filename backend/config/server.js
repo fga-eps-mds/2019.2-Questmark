@@ -26,7 +26,6 @@ app.use((req, res, next) => {
 	res.locals.sucess = req.flash("sucess");
 	next();
 });
-
 app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');

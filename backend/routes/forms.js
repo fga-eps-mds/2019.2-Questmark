@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
 router.get('/registro', (req, res) => {
@@ -39,7 +39,7 @@ router.post('/registro/salvar', [
         res.send({ msg: erros.array().map((erro) => erro.msg), status: false });
     }
     else {
-        var formulario = {
+        let formulario = {
             nome: dados.name_quest,
             data_quest: dados
         };
@@ -52,7 +52,7 @@ router.post('/registro/salvar', [
         }).catch((err) => {
             res.send({ msg: ['Falha ao salvar o questionário.'], status: false });
         });
-    }
+    };
 });
 
 router.get('/postar/:id', (req, res) => {
@@ -78,7 +78,7 @@ router.get('/editar/:id', (req, res) => {
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
 router.post('/salvar_edicao/:id',
@@ -89,7 +89,6 @@ router.post('/salvar_edicao/:id',
         const id = req.params.id;
         let dadosForm = req.body;
         let erros = validationResult(req);
-
         if (erros.array().length > 0) {
             res.send({ msg: erros.array().map((erro) => erro.msg), status: false });
         }
@@ -100,9 +99,9 @@ router.post('/salvar_edicao/:id',
                 }
                 else {
                     res.send({ msg: 'Modificações salvas com sucesso!', status: true });
-                }
+                };
             });
-        }
+        };
     }
 );
 
@@ -131,7 +130,7 @@ router.post('/salvar_resposta/:id', (req, res) => {
                     name_quest: formulario.nome
                 });
             });
-        }
+        };
     });
 
 });
@@ -140,11 +139,11 @@ router.get('/listar_respostas/:id', (req, res) => {
     if (req.user) {
         modelFormulario.findOne({ _id: req.params.id }).then((formulario) => {
             res.render("./formularios/listar_respostas", { formulario: formulario })
-        })
+        });
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
 router.get('/converter_respostas/:id', (req, res) => {
@@ -155,11 +154,11 @@ router.get('/converter_respostas/:id', (req, res) => {
             var nome = formulario.nome;
             res.attachment(nome + '.csv');
             res.send(Buffer.from(csv));
-        })
+        });
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
 router.get('/delete/:id', (req, res) => {
@@ -173,7 +172,7 @@ router.get('/delete/:id', (req, res) => {
     }
     else {
         res.redirect('/users/login');
-    }
+    };
 });
 
 router.get('/dashboard/:id', async (req, res) => {
@@ -184,7 +183,7 @@ router.get('/dashboard/:id', async (req, res) => {
             res.render("./formularios/dashboard", { id: req.params.id, respostas: form.respostas, mapeamentoCampos: tipos });
         } else {
             res.redirect('/users/login');
-        }
+        };
     } catch (error) {
         res.send({ msg: `${error}`, status: false });
     }

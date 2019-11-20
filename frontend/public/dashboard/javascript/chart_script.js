@@ -1,13 +1,13 @@
 let typeCharts = Array();
 let maxScale = Array();
 
-function getAnsewrsEJS(answers) {
+getAnsewrsEJS = (answers) => {
     return answers;
 }
 
 function getFieldMappingEJS(fieldMapping) {
     return fieldMapping;
-}
+};
 
 function generateColors(size) {
     let backgroundColors = Array();
@@ -32,7 +32,7 @@ function initializeFieldHistogram(mapField, histogramFields) {
         maxScale[element.name] = 0;
         histogramFields[element.name][element.option] = 0;
     });
-}
+};
 
 function generateHistogram(jsonAnswers, fieldMapping) {
     let histogramFields = Array();
@@ -57,9 +57,8 @@ function generateHistogram(jsonAnswers, fieldMapping) {
             }
         }
     });
-
     return histogramFields;
-}
+};
 
 function createConfigPieChart(field, backgroundColors, borderColors, data) {
     const labelsField = Object.keys(data);
@@ -86,9 +85,8 @@ function createConfigPieChart(field, backgroundColors, borderColors, data) {
             }
         }
     };
-
     return configPie;
-}
+};
 
 function createConfigBarChart(field, backgroundColors, borderColors, data) {
     const labelsField = Object.keys(data);
@@ -123,14 +121,14 @@ function createConfigBarChart(field, backgroundColors, borderColors, data) {
     };
 
     return configBar;
-}
+};
 
 function makeContext(field) {
     let htmlContext = `        
     <div class="col-lg-5 ctx-chart">
       <div class="row header-chart">
         <div class="col-md-11" style="text-align:center;margin: auto;">
-            <span style="font-weight: bold;">${field[0].toUpperCase() + field.slice(1)}</span>
+            <span style="font-weight: bold;">${field[0].toUpperCase()+field.slice(1)}</span>
         </div>
         <div class="col-md-1">
             <button class="btn-change" onclick="changeChart('${field}')">

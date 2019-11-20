@@ -81,7 +81,7 @@ $("#formUser").on("submit", function (event) {
 			showIconValidation(false, 'iconEmail');
 			showAlertText('Usuário já possui cadastro.', 'alertTextEmail');
 		}
-	}
+	};
 });
 
 function showIconValidation(check, iconId) {

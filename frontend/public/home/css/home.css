@@ -1,4 +1,3 @@
-
 body {
   background: #fff;
   color: #444;
@@ -133,7 +132,6 @@ p {
   background: #007DFF;
   color: #fff;
 }
-
 #intro .intro-info .btn-get-started:hover,
 #intro .intro-info .btn-services:hover {
   background: #0a98c0;
@@ -365,4 +363,3 @@ p {
   }
 
 }
-

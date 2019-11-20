@@ -1,10 +1,11 @@
 const express = require('express');
-const router = express.Router();
-require('../models/Users');
 const mongoose = require('mongoose');
 const modelUsers = mongoose.model("users");
 const crypto = require('crypto');
 const passport = require('passport');
+
+require('../models/Users');
+const router = express.Router();
 
 router.get('/cadastro', (req, res) => {
   res.render('./usuarios/criar_conta');
@@ -44,7 +45,6 @@ router.post('/validar_senha', (req, res) => {
   else {
     res.send({ checkPassword: false });
   }
-
 });
 
 router.get('/login', (req, res) => {

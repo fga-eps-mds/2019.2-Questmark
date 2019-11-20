@@ -6,7 +6,7 @@ function apllyClass(arrayElements, classBootstrap) {
 			let divParent = document.getElementById(`${element.name}`);
 			divParent.className = 'field mx-sm-2';
 			visited_fields.push(element.name);
-		}
+		};
 		let labelOption = document.getElementById(`lbl-${element.option}`);
 		let divOption = document.getElementById(`div-${element.option}`);
 		let inputOption = document.getElementById(`${element.option}`);
@@ -30,7 +30,6 @@ function stylizeFields(dataInputs) {
 			domElement.className = 'form-control mx-sm-2';
 		});
 	};
-
 	if (dataInputs.select) {
 		dataInputs.select.forEach((element) => {
 			let domElement = document.getElementById(element.name);

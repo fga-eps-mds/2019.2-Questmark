@@ -38,14 +38,12 @@ function recoverInputsInformation() {
 $("#form_registro").on("submit", function (event) {
 	event.preventDefault();
 	let typeInputs = recoverInputsInformation();
-
 	let jsonData = {
 		name_quest: document.getElementById('name_quest').value,
 		copy_html: document.getElementById('copy_html').value,
 		copy_markdown: document.getElementById('notes').value,
 		type_inputs: typeInputs
 	};
-
 	$.post(this.action, jsonData, (resp) => {
 		if (resp.status) {
 			document.getElementById('modalLabel').innerHTML = 'Pronto!';

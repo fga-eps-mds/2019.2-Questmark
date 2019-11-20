@@ -214,7 +214,6 @@ h6 {
 }
 
 .main-nav {
-
 }
 
 .main-nav,
@@ -311,8 +310,6 @@ h6 {
   position: absolute;
   right: 15px;
 }
-
-
 
 .mobile-nav {
   position: fixed;
@@ -492,7 +489,6 @@ h6 {
 #services .titleb a {
   color: rgb(0, 255, 42);
 }
-
 
 #services .deion {
   margin-top: 40px;

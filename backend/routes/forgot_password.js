@@ -33,7 +33,6 @@ router.post('/recuperar_senha', async (req, res) => {
             html: `<p>Utilize o seguinte código em nosso site ${token} </p>
             <p>Se você não solicitou a troca de senha, por favor desconsidere este e-mail.`,
         };
-
         await sgMail.send(msg);
         res.render('usuarios/definir_nova_senha', { notUser: false, notToken: false, tokenExpires: false });
 
@@ -62,7 +61,6 @@ router.post('/redefinir_senha', async (req, res) => {
         await user.save();
         res.send();
         res.redirect('/users/login');
-
     } catch (error) {
         res.status(400).send({ error: 'Erro ao redefinir senha.' })
     };

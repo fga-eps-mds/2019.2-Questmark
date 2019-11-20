@@ -1,8 +1,8 @@
-(function ($) {
+(($) => {
   "use strict";
   $(window).on('load', function () {
     if ($('#preloader').length) {
-      $('#preloader').delay(100).fadeOut('slow', function () {
+      $('#preloader').delay(100).fadeOut('slow', () => {
         $(this).remove();
       });
     }
@@ -34,14 +34,15 @@
 
   if ($(window).scrollTop() > 100) {
     $('#header').addClass('header-scrolled');
-  }
+  };
+
 
 
   $('.main-nav a, .mobile-nav a, .scrollto').on('click', function () {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
+      let target = $(this.hash);
       if (target.length) {
-        var top_space = 0;
+        let top_space = 0;
 
         if ($('#header').length) {
           top_space = $('#header').outerHeight();
