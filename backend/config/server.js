@@ -39,7 +39,7 @@ app.use((req, res, next)=>{
 });
 
 //Conexão do MongoDB
-const url = "mongodb://mongo/questmark"
+const url = "mongodb+srv://questmarkdeploy:questmarkdeploy@cluster0-62j7g.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
 	.then(() => {
 		console.log('Conectado com sucesso ao banco de dados.');
