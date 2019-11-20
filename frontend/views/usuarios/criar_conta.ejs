@@ -1,32 +1,58 @@
+
 <!DOCTYPE HTML>
 <html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Cadastro</title>
-
-    <!-- JQuery  -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-    </script>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>   
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    <!-- Estilos -->
+    <title>Login</title>
     <link rel="stylesheet" href="/login_e_cadastro/styles/login_e_cadastro.css">
     <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
-
+    
+    <!--  Bootstrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"  crossorigin="anonymous">
 </head>
 
 <body>
+    <% if(validacao.length > 0){ %>
+        <div style="width: 100%;">
+            <div class="alert alert-danger">
+                <strong>Atenção!</strong>
+                <ul>    
+                    <% for(let i = 0;i < validacao.length;i++){ %>
+                        <li><%= validacao[i].msg  %></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    <% } %>
+    
     <div class="logo"  onclick="window.location.href='/'" title="Home">
         QM
     </div>
     <div class="box">
-        <form id="formUser" class="loginBox" action="/users/criar_conta" method="POST">
-                
-            <label for="nome" class="textLabel"><b>Nome</b></label>
-            <div class="divField">
+        <form action="/users/autenticar" method="POST" class="loginBox">
+            <label for="email" class="textLabel"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" value="<%= email %>" class="inputBox inputBoxFocus" required>
+            <label for="password" class="textLabel"><b>Senha</b></label>
+            <input type="password" placeholder="Enter Password" name="senha" 
+            class="inputBox inputBoxFocus" required>
+            <div class="hyperLinkBox">              
+                <a href="/users/cadastro" id="hyperLink" class="hyperLinkFocus">
+                    Ainda não é cadastrado?
+                </a>
+                <a href="/password/forgot" id="hyperLink" class="hyperLinkFocus">
+                    Esqueci minha senha
+                </a>
+            </div>
+            <button class="buttonLoginFocus" id="buttonLogin">Login</button>
+        </form>
+    </div>
+    <!-- jQuery first, then Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+</body>
+</html>
