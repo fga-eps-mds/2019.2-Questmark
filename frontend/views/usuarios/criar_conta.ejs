@@ -12,7 +12,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>   
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
     <!-- Estilos -->
@@ -22,77 +22,11 @@
 </head>
 
 <body>
-    <div class="logo">QM</div>
+    <div class="logo"  onclick="window.location.href='/'" title="Home">
+        QM
+    </div>
     <div class="box">
         <form id="formUser" class="loginBox" action="/users/criar_conta" method="POST">
                 
             <label for="nome" class="textLabel"><b>Nome</b></label>
             <div class="divField">
-                <input type="text" placeholder="Digite seu nome" name="nome" id="" 
-                class="inputBox inputBoxFocus" onblur="nameValitation(this.value)" 
-                style="margin: 0px;" required>
-                <img id="iconName" class="verificationIcon">
-            </div>
-
-            <label for="email" class="textLabel"><b>E-mail</b></label>
-            <div class="divField">
-                <input type="email" placeholder="Digite seu e-mail" name="email" 
-                onblur="emailValidation(this.value)" class="inputBox inputBoxFocus"
-                style="margin: 0px;" id="" required>    
-                <img id="iconEmail" class="verificationIcon">
-            </div>
-			<div id="alertTextEmail" class="alertText">
-            </div>
-
-            <label for="senha" class="textLabel"><b>Senha</b></label>
-            <div class="divField">
-                <input type="password" placeholder="Digite a senha" name="senha" 
-                id="fieldPassword" class="inputBox inputBoxFocus" style="margin: 0px;" 
-                oninput="passwordValidation(this.value)" required>
-                <img id="iconPassword1" class="verificationIcon">
-            </div>
-            <div id="alertTextPassword" class="alertText">
-            </div>
-
-            <label for="confirmPassword" class="textLabel"><b>Confirmar Senha</b></label>
-            <div class="divField">
-                <input type="password" placeholder="Confirme a senha" name="confirmPassword" 
-                id="" class="inputBox inputBoxFocus" style="margin: 0px;" 
-                oninput="confirmPasswordValidation(this.value)" required>                
-                <img id="iconPassword2" class="verificationIcon">
-            </div>
-        
-            <div class="hyperLinkBox">
-                <a href="/users/login" id="hyperLinkCreate" class="hyperLinkCreateFocus">
-                    Já é cadastrado?
-                </a>
-            </div>
-            <button type="submit" id="buttonLogin" class="buttonLoginFocus">
-                Cadastrar
-            </button>
-        </form>
-    </div>
-
-    <!-- Modal de Feedback -->
-    <div class="modal fade" id="modalFeedback" tabindex="-1" role="dialog" 
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div id="modalHeader">
-            <h5 class="modal-title" id="modalLabel">Título</h5>
-          </div>
-          <div id='modalBody' class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" id="btnClose" data-dismiss="modal">Texto Btn</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Script de submissão e validação do form -->
-    <script src="/login_e_cadastro/javascript/form_validation.js"></script>
-</body>
-
-</html>
