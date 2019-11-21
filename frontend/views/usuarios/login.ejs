@@ -26,7 +26,7 @@
             </div>
         </div>
     <% } %>
-    <div class="logo">QM</div>
+    <div class="shine" onclick="window.location.href='/'">QM</div>
     <div class="box">
         <form action="/users/autenticar" method="POST" class="loginBox">
             <label for="email" class="textLabel"><b>Email</b></label>
@@ -35,11 +35,6 @@
             <input type="password" placeholder="Enter Password" name="senha" 
             class="inputBox inputBoxFocus" required>
             <div class="hyperLinkBox">
-                <a href="/" id="hyperLink" class="hyperLinkFocus" 
-                    style="display: block;text-align: center;
-                    border-bottom: 1px solid rgba(0, 0, 0, .2);margin-bottom: 1vh;">
-                    Home
-                </a>               
                 <a href="/users/cadastro" id="hyperLink" class="hyperLinkFocus">
                     Ainda não é cadastrado?
                 </a>
