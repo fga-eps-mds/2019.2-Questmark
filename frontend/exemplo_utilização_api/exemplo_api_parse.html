@@ -1,19 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<script>
-		/*  
-			Utilização:
-
-			=> Rota de acesso:
-				* seu_dominio/parse
-			=> Formato do Json para ser envido para o servidor:
-				* {markdown: markdown}
-			=> Resposta html:
-				* encontra-se na chave 'html' do objeto de resposta JSON(obj.html).
-		*/
-		function parseMarkdownToHtml(){
+		function parseMarkdownToHtml() {
 			const url = `http://localhost:3000/parse`;
 			const markdown = document.getElementById('txt-markdown').value;
 			let loadingIMG = document.getElementById('loading');
@@ -22,20 +13,20 @@
 			previewDIV.innerHTML = '';
 
 			let ajax = new XMLHttpRequest();
-			ajax.open('POST',url);
-			ajax.setRequestHeader('Content-type','application/json; charset=utf-8');
-			ajax.onreadystatechange = function(){
-				if(ajax.readyState == 4 && ajax.status == 200){
+			ajax.open('POST', url);
+			ajax.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+			ajax.onreadystatechange = function () {
+				if (ajax.readyState == 4 && ajax.status == 200) {
 					let responseJson = JSON.parse(ajax.responseText);
-					console.log(responseJson);
 					loadingIMG.style.display = 'none';
 					previewDIV.insertAdjacentHTML('beforeend', responseJson.html);
-				}		
+				}
 			}
-			ajax.send(JSON.stringify({markdown}));
+			ajax.send(JSON.stringify({ markdown }));
 		}
 	</script>
 </head>
+
 <body>
 
 	<div>
@@ -44,17 +35,16 @@
 		</textarea>
 		<button onclick="parseMarkdownToHtml()">Enviar</button>
 	</div>
-	
+
 	<div id="loading" style="display: none;">
 		<h2>Aguarde...</h2>
 	</div>
 
 	<h1>Preview:</h1>
 	<div id="preview" style="">
-		
+
 	</div>
 
 </body>
-</html>
 
-	
+</html>
