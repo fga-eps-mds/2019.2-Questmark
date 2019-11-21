@@ -6,34 +6,32 @@
     <title>Login</title>
     <link rel="stylesheet" href="/login_e_cadastro/styles/login_e_cadastro.css">
     <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
-    
-    <!--  Bootstrap  -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
-    crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 </head>
 
 <body>
     <% if(validacao.length > 0){ %>
-        <div style="width: 100%;">
-            <div class="alert alert-danger">
-                <strong>Atenção!</strong>
-                <ul>    
-                    <% for(let i = 0;i < validacao.length;i++){ %>
-                        <li><%= validacao[i].msg  %></li>
-                    <% } %>
-                </ul>
-            </div>
+    <div style="width: 100%;">
+        <div class="alert alert-danger">
+            <strong>Atenção!</strong>
+            <ul>
+                <% for(let i = 0;i < validacao.length;i++){ %>
+                <li><%= validacao[i].msg  %></li>
+                <% } %>
+            </ul>
         </div>
+    </div>
     <% } %>
     <div class="shine" onclick="window.location.href='/'">QM</div>
     <div class="box">
         <form action="/users/autenticar" method="POST" class="loginBox">
             <label for="email" class="textLabel"><b>Email</b></label>
-            <input type="email" placeholder="Enter Email" name="email" value="<%= email %>" class="inputBox inputBoxFocus" required>
+            <input type="email" placeholder="Enter Email" name="email" value="<%= email %>"
+                class="inputBox inputBoxFocus" required>
             <label for="password" class="textLabel"><b>Senha</b></label>
-            <input type="password" placeholder="Enter Password" name="senha" 
-            class="inputBox inputBoxFocus" required>
+            <input type="password" placeholder="Enter Password" name="senha" class="inputBox inputBoxFocus" required>
             <div class="hyperLinkBox">
                 <a href="/users/cadastro" id="hyperLink" class="hyperLinkFocus">
                     Ainda não é cadastrado?
@@ -45,7 +43,6 @@
             <button class="buttonLoginFocus" id="buttonLogin">Login</button>
         </form>
     </div>
-    <!-- jQuery first, then Popper.js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

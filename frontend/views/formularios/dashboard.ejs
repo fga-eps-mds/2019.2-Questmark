@@ -6,56 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/dashboard/styles/styles.css">
-    
-    <!-- Fonts -->
+
     <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Knewave&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/4b0fcedc6f.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4b0fcedc6f.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <title>Dashboard</title>
 </head>
 <%- include ../partials/Header.ejs%>
+
 <body>
 
-    <h4 class="font-logo" align="center">           
+    <h4 class="font-logo" align="center">
         Dashboard
     </h4>
 
     <div id="charts-container" class="container main-font" style="display: none;">
-        <button id="btn-csv" class="buttonCSV"
-                onclick="window.location.href='/forms/converter_respostas/<%= id %>'">
+        <button id="btn-csv" class="buttonCSV" onclick="window.location.href='/forms/converter_respostas/<%= id %>'">
             <span style="margin: 0px 0px 0px 10px">Download CSV</span>
             <i class="fas fa-file-csv" style="margin: 0px 10px 0px 10px"></i>
         </button>
-        
+
         <div id="charts-div" class="row">
-        
-        </div>   
+
+        </div>
     </div>
 
     <div id="no-answer" class="not-visible" style="display: none;">
-        <img src="/dashboard/images/chart-semresposta.png" 
-            style="width: 40vw;display: block;margin: 0 auto;">
+        <img src="/dashboard/images/chart-semresposta.png" style="width: 40vw;display: block;margin: 0 auto;">
     </div>
-    
-    <!-- Script de de plotagem dos gráficos -->
+
     <script src="/dashboard/javascript/chart_script.js"></script>
     <script>
-        let answers = getAnsewrsEJS(<%-JSON.stringify(respostas)%>);
-        let fieldMapping = getFieldMappingEJS(<%-JSON.stringify(mapeamentoCampos)%>);
+        let answers = getAnsewrsEJS(<%-JSON.stringify(respostas) %>);
+        let fieldMapping = getFieldMappingEJS(<%-JSON.stringify(mapeamentoCampos) %>);
 
-        if(answers){
+        if (answers) {
             document.getElementById('charts-container').style.display = 'block';
-            loadCharts(answers,fieldMapping);    
+            loadCharts(answers, fieldMapping);
         }
-        else{
-           document.getElementById('no-answer').style.display = 'block';
+        else {
+            document.getElementById('no-answer').style.display = 'block';
         }    
     </script>
 </body>
+
 </html>

@@ -19,7 +19,7 @@ body {
 }
 .textLabel{
     color: white;
-    margin: 2vh 0vh 1vh 0vh;
+    margin: 1vh 0vh 1vh 0vh;
 }
 .label:focus{
     box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);

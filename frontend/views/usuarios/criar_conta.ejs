@@ -19,17 +19,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-
-  <!-- Estilos -->
   <link rel="stylesheet" href="/login_e_cadastro/styles/login_e_cadastro.css">
   <link href='https://fonts.googleapis.com/css?family=Knewave' rel='stylesheet'>
 
 </head>
 
 <body>
-  <div class="shine" onclick="window.location.href='/'">QM</div>
-  <div class="box">
-    <form id="formUser" class="loginBox" action="/users/criar_conta" method="POST">
+
+    <div class="shine" onclick="window.location.href='/'">QM</div>
+    <div class="box">
+        <form id="formUser" class="loginBox" action="/users/criar_conta" method="POST">
+                
+            <label for="nome" class="textLabel"><b>Nome</b></label>
+            <div class="divField">
+                <input type="text" placeholder="Digite seu nome" name="nome" id="" 
+                class="inputBox inputBoxFocus" onblur="nameValitation(this.value)" 
+                style="margin: 0px;" required>
+                <img id="iconName" class="verificationIcon">
+            </div>
+
 
       <label for="nome" class="textLabel"><b>Nome</b></label>
       <div class="divField">
@@ -44,7 +52,8 @@
           class="inputBox inputBoxFocus" style="margin: 0px;" id="" required>
         <img id="iconEmail" class="verificationIcon">
       </div>
-      <div id="alertTextEmail" class="alertText"></div>
+      <div id="alertTextEmail" class="alertText">
+      </div>
 
       <label for="senha" class="textLabel"><b>Senha</b></label>
       <div class="divField">
@@ -72,8 +81,6 @@
       </button>
     </form>
   </div>
-
-  <!-- Modal de Feedback -->
   <div class="modal fade" id="modalFeedback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -90,8 +97,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Script de submissão e validação do form -->
   <script src="/login_e_cadastro/javascript/form_validation.js"></script>
 </body>
 
