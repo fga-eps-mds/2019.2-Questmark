@@ -24,7 +24,7 @@
         </div>
     </div>
     <% } %>
-    <div class="logo">QM</div>
+    <div class="shine" onclick="window.location.href='/'">QM</div>
     <div class="box">
         <form action="/users/autenticar" method="POST" class="loginBox">
             <label for="email" class="textLabel"><b>Email</b></label>
@@ -33,8 +33,12 @@
             <label for="password" class="textLabel"><b>Senha</b></label>
             <input type="password" placeholder="Enter Password" name="senha" class="inputBox inputBoxFocus" required>
             <div class="hyperLinkBox">
-                <a href="/users/cadastro" id="hyperLink" class="hyperLinkFocus">Ainda não é cadastrado?</a>
-                <a href="/password/forgot" id="hyperLink" class="hyperLinkFocus ">Esqueci minha senha</a>
+                <a href="/users/cadastro" id="hyperLink" class="hyperLinkFocus">
+                    Ainda não é cadastrado?
+                </a>
+                <a href="/password/forgot" id="hyperLink" class="hyperLinkFocus">
+                    Esqueci minha senha
+                </a>
             </div>
             <button class="buttonLoginFocus" id="buttonLogin">Login</button>
         </form>
