@@ -56,15 +56,15 @@ body {
 }
 .textLabel{
     color: white;
-    margin: 2vh 0vh 1vh 0vh;
+    margin: 2vh 0vw 1vh 0vw;
 }
 .label:focus{
     box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
 }
 .inputBox{
     width: 250px;
-    margin: 0vh 10vh 0vh 10vh;
-    padding: 5px;
+    margin: 0vh 10vw;
+    padding: 1vh 1vw;
     border-radius: 5px;
     border:0px;
     background-color: white;
@@ -73,8 +73,7 @@ body {
 }
 .inputBoxFocus:focus{
     width: 250px;
-    margin: 0vh 10vh 0vh 10vh;
-    padding: 5px;
+    padding: 1.3vh 1.3vw;
     border-radius: 5px;
     border:0px;
     background-color: white;
@@ -82,26 +81,24 @@ body {
     box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
 }
 #buttonLogin{
-    margin: 2vh 0vh 5vh 0vh;
+    margin: 2vh 0vw 5vh 0vw;
     background-image: linear-gradient(to right,#007BFF, rgb(0, 170, 255));
     color: white;
-    padding: 15px 25px;
+    padding: 1.5vh 3vw;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     border: 2px;
-    border-radius: 10px;
+    border-radius: 0.5vw;
     outline: none;
 }
-.buttonLoginFocus:focus{
-    margin: 2vh 0vh 5vh 0vh;
+.buttonLoginFocus:hover{
+    margin: 2vh 0vw 5vh 0vw;
     background-image: linear-gradient(to right,#007BFF, rgb(0, 170, 255));
     color: white;
-    padding: 15px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border: 2px;
     border-radius: 10px;
     outline: none;
     box-shadow: 2px 1px 3px rgba(0, 0, 0, .5);
@@ -110,7 +107,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 4vh;
+    margin-top: 3vh;
     background-color: rgba(255, 255, 255, 0.459);
     justify-content: center;
     padding-bottom: 2vh;
@@ -122,6 +119,7 @@ body {
     margin: 2vh 1vh 0vh 1vh;
     font-size: 10px;    
     text-decoration: none;
+    font-weight: bolder;
 }
 .hyperLinkFocus:focus{
     padding: 1px;
@@ -136,10 +134,11 @@ body {
     margin: 2vh 10vh 0vh 10vh;
     font-size: 10px;    
     text-decoration: none;
+    font-weight: bolder;
 }
 .hyperLinkCreateFocus:focus{
     padding: 1px;
-    margin: 2vh 10vh 0vh 10vh;
+    margin: 2vh 10vw 0vh 10vw;
     font-size: 10px;    
     text-decoration: none;
     outline: none;
@@ -149,11 +148,10 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-left: 5vh;
+    margin-left: 5vw;
 }
-
 .verificationIcon{
-    width: 4vh;
+    width: 4vw;
     height: 4vh;
     margin-left: 1vh;
     visibility: hidden;
@@ -162,4 +160,26 @@ body {
     color: red;
     font-size: 8pt;
     font-weight: bolder;
+}
+.logo {
+    color: #ffffff;
+    font-family: 'Knewave';
+    font-size: 15vh;    
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+.logo:hover{    
+    text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
 }
