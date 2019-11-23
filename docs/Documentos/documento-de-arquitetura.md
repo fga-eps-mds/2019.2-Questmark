@@ -24,6 +24,8 @@ Questmark é uma plataforma que irá possibilitar a criação de formulários em
  
 >The jQuery Foundation. O que é jQuery? Disponível em: <https://jquery.com/>. Acessado em 16 de novembro de 2019.
 
+>Treinaweb. Padrão MVC - Symfony. Disponível em: <https://www.treinaweb.com.br/blog/tag/symfony/>. Acessado em 23 de novembro de 2019.
+
 >Canalti. Arquitetura cliente-servidor. Disponível em: <https://www.canalti.com.br/arquitetura-de-computadores/arquitetura-cliente-servidor/>. Acessado em 23 de novembro de 2019.
  
 ### 1.5 Visão Geral
