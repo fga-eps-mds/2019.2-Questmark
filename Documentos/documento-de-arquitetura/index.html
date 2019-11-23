@@ -494,8 +494,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-qualidade" class="md-nav__link">
-    5. Qualidade
+  <a href="#5-diagrama-de-arquitetura" class="md-nav__link">
+    5. Diagrama de arquitetura
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-diagrama-de-pacotes" class="md-nav__link">
+    6. Diagrama de Pacotes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-qualidade" class="md-nav__link">
+    7. Qualidade
   </a>
   
 </li>
@@ -1452,8 +1466,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-qualidade" class="md-nav__link">
-    5. Qualidade
+  <a href="#5-diagrama-de-arquitetura" class="md-nav__link">
+    5. Diagrama de arquitetura
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-diagrama-de-pacotes" class="md-nav__link">
+    6. Diagrama de Pacotes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-qualidade" class="md-nav__link">
+    7. Qualidade
   </a>
   
 </li>
@@ -1489,7 +1517,7 @@
 <h3 id="11-finalidade">1.1 Finalidade</h3>
 <p>Este documento tem como objetivo informar, de uma forma geral, a arquitetura do projeto Questmark. Tanto o comportamento do software, quanto as tecnologias utilizadas para o desenvolvimento do mesmo devem ser expostas de forma clara, explicativa e objetiva para o leitor. </p>
 <h3 id="12-escopo">1.2 Escopo</h3>
-<p>Questmark é uma plataforma que irá possibilitar a criação de formulários em Markdown, de uma forma descomplicada, para qualquer usuário que fizer cadastro no mesmo. O projeto também dá ao cliente a comodidade de visualizar um dashboard, de simples entendimento, com as respostas dadas em seu formulário por um terceiro usuário. Se caso o usúario preferir, poderá baixar as respostas em um arquivo CSV. O documento apresentará toda a parte arquitetural para a confecção do Questmark, a fim de tornar claras as características arquiteturais do projeto.</p>
+<p>Questmark é uma plataforma que irá possibilitar a criação de formulários em Markdown, de uma forma descomplicada, para qualquer usuário que fizer cadastro no mesmo. O projeto também dá ao cliente a comodidade de visualizar um dashboard, de simples entendimento, com as respostas dadas em seu formulário por um terceiro usuário. Se caso o usuário preferir, poderá baixar as respostas em um arquivo CSV. O documento apresentará toda a parte arquitetural para a confecção do Questmark, a fim de tornar claras as características arquiteturais do projeto.</p>
 <h3 id="13-definicoes-acronimos-e-abreviacoes">1.3 Definições, Acrônimos e Abreviações</h3>
 <ul>
 <li><strong>FGA:</strong> Faculdade do Gama - Campus da Universidade de Brasília localizado no Gama.</li>
@@ -1534,17 +1562,17 @@
 <img alt="MVC" src="../../Imagens/mvc.jpg" />
 * <strong>Model:</strong> parte lógica da aplicação que gerencia o comportamento dos dados. 
 * <strong>View:</strong> parte responsável pela interação e exibição dos dados para o usuário final.
-* <strong>Controller:</strong> parte resposável por tratar as requisições do usuário, assim realizando ações e controlando a camada de <em>view</em> e <em>model</em> para chegar ao resultado desejado conforme as regras de negócio do projeto. </p>
+* <strong>Controller:</strong> parte responsável por tratar as requisições do usuário, assim realizando ações e controlando a camada de <em>view</em> e <em>model</em> para chegar ao resultado desejado conforme as regras de negócio do projeto. </p>
 <h3 id="22-tecnologias">2.2 Tecnologias</h3>
 <h4 id="221-nodejs">2.2.1 NodeJs</h4>
 <p>NodeJs é uma plataforma de aplicação, na qual você escreve seus programas com Javascript que serão compilados, otimizados e interpretados pela máquina virtual V8. Essa VM é a mesma que o Google utiliza para executar Javascript no browser Chrome, e foi a partir dela que o criador do Node.js, Ryan Dahl, criou o projeto. Foi a tecnologia que atendeu as necessidades da equipe.</p>
 <h4 id="222-express">2.2.2 Express</h4>
-<p>É framework web mais famoso para Node.js. Inclui suporte a diferentes view engines, funciona no padrão MVC, possui JSON e HTTP na caixa, trabalha com URLs amigáveis nativamente e muito mais, sem deixar de ser bem leve, o tornando indispensável para APIs e aplicações web escritas em Node.</p>
+<p>É framework web mais famoso para Node.js. Inclui suporte a diferentes view engines, funciona no padrão MVC, possui JSON e HTTP na caixa, trabalha com URLs amigáveis nativamente e muito mais, sem deixar de ser bem leve, o tornando indispensável para API’s e aplicações web escritas em Node.</p>
 <h4 id="223-mongoose">2.2.3 Mongoose</h4>
 <p>Mongoose é uma biblioteca do Nodejs que proporciona uma solução baseada em esquemas para modelar os dados da sua aplicação. Ele possui sistema de conversão de tipos, validação, criação de consultas e hooks para lógica de negócios. O Mongoose fornece um mapeamento de objetos do MongoDB similar ao ORM (Object Relational Mapping), ou ODM (Object Data Mapping) no caso do Mongoose. Isso significa que o Mongoose traduz os dados do banco de dados para objetos JavaScript para que possam ser utilizados pela aplicação.</p>
 <h4 id="224-passport">2.2.4 Passport</h4>
 <p>Passport é um middleware de autenticação para NodeJS, extremamente flexível e modular. Passportjs  pode 
-se de forma extramente eficiente para qualquer aplicação Web baseado no Express. Com um cojunto de estratégias, com suporte na autenticação para facebook,twitter e mais. A Estratégia adotado no Questmark foi a local.</p>
+se de forma extramente eficiente para qualquer aplicação Web baseado no Express. Com um conjunto de estratégias, com suporte na autenticação para facebook,twitter e mais. A Estratégia adotado no Questmark foi a local.</p>
 <h4 id="225-html">2.2.5 HTML</h4>
 <p>HTML (abreviação para a expressão inglesa HyperText Markup Language, que significa Hipertexto de Marcação de Linguagem) é uma linguagem de marcação utilizada na construção de páginas na Web. Documentos HTML podem ser interpretados por navegadores. A tecnologia é fruto da junção entre os padrões HyTime e SGML.</p>
 <h4 id="226-css">2.2.6 CSS</h4>
@@ -1558,7 +1586,7 @@ se de forma extramente eficiente para qualquer aplicação Web baseado no Expres
 <h4 id="2210-sendgridmail">2.2.10 @sendgrid/mail</h4>
 <p>Este é um serviço dedicado para interação com o terminal de email da API do Sendgrid v3 . Utilizado para envio de email.</p>
 <h4 id="2211-jest">2.2.11 - JEST</h4>
-<p>Jest é um poderoso Framework de Testes em JavaScript com um foco na simplicidade. Com o jest é possivél realizar testes unitarios, de integração e de aceitação. Além disso, é possivél gerar relatorios dos testes.</p>
+<p>Jest é um poderoso Framework de Testes em JavaScript com um foco na simplicidade. Com o jest é possível realizar testes unitários, de integração e de aceitação. Além disso, é possível gerar relatórios dos testes.</p>
 <h4 id="2212-ajax">2.2.12 - AJAX</h4>
 <p>AJAX significa Asynchronous JavaScript and XML, ou JavaScript e XML Assíncronos, em bom português. Ele é um conjunto de técnicas de desenvolvimento voltado para a web que permite que aplicações trabalhem de modo assíncrono, processando qualquer requisição ao servidor em segundo plano.</p>
 <h4 id="2213-jquery">2.2.13 - jQuery</h4>
@@ -1566,7 +1594,7 @@ se de forma extramente eficiente para qualquer aplicação Web baseado no Expres
 <h2 id="3-metas-e-restricoes-de-arquitetura">3. Metas e Restrições de Arquitetura</h2>
 <p>As restrições de arquitetura do projeto são a utilização de um Banco de Dados MongoDB para cada serviço interno, Logo um banco onde irá armazenar informações sobre os usuários cadastrados e seus respectivos formulários.
 Utilização da ferramenta Docker para a virtualização dos ambientes de forma prática e adequada para a realização do projeto ( Conexão com a internet é necessária).</p>
-<p>As metas do projeto são disponibilizar a criação de um questionário com entrada em markdown  , por ser uma marcação simples e disponibilizar o questionário criado a todos os usuários sem cadastro prévio, disponibilizar ao criador do questionário um dashboard com dados analiticos do questionario, para análise das respostas e também um arquivo CSV Contendo as respectivas respostas. Além disso, disponibilizar ao úsuario a opção de inserir em qualquer site que aceite a tag  IFRAME.</p>
+<p>As metas do projeto são disponibilizar a criação de um questionário com entrada em markdown  , por ser uma marcação simples e disponibilizar o questionário criado a todos os usuários sem cadastro prévio, disponibilizar ao criador do questionário um dashboard com dados analiticos do questionario, para análise das respostas e também um arquivo CSV Contendo as respectivas respostas. Além disso, disponibilizar ao usuário a opção de inserir em qualquer site que aceite a tag  IFRAME.</p>
 <!-- ## 4. Diagrama de Pacotes -->
 
 <h2 id="4-visao-de-casos-de-uso">4. Visão de Casos de Uso</h2>
@@ -1587,14 +1615,18 @@ Utilização da ferramenta Docker para a virtualização dos ambientes de forma 
 - Fazer download das respostas no formato de CSV </p>
 <h2 id="41-atores">4.1 Atores</h2>
 <p>O usuário da plataforma, quando logado, é capaz de realizar o CRUD de questionários, bem como ter acesso as respostas dos seus questionários. 
-O usuário da plataforma, quando deslogado, é capaz de resposder questionários de terceiros.</p>
+O usuário da plataforma, quando deslogado, é capaz de responder questionários de terceiros.</p>
 <h2 id="42-diagrama-de-casos-de-uso">4.2 Diagrama de casos de uso</h2>
 <p><img alt="UC_Questmark" src="../../Imagens/uc_questmark.png" /></p>
-<h2 id="5-qualidade">5. Qualidade</h2>
+<h2 id="5-diagrama-de-arquitetura">5. Diagrama de arquitetura</h2>
+<p><img alt="Diagrama_de_arquitetura" src="../../Imagens/diagrama_de_arquitetura.png" /></p>
+<h2 id="6-diagrama-de-pacotes">6. Diagrama de Pacotes</h2>
+<p><img alt="Diagrama_de_pacotes" src="../../Imagens/DiagramaDePacotes.png" /></p>
+<h2 id="7-qualidade">7. Qualidade</h2>
 <p>O software suporta os seguintes requisitos de qualidade:</p>
 <ul>
 <li>Interface amigável e funcional</li>
-<li>Sistema objetivo para o usúario</li>
+<li>Sistema objetivo para o usuário</li>
 <li>Ser capaz de mostrar dados fiéis ao usuário.</li>
 </ul>
 <h2 id="historico-de-revisao">Histórico de Revisão</h2>
@@ -1629,7 +1661,7 @@ O usuário da plataforma, quando deslogado, é capaz de resposder questionários
 <tr>
 <td align="center">11/11/2019</td>
 <td align="center">0.4</td>
-<td align="center">Inserido as tecnologias faltantes no tópico 2.1 e recisão nos demais tópicos</td>
+<td align="center">Inserido as tecnologias faltantes no tópico 2.1 e rescisão nos demais tópicos</td>
 <td align="center">Lucas Lopes</td>
 </tr>
 <tr>
@@ -1655,6 +1687,12 @@ O usuário da plataforma, quando deslogado, é capaz de resposder questionários
 <td align="center">0.8</td>
 <td align="center">Correção de erros ortográficos e adição de definição de acrônimos</td>
 <td align="center">Gustavo Nogueira</td>
+</tr>
+<tr>
+<td align="center">22/11/2019</td>
+<td align="center">0.9</td>
+<td align="center">Correção de erros ortográficos e adição dos tópicos 5 e 6</td>
+<td align="center">Danill Souza</td>
 </tr>
 </tbody>
 </table>
