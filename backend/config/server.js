@@ -10,6 +10,7 @@ const forms = require('../routes/forms');
 const users = require("../routes/users");
 const forgot_password = require('../routes/forgot_password');
 const parseMarkdownToHMTL = require('../routes/parser');
+require('dotenv').config()
 require('../controllers/auth')(passport);
 
 app.use(session({
@@ -32,9 +33,11 @@ app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 	res.setHeader('Access-Control-Allow-Credentials', true);
 	next();
+	
 });
 
-const url = "mongodb+srv://questmarkdeploy:questmarkdeploy@cluster0-62j7g.mongodb.net/test?retryWrites=true&w=majority";
+
+const url = process.env.MONGO_URI;
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
 	.then(() => {
 		console.log('Conectado com sucesso ao banco de dados.');
