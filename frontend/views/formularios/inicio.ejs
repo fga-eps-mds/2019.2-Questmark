@@ -22,31 +22,31 @@
       <div class="formText"><%= formulario[i].nome%></div>
       <div class="buttonsBox">
         <a href="/forms/editar/<%= formulario[i].id %>">
-          <div class="buttonForm" style="background: #00AAFF">
+          <div class="buttonForm" style="background: #00AAFF" title="Editar">
             <i class="fa fa-pencil" id="buttonIcon"></i>
           </div>
         </a>
         <a onclick="getInfo('<%=formulario[i].id%>','<%=formulario[i].nome%>')" data-toggle="modal"
           data-target="#ModalPrincipal" style="cursor:pointer;">
-          <div class="buttonForm" style="background: #77D353">
+          <div class="buttonForm" style="background: #77D353" title="Compartilhar">
             <i class="fas fa-share-alt" id="buttonIcon"></i>
           </div>
         </a>
         <a href="/forms/dashboard/<%= formulario[i].id %>">
-          <div class="buttonForm" style="background: #4B2CFF">
+          <div class="buttonForm" style="background: #4B2CFF" title="Dashboard">
             <i class="fas fa-chart-bar" id="buttonIcon"></i>
           </div>
         </a>
         <a onclick="deleteForm('<%=formulario[i].id%>','<%=formulario[i].nome%>')" data-toggle="modal"
           data-target="#ModalPrincipalDelete" style="cursor:pointer;">
-          <div class="buttonForm" style="background: #FF2C2C">
+          <div class="buttonForm" style="background: #FF2C2C" title="Deletar">
             <i class="fas fa-trash" id="buttonIcon"></i>
           </div>
         </a>
       </div>
     </div>
     <% } %>
-    <a href="/forms/registro" class="newFormButton">+</a>
+    <a href="/forms/registro" class="newFormButton" title="Cadastrar">+</a>
   </div>
   <% }else{ %>
   <div class="nothingHere">

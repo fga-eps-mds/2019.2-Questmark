@@ -32,14 +32,12 @@
 		<form id="form_registro" method="POST" action="/forms/registro/salvar">
 			<div>
 				<div style="display: flex; justify-content: center;">
-					<input type="text" id="name_quest" name="name_quest" placeholder="Nome do questionário"
-						class="textBoxName">
+					<input type="text" id="name_quest" name="name_quest" placeholder="Nome do questionário" class="textBoxName">
 				</div>
 				<div class="pageDimension">
 					<div style="display: flex; flex-direction: column;">
 						<label for="copy_marskdown" class="textTitles">Conteúdo</label>
-						<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox"
-							onkeyup="stylizePreview()"></textarea>
+						<textarea id="notes" name="copy_markdown" placeholder=" Markdown" class="textBox" onkeyup="stylizePreview()"></textarea>
 					</div>
 					<div style="display: flex; flex-direction: column;">
 						<label class="textTitles">Preview</label>
@@ -51,11 +49,11 @@
 			</div>
 			<div style="float: right; margin-top: 15px; flex-direction: row; display:flex">
 				<a onclick="window.location.href='/forms'">
-					<div class="buttonOptionDiv" style="background-color: rgb(255, 0, 0);">
+					<div class="buttonOptionDiv" style="background-color: rgb(255, 0, 0);" title="Cancelar">
 						<i class="fas fa-times" style="color: white" id="buttonIcon"></i>
 					</div>
 				</a>
-				<button type="submit" class="buttonOption" style="background: rgb(15, 225, 20);">
+				<button type="submit" class="buttonOption" style="background: rgb(15, 225, 20);" title="Cadastrar">
 					<i class="fas fa-check" style="color: white"></i>
 				</button>
 			</div>
@@ -96,8 +94,6 @@
 			document.getElementById('notes-preview').innerHTML = wmd.previewMgr.output();
 			stylizeFields(recoverInputsInformation());
 		};
-
 	</script>
 </body>
-
 </html>
