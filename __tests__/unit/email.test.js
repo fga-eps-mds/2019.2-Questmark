@@ -1,5 +1,5 @@
 const sgMail = require('@sendgrid/mail');
-var key = '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';
+var key = process.env.SENDGRID;
 sgMail.setApiKey(key);
 
 describe("Teste de email",()=>{

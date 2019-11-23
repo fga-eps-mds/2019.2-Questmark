@@ -3,7 +3,8 @@ const crypto = require('crypto');
 const User = require('../models/Users');
 const sgMail = require('@sendgrid/mail');
 const router = express.Router();
-sgMail.setApiKey("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");
+require('dotenv').config();
+sgMail.setApiKey(process.env.EMAIL);
 
 router.get('/forgot', (req, res) => {
     res.render('./usuarios/solicitar_nova_senha', { status: false });
