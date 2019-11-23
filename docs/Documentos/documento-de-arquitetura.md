@@ -22,7 +22,9 @@ Questmark é uma plataforma que irá possibilitar a criação de formulários em
 ### 1.4 Referências
 >André; Gabriel; Guilherme; ALMEIDA; Weyler. Cidade Democrática: Documento de Arquitetura. Disponível em: <https://github.com/fga-gpp-mds/2016.2-CidadeDemocratica/wiki/Documento-de-Arquitetura>. Acessado em 16 de novembro de 2019. 
  
->The jQuery Foundation. O que é jQuery? Disponível em: <https://jquery.com/>. Acessado em 16 de novembro de 2019. 
+>The jQuery Foundation. O que é jQuery? Disponível em: <https://jquery.com/>. Acessado em 16 de novembro de 2019.
+
+>Canalti. Arquitetura cliente-servidor. Disponível em: <https://www.canalti.com.br/arquitetura-de-computadores/arquitetura-cliente-servidor/>. Acessado em 23 de novembro de 2019.
  
 ### 1.5 Visão Geral
 O documento, através de dez principais tópicos e suas ramificações, visa detalhar a arquitetura e os requisitos do software do projeto. Tendo como objetivo facilitar o desenvolvimento e esclarecendo dúvidas a respeito deste.
@@ -33,15 +35,15 @@ O documento, através de dez principais tópicos e suas ramificações, visa det
     - Metas e Restrições de Arquitetura;
     - Visão de Casos de Uso;
     - Visão Lógica;
-    - Visão de Processos;
-    - Visão de Implantação;
-    - Visão de Dados;
-    - Tamanho e Desempenho;
     - Qualidade.
  
 ## 2. Representação da Arquitetura
-<!-- Diagrama de arquitetura + descrição de implementação -->
- 
+A arquitetura implementada no projeto segue o modelo cliente-servidor em que o processamento da informação é dividido em módulos ou processos distintos. Dessa forma, o cliente(usuário) solicita um determinado serviço enquanto o servidor oferece o serviço solicitado pelo cliente.
+
+Neste projeto tecnologias como _Bootstrap_,_Html_,_Css_,_Javascript_ e _JQuery_ foram utilizadas para o lado do cliente(_frontend_), e no lado do servidor(_backend_), camada que trata as requisições e realiza a comunicação com a camada de persistência de dados, foi utilizado o NodeJS.
+
+![Diagrama_de_arquitetura](../Imagens/diagrama_de_arquitetura.png)
+
 ### 2.1 Padrão Arquitetural
 O padrão arquitetural utilizado para modelagem do projeto foi o MVC.
 ![MVC](../Imagens/mvc.jpg)
@@ -97,8 +99,6 @@ Utilização da ferramenta Docker para a virtualização dos ambientes de forma 
  
 As metas do projeto são disponibilizar a criação de um questionário com entrada em markdown  , por ser uma marcação simples e disponibilizar o questionário criado a todos os usuários sem cadastro prévio, disponibilizar ao criador do questionário um dashboard com dados analiticos do questionario, para análise das respostas e também um arquivo CSV Contendo as respectivas respostas. Além disso, disponibilizar ao usuário a opção de inserir em qualquer site que aceite a tag  IFRAME.
  
-<!-- ## 4. Diagrama de Pacotes -->
- 
 ## 4. Visão de Casos de Uso
 Lista dos casos de uso:
 - Cadastro de usuários
@@ -125,13 +125,13 @@ O usuário da plataforma, quando deslogado, é capaz de responder questionários
  
 ![UC_Questmark](../Imagens/uc_questmark.png)
  
-## 5. Diagrama de arquitetura
-![Diagrama_de_arquitetura](../Imagens/diagrama_de_arquitetura.png)
+## 5. Visão Lógica 
 
-## 6. Diagrama de Pacotes 
+### 5.1. Diagrama de Pacotes 
+
 ![Diagrama_de_pacotes](../Imagens/DiagramaDePacotes.png)
 
-## 7. Qualidade
+## 6. Qualidade
 O software suporta os seguintes requisitos de qualidade:
  
 - Interface amigável e funcional
@@ -149,4 +149,5 @@ O software suporta os seguintes requisitos de qualidade:
 |16/11/2019|0.6| Adição do jQuery como tecnologia utilizada  |Gustavo Nogueira|
 |18/11/2019|0.7| Adição do tópico 2.1 Padrão Arquitetural  |Gustavo Nogueira|
 |18/11/2019|0.8| Correção de erros ortográficos e adição de definição de acrônimos|Gustavo Nogueira|
-|22/11/2019|0.9| Correção de erros ortográficos e adição dos tópicos 5 e 6|Danill Souza|
+|22/11/2019|0.9| Correção de erros ortográficos e adição dos tópicos 5 e 6|Danillo Souza|
+|23/11/2019|1.0| Correção da ordem dos tópicos e adição de descrição para o diagrama de arquitetura |Gustavo Nogueira|
