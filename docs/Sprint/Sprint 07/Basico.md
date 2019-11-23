@@ -8,11 +8,11 @@
 |**Pontos Planejados**|39|
 |**Pontos da Dívida Passada**|3|
 |**Pontuação Total**|42|
-
+ 
 ---
-
+ 
 ## Presença na Sprint Planning
-
+ 
 |Membro|Presença|
 |:---:|:---:|
 |Danillo G. Souza|Sim|
@@ -21,11 +21,11 @@
 |Luiz Gustavo|Sim|
 |Miguel Santos|Não|
 |Níclao Ribeiro|Sim|
-
+ 
 ---
 ## Sprint Review
 ### Pontos Positivos
-- O padrão de documentos técnicos foi mantiodo e utilizado da forma correta até o presente momento.
+- O padrão de documentos técnicos foi mantido e utilizado da forma correta até o presente momento.
    
 ### Pontos Negativos
 - Pior sprint até o momento. Diversas issues foram atrasadas por conta da complexidade de algumas tasks que não foram previstas no sprint planning.
@@ -33,5 +33,8 @@
 - Issue relacionada a documentos tornou-se um Epic.
   
 ### Melhorias
-- Evitar atrasos das proximas issues.
+- Evitar atrasos das próximas issues.
 - Melhorar a produtividade da equipe.
+ 
+ 
+

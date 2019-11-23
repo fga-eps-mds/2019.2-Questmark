@@ -84,7 +84,7 @@ O repositório será composto de :
 |:---:|:---:|:---:|:---:|   
 |02/09/2019|0.1| Criação do documento| Nícalo Ribeiro |
 |02/09/2019|0.2| Adição dos tópicos Introdução , Política de *commits* e Política de *branches* | Nícalo Ribeiro|
-|03/09/2019| 0.3| Adição do tópico Ferramentas | Nícalo Ribeiro|
-|22/11/2019| 0.4| Correção de erros ortográficos | Danillo Souza|
+|03/09/2019|0.3| Adição do tópico Ferramentas | Nícalo Ribeiro|
+|22/11/2019|0.4| Correção de erros ortográficos | Danillo Souza|
  
 
