@@ -1,5 +1,5 @@
 # Requisitos de Software
-
+ 
 |ID|Funcionalidades|Descrição|Sugestão de solução|Prioridade|
 |:---:|:---:|:---:|:---:|:---:|
 |RS01|Cadastro de usuários|||Must|
@@ -17,13 +17,14 @@
 |RS13|Gerar link compartilhável|Gerar link após finalização do cadastro do questionário no sistema.||Must|
 |RS14|Salvar questionários|Persistir o html gerado para cada questionário em um banco de dados.||Must|
 |RS15|Gerar CSV|Gerar CSV a partir das respostas recebidas para cada questionário.||Must|
-|RS16|Gerar iFrame para embedded|Gerar iFrame dos questinionários de forma que permita o usuário incorporar seus questionários em outras páginas.||Must|
-|RS17|Submissão de repostas a partir do link|Qualquer um deve ser capaz de acessar o link comapartilhável e submeter a sua resposta. Assim persistindo a resposta no banco de dados||Must|
-
-
+|RS16|Gerar iFrame para embedded|Gerar iFrame dos questionários de forma que permita o usuário incorporar seus questionários em outras páginas.||Must|
+|RS17|Submissão de repostas a partir do link|Qualquer um deve ser capaz de acessar o link compartilhável e submeter a sua resposta. Assim persistindo a resposta no banco de dados||Must|
+ 
+ 
 ## Histórico de Revisão
 |Data|Versão|Modificação|Autor|
 |:---:|:---:|:---:|:---:|
 |04/09/2019|0.1|Abertura do documento|MDS (Todos)|
 |05/09/2019|0.2|Levantamento dos requisitos|Gustavo Nogueira|
 |16/11/2019|0.3|Atualização dos requisitos recebidos após a realese 1.|Gustavo Nogueira|
+|22/11/2019|0.4|Correção de erros ortográficos|Danillo Souza|
