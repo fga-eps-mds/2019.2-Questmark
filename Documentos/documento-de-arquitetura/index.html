@@ -494,22 +494,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-diagrama-de-arquitetura" class="md-nav__link">
-    5. Diagrama de arquitetura
+  <a href="#5-visao-logica" class="md-nav__link">
+    5. Visão Lógica
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-diagrama-de-pacotes" class="md-nav__link">
+    5.1. Diagrama de Pacotes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-diagrama-de-pacotes" class="md-nav__link">
-    6. Diagrama de Pacotes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-qualidade" class="md-nav__link">
-    7. Qualidade
+  <a href="#6-qualidade" class="md-nav__link">
+    6. Qualidade
   </a>
   
 </li>
@@ -1466,22 +1472,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-diagrama-de-arquitetura" class="md-nav__link">
-    5. Diagrama de arquitetura
+  <a href="#5-visao-logica" class="md-nav__link">
+    5. Visão Lógica
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-diagrama-de-pacotes" class="md-nav__link">
+    5.1. Diagrama de Pacotes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-diagrama-de-pacotes" class="md-nav__link">
-    6. Diagrama de Pacotes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-qualidade" class="md-nav__link">
-    7. Qualidade
+  <a href="#6-qualidade" class="md-nav__link">
+    6. Qualidade
   </a>
   
 </li>
@@ -1535,7 +1547,9 @@
 <h3 id="14-referencias">1.4 Referências</h3>
 <blockquote>
 <p>André; Gabriel; Guilherme; ALMEIDA; Weyler. Cidade Democrática: Documento de Arquitetura. Disponível em: <a href="https://github.com/fga-gpp-mds/2016.2-CidadeDemocratica/wiki/Documento-de-Arquitetura">https://github.com/fga-gpp-mds/2016.2-CidadeDemocratica/wiki/Documento-de-Arquitetura</a>. Acessado em 16 de novembro de 2019. </p>
-<p>The jQuery Foundation. O que é jQuery? Disponível em: <a href="https://jquery.com/">https://jquery.com/</a>. Acessado em 16 de novembro de 2019. </p>
+<p>The jQuery Foundation. O que é jQuery? Disponível em: <a href="https://jquery.com/">https://jquery.com/</a>. Acessado em 16 de novembro de 2019.</p>
+<p>Treinaweb. Padrão MVC - Symfony. Disponível em: <a href="https://www.treinaweb.com.br/blog/tag/symfony/">https://www.treinaweb.com.br/blog/tag/symfony/</a>. Acessado em 23 de novembro de 2019.</p>
+<p>Canalti. Arquitetura cliente-servidor. Disponível em: <a href="https://www.canalti.com.br/arquitetura-de-computadores/arquitetura-cliente-servidor/">https://www.canalti.com.br/arquitetura-de-computadores/arquitetura-cliente-servidor/</a>. Acessado em 23 de novembro de 2019.</p>
 </blockquote>
 <h3 id="15-visao-geral">1.5 Visão Geral</h3>
 <p>O documento, através de dez principais tópicos e suas ramificações, visa detalhar a arquitetura e os requisitos do software do projeto. Tendo como objetivo facilitar o desenvolvimento e esclarecendo dúvidas a respeito deste.</p>
@@ -1546,17 +1560,14 @@
 <li>Metas e Restrições de Arquitetura;</li>
 <li>Visão de Casos de Uso;</li>
 <li>Visão Lógica;</li>
-<li>Visão de Processos;</li>
-<li>Visão de Implantação;</li>
-<li>Visão de Dados;</li>
-<li>Tamanho e Desempenho;</li>
 <li>Qualidade.</li>
 </ul>
 </li>
 </ul>
 <h2 id="2-representacao-da-arquitetura">2. Representação da Arquitetura</h2>
-<!-- Diagrama de arquitetura + descrição de implementação -->
-
+<p>A arquitetura implementada no projeto segue o modelo cliente-servidor em que o processamento da informação é dividido em módulos ou processos distintos. Dessa forma, o cliente(usuário) solicita um determinado serviço enquanto o servidor oferece o serviço solicitado pelo cliente.</p>
+<p>Neste projeto tecnologias como <em>Bootstrap</em>,<em>Html</em>,<em>Css</em>,<em>Javascript</em> e <em>JQuery</em> foram utilizadas para o lado do cliente(<em>frontend</em>), e no lado do servidor(<em>backend</em>), camada que trata as requisições e realiza a comunicação com a camada de persistência de dados, foi utilizado o NodeJS.</p>
+<p><img alt="Diagrama_de_arquitetura" src="../../Imagens/diagrama_de_arquitetura.png" /></p>
 <h3 id="21-padrao-arquitetural">2.1 Padrão Arquitetural</h3>
 <p>O padrão arquitetural utilizado para modelagem do projeto foi o MVC.
 <img alt="MVC" src="../../Imagens/mvc.jpg" />
@@ -1595,8 +1606,6 @@ se de forma extramente eficiente para qualquer aplicação Web baseado no Expres
 <p>As restrições de arquitetura do projeto são a utilização de um Banco de Dados MongoDB para cada serviço interno, Logo um banco onde irá armazenar informações sobre os usuários cadastrados e seus respectivos formulários.
 Utilização da ferramenta Docker para a virtualização dos ambientes de forma prática e adequada para a realização do projeto ( Conexão com a internet é necessária).</p>
 <p>As metas do projeto são disponibilizar a criação de um questionário com entrada em markdown  , por ser uma marcação simples e disponibilizar o questionário criado a todos os usuários sem cadastro prévio, disponibilizar ao criador do questionário um dashboard com dados analiticos do questionario, para análise das respostas e também um arquivo CSV Contendo as respectivas respostas. Além disso, disponibilizar ao usuário a opção de inserir em qualquer site que aceite a tag  IFRAME.</p>
-<!-- ## 4. Diagrama de Pacotes -->
-
 <h2 id="4-visao-de-casos-de-uso">4. Visão de Casos de Uso</h2>
 <p>Lista dos casos de uso:
 - Cadastro de usuários
@@ -1618,11 +1627,10 @@ Utilização da ferramenta Docker para a virtualização dos ambientes de forma 
 O usuário da plataforma, quando deslogado, é capaz de responder questionários de terceiros.</p>
 <h2 id="42-diagrama-de-casos-de-uso">4.2 Diagrama de casos de uso</h2>
 <p><img alt="UC_Questmark" src="../../Imagens/uc_questmark.png" /></p>
-<h2 id="5-diagrama-de-arquitetura">5. Diagrama de arquitetura</h2>
-<p><img alt="Diagrama_de_arquitetura" src="../../Imagens/diagrama_de_arquitetura.png" /></p>
-<h2 id="6-diagrama-de-pacotes">6. Diagrama de Pacotes</h2>
+<h2 id="5-visao-logica">5. Visão Lógica</h2>
+<h3 id="51-diagrama-de-pacotes">5.1. Diagrama de Pacotes</h3>
 <p><img alt="Diagrama_de_pacotes" src="../../Imagens/DiagramaDePacotes.png" /></p>
-<h2 id="7-qualidade">7. Qualidade</h2>
+<h2 id="6-qualidade">6. Qualidade</h2>
 <p>O software suporta os seguintes requisitos de qualidade:</p>
 <ul>
 <li>Interface amigável e funcional</li>
@@ -1692,7 +1700,13 @@ O usuário da plataforma, quando deslogado, é capaz de responder questionários
 <td align="center">22/11/2019</td>
 <td align="center">0.9</td>
 <td align="center">Correção de erros ortográficos e adição dos tópicos 5 e 6</td>
-<td align="center">Danill Souza</td>
+<td align="center">Danillo Souza</td>
+</tr>
+<tr>
+<td align="center">23/11/2019</td>
+<td align="center">1.0</td>
+<td align="center">Correção da ordem dos tópicos e adição de descrição para o diagrama de arquitetura</td>
+<td align="center">Gustavo Nogueira</td>
 </tr>
 </tbody>
 </table>
