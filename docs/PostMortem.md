@@ -9,7 +9,7 @@ Com o encerramento da disciplina de MDS (Métodos de Desenvolvimento de Software
 - O time, para a R2, deu o máximo para corrigir os erros que estavam sendo cometidos na R1. Ou seja, ouviu o feedback dado pelos professores;
 - Os testes foram realizados na medida do possível;
 - O pareamento possibilitou uma maior absorção de conhecimento;
-- A comiunicação dentro da equipe foi melhorando conforme o decorrer do projeto;
+- A comunicação dentro da equipe foi melhorando conforme o decorrer do projeto;
 - Velocity da equipe foi de 21 pontos;
 - Toda a aplicação foi documentada;
  
@@ -22,7 +22,7 @@ Com o encerramento da disciplina de MDS (Métodos de Desenvolvimento de Software
 - Alguns membros não tiveram tanto comprometimento com o desenvolvimento do projeto;
 - Os documentos técnicos até a R1 eram bem pobres de informações;
 - A comunicação pelas issues, no início do projeto, não foi tão boa;
-- O monitor, designado como EPS, esteve sempre como segundo;
+- O monitor, designado como EPS, esteve sempre como segundo plano;
 - O deploy contínuo foi, praticamente, inexistente. A equipe não lançou nenhuma versão do projeto na branch master;
 - Como não houveram lançamentos na master, a importância da mesma tornou-se irrelevante ao decorrer do semestre; 
 - O React, que era uma tecnologia proposta no inicio do semestre, foi trocada por EJS.
