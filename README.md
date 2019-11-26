@@ -9,9 +9,9 @@
 
 ## Sobre o projeto
 
-   O QuestMark é uma plataforma para criar questionários a partir da sintaxe _markdown_. O _markdown_, tecnologia amplamente utilizada por desenvolvedores, permite a criação de textos elegantes de uma forma simples e intuitiva. Porém, o mesmo não permite a criação de um formulário por não ter sido programado com esse propósito. Dessa forma, a equipe do projeto QuestMark, decidiu desenvolver uma plataforma que sana esse problema.
+   O QuestMark é uma plataforma para criar questionários a partir da sintaxe _markdown_. O _markdown_, tecnologia amplamente utilizada por desenvolvedores, permite a criação de textos elegantes de uma forma simples e intuitiva. Porém, o mesmo não permite a criação de um formulário por não ter sido programado com esse propósito.
 
-  Foi utilizado um projeto _open source_ chamado [_WMD: The Wysiwym Markdown Editor_](https://github.com/brikis98/wmd) que implementa uma sintaxe bastante simples para criar campos de formulários. Apesar de existir um projeto que já inclui a sintaxe para criação de questionários, não há nenhuma plataforma que disponibilize essa aplicabilidade de uma maneira fácil ao público.
+  Foi utilizado um projeto _open source_ chamado [_WMD: The Wysiwym Markdown Editor_](https://github.com/brikis98/wmd) que implementa uma sintaxe bastante simples para criar campos de formulários. Apesar de existir um projeto que já inclui a sintaxe para criação de questionários, não há nenhuma plataforma que disponibilize essa aplicabilidade de uma maneira fácil ao público. Dessa forma, a equipe do projeto QuestMark, decidiu desenvolver uma plataforma que sana esse problema.
 
 ## Principais funcionalidades
 * _CRUD_ de questionários;
@@ -19,12 +19,12 @@
 * Gerar iFrame para incorporação de questionários em outras páginas;
 * Gerar arquivo _CSV_ a partir das respostas de um questionário;
 * Gerar _dashboard_ a partir das respostas de um questionário;
-* _API_ isolada que realiza o conversão de _markdown_,contendo a sintaxe para criar campos de formulários, para _html_ .
+* _API_ isolada que realiza o conversão de _markdown_,contendo a sintaxe para criar campos de formulários, para _html_. [Exemplo de utilização da _API_ ](https://github.com/fga-eps-mds/2019.2-Questmark/blob/develop/frontend/exemplo_utiliza%C3%A7%C3%A3o_api/exemplo_api_parse.html).
 
 ## Como contribuir
-* [Código de conduta]()
+* [Código de conduta](https://github.com/fga-eps-mds/2019.2-Questmark/blob/develop/CODE_OF_CONDUCT.md)
 
-* [Guia de contribuição]()
+* [Guia de contribuição](https://github.com/fga-eps-mds/2019.2-Questmark/blob/develop/.github/CONTRIBUTING.md)
 
 ## Guia de instalação
 
@@ -46,6 +46,12 @@ https://masterquestmark.herokuapp.com/
 https://prodquestmark.herokuapp.com/
 ### Site
 https://www.questmark.com.br
+
+## Empacotamento
+* Ao desempacotar o .deb é necessario ter instalado previamente na máquina os programas:
+  * docker
+  * docker-compose
+* Link para instalação: https://docs.docker.com/v17.09/engine/installation/
 
 ## Equipe
 
