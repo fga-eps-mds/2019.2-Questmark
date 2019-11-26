@@ -1,24 +1,37 @@
 <!DOCTYPE HTML>
 <html lang="pt-br">
-
 <head>
 	<meta charset="UTF-8">
 	<script>
+		/*  
+			Utilização da API:
+			=> Rota de acesso ao serviço de parse:
+				* dominio_da_plataforma_questmark/parse
+				* https://prodquestmark.herokuapp.com/parse
+			=> Formato do Json para ser enviado para o servidor:
+				* {markdown: markdown}
+			=> Resposta html:
+				* encontra-se na chave 'html' do objeto de resposta JSON => (obj.html).
+
+			=> Obs.: A entrada markdown não deve conter caracteres especiais.
+		*/
 		function parseMarkdownToHtml() {
-			const url = `http://localhost:3000/parse`;
+			const url = `https://prodquestmark.herokuapp.com/parse`;
 			const markdown = document.getElementById('txt-markdown').value;
-			let loadingIMG = document.getElementById('loading');
+			let loading = document.getElementById('loading');
 			let previewDIV = document.getElementById('preview');
-			loadingIMG.style.display = 'block';
+			loading.style.display = 'block';
 			previewDIV.innerHTML = '';
 
 			let ajax = new XMLHttpRequest();
 			ajax.open('POST', url);
+			//Formato do cabeçalho da requisição
 			ajax.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+			//Callback que tratará a resposta
 			ajax.onreadystatechange = function () {
 				if (ajax.readyState == 4 && ajax.status == 200) {
 					let responseJson = JSON.parse(ajax.responseText);
-					loadingIMG.style.display = 'none';
+					loading.style.display = 'none';
 					previewDIV.insertAdjacentHTML('beforeend', responseJson.html);
 				}
 			}
@@ -28,11 +41,11 @@
 </head>
 
 <body>
-
 	<div>
 		<h1>Markdown:</h1>
-		<textarea cols="50" rows="10" name="markdown" id="txt-markdown">
+		<textarea cols="50" rows="10" name="markdown" id="txt-markdown" type="reset">
 		</textarea>
+		<script>document.getElementById('txt-markdown').value = '';</script>
 		<button onclick="parseMarkdownToHtml()">Enviar</button>
 	</div>
 
@@ -42,9 +55,8 @@
 
 	<h1>Preview:</h1>
 	<div id="preview" style="">
-
+	
 	</div>
 
 </body>
-
 </html>
