@@ -48,10 +48,14 @@ https://prodquestmark.herokuapp.com/
 https://www.questmark.com.br
 
 ## Empacotamento
-* Ao desempacotar o .deb é necessario ter instalado previamente na máquina os programas:
+* Para desempacotar o .deb com sucesso é necessario ter instalado previamente na máquina os programas:
   * docker
   * docker-compose
 * Link para instalação: https://docs.docker.com/v17.09/engine/installation/
+* Após a instalação das dependências necessárias desempacote utilizando o comando
+```
+  sudo dpkg -i questmark_1.0_amd64.deb
+```
 
 ## Equipe
 
