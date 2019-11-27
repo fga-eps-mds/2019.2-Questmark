@@ -1,0 +1,19 @@
+body{
+	background-image: linear-gradient(to right,#007BFF, rgb(0, 225, 255));
+	font-family: 'PT Serif', serif;
+	font-size: 15pt;
+}
+
+#main-div{
+	width: 50vw;
+	background-color: white;
+	border-radius: 2vw;
+	margin-top: 5vh; 
+	padding: 1.8vh 2vw;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+#font-logo{
+  font-family: 'Knewave', cursive;
+  color: #747474;
+}

@@ -1,0 +1,46 @@
+{
+  "name": "2019.2-questmark",
+  "version": "1.0.0",
+  "description": "Questionario Markdown",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fga-eps-mds/2019.2-Questmark.git"
+  },
+  "author": "Lucas Lopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fga-eps-mds/2019.2-Questmark/issues"
+  },
+  "homepage": "https://github.com/fga-eps-mds/2019.2-Questmark#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "express-validator": "^6.2.0",
+    "mongoose": "^5.7.1",
+    "node-fakeweb": "^1.1.0",
+    "nodemon": "^1.19.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.1",
+    "jest": "^23.6.0",
+    "nock": "^11.7.0",
+    "supertest": "^3.3.0"
+  }
+}

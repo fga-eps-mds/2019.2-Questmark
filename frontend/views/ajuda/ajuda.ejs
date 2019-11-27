@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Questmark ajuda</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="deion">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="/ajuda/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/ajuda/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/ajuda/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/ajuda/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/ajuda/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/ajuda/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="/ajuda/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header id="header" class="fixed-top">
+    <div class="container">
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="#header"><span>QM</span></a></h1> 
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#intro">Ínicio</a></li>
+          <li><a href="#services">Sintaxe</a></li>
+          <li><a href="#why-us">Porque nós?</a></li>
+          <li><a href="#team">Inserir em seu site</a></li>
+          <li><a href="/forms">Criar Fórmulario</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+  </header>
+  <section id="intro" class="clearfix">
+    <div class="container">
+
+      <div class="intro-img">
+        <img src="img/abcdef.png" alt="" class="img-fluid">
+      </div>
+
+      <div class="intro-info">
+        <h2>Aprenda a usar o <br><span>Questmark</span><br>facilmente!</h2>
+        <div>
+          <a href="#services" class="btn-get-started scrollto">Começar</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="services" class="section-bg">
+      <div class="container">
+        <header class="section-header">
+          <h3>Sintaxe</h3>
+          <p>Abaixo tudo o que você precisará saber para criar questionários no Questmark</p>
+          <p>A entrada em markdown e a saída já renderizada ;)</p>
+        </header>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+          
+              <h4 class="titleb"><a>Input</a></h4>
+              <p  class="deion">Nome = ____</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="title"><a href="">Renderizado</a></h4>
+              <p class="deion">
+                Nome: <input type="text">
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="titleb"><a href="">Radio Buttons</a></h4>
+              <p class="deion">Sexo = (x) Masculino () Feminino </p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="title"><a href="">Renderizado</a></h4>
+              <p class="deion"><label>Sexo:</label> 
+                <input type="radio" name="sex" id="male" value="male" checked="checked"/><label for="male">Masculino</label>
+                <input type="radio" name="sex" id="female" value="female"/><label for="female">Feminino</label>  </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="titleb"><a href="">Check boxes</a></h4>
+              <p class="deion">Celulares = [] Android [x] iPhone [x] Blackberry</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="title"><a href="">Renderizado</a></h4>
+              <p class="deion"><label>Celulares:</label> 
+                <input type="checkbox" name="phones" id="Android" value="Android"/><label for="Android">Android</label>
+                <input type="checkbox" name="phones" id="iPhone" value="iPhone" checked="checked"/><label for="iPhone">iPhone</label>
+                <input type="checkbox" name="phones" id="Blackberry" value="Blackberry" checked="checked"/><label for="Blackberry">Blackberry</label>
+                </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+              <div class="box">
+                <h4 class="titleb"><a href="">Drop Down</a></h4>
+                <p class="deion">Estado = {GO, DF, (MA)}
+              </div>
+          </div>
+            <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+              <div class="box">
+                <h4 class="title"><a href="">Renderizado</a></h4>
+                <p class="deion">
+                    <label for="city">Estado:</label>
+                    <select id="city" name="city">
+                      <option value="BOS">GO</option>
+                      <option value="SFO">DF</option>
+                      <option value="NYC" selected="selected">MA</option>
+                    </select>
+                </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+              <div class="box">
+                <h4 class="titleb"><a href="">Campos Obigatorios</a></h4>
+                <p class="deion">Nome* = ___
+              </div>
+          </div>
+            <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+              <div class="box">
+                <h4 class="title"><a href="">Renderizado</a></h4>
+                <p class="deion">
+                    <label for="zip-code" class="required-label">Nome*:</label>
+                    <input type="text" name="zip-code" id="zip-code" size="20" class="required-input"/>
+                </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+ 
+    <section id="why-us" class="wow fadeIn">
+      <div class="container">
+        <header class="section-header">
+          <h3>Por que usar o Questmark?</h3>
+          <p>Somos uma plataforma de criação e gereciamentos de questionários a partir de markdown</p>
+        </header>
+
+        <div class="row row-eq-height justify-content-center">
+
+          <div class="col-lg-4 mb-4">
+            <div class="card wow bounceInUp">
+                <i class="fa fa-diamond"></i>
+              <div class="card-body">
+                <h5 class="card-title">Markdown</h5>
+                <p class="card-text">A linguagem markdown é simples de aprender e fácil de ser utilizada</p>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card wow bounceInUp">
+                <i class="fa fa-language"></i>
+              <div class="card-body">
+                <h5 class="card-title">Download em .csv</h5>
+                <p class="card-text">Baixe as respostas de cada questionário em um arquivo .csv para utilizá-las como quiser</p>
+              
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card wow bounceInUp">
+                <i class="fa fa-object-group"></i>
+              <div class="card-body">
+                <h5 class="card-title">Inserir na página github</h5>
+                <p class="card-text">Nós disponibilzamos a opção de inserir seu questionário em suas páginas html,githubpages e qualquer outra página.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <div class="section-header">
+          <h3>Inserir o questionário em suas páginas</h3>
+        </div>
+        <div class="row about-extra">
+          <div class="col-lg-6 wow fadeInUp">
+            <br>
+            <div class="card">
+              <img src="/ajuda/img/tutorial.jpg" class="img-fluid" alt="">
+            </div>
+          
+          </div>
+          <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+            <p>
+              Logo após a criação do seu questionário, o mesmo pode ser visualizado em sua tela de questionários. Podendo ser, editado,modificado, compartilhado, analise no dashboard e excluído.
+            </p>
+            <p>
+              Ao clicar no botão de compartilhar, irá aparecer duas opções como aparece ao lado. Basta clicar em iframe e será copiado automaticamente o link do iframe. Com isso, basta colar em seu site/página.
+            </p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ 
+  <footer id="footer">
+    <div class="container">
+      <div class="credits">
+        Designed by <a href="https://bootstrap.com/">Bootstrap</a>
+        icons by <a href="https://icons8.com/">Icons8</a>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <script src="/ajuda/lib/jquery/jquery.min.js"></script>
+  <script src="/ajuda/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/ajuda/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/ajuda/lib/easing/easing.min.js"></script>
+  <script src="/ajuda/lib/mobile-nav/mobile-nav.js"></script>
+  <script src="/ajuda/lib/wow/wow.min.js"></script>
+  <script src="/ajuda/lib/waypoints/waypoints.min.js"></script>
+  <script src="/ajuda/lib/counterup/counterup.min.js"></script>
+  <script src="/ajuda/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/ajuda/lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="/ajuda/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="/ajuda/js/main.js"></script>
+
+</body>
+</html>

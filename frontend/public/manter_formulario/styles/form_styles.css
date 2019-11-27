@@ -1,0 +1,33 @@
+#view-form-body{
+	background-image: linear-gradient(to right,#007BFF, rgb(0, 225, 255));
+	font-family: 'PT Serif', serif;
+}
+
+#main-div{
+	text-align: justify;
+	display: inline-block;
+	background-color: white;
+	border-radius: 10px; 
+	padding: 1vh 1vw;
+	margin: 3vh 0vw;
+}
+
+.field{
+	display: inline-block;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-top: 3vh;
+	padding-bottom: 1vh;
+	border: 1.5px solid #007BFF;
+	border-radius: 10px;	
+}
+
+.optionField{
+	display: inline-block;
+}
+
+#btnSubmit{
+	display: block;
+	margin-left: auto;
+	margin-top: 2vh;
+}

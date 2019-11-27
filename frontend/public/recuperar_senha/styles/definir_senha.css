@@ -1,0 +1,119 @@
+body {
+    background-color: #49AFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: black
+}
+
+.main-title{
+    text-align: center;
+    color : white
+}
+
+.main-box {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top : 5vh;
+    background-color: white;
+    width: 560px;
+    min-height: 360px;
+    border-radius: 10px
+}
+
+.box-inserts{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    font-size: 19px;
+    margin-top: 5%
+}
+
+.div-input{
+    display:flex;
+    flex-direction:row;
+    margin-bottom: 20px
+}
+
+.input-email{
+    height: 30px;
+    border-radius: 5px;
+    width: 240px;
+    margin-right: 10px;
+    padding-left: 10px
+}
+
+.input-code{
+    height: 30px;
+    border-radius: 5px;
+    width: 240px; 
+    padding-left: 10px
+}
+
+.div-password{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    font-size: 19px
+}
+
+.div-input-password{
+    display:flex;
+    flex-direction:row;
+    justify-content: center
+}
+
+.input-password{
+    height: 30px;
+    border-radius: 5px;
+    width: 320px;
+    margin-right: 20px;
+    padding-left: 10px
+}
+
+.div-confirm{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    margin-top: 35px
+}
+
+.button-confirm{
+    color:white;
+    height : 40px;
+    background-color: #4AB1FF;
+    border-radius : 10px;
+    width: 160px;
+    font-weight: bold;
+}
+
+.div-error{
+    background-color: red;
+    color: white;
+    width: 260px;
+    min-height: 80px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 5%;
+    margin-bottom: 5%
+}
+
+.div-options{
+    flex-direction : row;
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    height: 30px;
+    width: 480px;
+    margin-top: 5%
+}

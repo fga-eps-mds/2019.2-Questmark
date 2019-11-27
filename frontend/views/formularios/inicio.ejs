@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="/listagem_formulario/js/copyForm.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/listagem_formulario/styles/listForms.css">
+  <script src="https://kit.fontawesome.com/4b0fcedc6f.js" crossorigin="anonymous"></script>
+  <title>QuestMark</title>
+</head>
+<%- include ../partials/Header.ejs%>
+<%- include ../partials/Overlay.ejs%>
+<%- include ../partials/OverlayDelete.ejs%>
+
+<body>
+  <% if (formulario.length>0) { %>
+  <br>
+  <div class="wrapping">
+    <% for(let i = 0;i < formulario.length;i++){ %>
+    <div class="formBox">
+      <div class="formText"><%= formulario[i].nome%></div>
+      <div class="buttonsBox">
+        <a href="/forms/editar/<%= formulario[i].id %>">
+          <div class="buttonForm" style="background: #00AAFF" title="Editar">
+            <i class="fa fa-pencil" id="buttonIcon"></i>
+          </div>
+        </a>
+        <a onclick="getInfo('<%=formulario[i].id%>','<%=formulario[i].nome%>')" data-toggle="modal"
+          data-target="#ModalPrincipal" style="cursor:pointer;">
+          <div class="buttonForm" style="background: #77D353" title="Compartilhar">
+            <i class="fas fa-share-alt" id="buttonIcon"></i>
+          </div>
+        </a>
+        <a href="/forms/dashboard/<%= formulario[i].id %>">
+          <div class="buttonForm" style="background: #4B2CFF" title="Dashboard">
+            <i class="fas fa-chart-bar" id="buttonIcon"></i>
+          </div>
+        </a>
+        <a onclick="deleteForm('<%=formulario[i].id%>','<%=formulario[i].nome%>')" data-toggle="modal"
+          data-target="#ModalPrincipalDelete" style="cursor:pointer;">
+          <div class="buttonForm" style="background: #FF2C2C" title="Deletar">
+            <i class="fas fa-trash" id="buttonIcon"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+    <% } %>
+    <a href="/forms/registro" class="newFormButton" title="Cadastrar">+</a>
+  </div>
+  <% }else{ %>
+  <div class="nothingHere">
+    <div class="nothingHereText">Nenhum Formulário Foi Cadastrado</div>
+    <a href="/forms/registro" class="newFormButton">+</a>
+  </div>
+  <% } %>
+</body>
+
+</html>
