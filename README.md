@@ -56,6 +56,7 @@ https://www.questmark.com.br
 ```
   sudo dpkg -i questmark_1.0_amd64.deb
 ```
+* Após o passo anterior ter sido realizado, o projeto estará disponível na pasta /opt
 
 ## Equipe
 
@@ -76,5 +77,3 @@ https://www.questmark.com.br
 <p align="center">Métodos de Desenvolvimento de Software (MDS) - 2019.2<br /><br />
 <a href="https://fga.unb.br" target="_blank"><img width="230"src="https://4.bp.blogspot.com/-0aa6fAFnSnA/VzICtBQgciI/AAAAAAAARn4/SxVsQPFNeE0fxkCPVgMWbhd5qIEAYCMbwCLcB/s1600/unb-gama.png"></a>
 </p>
-
-
