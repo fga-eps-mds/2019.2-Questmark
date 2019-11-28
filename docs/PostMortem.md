@@ -11,6 +11,7 @@ Com o encerramento da disciplina de MDS (Métodos de Desenvolvimento de Software
 - O pareamento possibilitou uma maior absorção de conhecimento;
 - A comunicação dentro da equipe foi melhorando conforme o decorrer do projeto;
 - Velocity da equipe foi de 21 pontos;
+- O Planning Poker foi realizado em todas as sprints;
 - Toda a aplicação foi documentada;
  
 ## Pontos Negativos
@@ -25,5 +26,14 @@ Com o encerramento da disciplina de MDS (Métodos de Desenvolvimento de Software
 - O monitor, designado como EPS, esteve sempre como segundo plano;
 - O deploy contínuo foi, praticamente, inexistente. A equipe não lançou nenhuma versão do projeto na branch master;
 - Como não houveram lançamentos na master, a importância da mesma tornou-se irrelevante ao decorrer do semestre; 
-- O React, que era uma tecnologia proposta no inicio do semestre, foi trocada por EJS.
-- O WMD não pode ter sido testado, pois é um código bem antigo e bem extenso.
+- O React, que era uma tecnologia proposta no início do semestre, foi trocada por EJS.
+- O WMD não pode ter sido testado, pois é um código bem antigo e bem extenso;
+- Diversas issue foram pontuadas de forma equivocada;
+ 
+## O que melhorar para o próximo projeto?
+- Realizar deploy contínuo e entrega contínua;
+- Pontuar issues de uma forma menos equivocada para evitar atrasos;
+- Perguntar ao cliente ( No caso ao professor responsável ) qual é realmente a ideia do projeto para evitar um erro de interpretação como ocorreu com o tema do projeto;
+- Organizar melhor o tempo para evitar o fechamento de issues ao final das sprints, evitando então o acúmulo de tarefas;
+ 
+
