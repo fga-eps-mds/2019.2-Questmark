@@ -2,9 +2,9 @@ getInfo = (formId, formName) => {
     var link = window.location.href;
     document.getElementById("ModalInterno").innerHTML = formName;
     document.getElementById("shareLink").value = link+'/postar/' + formId;
-    document.getElementById("iFrame").value = '<iframe src=' + link +
+    document.getElementById("iFrame").value = '<iframe src=' +'"'+ link +
                                               '/postar/' + formId + '"' +
-                                              ' height="300px" width="60%"' + '></iframe>';
+                                              ' height="450px" width="60%"' + '></iframe>';
     
 }
 copyLink = () => {
