@@ -153,3 +153,4 @@ O software suporta os seguintes requisitos de qualidade:
 |18/11/2019|0.8| Correção de erros ortográficos e adição de definição de acrônimos|Gustavo Nogueira|
 |22/11/2019|0.9| Correção de erros ortográficos e adição dos tópicos 5 e 6|Danillo Souza|
 |23/11/2019|1.0| Correção da ordem dos tópicos e adição de descrição para o diagrama de arquitetura |Gustavo Nogueira|
+|26/11/2019|1.1| Revisão geral da ortográfia e da documentação completa |Luiz Gustavo|
